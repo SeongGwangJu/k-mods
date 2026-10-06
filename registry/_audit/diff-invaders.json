@@ -1,0 +1,47 @@
+{
+  "name": "diff-invaders",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/davila7/claude-code-templates",
+    "path": "cli-tool/components/mods/games/diff-invaders",
+    "sha": "375af9018a40e330e81542f59054daaa088c21aa"
+  },
+  "auditedWith": "2.1.291",
+  "validate": {
+    "success": true,
+    "errors": [],
+    "warnings": []
+  },
+  "hooks": [
+    "command.run{command=diff-invaders}",
+    "session.start",
+    "tool.call{tool=Edit|Write}",
+    "turn.complete",
+    "ui.message",
+    "ui.render{component=AbovePrompt}"
+  ],
+  "calls": [
+    "$.command.register",
+    "$.store.get",
+    "$.store.set",
+    "$.ui.invalidate",
+    "$.ui.log",
+    "$.ui.resolve",
+    "$.ui.toast"
+  ],
+  "envReads": [],
+  "envWrites": [],
+  "gatingWithoutCatch": [
+    "tool.call{tool=Edit|Write}"
+  ],
+  "commands": [
+    "/diff-invaders"
+  ],
+  "programs": [],
+  "urls": [],
+  "license": "LICENSE",
+  "permissions": [
+    "gate",
+    "chat"
+  ]
+}

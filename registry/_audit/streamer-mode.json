@@ -1,0 +1,41 @@
+{
+  "name": "streamer-mode",
+  "source": "./mods/streamer-mode",
+  "auditedWith": "2.1.291",
+  "validate": {
+    "success": true,
+    "errors": [],
+    "warnings": []
+  },
+  "hooks": [
+    "command.run{command=streamer}",
+    "session.start",
+    "ui.render{component=AskUserQuestion}",
+    "ui.render{component=AssistantMessage}",
+    "ui.render{component=CommandOutput}",
+    "ui.render{component=PromptHint}",
+    "ui.render{component=ToolGroup}",
+    "ui.render{component=ToolResult}",
+    "ui.render{component=ToolUse}",
+    "ui.render{component=UserMessage}"
+  ],
+  "calls": [
+    "$.command.register",
+    "$.store.get",
+    "$.store.set",
+    "$.ui.invalidate",
+    "$.ui.toast"
+  ],
+  "envReads": [],
+  "envWrites": [],
+  "gatingWithoutCatch": [],
+  "commands": [
+    "/streamer"
+  ],
+  "programs": [],
+  "urls": [],
+  "license": "../../LICENSE",
+  "permissions": [
+    "chat"
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "name": "receipt",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/hoobnn/hoobnn-agent-mods.git",
+    "path": "claude-code/receipt",
+    "sha": "8fb6f67cad9fd023cc7c06b7923518b4bbc45aea"
+  },
+  "auditedWith": "2.1.291",
+  "validate": {
+    "success": true,
+    "errors": [],
+    "warnings": []
+  },
+  "hooks": [
+    "command.run{command=receipt}",
+    "prompt.edit",
+    "prompt.submit",
+    "session.start",
+    "tool.call",
+    "turn.complete",
+    "turn.start",
+    "ui.render{component=AbovePrompt}"
+  ],
+  "calls": [
+    "$.clock.now",
+    "$.command.register",
+    "$.config.set",
+    "$.env.get",
+    "$.session.cwd",
+    "$.settings.read",
+    "$.state.get",
+    "$.state.set",
+    "$.store.delete",
+    "$.store.get",
+    "$.ui.resolve",
+    "$.ui.toast"
+  ],
+  "envReads": [
+    "LANG",
+    "LC_ALL",
+    "LC_MESSAGES"
+  ],
+  "envWrites": [
+    "nothing"
+  ],
+  "gatingWithoutCatch": [
+    "prompt.submit",
+    "tool.call"
+  ],
+  "commands": [
+    "/receipt"
+  ],
+  "programs": [],
+  "urls": [],
+  "license": "../../LICENSE",
+  "permissions": [
+    "gate",
+    "chat",
+    "env"
+  ]
+}

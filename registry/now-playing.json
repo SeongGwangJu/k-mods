@@ -1,0 +1,66 @@
+{
+  "$schema": "./_schema.json",
+  "name": "now-playing",
+  "displayName": "나우 플레잉",
+  "summary": "macOS에서 Spotify로 재생 중인 곡과 가사를 입력창 위에 보여주고, 버튼이나 /music으로 재생·일시정지·이전·다음을 조작해요.",
+  "summaryEn": "Shows Spotify's current track, progress, and synced lyrics above the prompt on macOS, with transport buttons and /music commands.",
+  "category": "tool",
+  "tags": [
+    "Spotify",
+    "상태줄"
+  ],
+  "kind": "upstream",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/hamzafer/claude-code-mods",
+    "path": "mods/now-playing",
+    "sha": "adf9d72d81cb04284416371f9de8a6f937dcc631"
+  },
+  "upstream": {
+    "repo": "hamzafer/claude-code-mods",
+    "path": "mods/now-playing",
+    "commit": "adf9d72d81cb04284416371f9de8a6f937dcc631",
+    "stars": 119
+  },
+  "author": {
+    "name": "Hamza Zafar",
+    "url": "https://github.com/hamzafer"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/hamzafer/claude-code-mods/tree/main/mods/now-playing",
+  "commands": [
+    "/music"
+  ],
+  "surfaces": [
+    "terminal",
+    "desktop"
+  ],
+  "requires": [
+    "macOS",
+    "Spotify 데스크톱 앱"
+  ],
+  "preview": "https://raw.githubusercontent.com/hamzafer/claude-code-mods/adf9d72d81cb04284416371f9de8a6f937dcc631/images/now-playing.png",
+  "notes": [
+    "macOS가 아니면 session.start에서 uname -s로 확인해 명령 등록·폴링을 전혀 하지 않고 조용히 꺼져 있어요(Linux/Windows에서 아무 영향 없음)."
+  ],
+  "review": {
+    "date": "2026-10-06",
+    "by": "k-mods",
+    "claudeCode": "2.1.291",
+    "method": [
+      "validate",
+      "code-read"
+    ],
+    "findings": [
+      "validate 성공(success:true), errors/warnings 없음, gatingHooks 없음.",
+      "네트워크 목적지: LRCLIB(https://lrclib.net/api). 곡이 바뀔 때마다 1회, 가사(싱크 가사)를 받아오려고 트랙명·아티스트명·앨범명·재생시간을 보내요. userConfig의 lyrics 옵션을 끄면(/config) 이 호출 자체가 아예 일어나지 않아요. 대화 내용이나 코드가 아니라 공개된 곡 정보만 보내는 호출이에요.",
+      "외부 프로그램 실행: `osascript`로 Spotify를 AppleScript 제어(재생 상태 조회, 재생/일시정지/다음/이전. 'is running' 확인이 먼저라 Spotify를 새로 실행시키지 않음), `pgrep -x Spotify`(꺼져 있을 때 가벼운 확인용), `uname -s`(macOS 여부 확인).",
+      "파일 쓰기: 없음.",
+      "모델 호출($.model.*): 없음.",
+      "prompt.submit/tool.call/tool.check 훅: 등록하지 않음.",
+      "env/설정/트랜스크립트 읽기: 없음.",
+      "기기 밖 데이터 전송: 가사 조회 1건(위 설명) 외에는 없음. 로그인이 필요 없는 공개 API예요.",
+      "타이머/폴링: 재생 중엔 3초, 멈춰 있으면 5초 간격으로 Spotify 상태를 가볍게 확인해요(0.25초마다 화면의 재생 바만 로컬 계산으로 움직이고, 실제 Spotify 질의는 그보다 드물게). Spotify가 꺼져 있으면 pgrep만 돌려 가벼워요."
+    ]
+  }
+}

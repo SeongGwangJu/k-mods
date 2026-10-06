@@ -1,0 +1,54 @@
+{
+  "name": "agent-flow",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/davila7/claude-code-templates",
+    "path": "cli-tool/components/mods/ui/agent-flow",
+    "sha": "375af9018a40e330e81542f59054daaa088c21aa"
+  },
+  "auditedWith": "2.1.291",
+  "validate": {
+    "success": true,
+    "errors": [],
+    "warnings": []
+  },
+  "hooks": [
+    "agent.spawn",
+    "command.run{command=agent-flow}",
+    "session.measure",
+    "session.start",
+    "tool.call",
+    "turn.complete",
+    "turn.start",
+    "turn.step",
+    "ui.close",
+    "ui.press",
+    "ui.render{component=Pane}"
+  ],
+  "calls": [
+    "$.agent.list",
+    "$.command.register",
+    "$.session.usage",
+    "$.ui.close",
+    "$.ui.invalidate",
+    "$.ui.log",
+    "$.ui.open",
+    "$.ui.resolve",
+    "$.ui.status"
+  ],
+  "envReads": [],
+  "envWrites": [],
+  "gatingWithoutCatch": [
+    "agent.spawn",
+    "tool.call",
+    "ui.close"
+  ],
+  "commands": [],
+  "programs": [],
+  "urls": [],
+  "license": null,
+  "permissions": [
+    "gate",
+    "chat"
+  ]
+}

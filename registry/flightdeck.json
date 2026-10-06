@@ -1,0 +1,64 @@
+{
+  "$schema": "./_schema.json",
+  "name": "flightdeck",
+  "displayName": "플라이트덱 대시보드",
+  "summary": "메인 모델 상태·비용·컨텍스트, 온콜 아키텍트 상담, 권한 검사, 서브에이전트 카드를 실시간 세션 이벤트로 한 화면에 보여줘요",
+  "summaryEn": "A live terminal dashboard: model vitals, cost/context, an on-call architect, permission checks and subagent cards from real session events.",
+  "category": "statusline",
+  "tags": [
+    "대시보드",
+    "서브에이전트",
+    "권한검사",
+    "컨텍스트"
+  ],
+  "kind": "upstream",
+  "source": {
+    "source": "github",
+    "repo": "scasella/claude-flightdeck",
+    "sha": "f31daca523d36c501cd0df23a737a44c7dc56ad6"
+  },
+  "upstream": {
+    "repo": "scasella/claude-flightdeck",
+    "commit": "f31daca523d36c501cd0df23a737a44c7dc56ad6",
+    "stars": 16
+  },
+  "author": {
+    "name": "Stephen Casella",
+    "url": "https://github.com/scasella"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/scasella/claude-flightdeck",
+  "commands": [
+    "/flightdeck"
+  ],
+  "surfaces": [
+    "terminal",
+    "desktop"
+  ],
+  "conflicts": [
+    {
+      "with": "agentpane",
+      "note": "둘 다 서브에이전트를 패널로 보여줘요. flightdeck은 컨텍스트·비용·권한검사까지 보는 세션 전체 대시보드, agentpane은 서브에이전트 대화 보기·중단에 강해요. 보통 하나만 써도 충분해요."
+    }
+  ],
+  "preview": "https://raw.githubusercontent.com/scasella/claude-flightdeck/f31daca523d36c501cd0df23a737a44c7dc56ad6/docs/media/demo.gif",
+  "review": {
+    "date": "2026-10-06",
+    "by": "k-mods",
+    "claudeCode": "2.1.291",
+    "method": [
+      "validate",
+      "code-read"
+    ],
+    "findings": [
+      "네트워크 호출 없음 ($.http 미사용, 자체 요청 없음)",
+      "외부 프로그램 실행 없음",
+      "파일 쓰기 없음. 세션 상태는 $.state 아톰에만 저장",
+      "모델 호출($.model.*) 없음",
+      "tool.check/tool.call 등 gatingHooks 7개(classic.UserPromptSubmit, agent.offer, session.compact, tool.check, tool.call, session.append, agent.spawn)는 validate에서 .catch 없음으로 표시되지만, 모두 next()의 결과를 그대로 반환하는 관찰 전용 훅. 직접 deny/allow를 판단하지 않음",
+      "$.session.usage(컨텍스트·비용·레이트리밋)와 세션 이벤트는 읽지만 트랜스크립트 원문·환경변수는 읽지 않음. 권한 로그에 남는 명령/경로 문자열은 redact()로 토큰·비밀번호 패턴을 마스킹한 뒤 저장",
+      "기기 밖 데이터 전송 없음",
+      "무거운 타이머 없음. $.clock.every 미사용, 세션 이벤트 훅으로만 갱신. rail/elapsed 클라이언트 모듈의 110ms/1000ms 틱은 자기 화면만 다시 그리는 로컬 애니메이션일 뿐 외부 호출과 무관"
+    ]
+  }
+}

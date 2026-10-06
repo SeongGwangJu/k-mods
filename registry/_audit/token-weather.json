@@ -1,0 +1,35 @@
+{
+  "name": "token-weather",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/anthropics/claude-code-playground.git",
+    "path": "claude-code/mods/token-weather",
+    "sha": "569c5283d9a0a7ee7938df85bb32e4f48cbb8c86"
+  },
+  "auditedWith": "2.1.291",
+  "validate": {
+    "success": true,
+    "errors": [],
+    "warnings": []
+  },
+  "hooks": [
+    "session.start",
+    "turn.complete",
+    "ui.render{component=AbovePrompt}"
+  ],
+  "calls": [
+    "$.session.usage",
+    "$.ui.invalidate",
+    "$.ui.resolve"
+  ],
+  "envReads": [],
+  "envWrites": [],
+  "gatingWithoutCatch": [],
+  "commands": [],
+  "programs": [],
+  "urls": [],
+  "license": "../../../LICENSE",
+  "permissions": [
+    "chat"
+  ]
+}

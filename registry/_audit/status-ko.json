@@ -1,0 +1,34 @@
+{
+  "name": "status-ko",
+  "source": "./mods/status-ko",
+  "auditedWith": "2.1.291",
+  "validate": {
+    "success": true,
+    "errors": [],
+    "warnings": []
+  },
+  "hooks": [
+    "tool.call",
+    "turn.complete",
+    "turn.start",
+    "ui.render{component=Spinner}",
+    "ui.render{component=TurnDuration}"
+  ],
+  "calls": [
+    "$.clock.now",
+    "$.session.model",
+    "$.ui.invalidate",
+    "$.ui.resolve"
+  ],
+  "envReads": [],
+  "envWrites": [],
+  "gatingWithoutCatch": [],
+  "commands": [],
+  "programs": [],
+  "urls": [],
+  "license": "../../LICENSE",
+  "permissions": [
+    "gate",
+    "chat"
+  ]
+}

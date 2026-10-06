@@ -1,0 +1,62 @@
+{
+  "name": "ts-band",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/hoobnn/hoobnn-agent-mods.git",
+    "path": "claude-code/ts-band",
+    "sha": "8fb6f67cad9fd023cc7c06b7923518b4bbc45aea"
+  },
+  "auditedWith": "2.1.291",
+  "validate": {
+    "success": true,
+    "errors": [],
+    "warnings": []
+  },
+  "hooks": [
+    "command.run{command=ts}",
+    "prompt.edit",
+    "prompt.submit",
+    "session.start",
+    "tool.call{tool=Bash}",
+    "ui.render{component=AbovePrompt}"
+  ],
+  "calls": [
+    "$.clock.every",
+    "$.clock.now",
+    "$.command.register",
+    "$.config.set",
+    "$.env.get",
+    "$.process.run",
+    "$.settings.read",
+    "$.state.get",
+    "$.state.set",
+    "$.store.delete",
+    "$.store.get",
+    "$.ui.resolve",
+    "$.ui.toast"
+  ],
+  "envReads": [
+    "LANG",
+    "LC_ALL",
+    "LC_MESSAGES"
+  ],
+  "envWrites": [
+    "nothing"
+  ],
+  "gatingWithoutCatch": [
+    "prompt.submit",
+    "tool.call{tool=Bash}"
+  ],
+  "commands": [
+    "/ts"
+  ],
+  "programs": [],
+  "urls": [],
+  "license": "../../LICENSE",
+  "permissions": [
+    "process",
+    "gate",
+    "chat",
+    "env"
+  ]
+}

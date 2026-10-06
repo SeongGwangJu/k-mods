@@ -1,0 +1,54 @@
+{
+  "$schema": "./_schema.json",
+  "name": "prismantis",
+  "displayName": "프리즈만티스",
+  "summary": "표·코드·다이어그램·도구 줄을 15가지 테마로 색입혀 보여주고, 복사 버튼도 달아줘요.",
+  "summaryEn": "Colorful, themeable rendering for Claude Code replies across 15 themes: tables, code, diagrams, charts and tool rows, with copy buttons.",
+  "category": "theme",
+  "tags": [
+    "테마",
+    "렌더러",
+    "마크다운",
+    "RTL"
+  ],
+  "kind": "upstream",
+  "source": {
+    "source": "github",
+    "repo": "NahumLitvin/prismantis",
+    "sha": "1e33faae6d36fdf4547260ea844c9f241dff87f4"
+  },
+  "upstream": {
+    "repo": "NahumLitvin/prismantis",
+    "commit": "1e33faae6d36fdf4547260ea844c9f241dff87f4",
+    "stars": 38
+  },
+  "author": {
+    "name": "Nahum Litvin",
+    "url": "https://github.com/NahumLitvin"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/NahumLitvin/prismantis",
+  "commands": [
+    "/prismantis"
+  ],
+  "surfaces": [
+    "terminal",
+    "desktop"
+  ],
+  "review": {
+    "date": "2026-10-06",
+    "by": "k-mods",
+    "claudeCode": "2.1.291",
+    "method": [
+      "validate",
+      "code-read"
+    ],
+    "findings": [
+      "네트워크 호출 없음. 외부 프로그램 실행 없음 ($.process.run 미사용). 파일 쓰기 없음.",
+      "모델 호출 없음. 단 diagramHints 설정(기본 on) 켜짐 시 prompt.submit 훅이 매 프롬프트에 약 190 토큰짜리 렌더링 안내 문구를 컨텍스트로 첨부. plugin.json 설명에 명시됨.",
+      "prompt.submit 훅은 .catch 없이 등록되어 --strict에서는 탈락하지만, 실제로는 항상 next(e)를 호출해 통과시키기만 함(차단 로직 없음. 사실상 fail-open).",
+      "env 읽기: 터미널 종류 감지용 ALACRITTY_WINDOW_ID·KITTY_WINDOW_ID·KONSOLE_VERSION·TERM·TERM_PROGRAM·VTE_VERSION·WT_SESSION. RTL/테마 자동 감지 목적, 트랜스크립트 읽기 없음.",
+      "기기 밖 데이터 전송 없음. 무거운 타이머 없음."
+    ]
+  }
+}

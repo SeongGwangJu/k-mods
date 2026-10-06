@@ -1,0 +1,54 @@
+{
+  "name": "ko-ui",
+  "source": {
+    "source": "github",
+    "repo": "moduvoice/claude-code-ko-ui",
+    "sha": "7a192004e6e13b40e83221c111102991b8aa9203"
+  },
+  "auditedWith": "2.1.291",
+  "validate": {
+    "success": true,
+    "errors": [],
+    "warnings": []
+  },
+  "hooks": [
+    "command.describe",
+    "command.run{command=ko-dump}",
+    "config.describe",
+    "session.start",
+    "ui.render{component=CommandOutput}",
+    "ui.render{component=InfoNotice}",
+    "ui.render{component=PromptHint}",
+    "ui.render{component=SessionMode}",
+    "ui.render{component=Spinner}",
+    "ui.render{component=ToolGroup}",
+    "ui.render{component=ToolProgress}",
+    "ui.render{component=TurnDuration}",
+    "ui.render{component=UserMessage, props.origin has {kind=task-notification}}"
+  ],
+  "calls": [
+    "$.clock.after",
+    "$.command.list",
+    "$.command.register",
+    "$.config.list",
+    "$.fs.read",
+    "$.store.get",
+    "$.store.set",
+    "$.ui.invalidate",
+    "$.ui.resolve",
+    "$.ui.toast"
+  ],
+  "envReads": [],
+  "envWrites": [],
+  "gatingWithoutCatch": [],
+  "commands": [
+    "/ko-dump"
+  ],
+  "programs": [],
+  "urls": [],
+  "license": "LICENSE",
+  "permissions": [
+    "chat",
+    "fs-read"
+  ]
+}

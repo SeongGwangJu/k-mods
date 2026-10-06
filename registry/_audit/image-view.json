@@ -1,0 +1,67 @@
+{
+  "name": "image-view",
+  "source": {
+    "source": "github",
+    "repo": "GGGODLIN/cc-mod-image-view",
+    "sha": "1544b15355515e240af30b3aa7cd8b3b0a899591"
+  },
+  "auditedWith": "2.1.291",
+  "validate": {
+    "success": true,
+    "errors": [],
+    "warnings": []
+  },
+  "hooks": [
+    "prompt.submit",
+    "session.start",
+    "ui.render{component=AbovePrompt}",
+    "ui.render{component=Pane, requestId=cc-image-view}",
+    "ui.render{component=UserMessage}"
+  ],
+  "calls": [
+    "$.clock.after",
+    "$.clock.every",
+    "$.env.get",
+    "$.fs.exists",
+    "$.fs.list",
+    "$.fs.read",
+    "$.fs.stat",
+    "$.process.run",
+    "$.prompt.read",
+    "$.session.cwd",
+    "$.session.id",
+    "$.session.root",
+    "$.state.get",
+    "$.state.set",
+    "$.ui.invalidate",
+    "$.ui.open",
+    "$.ui.resolve"
+  ],
+  "envReads": [
+    "CLAUDE_CODE_TMPDIR",
+    "CLAUDE_CONFIG_DIR",
+    "HOME",
+    "LANG",
+    "LC_ALL"
+  ],
+  "envWrites": [
+    "nothing"
+  ],
+  "gatingWithoutCatch": [
+    "prompt.submit"
+  ],
+  "commands": [],
+  "programs": [
+    "id",
+    "mv",
+    "sh"
+  ],
+  "urls": [],
+  "license": "LICENSE",
+  "permissions": [
+    "process",
+    "chat",
+    "env",
+    "fs-read"
+  ]
+}

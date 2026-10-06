@@ -1,0 +1,54 @@
+{
+  "$schema": "./_schema.json",
+  "name": "receipt",
+  "displayName": "턴 영수증",
+  "summary": "매 턴이 끝나면 바뀐 파일·실행한 명령·읽은 횟수를 입력창 위에 한 줄 영수증으로 보여주고, 제자리걸음을 하면 알려줘요.",
+  "summaryEn": "What each turn did, in a band above the prompt: files/lines changed, commands and failures, reads, subagents; a toast when the model loops.",
+  "category": "statusline",
+  "tags": ["영수증", "턴요약", "루프감지", "자동화", "작업로그"],
+  "kind": "upstream",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/hoobnn/hoobnn-agent-mods.git",
+    "path": "claude-code/receipt",
+    "sha": "8fb6f67cad9fd023cc7c06b7923518b4bbc45aea"
+  },
+  "upstream": {
+    "repo": "hoobnn/hoobnn-agent-mods",
+    "path": "claude-code/receipt",
+    "commit": "8fb6f67cad9fd023cc7c06b7923518b4bbc45aea",
+    "stars": 4
+  },
+  "author": { "name": "hoobnn", "url": "https://github.com/hoobnn" },
+  "license": "MIT",
+  "homepage": "https://github.com/hoobnn/hoobnn-agent-mods/tree/8fb6f67cad9fd023cc7c06b7923518b4bbc45aea/claude-code/receipt",
+  "commands": ["/receipt"],
+  "surfaces": ["terminal"],
+  "settings": [
+    {
+      "key": "language",
+      "value": "ko",
+      "why": "`auto`는 Claude Code 언어 설정과 시스템 로캘을 차례로 따라가다 둘 다 인식에 실패하면 영어로 빠져요. `ko`로 고정하면 영수증과 경고 토스트가 항상 한국어로 나와요."
+    }
+  ],
+  "notes": [
+    "같은 작성자의 `hud`·`ts-band`·`todo-bar`·`hitokoto`와 같은 Box/Text 기반 렌더링을 쓰지만, 이 mod의 테스트 스위트만 유일하게 terminal 서피스만 돌려 확인해 surfaces를 terminal로만 표기했어요(desktop이 안 되는 것을 확인한 건 아니고, 작성자가 desktop으로 검증한 기록이 없다는 뜻이에요).",
+    "채팅만 하고 도구를 쓰지 않은 턴은 영수증을 남기지 않고, 다음 턴이 시작되면 자동으로 접혀요."
+  ],
+  "featured": false,
+  "preview": "https://raw.githubusercontent.com/hoobnn/hoobnn-agent-mods/8fb6f67cad9fd023cc7c06b7923518b4bbc45aea/claude-code/receipt/assets/preview.png",
+  "review": {
+    "date": "2026-10-06",
+    "by": "k-mods",
+    "claudeCode": "2.1.291",
+    "method": ["validate", "code-read"],
+    "findings": [
+      "`scripts/cc.sh plugin validate --json` success:true, errors/warnings 없음(직접 실행 확인).",
+      "네트워크 호출·모델 호출이 전혀 없음을 코드 전체(register.tsx, ledger.ts, config.ts)를 읽고 $.http/$.process/$.model 미사용으로 확인했어요.",
+      "턴의 `tool.call` 결과만 사후에 읽어 파일 변경 줄 수(git diff 결과가 있으면 그 값, 없으면 patch를 직접 세어 계산), 명령 실행·실패 수, 읽기 횟수, 서브에이전트 수를 집계해요(ledger.ts의 addCall).",
+      "같은 호출이 연속 실패(기본 3회, repeatFailures)하거나 같은 파일을 되돌리는 편집이 반복되면(기본 2회, flipFlops) 토스트만 띄우고, 실제로 어떤 도구 호출도 막거나 내용을 바꾸지 않아요(watchCall은 감지만 하고 tool.call 훅은 next(e) 결과를 그대로 반환).",
+      "타이머 폴링이 전혀 없고 turn.start/tool.call/turn.complete 이벤트에만 반응하는 완전 이벤트 기반 구조예요.",
+      "`tool.call`·`prompt.submit` 훅에 `.catch` 누락 validate 경고가 있으나, 두 훅 모두 거부(deny) 로직이 없는 관찰용 훅이라 안전 영향은 낮아요."
+    ]
+  }
+}

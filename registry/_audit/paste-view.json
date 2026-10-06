@@ -1,0 +1,65 @@
+{
+  "name": "paste-view",
+  "source": {
+    "source": "github",
+    "repo": "Amorfx/claude-paste-view",
+    "sha": "a71ba10600076c4c9e5623da79dfa576c4a30cbd"
+  },
+  "auditedWith": "2.1.291",
+  "validate": {
+    "success": true,
+    "errors": [],
+    "warnings": []
+  },
+  "hooks": [
+    "session.start",
+    "ui.close{id=paste-view}",
+    "ui.render{component=AbovePrompt}",
+    "ui.render{component=Pane, requestId=paste-view}"
+  ],
+  "calls": [
+    "$.clock.every",
+    "$.env.get",
+    "$.fs.exists",
+    "$.fs.list",
+    "$.fs.read",
+    "$.process.run",
+    "$.prompt.read",
+    "$.session.id",
+    "$.state.get",
+    "$.state.set",
+    "$.ui.close",
+    "$.ui.open",
+    "$.ui.panes",
+    "$.ui.resolve",
+    "$.ui.toast"
+  ],
+  "envReads": [
+    "CLAUDE_CODE_FORCE_TERMINAL_IMAGES",
+    "CLAUDE_CODE_SESSION_KIND",
+    "CLAUDE_CODE_TMPDIR",
+    "KITTY_WINDOW_ID",
+    "STY",
+    "TERM",
+    "TERM_PROGRAM",
+    "TMUX"
+  ],
+  "envWrites": [
+    "nothing"
+  ],
+  "gatingWithoutCatch": [
+    "ui.close{id=paste-view}"
+  ],
+  "commands": [],
+  "programs": [
+    "id",
+    "uname"
+  ],
+  "urls": [],
+  "license": "LICENSE",
+  "permissions": [
+    "process",
+    "env",
+    "fs-read"
+  ]
+}

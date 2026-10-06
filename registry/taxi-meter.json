@@ -1,0 +1,55 @@
+{
+  "$schema": "./_schema.json",
+  "name": "taxi-meter",
+  "displayName": "택시 미터기",
+  "summary": "입력창 위 택시 미터기 패널로 세션 요금과 5시간·주간 한도를 보여줘요. /meter·/receipt로 자세히 볼 수 있어요.",
+  "summaryEn": "A taxi-meter panel above the prompt: session cost, model/tier, 5-hour and weekly limits with reset time, via /meter and /receipt.",
+  "category": "statusline",
+  "tags": [
+    "사용량",
+    "비용",
+    "korean"
+  ],
+  "kind": "upstream",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/devbrother2024/devbrothers-mods.git",
+    "path": "plugins/taxi-meter",
+    "sha": "82b075ca7af3e066a4c88f542dabb95888225e1e"
+  },
+  "upstream": {
+    "repo": "devbrother2024/devbrothers-mods",
+    "path": "plugins/taxi-meter",
+    "commit": "82b075ca7af3e066a4c88f542dabb95888225e1e",
+    "stars": 6
+  },
+  "author": {
+    "name": "개발동생 (devbrothers)",
+    "url": "https://github.com/devbrother2024"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/devbrother2024/devbrothers-mods",
+  "commands": [
+    "/meter",
+    "/receipt"
+  ],
+  "surfaces": [
+    "terminal",
+    "desktop"
+  ],
+  "review": {
+    "date": "2026-10-06",
+    "by": "k-mods",
+    "claudeCode": "2.1.291",
+    "method": [
+      "validate",
+      "code-read"
+    ],
+    "findings": [
+      "네트워크 호출 없음, 외부 프로그램 실행 없음, 모델 호출 없음, 파일 쓰기 없음. $.session.usage()가 돌려주는 사용량 수치를 $.store에만 저장해 요금을 계산.",
+      "효과음은 $.audio.play(번들된 로컬 자산)만 사용, 네트워크 아님.",
+      "gating 훅: classic.SessionStart, classic.PostModelSwitch가 .catch 없이 등록되나 둘 다 next(e) 통과 후 패널 갱신만 하는 관찰용.",
+      "환율(원/달러) 등은 사용자가 설정하는 숫자일 뿐 외부 조회 없음. 기기 밖 데이터 전송 없음."
+    ]
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "name": "agent-quick-menu",
+  "source": {
+    "source": "github",
+    "repo": "agentic-workbench/agent-quick-menu",
+    "sha": "29aef14bbe7814e8c7284e2a1dca601435d2dcbe"
+  },
+  "auditedWith": "2.1.291",
+  "validate": {
+    "success": true,
+    "errors": [],
+    "warnings": []
+  },
+  "hooks": [
+    "command.run{command=menu}",
+    "plugin.register",
+    "session.start",
+    "ui.close",
+    "ui.render{component=AbovePrompt}",
+    "ui.render{component=Pane, requestId=quick-menu}"
+  ],
+  "calls": [
+    "$.clock.now",
+    "$.clock.sleep",
+    "$.command.list",
+    "$.command.register",
+    "$.command.run",
+    "$.config.list",
+    "$.env.get",
+    "$.fs.exists",
+    "$.fs.read",
+    "$.fs.stat",
+    "$.settings.read",
+    "$.state.get",
+    "$.state.set",
+    "$.store.get",
+    "$.store.set",
+    "$.ui.close",
+    "$.ui.focus",
+    "$.ui.invalidate",
+    "$.ui.open",
+    "$.ui.panes",
+    "$.ui.resolve",
+    "$.ui.toast"
+  ],
+  "envReads": [
+    "CLAUDE_CODE_PLUGIN_DIRS",
+    "CLAUDE_CONFIG_DIR",
+    "HOME",
+    "USERPROFILE"
+  ],
+  "envWrites": [
+    "nothing"
+  ],
+  "gatingWithoutCatch": [
+    "plugin.register",
+    "ui.close"
+  ],
+  "commands": [],
+  "programs": [],
+  "urls": [],
+  "license": "LICENSE",
+  "permissions": [
+    "env",
+    "fs-read"
+  ]
+}

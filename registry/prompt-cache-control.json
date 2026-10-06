@@ -1,0 +1,61 @@
+{
+  "$schema": "./_schema.json",
+  "name": "prompt-cache-control",
+  "displayName": "프롬프트 캐시 미터",
+  "summary": "요청마다 캐시가 얼마나 읽히고 새로 쓰였는지 입력창 위에 보여주고, 만료 임박이면 알려주며 /compact·/clear 시점을 제안해요",
+  "summaryEn": "Shows how much of each request's prompt the cache served vs wrote, counts down to expiry, and suggests /compact or /clear before it lapses.",
+  "category": "statusline",
+  "tags": [
+    "프롬프트 캐시",
+    "토큰 비용",
+    "/cache 패널"
+  ],
+  "kind": "upstream",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/davila7/claude-code-templates",
+    "path": "cli-tool/components/mods/observability/prompt-cache-control",
+    "sha": "375af9018a40e330e81542f59054daaa088c21aa"
+  },
+  "upstream": {
+    "repo": "davila7/claude-code-templates",
+    "path": "cli-tool/components/mods/observability/prompt-cache-control",
+    "commit": "375af9018a40e330e81542f59054daaa088c21aa",
+    "stars": 32416
+  },
+  "author": {
+    "name": "claude-code-templates",
+    "url": "https://www.aitmpl.com"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/davila7/claude-code-templates/tree/375af9018a40e330e81542f59054daaa088c21aa/cli-tool/components/mods/observability/prompt-cache-control",
+  "commands": [
+    "/cache"
+  ],
+  "surfaces": [
+    "terminal",
+    "desktop"
+  ],
+  "notes": [
+    "TTL(캐시 유지 시간)은 환경변수·설정·계정 종류(구독/API 키)로 자동 추정되고, 요청 간격을 관찰해 스스로 보정해요",
+    "1초 간격 타이머가 돌지만 표시 내용이 바뀔 때만 다시 그려서 유휴 세션엔 비용이 없어요"
+  ],
+  "review": {
+    "date": "2026-10-06",
+    "by": "k-mods",
+    "claudeCode": "2.1.291",
+    "method": [
+      "validate",
+      "code-read"
+    ],
+    "findings": [
+      "네트워크 호출 없음, 외부 프로그램 실행 없음, 모델 호출($.model.*) 없음",
+      "파일 읽기만 있음: .claude/settings.local.json, .claude/settings.json, ~/.claude/settings.json 에서 promptCacheTtl 값을 읽음(쓰기는 없음)",
+      "env 읽기: CLAUDE_CODE_PROMPT_CACHE_TTL, DISABLE_PROMPT_CACHING(_HAIKU/_SONNET/_OPUS), ENABLE_PROMPT_CACHING_1H, FORCE_PROMPT_CACHING_5M, HOME",
+      "turn.step에서 매 요청의 캐시 토큰 사용량(cache_read/cache_creation/input)을 읽어 집계, $.clock.every(1000)로 1초마다 카운트다운 갱신(표시가 바뀔 때만 다시 그림)",
+      "ui.close 훅이 validate에서 gatingHooks(hasCatch:false)로 표시되지만 자기 패널을 닫는 관찰용 분기만 있고 deny 로직 없음",
+      "기기 밖으로 데이터 전송 없음, 무거운 폴링 없음",
+      "명시된 최소 Claude Code 버전: 2.1.287. 외부 CLI 도구 불필요. 터미널·데스크톱(HTML) 모두 같은 화면으로 렌더링된다고 README에 명시"
+    ]
+  }
+}

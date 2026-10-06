@@ -1,0 +1,60 @@
+{
+  "name": "github-issues",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/MarcoCarnevali/claude-code-mods",
+    "path": "github-issues",
+    "sha": "4d6876e56e5225db26edf8eedcea467831592976"
+  },
+  "auditedWith": "2.1.291",
+  "validate": {
+    "success": true,
+    "errors": [],
+    "warnings": []
+  },
+  "hooks": [
+    "command.run{command=issues}",
+    "session.start",
+    "turn.complete",
+    "ui.close",
+    "ui.render{component=Pane, requestId=github-issues}"
+  ],
+  "calls": [
+    "$.clock.every",
+    "$.clock.now",
+    "$.clock.sleep",
+    "$.command.register",
+    "$.process.run",
+    "$.prompt.submit",
+    "$.session.repo",
+    "$.session.surfaces",
+    "$.state.get",
+    "$.state.set",
+    "$.store.get",
+    "$.store.set",
+    "$.ui.invalidate",
+    "$.ui.open",
+    "$.ui.panes",
+    "$.ui.resolve",
+    "$.ui.status",
+    "$.ui.toast"
+  ],
+  "envReads": [],
+  "envWrites": [],
+  "gatingWithoutCatch": [
+    "ui.close"
+  ],
+  "commands": [
+    "/issues"
+  ],
+  "programs": [],
+  "urls": [
+    "http://www.w3.org/2000/svg"
+  ],
+  "license": "../LICENSE",
+  "permissions": [
+    "process",
+    "prompt",
+    "chat"
+  ]
+}

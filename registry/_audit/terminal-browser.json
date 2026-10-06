@@ -1,0 +1,70 @@
+{
+  "name": "terminal-browser",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/zenbu-labs/terminal-browser",
+    "path": "claude-code-plugin",
+    "sha": "1346bbe7d7d857e9ab99db11c06fa3d8f717ac49"
+  },
+  "auditedWith": "2.1.291",
+  "validate": {
+    "success": true,
+    "errors": [],
+    "warnings": []
+  },
+  "hooks": [
+    "browser.close",
+    "browser.open",
+    "command.run{command=browser}",
+    "engine.create",
+    "session.start",
+    "tool.call{tool=?}",
+    "ui.close{id=browser}",
+    "ui.message",
+    "ui.render{component=Pane, requestId=browser}",
+    "ui.scroll{requestId=browser}"
+  ],
+  "calls": [
+    "$.clock.sleep",
+    "$.command.register",
+    "$.fs.exists",
+    "$.http.fetch",
+    "$.process.run",
+    "$.prompt.fill",
+    "$.session.surfaces",
+    "$.tool.register",
+    "$.ui.blit",
+    "$.ui.close",
+    "$.ui.invalidate",
+    "$.ui.log",
+    "$.ui.open",
+    "$.ui.resolve"
+  ],
+  "envReads": [],
+  "envWrites": [],
+  "gatingWithoutCatch": [
+    "browser.close",
+    "browser.open",
+    "tool.call{tool=?}",
+    "ui.close{id=browser}",
+    "ui.scroll{requestId=browser}"
+  ],
+  "commands": [
+    "/browser"
+  ],
+  "programs": [],
+  "urls": [
+    "http://${text}",
+    "http://127.0.0.1:${state.port}${path}",
+    "https://${text}",
+    "https://terminal-browser.sh"
+  ],
+  "license": "../LICENSE",
+  "permissions": [
+    "network",
+    "process",
+    "gate",
+    "prompt",
+    "fs-read"
+  ]
+}

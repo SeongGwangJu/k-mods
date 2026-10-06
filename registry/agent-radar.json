@@ -1,0 +1,61 @@
+{
+  "$schema": "./_schema.json",
+  "name": "agent-radar",
+  "displayName": "에이전트 레이더",
+  "summary": "실행 중인 서브에이전트마다 입력창 위에 경과 시간·도구 호출 수·현재 작업을 한 줄로 보여주고, /radar로 전체 목록과 대화 내용을 확인해요.",
+  "summaryEn": "Shows one live line per running subagent above the prompt: time, tool count, current action. /radar lists every agent and its messages.",
+  "category": "statusline",
+  "tags": [
+    "서브에이전트",
+    "상태줄"
+  ],
+  "kind": "upstream",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/hamzafer/claude-code-mods",
+    "path": "mods/agent-radar",
+    "sha": "adf9d72d81cb04284416371f9de8a6f937dcc631"
+  },
+  "upstream": {
+    "repo": "hamzafer/claude-code-mods",
+    "path": "mods/agent-radar",
+    "commit": "adf9d72d81cb04284416371f9de8a6f937dcc631",
+    "stars": 119
+  },
+  "author": {
+    "name": "Hamza Zafar",
+    "url": "https://github.com/hamzafer"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/hamzafer/claude-code-mods/tree/main/mods/agent-radar",
+  "commands": [
+    "/radar"
+  ],
+  "surfaces": [
+    "terminal",
+    "desktop"
+  ],
+  "notes": [
+    "같은 저장소의 mission-control도 서브에이전트를 추적하지만 코드맵까지 포함한 더 무거운 패널이에요. agent-radar는 가볍고 단일 목적(에이전트 상태)이라 함께 설치해도 역할이 겹치지 않는다고 판단했어요."
+  ],
+  "review": {
+    "date": "2026-10-06",
+    "by": "k-mods",
+    "claudeCode": "2.1.291",
+    "method": [
+      "validate",
+      "code-read"
+    ],
+    "findings": [
+      "validate 성공(success:true), errors/warnings 없음. gatingHooks 2건(agent.spawn, tool.call)이 .catch 없이 등록돼요(k-mods 기준 지적 대상). 다만 둘 다 deny 로직이 전혀 없고 통계만 기록하는 관찰용 훅이라 실제로 도구 호출을 막을 위험은 없어요.",
+      "네트워크 목적지: 없음. 코드 전체에 $.http·fetch 호출이 없어요.",
+      "외부 프로그램 실행: 없음.",
+      "파일 쓰기: 없음. 상태는 $.state(agent-radar.agents/selected/now)에만 저장돼요.",
+      "모델 호출($.model.*): 없음.",
+      "tool.call/agent.spawn 훅 동작: 서브에이전트 생성과 도구 호출을 가로채 라벨(파일명·명령 요약 등)만 기록하고 항상 next()로 그대로 통과시켜요. deny하는 코드 경로가 없어요.",
+      "트랜스크립트 읽기: /radar 패널에서 에이전트를 선택하면 $.session.messages({agentId})로 그 에이전트의 최근 6개 메시지를 읽어 화면에만 표시해요. 기기 밖으로 보내지 않아요.",
+      "기기 밖 데이터 전송: 없음.",
+      "타이머: $.clock.every(1000, ...). 표시할 에이전트가 있을 때만 재계산해 가벼워요."
+    ]
+  }
+}

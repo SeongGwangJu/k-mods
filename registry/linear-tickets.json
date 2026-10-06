@@ -1,0 +1,56 @@
+{
+  "$schema": "./_schema.json",
+  "name": "linear-tickets",
+  "displayName": "Linear 티켓 패널",
+  "summary": "내게 배정된 Linear 티켓을 패널로 보여주고, 클릭하면 바로 작업을 시작할 수 있어요.",
+  "summaryEn": "Shows your assigned Linear tickets in a pane; click one to load it into the session, read details, comment, or change status and priority.",
+  "category": "integration",
+  "tags": [
+    "Linear",
+    "MCP",
+    "패널"
+  ],
+  "kind": "upstream",
+  "source": {
+    "source": "github",
+    "repo": "rjohnt/linear-claude-mod",
+    "sha": "629eb7d23bb8702fadf22e3a28b01ca61c0c4415"
+  },
+  "upstream": {
+    "repo": "rjohnt/linear-claude-mod",
+    "commit": "629eb7d23bb8702fadf22e3a28b01ca61c0c4415",
+    "stars": 1
+  },
+  "author": {
+    "name": "rjohnt",
+    "url": "https://github.com/rjohnt"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/rjohnt/linear-claude-mod",
+  "commands": [
+    "/tickets"
+  ],
+  "surfaces": [
+    "terminal",
+    "desktop"
+  ],
+  "requires": [
+    "Linear MCP 서버 연결 (plugin.json 기본값 plugin:linear:linear)"
+  ],
+  "review": {
+    "date": "2026-10-06",
+    "by": "k-mods",
+    "claudeCode": "2.1.291",
+    "method": [
+      "validate",
+      "code-read"
+    ],
+    "findings": [
+      "네트워크 호출: 플러그인이 직접 fetch하지 않고 사용자가 이미 연결한 Linear MCP 서버($.mcp.call)를 통해서만 Linear API에 접근. 신뢰 경계가 사용자의 기존 MCP 설정에 있음.",
+      "외부 프로그램 실행: 'Open in Linear' 버튼을 눌렀을 때만 $.process.run으로 OS 기본 브라우저 오프너를 실행해 티켓 URL을 염. 사용자 명시 클릭에만 동작.",
+      "파일 쓰기 없음. 모델 호출 없음. gating 훅 없음 (tool.call/prompt.submit/tool.check 미등록).",
+      "env 읽기 없음, 트랜스크립트 읽기 없음. 기기 밖 데이터 전송은 Linear API 호출(이 mod의 핵심 기능)뿐이며 사용자가 설정한 MCP 서버를 통해서만 이뤄짐.",
+      "validate 경고: plugin.json name이 'linear-claude-mod'라 'Anthropic 자체 플러그인처럼 읽힌다'는 경고가 뜸(코드 문제는 아니며 k-mods 등록 이름은 linear-tickets로 분리함). author 정보 없음 경고도 있었음(위 author는 저장소 소유자 기준)."
+    ]
+  }
+}

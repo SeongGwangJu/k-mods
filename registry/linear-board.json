@@ -1,0 +1,59 @@
+{
+  "$schema": "./_schema.json",
+  "name": "linear-board",
+  "displayName": "Linear 보드 패널",
+  "summary": "Linear 프로젝트·마일스톤·이슈를 패널로 보여주고, 계획·실행·제품 버튼으로 바로 프롬프트를 채워 넣어요.",
+  "summaryEn": "Your Linear projects, milestones and issues in a pane; plan, execute or product buttons send a ready prompt into the session.",
+  "category": "integration",
+  "tags": [
+    "Linear",
+    "패널",
+    "GraphQL"
+  ],
+  "kind": "upstream",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/SaharCarmel/linear-mod.git",
+    "path": "linear-mod",
+    "sha": "1e6fef15490b08080965415e9ab5406b51aa5475"
+  },
+  "upstream": {
+    "repo": "SaharCarmel/linear-mod",
+    "path": "linear-mod",
+    "commit": "1e6fef15490b08080965415e9ab5406b51aa5475",
+    "stars": 1
+  },
+  "author": {
+    "name": "linear-mod contributors",
+    "url": "https://github.com/SaharCarmel/linear-mod"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/SaharCarmel/linear-mod",
+  "commands": [
+    "/linear"
+  ],
+  "surfaces": [
+    "terminal",
+    "desktop"
+  ],
+  "requires": [
+    "Linear API 키 (lin_api_...). /plugin configure 또는 LINEAR_API_KEY 환경 변수"
+  ],
+  "review": {
+    "date": "2026-10-06",
+    "by": "k-mods",
+    "claudeCode": "2.1.291",
+    "method": [
+      "validate",
+      "code-read"
+    ],
+    "findings": [
+      "네트워크 목적지: https://api.linear.app/graphql 단 한 곳. 플러그인 본연의 기능(Linear 연동)에 필요한 호출, 사용자가 직접 넣은 API 키로만 인증.",
+      "외부 프로그램 실행: $.process.run으로 로컬 'git rev-parse --abbrev-ref HEAD' 한 줄만 실행(현재 브랜치명을 읽어 이슈의 branchName과 맞춰보는 용도). 읽기 전용, 자격 증명 없음.",
+      "파일 쓰기 없음. 모델 호출 없음.",
+      "gating 훅: ui.close/ui.focus/ui.scroll 3개가 .catch 없이 등록되지만 모두 UI 포커스·스크롤 이벤트이고 차단 로직이 없는 패스스루.",
+      "env 읽기: LINEAR_API_KEY 하나뿐(sensitive 처리됨). 트랜스크립트 직접 읽기 없음.",
+      "기기 밖 데이터 전송: Linear API 호출(이슈 열람·코멘트 작성 등)이 핵심 기능이며 사용자 소유 API 키로만 이뤄짐. 그 외 전송 없음."
+    ]
+  }
+}

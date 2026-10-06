@@ -1,0 +1,51 @@
+{
+  "$schema": "./_schema.json",
+  "name": "image-view",
+  "displayName": "이미지 미리보기",
+  "summary": "붙여넣은 이미지를 입력창 위에 썸네일로 보여줘요. [Image #1] 같은 표시 대신이에요.",
+  "summaryEn": "See the images you paste into Claude Code: thumbnails above the prompt instead of bare [Image #1] tags.",
+  "category": "tool",
+  "tags": [
+    "붙여넣기",
+    "이미지",
+    "미리보기"
+  ],
+  "kind": "upstream",
+  "source": {
+    "source": "github",
+    "repo": "GGGODLIN/cc-mod-image-view",
+    "sha": "1544b15355515e240af30b3aa7cd8b3b0a899591"
+  },
+  "upstream": {
+    "repo": "GGGODLIN/cc-mod-image-view",
+    "commit": "1544b15355515e240af30b3aa7cd8b3b0a899591",
+    "stars": 19
+  },
+  "author": {
+    "name": "gggodlin",
+    "url": "https://github.com/GGGODLIN"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/GGGODLIN/cc-mod-image-view",
+  "surfaces": [
+    "terminal",
+    "desktop"
+  ],
+  "review": {
+    "date": "2026-10-06",
+    "by": "k-mods",
+    "claudeCode": "2.1.291",
+    "method": [
+      "validate",
+      "code-read"
+    ],
+    "findings": [
+      "출처 고지: NOTICE 파일에 따르면 jarrodwatts/claude-image-view(커밋 12795b62...)의 붙여넣기 썸네일 로직을 그대로 가져온 것으로, 원저작자 Jarrod Watts의 MIT 저작권 표시를 LICENSE·NOTICE에 그대로 유지하고 있음(플러그인 id만 cc-image-view로 바꿔 원본 image-view와 충돌 방지). MIT가 허용하는 적법한 재배포.",
+      "네트워크 호출 없음, 모델 호출 없음.",
+      "외부 프로그램 실행: $.process.run으로 (1) 'id -u', (2) 임시 폴더를 만들기 전 소유권·권한·심볼릭링크 여부를 셸 스크립트로 검증한 뒤 chmod 700(멀티유저 환경의 심링크·권한 공격 방지. 주석에 '컨버터는 신뢰 경계'라 명시), (3) sips/ffmpeg/magick/convert 중 설치된 것으로 jpg·gif·webp를 로컬에서 png로 변환, (4) mv -f로 원자적 파일 교체. 전부 로컬 파일 처리, 네트워크 없음.",
+      "파일 쓰기: 변환된 이미지를 /tmp/claude-<uid>/cc-image-view/<세션id>/ 아래에만 저장, 쓰기 전 권한 검증(umask 077, chmod 700).",
+      "gating 훅: prompt.submit이 .catch 없이 등록되나, 드래프트에서 이미지 태그를 감지해 다음 그림을 준비하는 관찰용이며 차단 로직 없음.",
+      "env 읽기: CLAUDE_CODE_TMPDIR, CLAUDE_CONFIG_DIR, HOME, LANG, LC_ALL(언어·경로 감지용). 기기 밖 데이터 전송 없음."
+    ]
+  }
+}

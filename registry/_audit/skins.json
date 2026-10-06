@@ -1,0 +1,75 @@
+{
+  "name": "skins",
+  "source": "./mods/skins",
+  "auditedWith": "2.1.291",
+  "validate": {
+    "success": true,
+    "errors": [],
+    "warnings": []
+  },
+  "hooks": [
+    "classic.SessionStart{source=clear|resume|fork}",
+    "command.run{command=skin}",
+    "config.set",
+    "session.append",
+    "session.measure",
+    "session.start",
+    "tool.call",
+    "tool.call{tool=/\"^mcp__skins__design$\"/}",
+    "turn.complete",
+    "turn.start",
+    "ui.render{component=AbovePrompt}",
+    "ui.render{component=AskUserQuestion}",
+    "ui.render{component=AssistantMessage}",
+    "ui.render{component=Pane, requestId=skins-gallery}",
+    "ui.render{component=Pane, requestId=skins-settings}",
+    "ui.render{component=Spinner}",
+    "ui.render{component=ToolGroup}",
+    "ui.render{component=ToolResult}",
+    "ui.render{component=ToolUse}",
+    "ui.render{component=TurnDuration}",
+    "ui.render{component=UserMessage}"
+  ],
+  "calls": [
+    "$.clock.after",
+    "$.clock.every",
+    "$.clock.now",
+    "$.command.register",
+    "$.command.run",
+    "$.config.list",
+    "$.session.cwd",
+    "$.session.usage",
+    "$.settings.read",
+    "$.state.get",
+    "$.state.set",
+    "$.store.get",
+    "$.store.set",
+    "$.tool.register",
+    "$.ui.copy",
+    "$.ui.open",
+    "$.ui.resolve",
+    "$.ui.toast"
+  ],
+  "envReads": [],
+  "envWrites": [],
+  "gatingWithoutCatch": [
+    "classic.SessionStart{source=clear|resume|fork}",
+    "config.set",
+    "session.append",
+    "tool.call",
+    "tool.call{tool=/\"^mcp__skins__design$\"/}"
+  ],
+  "commands": [
+    "/skin"
+  ],
+  "programs": [],
+  "urls": [
+    "http://www.w3.org/2000/svg"
+  ],
+  "license": "LICENSE",
+  "permissions": [
+    "gate",
+    "chat",
+    "env"
+  ]
+}

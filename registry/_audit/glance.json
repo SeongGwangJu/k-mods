@@ -1,0 +1,45 @@
+{
+  "name": "glance",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/hamzafer/claude-code-mods",
+    "path": "mods/glance",
+    "sha": "adf9d72d81cb04284416371f9de8a6f937dcc631"
+  },
+  "auditedWith": "2.1.291",
+  "validate": {
+    "success": true,
+    "errors": [],
+    "warnings": []
+  },
+  "hooks": [
+    "command.run{command=glance}",
+    "session.start",
+    "ui.render{component=AbovePrompt}"
+  ],
+  "calls": [
+    "$.clock.every",
+    "$.clock.now",
+    "$.command.register",
+    "$.mcp.call",
+    "$.process.run",
+    "$.state.get",
+    "$.state.set",
+    "$.ui.resolve"
+  ],
+  "envReads": [],
+  "envWrites": [],
+  "gatingWithoutCatch": [],
+  "commands": [
+    "/glance"
+  ],
+  "programs": [
+    "gh"
+  ],
+  "urls": [],
+  "license": "../../LICENSE",
+  "permissions": [
+    "network",
+    "process"
+  ]
+}

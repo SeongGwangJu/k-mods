@@ -1,0 +1,52 @@
+{
+  "name": "taxi-navi",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/devbrother2024/devbrothers-mods.git",
+    "path": "plugins/taxi-navi",
+    "sha": "82b075ca7af3e066a4c88f542dabb95888225e1e"
+  },
+  "auditedWith": "2.1.291",
+  "validate": {
+    "success": true,
+    "errors": [],
+    "warnings": []
+  },
+  "hooks": [
+    "command.run{command=navi}",
+    "session.start",
+    "tool.call{tool=TaskCreate|TaskUpdate|TaskList|TodoWrite}",
+    "turn.start",
+    "ui.render{component=AbovePrompt}"
+  ],
+  "calls": [
+    "$.audio.play",
+    "$.audio.speak",
+    "$.clock.after",
+    "$.clock.now",
+    "$.command.register",
+    "$.env.get",
+    "$.ui.invalidate",
+    "$.ui.resolve"
+  ],
+  "envReads": [
+    "CLAUDE_CODE_ENABLE_TODO_TOOLS"
+  ],
+  "envWrites": [
+    "nothing"
+  ],
+  "gatingWithoutCatch": [
+    "tool.call{tool=TaskCreate|TaskUpdate|TaskList|TodoWrite}"
+  ],
+  "commands": [
+    "/navi"
+  ],
+  "programs": [],
+  "urls": [],
+  "license": "../../LICENSE",
+  "permissions": [
+    "gate",
+    "env",
+    "sound"
+  ]
+}

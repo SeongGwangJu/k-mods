@@ -1,0 +1,45 @@
+{
+  "name": "context-bar",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/hamzafer/claude-code-mods",
+    "path": "mods/context-bar",
+    "sha": "adf9d72d81cb04284416371f9de8a6f937dcc631"
+  },
+  "auditedWith": "2.1.291",
+  "validate": {
+    "success": true,
+    "errors": [],
+    "warnings": []
+  },
+  "hooks": [
+    "command.run{command=context-bar}",
+    "session.compact",
+    "session.start",
+    "turn.complete",
+    "ui.render{component=AbovePrompt}"
+  ],
+  "calls": [
+    "$.command.register",
+    "$.session.usage",
+    "$.state.get",
+    "$.state.set",
+    "$.store.get",
+    "$.store.set",
+    "$.ui.resolve"
+  ],
+  "envReads": [],
+  "envWrites": [],
+  "gatingWithoutCatch": [
+    "session.compact"
+  ],
+  "commands": [
+    "/context-bar"
+  ],
+  "programs": [],
+  "urls": [],
+  "license": "../../LICENSE",
+  "permissions": [
+    "chat"
+  ]
+}

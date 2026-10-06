@@ -1,0 +1,36 @@
+{
+  "name": "gfm-render",
+  "source": {
+    "source": "github",
+    "repo": "briangtn/claude-gfm-render",
+    "sha": "a209ad5a0ec35c0813d2d80ab62b596140b0c807"
+  },
+  "auditedWith": "2.1.291",
+  "validate": {
+    "success": true,
+    "errors": [],
+    "warnings": []
+  },
+  "hooks": [
+    "ui.render{component=AssistantMessage}"
+  ],
+  "calls": [
+    "$.process.run",
+    "$.state.get",
+    "$.state.set",
+    "$.ui.resolve"
+  ],
+  "envReads": [],
+  "envWrites": [],
+  "gatingWithoutCatch": [],
+  "commands": [],
+  "programs": [
+    "node"
+  ],
+  "urls": [],
+  "license": "LICENSE",
+  "permissions": [
+    "process",
+    "chat"
+  ]
+}

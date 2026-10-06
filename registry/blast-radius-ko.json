@@ -1,0 +1,41 @@
+{
+  "$schema": "./_schema.json",
+  "name": "blast-radius-ko",
+  "displayName": "위험 명령 브레이크",
+  "summary": "rm -rf·force push·DB 초기화처럼 되돌릴 수 없는 명령을 실행 전에 멈추고, 무엇이 바뀌는지 보여준 뒤 물어봐요",
+  "summaryEn": "Holds irreversible commands (rm -rf, force push, DB resets, volume prunes) and shows what they would change before asking",
+  "category": "guard",
+  "tags": [
+    "안전",
+    "rm -rf",
+    "DB"
+  ],
+  "kind": "patched",
+  "source": "./mods/blast-radius-ko",
+  "upstream": {
+    "repo": "anthropics/claude-code-playground",
+    "path": "claude-code/mods/blast-radius",
+    "commit": "569c5283d9a0a7ee7938df85bb32e4f48cbb8c86"
+  },
+  "author": {
+    "name": "Anthropic",
+    "url": "https://github.com/anthropics"
+  },
+  "license": "Apache-2.0",
+  "commands": [],
+  "surfaces": [
+    "terminal",
+    "desktop"
+  ],
+  "review": {
+    "date": "2026-10-06",
+    "by": "k-mods",
+    "claudeCode": "2.1.291",
+    "method": [
+      "validate",
+      "code-read",
+      "unit-test",
+      "live-session"
+    ]
+  }
+}

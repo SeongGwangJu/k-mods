@@ -1,0 +1,59 @@
+{
+  "$schema": "./_schema.json",
+  "name": "agent-flow",
+  "displayName": "에이전트 플로우",
+  "summary": "메인 루프와 서브에이전트들을 나무 구조로 보여주고, 각 에이전트에 오간 컨텍스트 양과 답변을 클릭해서 볼 수 있어요",
+  "summaryEn": "A side pane showing the main loop and every subagent as a live tree, with the context handed down and the answer handed back for each.",
+  "category": "tool",
+  "tags": [
+    "서브에이전트",
+    "컨텍스트",
+    "패널"
+  ],
+  "kind": "upstream",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/davila7/claude-code-templates",
+    "path": "cli-tool/components/mods/ui/agent-flow",
+    "sha": "375af9018a40e330e81542f59054daaa088c21aa"
+  },
+  "upstream": {
+    "repo": "davila7/claude-code-templates",
+    "path": "cli-tool/components/mods/ui/agent-flow",
+    "commit": "375af9018a40e330e81542f59054daaa088c21aa",
+    "stars": 32416
+  },
+  "author": {
+    "name": "claude-code-templates",
+    "url": "https://www.aitmpl.com"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/davila7/claude-code-templates/tree/375af9018a40e330e81542f59054daaa088c21aa/cli-tool/components/mods/ui/agent-flow",
+  "commands": [
+    "/agent-flow"
+  ],
+  "surfaces": [
+    "terminal"
+  ],
+  "notes": [
+    "데스크톱 앱에서의 동작은 README·코드에 명시적 확인이 없어 이번 리뷰에서는 terminal만 표시했어요(테스트도 terminal surface 기준)",
+    "순수 관찰용 mod예요. 모든 훅이 next(e) 결과를 그대로 통과시키고 $.agent.list·$.session.usage만 추가로 읽어요"
+  ],
+  "review": {
+    "date": "2026-10-06",
+    "by": "k-mods",
+    "claudeCode": "2.1.291",
+    "method": [
+      "validate",
+      "code-read"
+    ],
+    "findings": [
+      "네트워크 호출 없음, 외부 프로그램 실행 없음, 파일 읽기/쓰기 없음, 모델 호출($.model.*) 없음",
+      "session.start, command.run(/agent-flow), turn.start, agent.spawn, turn.step, tool.call, turn.complete, session.measure, ui.close, ui.press, ui.render 훅. 전부 관찰 후 next(e)로 그대로 전달(차단 로직 없음)",
+      "agent.spawn·tool.call·ui.close가 validate에서 gatingHooks(hasCatch:false)로 표시되지만 실제로 deny를 반환하는 코드 경로는 없음(엔진 타입상 구조적 분류일 뿐)",
+      "$.agent.list(), $.session.usage()로 세션 내 에이전트 상태·컨텍스트 사용량만 조회, 기기 밖 전송 없음",
+      "무거운 타이머·폴링 없음(전부 이벤트 기반 갱신)",
+      "명시된 최소 Claude Code 버전: 2.1.287(README는 2.1.282에서 2.1.278 타입 선언 기준으로 작성·테스트했다고 부연). 외부 CLI 도구 불필요"
+    ]
+  }
+}

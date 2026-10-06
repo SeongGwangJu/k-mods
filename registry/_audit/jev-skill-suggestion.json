@@ -1,0 +1,64 @@
+{
+  "name": "jev-skill-suggestion",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/davila7/claude-code-templates",
+    "path": "cli-tool/components/mods/productivity/jev-skill-suggestion",
+    "sha": "375af9018a40e330e81542f59054daaa088c21aa"
+  },
+  "auditedWith": "2.1.291",
+  "validate": {
+    "success": true,
+    "errors": [],
+    "warnings": []
+  },
+  "hooks": [
+    "prompt.attachment{type=skill_listing}",
+    "prompt.submit",
+    "session.compact",
+    "session.end",
+    "skill.prompt",
+    "skill.prompt{skill=jev-skill-suggestion:setup}"
+  ],
+  "calls": [
+    "$.clock.now",
+    "$.clock.sleep",
+    "$.command.list",
+    "$.env.get",
+    "$.fs.exists",
+    "$.fs.list",
+    "$.fs.read",
+    "$.http.fetch",
+    "$.model.classify",
+    "$.session.cwd",
+    "$.ui.log",
+    "$.ui.status"
+  ],
+  "envReads": [
+    "HOME"
+  ],
+  "envWrites": [
+    "nothing"
+  ],
+  "gatingWithoutCatch": [
+    "prompt.submit",
+    "session.compact"
+  ],
+  "commands": [],
+  "programs": [],
+  "urls": [
+    "https://ai-gateway.vercel.sh/v4/ai",
+    "https://ai-gateway.vercel.sh/v4/ai/evaluation-model",
+    "https://api.typesafe.ai",
+    "https://api.typesafe.ai/v1/systemone",
+    "https://docs.typesafe.ai/cookbooks/skill_suggestion"
+  ],
+  "license": null,
+  "permissions": [
+    "network",
+    "model",
+    "chat",
+    "env",
+    "fs-read"
+  ]
+}

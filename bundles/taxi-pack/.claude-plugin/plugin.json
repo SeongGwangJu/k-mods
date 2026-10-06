@@ -1,0 +1,18 @@
+{
+  "name": "taxi-pack",
+  "version": "0.1.0",
+  "description": "Claude Code를 택시로: 미터기(요금·한도), 내비(할 일 경로), 과속카메라(위험 명령 확인), 블랙박스(도구 호출 녹화)를 한 번에 설치해요",
+  "author": {
+    "name": "개발동생 (devbrothers)",
+    "url": "https://github.com/devbrother2024"
+  },
+  "homepage": "https://github.com/SeongGwangJu/k-mods/tree/main/bundles/taxi-pack",
+  "repository": "https://github.com/SeongGwangJu/k-mods",
+  "license": "MIT",
+  "dependencies": [
+    "taxi-meter",
+    "taxi-navi",
+    "taxi-speedcam",
+    "taxi-blackbox"
+  ]
+}

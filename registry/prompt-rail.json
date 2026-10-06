@@ -1,0 +1,55 @@
+{
+  "$schema": "./_schema.json",
+  "name": "prompt-rail",
+  "displayName": "프롬프트 레일",
+  "summary": "세션에서 보낸 프롬프트들을 레일 하나로 모아 보여주고, 마우스를 올리면 읽고 클릭하면 그 지점으로 이동해요.",
+  "summaryEn": "A rail of your session's prompts beside the transcript or above the prompt; hover to read one, click to jump to it.",
+  "category": "tool",
+  "tags": [
+    "네비게이션",
+    "트랜스크립트",
+    "패널"
+  ],
+  "kind": "upstream",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/oikon48/prompt-rail.git",
+    "path": "plugins/prompt-rail",
+    "sha": "2ac50fb87fc426fed89ba0f09f1784ef6f289ae8"
+  },
+  "upstream": {
+    "repo": "oikon48/prompt-rail",
+    "path": "plugins/prompt-rail",
+    "commit": "2ac50fb87fc426fed89ba0f09f1784ef6f289ae8",
+    "stars": 21
+  },
+  "author": {
+    "name": "oikon48",
+    "url": "https://github.com/oikon48"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/oikon48/prompt-rail",
+  "commands": [
+    "/prompt-rail"
+  ],
+  "surfaces": [
+    "terminal",
+    "desktop"
+  ],
+  "review": {
+    "date": "2026-10-06",
+    "by": "k-mods",
+    "claudeCode": "2.1.291",
+    "method": [
+      "validate",
+      "code-read"
+    ],
+    "findings": [
+      "네트워크 호출 없음, 모델 호출 없음.",
+      "외부 프로그램 실행: $.process.spawn으로 로컬 'tail -c +N <세션 트랜스크립트 경로>'만 실행해 자신의 .jsonl 파일을 스트리밍으로 읽음. 표준 유닉스 유틸리티, 네트워크 없음.",
+      "파일 쓰기 없음(트랜스크립트는 읽기만).",
+      "gating 훅 다수(classic.SessionStart, classic.Stop, prompt.submit, session.receive, ui.focus x2)가 .catch 없이 등록. 레일 상태 갱신용 관찰 훅이며 코드에 deny 반환 경로가 없음.",
+      "기기 밖 데이터 전송 없음. 자신의 세션 트랜스크립트 파일을 로컬에서만 읽어 레일을 그림."
+    ]
+  }
+}

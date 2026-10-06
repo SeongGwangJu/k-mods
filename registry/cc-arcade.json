@@ -1,0 +1,61 @@
+{
+  "name": "cc-arcade",
+  "displayName": "CC 아케이드",
+  "summary": "입력창 위에서 스네이크·테트리스·2048·지뢰찾기 등 9가지 미니게임을 즐기고, Claude가 일하는 동안 자라는 펫도 키울 수 있어요.",
+  "summaryEn": "Nine terminal mini-games above the prompt (snake, Tetris, 2048, and more), plus a pet that grows as Claude works.",
+  "category": "animation",
+  "tags": [
+    "게임",
+    "아케이드",
+    "펫",
+    "스네이크",
+    "테트리스"
+  ],
+  "kind": "upstream",
+  "source": {
+    "source": "github",
+    "repo": "sezaakgun/cc-arcade",
+    "sha": "0baff06d31295850283c2eebe052f39bbc35473f"
+  },
+  "upstream": {
+    "repo": "sezaakgun/cc-arcade",
+    "commit": "0baff06d31295850283c2eebe052f39bbc35473f",
+    "stars": 40
+  },
+  "author": {
+    "name": "Seza Akgün",
+    "url": "https://github.com/sezaakgun"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/sezaakgun/cc-arcade",
+  "commands": [
+    "/arcade"
+  ],
+  "surfaces": [
+    "terminal"
+  ],
+  "requires": [
+    "대화형 터미널(비대화형 `-p` 모드에서는 동작하지 않아요)",
+    "Claude Code 2.1.287 미만이면 CLAUDE_CODE_ENABLE_FUNCTION_HOOKS=1 환경 변수 필요"
+  ],
+  "notes": [
+    "장르를 본뜬 클론이며 Tetris Holding·Taito·Atari·id Software와 무관해요(업스트림 설명 그대로).",
+    "최고 점수와 펫 상태는 로컬 $.store에만 저장돼요.",
+    "`/arcade colorblind`로 Doom을 빨강·초록 구분 없는 팔레트로 바꿀 수 있어요."
+  ],
+  "review": {
+    "date": "2026-10-06",
+    "by": "k-mods",
+    "claudeCode": "2.1.291",
+    "method": [
+      "validate",
+      "code-read"
+    ],
+    "findings": [
+      "validate 통과(마켓플레이스 루트 기준, 플러그인 자체 에러 없음). tool.call이 .catch 없이 플래그됐지만 next(e)를 먼저 호출한 뒤 펫 상태만 갱신하는 관찰용 훅. 차단 로직 없음.",
+      "네트워크·모델 호출·외부 프로세스 없음(validate calls: clock/command/store/ui 뿐이며 boards 10개 전부 surface module로 분석됨).",
+      "$.store 읽기·쓰기를 전부 .catch로 감싸 저장소 실패가 게임 자체를 막지 않게 함.",
+      "게임 보드는 e.surface !== 'terminal'이면 통과하도록 코드로 명시 가드됨. desktop 등에서는 그려지지 않음."
+    ]
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "name": "now-playing",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/hamzafer/claude-code-mods",
+    "path": "mods/now-playing",
+    "sha": "adf9d72d81cb04284416371f9de8a6f937dcc631"
+  },
+  "auditedWith": "2.1.291",
+  "validate": {
+    "success": true,
+    "errors": [],
+    "warnings": []
+  },
+  "hooks": [
+    "command.run{command=music}",
+    "session.end",
+    "session.start",
+    "ui.render{component=AbovePrompt}"
+  ],
+  "calls": [
+    "$.clock.every",
+    "$.clock.now",
+    "$.clock.sleep",
+    "$.command.register",
+    "$.http.fetch",
+    "$.process.run",
+    "$.state.get",
+    "$.state.set",
+    "$.ui.resolve"
+  ],
+  "envReads": [],
+  "envWrites": [],
+  "gatingWithoutCatch": [],
+  "commands": [
+    "/music"
+  ],
+  "programs": [
+    "osascript",
+    "pgrep",
+    "uname"
+  ],
+  "urls": [
+    "https://lrclib.net/api"
+  ],
+  "license": "../../LICENSE",
+  "permissions": [
+    "network",
+    "process"
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "name": "done-alarm",
+  "source": "./mods/done-alarm",
+  "auditedWith": "2.1.291",
+  "validate": {
+    "success": true,
+    "errors": [],
+    "warnings": []
+  },
+  "hooks": [
+    "classic.Notification",
+    "command.run{command=alarm}",
+    "session.start",
+    "tool.call{tool=AskUserQuestion}",
+    "turn.complete",
+    "ui.render{component=PromptHint}"
+  ],
+  "calls": [
+    "$.audio.speak",
+    "$.clock.now",
+    "$.command.register",
+    "$.http.fetch",
+    "$.process.run",
+    "$.session.cwd",
+    "$.ui.invalidate"
+  ],
+  "envReads": [],
+  "envWrites": [],
+  "gatingWithoutCatch": [],
+  "commands": [
+    "/alarm"
+  ],
+  "programs": [
+    "notify-send",
+    "osascript",
+    "uname"
+  ],
+  "urls": [
+    "https://api.telegram.org/bot${token}/sendMessage",
+    "https://ntfy.sh"
+  ],
+  "license": "../../LICENSE",
+  "permissions": [
+    "network",
+    "process",
+    "gate",
+    "chat",
+    "sound"
+  ]
+}

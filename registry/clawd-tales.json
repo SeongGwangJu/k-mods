@@ -1,0 +1,57 @@
+{
+  "name": "clawd-tales",
+  "displayName": "Clawd 이야기",
+  "summary": "입력창 위에서 픽셀 Clawd가 Claude의 모든 도구 호출을 몸짓으로 연기하고, 서브에이전트마다 작은 동료도 등장해요.",
+  "summaryEn": "A pixel Clawd acts out every tool call above the prompt, with helper characters for each subagent—terminal-first, no model calls.",
+  "category": "animation",
+  "tags": [
+    "Clawd",
+    "애니메이션",
+    "마스코트",
+    "픽셀아트"
+  ],
+  "kind": "upstream",
+  "source": {
+    "source": "github",
+    "repo": "plaxagoras/clawd-tales",
+    "sha": "89c7f95b4d4faf480a6ee200e92c3e6df34d1432"
+  },
+  "upstream": {
+    "repo": "plaxagoras/clawd-tales",
+    "commit": "89c7f95b4d4faf480a6ee200e92c3e6df34d1432",
+    "stars": 0
+  },
+  "author": {
+    "name": "plaxagoras",
+    "url": "https://github.com/plaxagoras"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/plaxagoras/clawd-tales",
+  "commands": [
+    "/tales"
+  ],
+  "surfaces": [
+    "terminal",
+    "desktop"
+  ],
+  "preview": "https://raw.githubusercontent.com/plaxagoras/clawd-tales/89c7f95b4d4faf480a6ee200e92c3e6df34d1432/assets/demo.gif",
+  "notes": [
+    "히어로의 걷기·환호 스프라이트 원형과 기본 팔레트는 Claude Fables(henrik-thevibe, MIT)에서 가져왔다고 NOTICE 파일에 명시돼 있어요.",
+    "서브에이전트가 뜨면 작은 동료가 따로 등장하고, 모델 색깔에 따라 외형이 달라져요.",
+    "mobile 화면에서는 그려지지 않도록 코드로 명시돼 있어요."
+  ],
+  "review": {
+    "date": "2026-10-06",
+    "by": "k-mods",
+    "claudeCode": "2.1.291",
+    "method": [
+      "validate",
+      "code-read"
+    ],
+    "findings": [
+      "validate 통과. classic.UserPromptSubmit·prompt.submit·classic.PermissionRequest·agent.spawn·tool.call·session.compact·classic.SessionStart 7개가 .catch 없이 플래그됐지만, 코드 전체 확인 결과 전부 next(e) 결과를 그대로 따르거나 next(e) 호출 전후로 애니메이션 상태만 바꾸는 관찰용 훅. 실제 차단 로직 없음.",
+      "네트워크·모델 호출·외부 프로세스·파일 쓰기 없음(validate calls: clock/command/agent.list/session.root/session.usage/state/store/ui 뿐).",
+      "오래된 'classic.*' 훅 이름과 새 이벤트 이름을 함께 등록해 구버전 Claude Code와도 호환하려는 구조로 보여요."
+    ]
+  }
+}

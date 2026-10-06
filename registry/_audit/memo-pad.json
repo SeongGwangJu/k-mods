@@ -1,0 +1,42 @@
+{
+  "name": "memo-pad",
+  "source": "./mods/memo-pad",
+  "auditedWith": "2.1.291",
+  "validate": {
+    "success": true,
+    "errors": [],
+    "warnings": []
+  },
+  "hooks": [
+    "command.run{command=m}",
+    "session.start",
+    "ui.close",
+    "ui.render{component=Pane}",
+    "ui.render{component=PromptHint}"
+  ],
+  "calls": [
+    "$.command.register",
+    "$.prompt.fill",
+    "$.session.cwd",
+    "$.store.get",
+    "$.store.set",
+    "$.ui.close",
+    "$.ui.invalidate",
+    "$.ui.open",
+    "$.ui.resolve"
+  ],
+  "envReads": [],
+  "envWrites": [],
+  "gatingWithoutCatch": [
+    "ui.close"
+  ],
+  "commands": [
+    "/m"
+  ],
+  "programs": [],
+  "urls": [],
+  "license": "../../LICENSE",
+  "permissions": [
+    "prompt"
+  ]
+}

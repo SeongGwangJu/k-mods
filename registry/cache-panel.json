@@ -1,0 +1,56 @@
+{
+  "$schema": "./_schema.json",
+  "name": "cache-panel",
+  "displayName": "캐시 패널",
+  "summary": "프롬프트 캐시가 식기 50분 전에 알려주고, 계속 데우기·한 번 핑·압축 중 하나를 비용 추정과 함께 고를 수 있어요.",
+  "summaryEn": "A passive 50-minute prompt-cache reminder with keep-warm, ping-once or compact choices, each shown with a live cost estimate.",
+  "category": "statusline",
+  "tags": [
+    "프롬프트캐시",
+    "비용"
+  ],
+  "kind": "upstream",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/danyuchn/claude-mods.git",
+    "path": "cache-panel",
+    "sha": "9e7d228f79538f3ed6f583b7612eaed291dabfe3"
+  },
+  "upstream": {
+    "repo": "danyuchn/claude-mods",
+    "path": "cache-panel",
+    "commit": "9e7d228f79538f3ed6f583b7612eaed291dabfe3",
+    "stars": 3
+  },
+  "author": {
+    "name": "Dustin Yuchen Teng",
+    "url": "https://github.com/danyuchn"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/danyuchn/claude-mods",
+  "commands": [
+    "/warm"
+  ],
+  "surfaces": [
+    "terminal",
+    "desktop"
+  ],
+  "review": {
+    "date": "2026-10-06",
+    "by": "k-mods",
+    "claudeCode": "2.1.291",
+    "method": [
+      "validate",
+      "code-read"
+    ],
+    "findings": [
+      "네트워크 호출 없음($.http.fetch 미사용).",
+      "모델 호출: $.model.fork로 'Reply with exactly: ok' 짧은 핑을 50분 간격으로 보내 캐시를 데움. 사용자가 '계속 데우기' 또는 '한 번 핑'을 눌렀을 때만 동작, 패널에 비용 추정치를 먼저 보여준 뒤 선택하게 함. README에 호출 빈도·비용 추정 방식이 상세히 공개됨.",
+      "외부 프로그램 실행: HERDR_ENV=1일 때만(저자의 다른 도구 herdr 환경 안에서 실행 중일 때) 'herdr notification show'로 로컬 알림을 띄움. 해당 env 변수가 없으면 완전히 no-op, README에도 명시됨.",
+      "파일 쓰기 없음.",
+      "gating 훅: classic.SessionStart, session.compact가 .catch 없이 등록되나 모두 next(e) 통과 후 타이머 정리만 하는 관찰용.",
+      "env 읽기: CACHE_PANEL_FAST(테스트용 가속 모드), HERDR_BIN_PATH, HERDR_ENV. 기기 밖 데이터 전송 없음.",
+      "같은 저장소의 screen-guard 플러그인은 별도 검토 결과 등록하지 않음(기본값이 대화 내용을 클라우드로 보내는 구조). cache-panel과는 무관한 별개 판단."
+    ]
+  }
+}

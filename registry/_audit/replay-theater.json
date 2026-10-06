@@ -1,0 +1,53 @@
+{
+  "name": "replay-theater",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/anthropics/claude-code-playground.git",
+    "path": "claude-code/mods/replay-theater",
+    "sha": "569c5283d9a0a7ee7938df85bb32e4f48cbb8c86"
+  },
+  "auditedWith": "2.1.291",
+  "validate": {
+    "success": true,
+    "errors": [],
+    "warnings": []
+  },
+  "hooks": [
+    "command.run{command=replay}",
+    "session.start",
+    "tool.call",
+    "turn.complete",
+    "turn.start",
+    "ui.close",
+    "ui.render{component=AbovePrompt}",
+    "ui.render{component=Pane}"
+  ],
+  "calls": [
+    "$.clock.sleep",
+    "$.command.register",
+    "$.fs.exists",
+    "$.fs.read",
+    "$.session.cwd",
+    "$.ui.close",
+    "$.ui.invalidate",
+    "$.ui.open",
+    "$.ui.resolve"
+  ],
+  "envReads": [],
+  "envWrites": [],
+  "gatingWithoutCatch": [
+    "tool.call",
+    "ui.close"
+  ],
+  "commands": [
+    "/replay"
+  ],
+  "programs": [],
+  "urls": [],
+  "license": "../../../LICENSE",
+  "permissions": [
+    "gate",
+    "chat",
+    "fs-read"
+  ]
+}

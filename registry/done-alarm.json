@@ -1,0 +1,38 @@
+{
+  "$schema": "./_schema.json",
+  "name": "done-alarm",
+  "displayName": "작업 끝 알림",
+  "summary": "오래 걸린 작업이 끝나거나 확인이 필요하면 맥 알림·한국어 음성·폰 푸시(ntfy·텔레그램·슬랙)로 알려줘요",
+  "summaryEn": "Notifies you on your Mac, out loud, or on your phone (ntfy, Telegram, Slack, Discord) when a long turn ends or Claude needs you",
+  "category": "automation",
+  "tags": [
+    "알림",
+    "자리 비움",
+    "텔레그램"
+  ],
+  "kind": "original",
+  "source": "./mods/done-alarm",
+  "author": {
+    "name": "SeongGwangJu",
+    "url": "https://github.com/SeongGwangJu"
+  },
+  "license": "MIT",
+  "commands": [
+    "/alarm"
+  ],
+  "surfaces": [
+    "terminal",
+    "desktop"
+  ],
+  "review": {
+    "date": "2026-10-06",
+    "by": "k-mods",
+    "claudeCode": "2.1.291",
+    "method": [
+      "validate",
+      "code-read",
+      "unit-test",
+      "live-session"
+    ]
+  }
+}

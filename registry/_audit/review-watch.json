@@ -1,0 +1,55 @@
+{
+  "name": "review-watch",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/hamzafer/claude-code-mods",
+    "path": "mods/review-watch",
+    "sha": "adf9d72d81cb04284416371f9de8a6f937dcc631"
+  },
+  "auditedWith": "2.1.291",
+  "validate": {
+    "success": true,
+    "errors": [],
+    "warnings": []
+  },
+  "hooks": [
+    "agent.spawn",
+    "session.start",
+    "tool.call{tool=Bash}",
+    "turn.complete",
+    "ui.render{component=AbovePrompt}"
+  ],
+  "calls": [
+    "$.agent.list",
+    "$.clock.every",
+    "$.env.get",
+    "$.process.run",
+    "$.state.get",
+    "$.state.set",
+    "$.ui.resolve",
+    "$.ui.toast"
+  ],
+  "envReads": [
+    "HOME"
+  ],
+  "envWrites": [
+    "nothing"
+  ],
+  "gatingWithoutCatch": [
+    "agent.spawn",
+    "tool.call{tool=Bash}"
+  ],
+  "commands": [],
+  "programs": [
+    "ps",
+    "tail"
+  ],
+  "urls": [],
+  "license": "../../LICENSE",
+  "permissions": [
+    "process",
+    "gate",
+    "chat",
+    "env"
+  ]
+}

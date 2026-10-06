@@ -1,0 +1,65 @@
+{
+  "name": "ctx-strip",
+  "source": "./mods/ctx-strip",
+  "auditedWith": "2.1.291",
+  "validate": {
+    "success": true,
+    "errors": [],
+    "warnings": []
+  },
+  "hooks": [
+    "classic.SessionStart",
+    "classic.SubagentStart",
+    "classic.SubagentStop",
+    "command.run{command=ctx}",
+    "session.measure",
+    "session.start",
+    "tool.call{tool=Agent}",
+    "ui.render{component=AbovePrompt}",
+    "ui.render{component=PromptHint}"
+  ],
+  "calls": [
+    "$.clock.every",
+    "$.clock.now",
+    "$.command.register",
+    "$.env.get",
+    "$.fs.write",
+    "$.process.run",
+    "$.session.id",
+    "$.session.messages",
+    "$.session.usage",
+    "$.ui.invalidate",
+    "$.ui.resolve"
+  ],
+  "envReads": [
+    "HOME",
+    "TMPDIR",
+    "USER",
+    "USERNAME"
+  ],
+  "envWrites": [
+    "nothing"
+  ],
+  "gatingWithoutCatch": [
+    "classic.SessionStart",
+    "classic.SubagentStart",
+    "classic.SubagentStop"
+  ],
+  "commands": [
+    "/ctx"
+  ],
+  "programs": [
+    "mkdir",
+    "open",
+    "xdg-open"
+  ],
+  "urls": [],
+  "license": "../../LICENSE",
+  "permissions": [
+    "process",
+    "fs-write",
+    "gate",
+    "chat",
+    "env"
+  ]
+}

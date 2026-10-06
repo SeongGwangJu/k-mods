@@ -1,0 +1,87 @@
+{
+  "name": "auto-handoff",
+  "source": {
+    "source": "github",
+    "repo": "alexknowshtml/claude-auto-handoff",
+    "sha": "8d762ce726c962268e2dbe24c1c60f0889a2fcde"
+  },
+  "auditedWith": "2.1.291",
+  "validate": {
+    "success": true,
+    "errors": [],
+    "warnings": []
+  },
+  "hooks": [
+    "classic.SessionStart",
+    "prompt.submit",
+    "session.compact",
+    "tool.call",
+    "turn.complete",
+    "turn.step",
+    "ui.render{component=AbovePrompt}",
+    "ui.render{component=UserMessage, props.origin has {kind=plugin}}"
+  ],
+  "calls": [
+    "$.clock.after",
+    "$.clock.every",
+    "$.command.run",
+    "$.env.get",
+    "$.fs.list",
+    "$.fs.read",
+    "$.fs.write",
+    "$.model.complete",
+    "$.process.run",
+    "$.prompt.submit",
+    "$.session.cwd",
+    "$.session.id",
+    "$.session.messages",
+    "$.session.surfaces",
+    "$.session.usage",
+    "$.store.get",
+    "$.store.set",
+    "$.ui.invalidate",
+    "$.ui.resolve",
+    "$.ui.toast"
+  ],
+  "envReads": [
+    "AUTO_HANDOFF_DISABLE",
+    "AUTO_HANDOFF_TOKENS",
+    "DISABLE_AUTO_COMPACT",
+    "HOME",
+    "USERPROFILE"
+  ],
+  "envWrites": [
+    "nothing"
+  ],
+  "gatingWithoutCatch": [
+    "classic.SessionStart",
+    "prompt.submit",
+    "session.compact",
+    "tool.call"
+  ],
+  "commands": [],
+  "programs": [
+    "sh",
+    "tailscale"
+  ],
+  "urls": [
+    "http://${serve.host}:${serve.port}/${sessionId.slice(0",
+    "http://x",
+    "https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.1.6/purify.min.js",
+    "https://cdnjs.cloudflare.com/ajax/libs/marked/12.0.2/marked.min.js",
+    "https://fonts.googleapis.com",
+    "https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;700&family=Fraunces:opsz,wght@9..144,400;9..144,700;9..144,900&display=swap",
+    "https://fonts.gstatic.com"
+  ],
+  "license": "LICENSE",
+  "permissions": [
+    "process",
+    "fs-write",
+    "model",
+    "gate",
+    "prompt",
+    "chat",
+    "env",
+    "fs-read"
+  ]
+}

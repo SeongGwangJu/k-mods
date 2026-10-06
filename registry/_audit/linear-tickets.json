@@ -1,0 +1,51 @@
+{
+  "name": "linear-tickets",
+  "source": {
+    "source": "github",
+    "repo": "rjohnt/linear-claude-mod",
+    "sha": "629eb7d23bb8702fadf22e3a28b01ca61c0c4415"
+  },
+  "auditedWith": "2.1.291",
+  "validate": {
+    "success": true,
+    "errors": [],
+    "warnings": [
+      "[object Object]",
+      "[object Object]"
+    ]
+  },
+  "hooks": [
+    "command.run{command=tickets}",
+    "session.start",
+    "ui.render{component=Pane, requestId=linear-tickets}"
+  ],
+  "calls": [
+    "$.clock.every",
+    "$.clock.now",
+    "$.command.register",
+    "$.mcp.call",
+    "$.process.run",
+    "$.prompt.submit",
+    "$.state.get",
+    "$.state.set",
+    "$.ui.focus",
+    "$.ui.open",
+    "$.ui.panes",
+    "$.ui.resolve",
+    "$.ui.toast"
+  ],
+  "envReads": [],
+  "envWrites": [],
+  "gatingWithoutCatch": [],
+  "commands": [
+    "/tickets"
+  ],
+  "programs": [],
+  "urls": [],
+  "license": "LICENSE",
+  "permissions": [
+    "network",
+    "process",
+    "prompt"
+  ]
+}

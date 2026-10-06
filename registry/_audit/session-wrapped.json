@@ -1,0 +1,63 @@
+{
+  "name": "session-wrapped",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/OneWave-AI/claude-code-mods",
+    "path": "session-wrapped",
+    "sha": "e6da26ca36a88eec3be25605d30fa20f2c1c0cec"
+  },
+  "auditedWith": "2.1.291",
+  "validate": {
+    "success": true,
+    "errors": [],
+    "warnings": []
+  },
+  "hooks": [
+    "command.run{command=wrapped}",
+    "prompt.submit",
+    "session.end",
+    "session.start",
+    "tool.call",
+    "turn.complete",
+    "ui.render{component=Pane, requestId=session-wrapped}"
+  ],
+  "calls": [
+    "$.clock.every",
+    "$.clock.now",
+    "$.command.register",
+    "$.env.get",
+    "$.process.run",
+    "$.session.model",
+    "$.session.usage",
+    "$.state.get",
+    "$.state.set",
+    "$.ui.open",
+    "$.ui.resolve",
+    "$.ui.toast"
+  ],
+  "envReads": [
+    "HOME"
+  ],
+  "envWrites": [
+    "nothing"
+  ],
+  "gatingWithoutCatch": [
+    "prompt.submit",
+    "tool.call"
+  ],
+  "commands": [
+    "/wrapped"
+  ],
+  "programs": [
+    "base64",
+    "python3"
+  ],
+  "urls": [],
+  "license": "../LICENSE",
+  "permissions": [
+    "process",
+    "gate",
+    "chat",
+    "env"
+  ]
+}

@@ -1,0 +1,1577 @@
+{
+  "name": "k-mods",
+  "owner": {
+    "name": "SeongGwangJu",
+    "url": "https://github.com/SeongGwangJu"
+  },
+  "description": "한국어로 고르고 한 줄로 설치하는 Claude Code mods 모음. 검토한 커밋만 설치돼요.",
+  "version": "0.1.0",
+  "plugins": [
+    {
+      "name": "ko-ui",
+      "source": {
+        "source": "github",
+        "repo": "moduvoice/claude-code-ko-ui",
+        "sha": "7a192004e6e13b40e83221c111102991b8aa9203"
+      },
+      "displayName": "한국어 UI 번역 사전",
+      "description": "슬래시 커맨드 설명, `/config` 항목, 작업 표시줄 같은 화면 문구를 사전 기반으로 한국어로 보여줘요.",
+      "category": "한국어화",
+      "tags": [
+        "한국어",
+        "번역",
+        "UI",
+        "i18n",
+        "사전"
+      ],
+      "author": {
+        "name": "moduvoice",
+        "url": "https://github.com/moduvoice"
+      },
+      "homepage": "https://github.com/moduvoice/claude-code-ko-ui",
+      "license": "MIT",
+      "repository": "https://github.com/moduvoice/claude-code-ko-ui"
+    },
+    {
+      "name": "skins",
+      "source": "./mods/skins",
+      "displayName": "스킨 (한국 수정판)",
+      "description": "도구 호출·표·코드·셸 출력을 테마 카드로 다시 그려요. 원본에서 한글 표가 잘리던 문제를 고쳤어요",
+      "category": "테마",
+      "tags": [
+        "테마",
+        "스킨",
+        "카드"
+      ],
+      "author": {
+        "name": "hellosverre",
+        "url": "https://github.com/hellosverre"
+      },
+      "homepage": "https://github.com/SeongGwangJu/k-mods/tree/main/mods/skins",
+      "license": "MIT",
+      "repository": "https://github.com/hellosverre/claude-skins"
+    },
+    {
+      "name": "gfm-render",
+      "source": {
+        "source": "github",
+        "repo": "briangtn/claude-gfm-render",
+        "sha": "a209ad5a0ec35c0813d2d80ab62b596140b0c807"
+      },
+      "displayName": "GFM 렌더러",
+      "description": "트랜스크립트에서 GFM 경고문·체크리스트·취소선·Mermaid 다이어그램을 그려줘요.",
+      "category": "테마",
+      "tags": [
+        "마크다운",
+        "Mermaid",
+        "렌더러"
+      ],
+      "author": {
+        "name": "briangtn",
+        "url": "https://github.com/briangtn"
+      },
+      "homepage": "https://github.com/briangtn/claude-gfm-render",
+      "license": "MIT",
+      "repository": "https://github.com/briangtn/claude-gfm-render"
+    },
+    {
+      "name": "prismantis",
+      "source": {
+        "source": "github",
+        "repo": "NahumLitvin/prismantis",
+        "sha": "1e33faae6d36fdf4547260ea844c9f241dff87f4"
+      },
+      "displayName": "프리즈만티스",
+      "description": "표·코드·다이어그램·도구 줄을 15가지 테마로 색입혀 보여주고, 복사 버튼도 달아줘요.",
+      "category": "테마",
+      "tags": [
+        "테마",
+        "렌더러",
+        "마크다운",
+        "RTL"
+      ],
+      "author": {
+        "name": "Nahum Litvin",
+        "url": "https://github.com/NahumLitvin"
+      },
+      "homepage": "https://github.com/NahumLitvin/prismantis",
+      "license": "MIT",
+      "repository": "https://github.com/NahumLitvin/prismantis"
+    },
+    {
+      "name": "spinner",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/hoobnn/hoobnn-agent-mods.git",
+        "path": "claude-code/spinner",
+        "sha": "8fb6f67cad9fd023cc7c06b7923518b4bbc45aea"
+      },
+      "displayName": "픽셀 장면 스피너 (냥캣 등 15종)",
+      "description": "Claude가 일하는 동안 입력창 위에 냥캣·천둥·청크 같은 픽셀 장면을 띄우고, 턴마다 자라는 펫도 키워요",
+      "category": "애니메이션",
+      "tags": [
+        "애니메이션",
+        "펫",
+        "테마",
+        "픽셀아트",
+        "스피너",
+        "마스코트",
+        "레벨업",
+        "다국어"
+      ],
+      "author": {
+        "name": "hoobnn",
+        "url": "https://github.com/hoobnn"
+      },
+      "homepage": "https://github.com/hoobnn/hoobnn-agent-mods",
+      "license": "MIT",
+      "repository": "https://github.com/hoobnn/hoobnn-agent-mods"
+    },
+    {
+      "name": "cc-arcade",
+      "source": {
+        "source": "github",
+        "repo": "sezaakgun/cc-arcade",
+        "sha": "0baff06d31295850283c2eebe052f39bbc35473f"
+      },
+      "displayName": "CC 아케이드",
+      "description": "입력창 위에서 스네이크·테트리스·2048·지뢰찾기 등 9가지 미니게임을 즐기고, Claude가 일하는 동안 자라는 펫도 키울 수 있어요.",
+      "category": "애니메이션",
+      "tags": [
+        "게임",
+        "아케이드",
+        "펫",
+        "스네이크",
+        "테트리스"
+      ],
+      "author": {
+        "name": "Seza Akgün",
+        "url": "https://github.com/sezaakgun"
+      },
+      "homepage": "https://github.com/sezaakgun/cc-arcade",
+      "license": "MIT",
+      "repository": "https://github.com/sezaakgun/cc-arcade"
+    },
+    {
+      "name": "clawd-spinner",
+      "source": {
+        "source": "github",
+        "repo": "saiharsha03/clawd-spinner",
+        "sha": "83550929abac306fe71b12588a53e996321b6e76"
+      },
+      "displayName": "Clawd 스피너",
+      "description": "189가지 스피너 단어마다 Clawd가 요리하거나 춤추거나 서성거리는 등 다른 몸짓을 연기해요.",
+      "category": "애니메이션",
+      "tags": [
+        "Clawd",
+        "스피너",
+        "애니메이션",
+        "마스코트"
+      ],
+      "author": {
+        "name": "Sai Rudra",
+        "url": "https://github.com/saiharsha03"
+      },
+      "homepage": "https://github.com/saiharsha03/clawd-spinner",
+      "license": "MIT",
+      "repository": "https://github.com/saiharsha03/clawd-spinner"
+    },
+    {
+      "name": "clawd-tales",
+      "source": {
+        "source": "github",
+        "repo": "plaxagoras/clawd-tales",
+        "sha": "89c7f95b4d4faf480a6ee200e92c3e6df34d1432"
+      },
+      "displayName": "Clawd 이야기",
+      "description": "입력창 위에서 픽셀 Clawd가 Claude의 모든 도구 호출을 몸짓으로 연기하고, 서브에이전트마다 작은 동료도 등장해요.",
+      "category": "애니메이션",
+      "tags": [
+        "Clawd",
+        "애니메이션",
+        "마스코트",
+        "픽셀아트"
+      ],
+      "author": {
+        "name": "plaxagoras",
+        "url": "https://github.com/plaxagoras"
+      },
+      "homepage": "https://github.com/plaxagoras/clawd-tales",
+      "license": "MIT",
+      "repository": "https://github.com/plaxagoras/clawd-tales"
+    },
+    {
+      "name": "combo-meter",
+      "source": {
+        "source": "github",
+        "repo": "SARTHAK2511/claude-combo",
+        "sha": "7f01ec059e073901facde77b8b6e670221cc33c4"
+      },
+      "displayName": "콤보 미터",
+      "description": "도구 호출이 성공하면 콤보가 이어지고 실패하면 끊기는 격투 게임 스타일 콤보 미터예요. D부터 SSS까지 랭크가 올라가요.",
+      "category": "애니메이션",
+      "tags": [
+        "게임",
+        "콤보",
+        "statusline",
+        "픽셀아트"
+      ],
+      "author": {
+        "name": "Sarthak Bhatore",
+        "url": "https://github.com/sarthak2511"
+      },
+      "homepage": "https://github.com/sarthak2511/claude-combo",
+      "license": "MIT",
+      "repository": "https://github.com/SARTHAK2511/claude-combo"
+    },
+    {
+      "name": "diff-invaders",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/davila7/claude-code-templates",
+        "path": "cli-tool/components/mods/games/diff-invaders",
+        "sha": "375af9018a40e330e81542f59054daaa088c21aa"
+      },
+      "displayName": "디프 인베이더",
+      "description": "Claude가 방금 쓴 diff 줄이 그대로 외계인 편대가 되는 스페이스 인베이더예요. 토큰 소모 없이 입력창 위에서 플레이해요",
+      "category": "애니메이션",
+      "tags": [
+        "게임",
+        "스페이스 인베이더",
+        "diff"
+      ],
+      "author": {
+        "name": "claude-code-templates",
+        "url": "https://www.aitmpl.com"
+      },
+      "homepage": "https://github.com/davila7/claude-code-templates/tree/375af9018a40e330e81542f59054daaa088c21aa/cli-tool/components/mods/games/diff-invaders",
+      "license": "MIT",
+      "repository": "https://github.com/davila7/claude-code-templates"
+    },
+    {
+      "name": "reels",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/hamzafer/claude-code-mods",
+        "path": "mods/reels",
+        "sha": "adf9d72d81cb04284416371f9de8a6f937dcc631"
+      },
+      "displayName": "릴스",
+      "description": "Claude가 작업하는 동안 YouTube Shorts를 터미널 패널에 재생하고, Claude가 끝나면 자동으로 멈춰요. /reels를 쳐야만 켜져요.",
+      "category": "애니메이션",
+      "tags": [
+        "엔터테인먼트",
+        "YouTube",
+        "재미"
+      ],
+      "author": {
+        "name": "Hamza Zafar",
+        "url": "https://github.com/hamzafer"
+      },
+      "homepage": "https://github.com/hamzafer/claude-code-mods/tree/main/mods/reels",
+      "license": "MIT",
+      "repository": "https://github.com/hamzafer/claude-code-mods"
+    },
+    {
+      "name": "tool-defense",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/davila7/claude-code-templates",
+        "path": "cli-tool/components/mods/games/tool-defense",
+        "sha": "375af9018a40e330e81542f59054daaa088c21aa"
+      },
+      "displayName": "툴 디펜스",
+      "description": "Claude의 실제 도구 호출(Bash·Edit·웹·Agent)이 그대로 적 유닛이 되는 타워 디펜스예요. 토큰 소모 없이 입력창 위에서 플레이해요",
+      "category": "애니메이션",
+      "tags": [
+        "게임",
+        "타워 디펜스",
+        "도구 호출"
+      ],
+      "author": {
+        "name": "claude-code-templates",
+        "url": "https://www.aitmpl.com"
+      },
+      "homepage": "https://github.com/davila7/claude-code-templates/tree/375af9018a40e330e81542f59054daaa088c21aa/cli-tool/components/mods/games/tool-defense",
+      "license": "MIT",
+      "repository": "https://github.com/davila7/claude-code-templates"
+    },
+    {
+      "name": "status-ko",
+      "source": "./mods/status-ko",
+      "displayName": "작업 상태 한국어",
+      "description": "작업 중 줄을 '읽는 중 · page.tsx'처럼 지금 하는 일로, 끝난 줄을 모델·시간·도구·캐시 한 줄로 보여줘요",
+      "category": "상태줄",
+      "tags": [
+        "한국어",
+        "스피너",
+        "상태줄"
+      ],
+      "author": {
+        "name": "SeongGwangJu",
+        "url": "https://github.com/SeongGwangJu"
+      },
+      "homepage": "https://github.com/SeongGwangJu/k-mods/tree/main/mods/status-ko",
+      "license": "MIT",
+      "repository": "https://github.com/SeongGwangJu/k-mods"
+    },
+    {
+      "name": "ctx-strip",
+      "source": "./mods/ctx-strip",
+      "displayName": "컨텍스트 막대",
+      "description": "컨텍스트가 무엇으로 차 있는지(대화·도구·스킬…) 입력창 위 막대로 보여주고, 서브에이전트가 돌면 한 줄로 알려줘요",
+      "category": "상태줄",
+      "tags": [
+        "컨텍스트",
+        "토큰",
+        "서브에이전트"
+      ],
+      "author": {
+        "name": "SeongGwangJu",
+        "url": "https://github.com/SeongGwangJu"
+      },
+      "homepage": "https://github.com/SeongGwangJu/k-mods/tree/main/mods/ctx-strip",
+      "license": "MIT",
+      "repository": "https://github.com/SeongGwangJu/k-mods"
+    },
+    {
+      "name": "agent-radar",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/hamzafer/claude-code-mods",
+        "path": "mods/agent-radar",
+        "sha": "adf9d72d81cb04284416371f9de8a6f937dcc631"
+      },
+      "displayName": "에이전트 레이더",
+      "description": "실행 중인 서브에이전트마다 입력창 위에 경과 시간·도구 호출 수·현재 작업을 한 줄로 보여주고, /radar로 전체 목록과 대화 내용을 확인해요.",
+      "category": "상태줄",
+      "tags": [
+        "서브에이전트",
+        "상태줄"
+      ],
+      "author": {
+        "name": "Hamza Zafar",
+        "url": "https://github.com/hamzafer"
+      },
+      "homepage": "https://github.com/hamzafer/claude-code-mods/tree/main/mods/agent-radar",
+      "license": "MIT",
+      "repository": "https://github.com/hamzafer/claude-code-mods"
+    },
+    {
+      "name": "browser-lanes",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/hamzafer/claude-code-mods",
+        "path": "mods/browser-lanes",
+        "sha": "adf9d72d81cb04284416371f9de8a6f937dcc631"
+      },
+      "displayName": "브라우저 레인",
+      "description": "이 세션이 Playwright 브라우저를 갖고 있는지, 누가 쓰고 있는지 입력창 위에 보여주고, 서브에이전트끼리는 순서를 기다리게 해요.",
+      "category": "상태줄",
+      "tags": [
+        "Playwright",
+        "자동화"
+      ],
+      "author": {
+        "name": "Hamza Zafar",
+        "url": "https://github.com/hamzafer"
+      },
+      "homepage": "https://github.com/hamzafer/claude-code-mods/tree/main/mods/browser-lanes",
+      "license": "MIT",
+      "repository": "https://github.com/hamzafer/claude-code-mods"
+    },
+    {
+      "name": "cache-panel",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/danyuchn/claude-mods.git",
+        "path": "cache-panel",
+        "sha": "9e7d228f79538f3ed6f583b7612eaed291dabfe3"
+      },
+      "displayName": "캐시 패널",
+      "description": "프롬프트 캐시가 식기 50분 전에 알려주고, 계속 데우기·한 번 핑·압축 중 하나를 비용 추정과 함께 고를 수 있어요.",
+      "category": "상태줄",
+      "tags": [
+        "프롬프트캐시",
+        "비용"
+      ],
+      "author": {
+        "name": "Dustin Yuchen Teng",
+        "url": "https://github.com/danyuchn"
+      },
+      "homepage": "https://github.com/danyuchn/claude-mods",
+      "license": "MIT",
+      "repository": "https://github.com/danyuchn/claude-mods"
+    },
+    {
+      "name": "context-bar",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/hamzafer/claude-code-mods",
+        "path": "mods/context-bar",
+        "sha": "adf9d72d81cb04284416371f9de8a6f937dcc631"
+      },
+      "displayName": "컨텍스트 바 (hamzafer)",
+      "description": "컨텍스트 창을 /context와 같은 색으로 구간별 막대 그래프로 보여주고, 토큰 수·압축 시점·범례까지 입력창 위에 표시해요.",
+      "category": "상태줄",
+      "tags": [
+        "컨텍스트",
+        "토큰"
+      ],
+      "author": {
+        "name": "Hamza Zafar",
+        "url": "https://github.com/hamzafer"
+      },
+      "homepage": "https://github.com/hamzafer/claude-code-mods/tree/main/mods/context-bar",
+      "license": "MIT",
+      "repository": "https://github.com/hamzafer/claude-code-mods"
+    },
+    {
+      "name": "flightdeck",
+      "source": {
+        "source": "github",
+        "repo": "scasella/claude-flightdeck",
+        "sha": "f31daca523d36c501cd0df23a737a44c7dc56ad6"
+      },
+      "displayName": "플라이트덱 대시보드",
+      "description": "메인 모델 상태·비용·컨텍스트, 온콜 아키텍트 상담, 권한 검사, 서브에이전트 카드를 실시간 세션 이벤트로 한 화면에 보여줘요",
+      "category": "상태줄",
+      "tags": [
+        "대시보드",
+        "서브에이전트",
+        "권한검사",
+        "컨텍스트"
+      ],
+      "author": {
+        "name": "Stephen Casella",
+        "url": "https://github.com/scasella"
+      },
+      "homepage": "https://github.com/scasella/claude-flightdeck",
+      "license": "MIT",
+      "repository": "https://github.com/scasella/claude-flightdeck"
+    },
+    {
+      "name": "hud",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/hoobnn/hoobnn-agent-mods.git",
+        "path": "claude-code/hud",
+        "sha": "8fb6f67cad9fd023cc7c06b7923518b4bbc45aea"
+      },
+      "displayName": "claude-hud 상태 대시보드",
+      "description": "모델·프로젝트·Git·컨텍스트·사용량·도구·할 일을 HUD 한 줄로 보여주고, 예산·이력·작업 요약·상세 패널·테마까지 지원해요.",
+      "category": "상태줄",
+      "tags": [
+        "HUD",
+        "상태줄",
+        "사용량",
+        "테마",
+        "Git",
+        "비용"
+      ],
+      "author": {
+        "name": "hoobnn",
+        "url": "https://github.com/hoobnn"
+      },
+      "homepage": "https://github.com/hoobnn/hoobnn-agent-mods/tree/8fb6f67cad9fd023cc7c06b7923518b4bbc45aea/claude-code/hud",
+      "license": "MIT",
+      "repository": "https://github.com/hoobnn/hoobnn-agent-mods"
+    },
+    {
+      "name": "mod-usage",
+      "source": {
+        "source": "github",
+        "repo": "jack21/claude-mod-usage",
+        "sha": "534b16ecf4c5580f611f270100025eef552d89e7"
+      },
+      "displayName": "사용량 진행률 막대",
+      "description": "컨텍스트·5시간·7일 사용량을 입력창 위 그라데이션 막대 3개로 보여줘요. Desktop/VS Code 전용, 12개 언어를 지원하지만 한국어는 아직 없어요.",
+      "category": "상태줄",
+      "tags": [
+        "사용량",
+        "컨텍스트",
+        "레이트리밋",
+        "다국어"
+      ],
+      "author": {
+        "name": "Jack Chiang",
+        "url": "https://github.com/jack21"
+      },
+      "homepage": "https://github.com/jack21/claude-mod-usage",
+      "license": "MIT",
+      "repository": "https://github.com/jack21/claude-mod-usage"
+    },
+    {
+      "name": "pr-pulse",
+      "source": {
+        "source": "github",
+        "repo": "gerricchaplin/pr-pulse",
+        "sha": "8bf587aaa9cb3815875dcc3818c8827a37e7cb78"
+      },
+      "displayName": "PR 펄스",
+      "description": "GitHub PR의 머지 준비 상태·CI 체크·리뷰 코멘트·리뷰 대기열을 입력창 위 띠와 패널로 실시간으로 보여줘요",
+      "category": "상태줄",
+      "tags": [
+        "GitHub",
+        "PR",
+        "CI",
+        "코드리뷰"
+      ],
+      "author": {
+        "name": "Gerric Chaplin",
+        "url": "https://github.com/gerricchaplin"
+      },
+      "homepage": "https://github.com/gerricchaplin/pr-pulse",
+      "license": "MIT",
+      "repository": "https://github.com/gerricchaplin/pr-pulse"
+    },
+    {
+      "name": "prompt-cache-control",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/davila7/claude-code-templates",
+        "path": "cli-tool/components/mods/observability/prompt-cache-control",
+        "sha": "375af9018a40e330e81542f59054daaa088c21aa"
+      },
+      "displayName": "프롬프트 캐시 미터",
+      "description": "요청마다 캐시가 얼마나 읽히고 새로 쓰였는지 입력창 위에 보여주고, 만료 임박이면 알려주며 /compact·/clear 시점을 제안해요",
+      "category": "상태줄",
+      "tags": [
+        "프롬프트 캐시",
+        "토큰 비용",
+        "/cache 패널"
+      ],
+      "author": {
+        "name": "claude-code-templates",
+        "url": "https://www.aitmpl.com"
+      },
+      "homepage": "https://github.com/davila7/claude-code-templates/tree/375af9018a40e330e81542f59054daaa088c21aa/cli-tool/components/mods/observability/prompt-cache-control",
+      "license": "MIT",
+      "repository": "https://github.com/davila7/claude-code-templates"
+    },
+    {
+      "name": "receipt",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/hoobnn/hoobnn-agent-mods.git",
+        "path": "claude-code/receipt",
+        "sha": "8fb6f67cad9fd023cc7c06b7923518b4bbc45aea"
+      },
+      "displayName": "턴 영수증",
+      "description": "매 턴이 끝나면 바뀐 파일·실행한 명령·읽은 횟수를 입력창 위에 한 줄 영수증으로 보여주고, 제자리걸음을 하면 알려줘요.",
+      "category": "상태줄",
+      "tags": [
+        "영수증",
+        "턴요약",
+        "루프감지",
+        "자동화",
+        "작업로그"
+      ],
+      "author": {
+        "name": "hoobnn",
+        "url": "https://github.com/hoobnn"
+      },
+      "homepage": "https://github.com/hoobnn/hoobnn-agent-mods/tree/8fb6f67cad9fd023cc7c06b7923518b4bbc45aea/claude-code/receipt",
+      "license": "MIT",
+      "repository": "https://github.com/hoobnn/hoobnn-agent-mods"
+    },
+    {
+      "name": "review-watch",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/hamzafer/claude-code-mods",
+        "path": "mods/review-watch",
+        "sha": "adf9d72d81cb04284416371f9de8a6f937dcc631"
+      },
+      "displayName": "리뷰 워치",
+      "description": "실행 중인 codex review나 '리뷰' 서브에이전트마다 모델·대상·경과 시간을 한 줄로 보여주고, 끝나면 발견 개수를 토스트로 알려줘요.",
+      "category": "상태줄",
+      "tags": [
+        "코드리뷰",
+        "codex"
+      ],
+      "author": {
+        "name": "Hamza Zafar",
+        "url": "https://github.com/hamzafer"
+      },
+      "homepage": "https://github.com/hamzafer/claude-code-mods/tree/main/mods/review-watch",
+      "license": "MIT",
+      "repository": "https://github.com/hamzafer/claude-code-mods"
+    },
+    {
+      "name": "statuspane",
+      "source": {
+        "source": "github",
+        "repo": "xuanji86/claude-statuspane",
+        "sha": "8eafdaf51de15a4177145ad58764327bdc7cbfa7"
+      },
+      "displayName": "상태 카드",
+      "description": "모델, 이펙트, 컨텍스트, 5시간·주간 한도, 비용, 브랜치를 프롬프트 위 카드 하나로 보여줘요.",
+      "category": "상태줄",
+      "tags": [
+        "사용량",
+        "CI"
+      ],
+      "author": {
+        "name": "Anji Xu",
+        "url": "https://github.com/xuanji86"
+      },
+      "homepage": "https://github.com/xuanji86/claude-statuspane",
+      "license": "MIT",
+      "repository": "https://github.com/xuanji86/claude-statuspane"
+    },
+    {
+      "name": "taxi-meter",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/devbrother2024/devbrothers-mods.git",
+        "path": "plugins/taxi-meter",
+        "sha": "82b075ca7af3e066a4c88f542dabb95888225e1e"
+      },
+      "displayName": "택시 미터기",
+      "description": "입력창 위 택시 미터기 패널로 세션 요금과 5시간·주간 한도를 보여줘요. /meter·/receipt로 자세히 볼 수 있어요.",
+      "category": "상태줄",
+      "tags": [
+        "사용량",
+        "비용",
+        "korean"
+      ],
+      "author": {
+        "name": "개발동생 (devbrothers)",
+        "url": "https://github.com/devbrother2024"
+      },
+      "homepage": "https://github.com/devbrother2024/devbrothers-mods",
+      "license": "MIT",
+      "repository": "https://github.com/devbrother2024/devbrothers-mods"
+    },
+    {
+      "name": "todo-bar",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/hoobnn/hoobnn-agent-mods.git",
+        "path": "claude-code/todo-bar",
+        "sha": "8fb6f67cad9fd023cc7c06b7923518b4bbc45aea"
+      },
+      "displayName": "할 일 진행 상태줄",
+      "description": "Claude가 만든 할 일 목록의 진행 상황을 입력창 위에 막대와 경과 시간으로 보여줘요.",
+      "category": "상태줄",
+      "tags": [
+        "할일",
+        "진행률",
+        "작업표시줄",
+        "상태줄"
+      ],
+      "author": {
+        "name": "hoobnn",
+        "url": "https://github.com/hoobnn"
+      },
+      "homepage": "https://github.com/hoobnn/hoobnn-agent-mods/tree/8fb6f67cad9fd023cc7c06b7923518b4bbc45aea/claude-code/todo-bar",
+      "license": "MIT",
+      "repository": "https://github.com/hoobnn/hoobnn-agent-mods"
+    },
+    {
+      "name": "token-weather",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/anthropics/claude-code-playground.git",
+        "path": "claude-code/mods/token-weather",
+        "sha": "569c5283d9a0a7ee7938df85bb32e4f48cbb8c86"
+      },
+      "displayName": "토큰 날씨",
+      "description": "컨텍스트 창이 얼마나 찼는지 날씨 아이콘과 최근 턴 막대그래프로 입력창 위에 보여줘요.",
+      "category": "상태줄",
+      "tags": [
+        "컨텍스트",
+        "사용량",
+        "날씨",
+        "차트"
+      ],
+      "author": {
+        "name": "Claude Code DevRel",
+        "url": "https://github.com/anthropics"
+      },
+      "homepage": "https://github.com/anthropics/claude-code-playground/tree/main/claude-code/mods/token-weather",
+      "license": "Apache-2.0",
+      "repository": "https://github.com/anthropics/claude-code-playground"
+    },
+    {
+      "name": "ts-band",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/hoobnn/hoobnn-agent-mods.git",
+        "path": "claude-code/ts-band",
+        "sha": "8fb6f67cad9fd023cc7c06b7923518b4bbc45aea"
+      },
+      "displayName": "테일스케일 노드 상태줄",
+      "description": "입력창 위에 Tailscale 노드들의 연결 상태를 보여주고, 노드가 끊기거나 다시 연결되면 토스트로 알려줘요.",
+      "category": "상태줄",
+      "tags": [
+        "테일스케일",
+        "네트워크",
+        "VPN",
+        "상태줄",
+        "알림"
+      ],
+      "author": {
+        "name": "hoobnn",
+        "url": "https://github.com/hoobnn"
+      },
+      "homepage": "https://github.com/hoobnn/hoobnn-agent-mods/tree/8fb6f67cad9fd023cc7c06b7923518b4bbc45aea/claude-code/ts-band",
+      "license": "MIT",
+      "repository": "https://github.com/hoobnn/hoobnn-agent-mods"
+    },
+    {
+      "name": "usage-band-pawandeep",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/pawandeepdhall/claude-mods",
+        "path": "plugins/usage-band",
+        "sha": "e00264e286951fd6522a12e321cc56f3ebe3c598"
+      },
+      "displayName": "사용량 밴드 (5시간·주간)",
+      "description": "입력창 위에 5시간·주간 사용량 퍼센트와 초기화 카운트다운을 항상 보여주고, 새 채팅·GitHub 푸시 버튼도 함께 제공해요.",
+      "category": "상태줄",
+      "tags": [
+        "사용량",
+        "한도 알림",
+        "새 채팅"
+      ],
+      "author": {
+        "name": "Pawandeep"
+      },
+      "homepage": "https://github.com/pawandeepdhall/claude-mods#usage-band",
+      "license": "MIT",
+      "repository": "https://github.com/pawandeepdhall/claude-mods"
+    },
+    {
+      "name": "mod-store",
+      "source": "./mods/mod-store",
+      "displayName": "모드 상점",
+      "description": "/k-mods 한 번이면 카탈로그를 둘러보고 버튼으로 설치·제거해요",
+      "category": "도구",
+      "tags": [
+        "설치",
+        "카탈로그"
+      ],
+      "author": {
+        "name": "SeongGwangJu",
+        "url": "https://github.com/SeongGwangJu"
+      },
+      "homepage": "https://github.com/SeongGwangJu/k-mods/tree/main/mods/mod-store",
+      "license": "MIT",
+      "repository": "https://github.com/SeongGwangJu/k-mods"
+    },
+    {
+      "name": "memo-pad",
+      "source": "./mods/memo-pad",
+      "displayName": "메모장",
+      "description": "Claude가 일하는 동안 다음에 시킬 일을 적어 두고, 버튼 한 번으로 입력창에 넣어요",
+      "category": "도구",
+      "tags": [
+        "메모",
+        "작업 흐름"
+      ],
+      "author": {
+        "name": "SeongGwangJu",
+        "url": "https://github.com/SeongGwangJu"
+      },
+      "homepage": "https://github.com/SeongGwangJu/k-mods/tree/main/mods/memo-pad",
+      "license": "MIT",
+      "repository": "https://github.com/SeongGwangJu/k-mods"
+    },
+    {
+      "name": "agent-flow",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/davila7/claude-code-templates",
+        "path": "cli-tool/components/mods/ui/agent-flow",
+        "sha": "375af9018a40e330e81542f59054daaa088c21aa"
+      },
+      "displayName": "에이전트 플로우",
+      "description": "메인 루프와 서브에이전트들을 나무 구조로 보여주고, 각 에이전트에 오간 컨텍스트 양과 답변을 클릭해서 볼 수 있어요",
+      "category": "도구",
+      "tags": [
+        "서브에이전트",
+        "컨텍스트",
+        "패널"
+      ],
+      "author": {
+        "name": "claude-code-templates",
+        "url": "https://www.aitmpl.com"
+      },
+      "homepage": "https://github.com/davila7/claude-code-templates/tree/375af9018a40e330e81542f59054daaa088c21aa/cli-tool/components/mods/ui/agent-flow",
+      "license": "MIT",
+      "repository": "https://github.com/davila7/claude-code-templates"
+    },
+    {
+      "name": "agent-quick-menu",
+      "source": {
+        "source": "github",
+        "repo": "agentic-workbench/agent-quick-menu",
+        "sha": "29aef14bbe7814e8c7284e2a1dca601435d2dcbe"
+      },
+      "displayName": "퀵 메뉴",
+      "description": "설치된 플러그인들의 명령과 설정을 한 패널에 모아서 찾고 바로 실행하게 해줘요.",
+      "category": "도구",
+      "tags": [
+        "명령어",
+        "설정"
+      ],
+      "author": {
+        "name": "dasganni",
+        "url": "https://github.com/dasganni"
+      },
+      "homepage": "https://github.com/agentic-workbench/agent-quick-menu",
+      "license": "MIT",
+      "repository": "https://github.com/agentic-workbench/agent-quick-menu"
+    },
+    {
+      "name": "image-view",
+      "source": {
+        "source": "github",
+        "repo": "GGGODLIN/cc-mod-image-view",
+        "sha": "1544b15355515e240af30b3aa7cd8b3b0a899591"
+      },
+      "displayName": "이미지 미리보기",
+      "description": "붙여넣은 이미지를 입력창 위에 썸네일로 보여줘요. [Image #1] 같은 표시 대신이에요.",
+      "category": "도구",
+      "tags": [
+        "붙여넣기",
+        "이미지",
+        "미리보기"
+      ],
+      "author": {
+        "name": "gggodlin",
+        "url": "https://github.com/GGGODLIN"
+      },
+      "homepage": "https://github.com/GGGODLIN/cc-mod-image-view",
+      "license": "MIT",
+      "repository": "https://github.com/GGGODLIN/cc-mod-image-view"
+    },
+    {
+      "name": "now-playing",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/hamzafer/claude-code-mods",
+        "path": "mods/now-playing",
+        "sha": "adf9d72d81cb04284416371f9de8a6f937dcc631"
+      },
+      "displayName": "나우 플레잉",
+      "description": "macOS에서 Spotify로 재생 중인 곡과 가사를 입력창 위에 보여주고, 버튼이나 /music으로 재생·일시정지·이전·다음을 조작해요.",
+      "category": "도구",
+      "tags": [
+        "Spotify",
+        "상태줄"
+      ],
+      "author": {
+        "name": "Hamza Zafar",
+        "url": "https://github.com/hamzafer"
+      },
+      "homepage": "https://github.com/hamzafer/claude-code-mods/tree/main/mods/now-playing",
+      "license": "MIT",
+      "repository": "https://github.com/hamzafer/claude-code-mods"
+    },
+    {
+      "name": "paste-view",
+      "source": {
+        "source": "github",
+        "repo": "Amorfx/claude-paste-view",
+        "sha": "a71ba10600076c4c9e5623da79dfa576c4a30cbd"
+      },
+      "displayName": "붙여넣기 미리보기",
+      "description": "붙여넣은 이미지와 긴 텍스트를 입력창 위에서 바로 미리 보여줘요.",
+      "category": "도구",
+      "tags": [
+        "붙여넣기",
+        "이미지",
+        "미리보기"
+      ],
+      "author": {
+        "name": "Clément Décou",
+        "url": "https://github.com/Amorfx"
+      },
+      "homepage": "https://github.com/Amorfx/claude-paste-view",
+      "license": "MIT",
+      "repository": "https://github.com/Amorfx/claude-paste-view"
+    },
+    {
+      "name": "pixel-player",
+      "source": {
+        "source": "github",
+        "repo": "chrisluo5311/Pixel-Play",
+        "sha": "6ebf7296332bf19898f51bba8421a1e620588423"
+      },
+      "displayName": "픽셀 뮤직 플레이어",
+      "description": "mpv로 재생목록을 재생하면서 픽셀 아트 캐릭터가 음악에 맞춰 반응하는 패널을 보여줘요.",
+      "category": "도구",
+      "tags": [
+        "음악",
+        "mpv",
+        "픽셀아트",
+        "플레이어"
+      ],
+      "author": {
+        "name": "chrisluo5311",
+        "url": "https://github.com/chrisluo5311"
+      },
+      "homepage": "https://github.com/chrisluo5311/Pixel-Play",
+      "license": "MIT",
+      "repository": "https://github.com/chrisluo5311/Pixel-Play"
+    },
+    {
+      "name": "prompt-rail",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/oikon48/prompt-rail.git",
+        "path": "plugins/prompt-rail",
+        "sha": "2ac50fb87fc426fed89ba0f09f1784ef6f289ae8"
+      },
+      "displayName": "프롬프트 레일",
+      "description": "세션에서 보낸 프롬프트들을 레일 하나로 모아 보여주고, 마우스를 올리면 읽고 클릭하면 그 지점으로 이동해요.",
+      "category": "도구",
+      "tags": [
+        "네비게이션",
+        "트랜스크립트",
+        "패널"
+      ],
+      "author": {
+        "name": "oikon48",
+        "url": "https://github.com/oikon48"
+      },
+      "homepage": "https://github.com/oikon48/prompt-rail",
+      "license": "MIT",
+      "repository": "https://github.com/oikon48/prompt-rail"
+    },
+    {
+      "name": "replay-theater",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/anthropics/claude-code-playground.git",
+        "path": "claude-code/mods/replay-theater",
+        "sha": "569c5283d9a0a7ee7938df85bb32e4f48cbb8c86"
+      },
+      "displayName": "Replay 극장",
+      "description": "이번 턴에서 Claude가 고친 파일들을 한 스텝씩 diff로 넘겨보며 다시 볼 수 있어요.",
+      "category": "도구",
+      "tags": [
+        "diff",
+        "리플레이",
+        "편집기록"
+      ],
+      "author": {
+        "name": "Claude Code DevRel",
+        "url": "https://github.com/anthropics"
+      },
+      "homepage": "https://github.com/anthropics/claude-code-playground/tree/main/claude-code/mods/replay-theater",
+      "license": "Apache-2.0",
+      "repository": "https://github.com/anthropics/claude-code-playground"
+    },
+    {
+      "name": "session-wrapped",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/OneWave-AI/claude-code-mods",
+        "path": "session-wrapped",
+        "sha": "e6da26ca36a88eec3be25605d30fa20f2c1c0cec"
+      },
+      "displayName": "세션 랩드",
+      "description": "`/wrapped`로 이번 세션의 도구 호출·테스트·비용 통계를 애니메이션으로 보여주고, 공유용 PNG 카드를 데스크톱에 저장해요.",
+      "category": "도구",
+      "tags": [
+        "세션 결산",
+        "PNG 카드",
+        "통계"
+      ],
+      "author": {
+        "name": "OneWave AI",
+        "url": "https://www.onewave-ai.com"
+      },
+      "homepage": "https://github.com/OneWave-AI/claude-code-mods/tree/main/session-wrapped",
+      "license": "MIT",
+      "repository": "https://github.com/OneWave-AI/claude-code-mods"
+    },
+    {
+      "name": "taxi-blackbox",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/devbrother2024/devbrothers-mods.git",
+        "path": "plugins/taxi-blackbox",
+        "sha": "82b075ca7af3e066a4c88f542dabb95888225e1e"
+      },
+      "displayName": "택시 블랙박스",
+      "description": "도구 호출을 블랙박스처럼 녹화해서, 오류나 거부 직전 상황을 /blackbox에서 돌려볼 수 있어요. 토큰·비밀번호는 가려서 기록해요.",
+      "category": "도구",
+      "tags": [
+        "디버깅",
+        "로그",
+        "패널",
+        "korean"
+      ],
+      "author": {
+        "name": "개발동생 (devbrothers)",
+        "url": "https://github.com/devbrother2024"
+      },
+      "homepage": "https://github.com/devbrother2024/devbrothers-mods",
+      "license": "MIT",
+      "repository": "https://github.com/devbrother2024/devbrothers-mods"
+    },
+    {
+      "name": "taxi-navi",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/devbrother2024/devbrothers-mods.git",
+        "path": "plugins/taxi-navi",
+        "sha": "82b075ca7af3e066a4c88f542dabb95888225e1e"
+      },
+      "displayName": "택시 내비게이션",
+      "description": "할 일 목록을 내비게이션처럼 보여줘요. 진행 경로와 다음 안내가 표시되고, 계획이 바뀌면 경로를 다시 찾아줘요.",
+      "category": "도구",
+      "tags": [
+        "할일",
+        "네비게이션",
+        "음성안내",
+        "korean"
+      ],
+      "author": {
+        "name": "개발동생 (devbrothers)",
+        "url": "https://github.com/devbrother2024"
+      },
+      "homepage": "https://github.com/devbrother2024/devbrothers-mods",
+      "license": "MIT",
+      "repository": "https://github.com/devbrother2024/devbrothers-mods"
+    },
+    {
+      "name": "done-alarm",
+      "source": "./mods/done-alarm",
+      "displayName": "작업 끝 알림",
+      "description": "오래 걸린 작업이 끝나거나 확인이 필요하면 맥 알림·한국어 음성·폰 푸시(ntfy·텔레그램·슬랙)로 알려줘요",
+      "category": "자동화",
+      "tags": [
+        "알림",
+        "자리 비움",
+        "텔레그램"
+      ],
+      "author": {
+        "name": "SeongGwangJu",
+        "url": "https://github.com/SeongGwangJu"
+      },
+      "homepage": "https://github.com/SeongGwangJu/k-mods/tree/main/mods/done-alarm",
+      "license": "MIT",
+      "repository": "https://github.com/SeongGwangJu/k-mods"
+    },
+    {
+      "name": "agent-compact-advisor",
+      "source": {
+        "source": "github",
+        "repo": "apolenkov/agent-compact-advisor",
+        "sha": "86b6831edea7e7f413e146a8c063dce06344a420"
+      },
+      "displayName": "컴팩트 타이밍 어드바이저",
+      "description": "지금이 /compact 하기 좋은 때인지 0~100점으로 상태줄에 보여주고, 압축할 때마다 목표·결정·남은 일을 지키는 보존 템플릿을 자동으로 넣어줘요.",
+      "category": "자동화",
+      "tags": [
+        "compact",
+        "컨텍스트",
+        "상태줄",
+        "휴리스틱",
+        "git"
+      ],
+      "author": {
+        "name": "apolenkov",
+        "url": "https://github.com/apolenkov"
+      },
+      "homepage": "https://github.com/apolenkov/agent-compact-advisor",
+      "license": "MIT",
+      "repository": "https://github.com/apolenkov/agent-compact-advisor"
+    },
+    {
+      "name": "auto-handoff",
+      "source": {
+        "source": "github",
+        "repo": "alexknowshtml/claude-auto-handoff",
+        "sha": "8d762ce726c962268e2dbe24c1c60f0889a2fcde"
+      },
+      "displayName": "오토 핸드오프",
+      "description": "컨텍스트가 꽉 차기 전에 Haiku가 요약한 브리핑과 함께 새 대화로 넘겨주고, 필요하면 브리핑 페이지를 따로 열어볼 수 있어요.",
+      "category": "자동화",
+      "tags": [
+        "핸드오프",
+        "컨텍스트",
+        "Haiku"
+      ],
+      "author": {
+        "name": "Alex Hillman",
+        "url": "https://github.com/alexknowshtml"
+      },
+      "homepage": "https://github.com/alexknowshtml/claude-auto-handoff",
+      "license": "MIT",
+      "repository": "https://github.com/alexknowshtml/claude-auto-handoff"
+    },
+    {
+      "name": "ctx-handoff",
+      "source": {
+        "source": "github",
+        "repo": "cablate/ctx-handoff-mod",
+        "sha": "bd3bfd2c5b86d2587ad2155be5bf5a69c4de7711"
+      },
+      "displayName": "컨텍스트 핸드오프",
+      "description": "컨텍스트가 한계에 가까워지면 핸드오프를 만들어 새 대화로 넘겨주고, 자리를 비운 사이엔 프롬프트 캐시를 데워둬요.",
+      "category": "자동화",
+      "tags": [
+        "핸드오프",
+        "컨텍스트",
+        "메모리"
+      ],
+      "author": {
+        "name": "cablate",
+        "url": "https://github.com/cablate"
+      },
+      "homepage": "https://github.com/cablate/ctx-handoff-mod",
+      "license": "MIT",
+      "repository": "https://github.com/cablate/ctx-handoff-mod"
+    },
+    {
+      "name": "jev-skill-suggestion",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/davila7/claude-code-templates",
+        "path": "cli-tool/components/mods/productivity/jev-skill-suggestion",
+        "sha": "375af9018a40e330e81542f59054daaa088c21aa"
+      },
+      "displayName": "스킬 자동 추천",
+      "description": "프롬프트마다 맞는 스킬 하나를 판단해 자동으로 불러오고 목록은 컨텍스트에서 빼요. API 키가 있으면 TypeSafe Jev로, 없으면 Claude 분류기로 판단해요",
+      "category": "자동화",
+      "tags": [
+        "스킬",
+        "컨텍스트 절약",
+        "TypeSafe Jev"
+      ],
+      "author": {
+        "name": "claude-code-templates",
+        "url": "https://www.aitmpl.com"
+      },
+      "homepage": "https://github.com/davila7/claude-code-templates/tree/375af9018a40e330e81542f59054daaa088c21aa/cli-tool/components/mods/productivity/jev-skill-suggestion",
+      "license": "MIT",
+      "repository": "https://github.com/davila7/claude-code-templates"
+    },
+    {
+      "name": "next-steps",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/hamzafer/claude-code-mods",
+        "path": "mods/next-steps",
+        "sha": "adf9d72d81cb04284416371f9de8a6f937dcc631"
+      },
+      "displayName": "다음 할 일 제안",
+      "description": "턴이 끝날 때마다 다음에 보낼 법한 프롬프트 2~3개를 입력창 위에 제안하고, 숫자 키 하나로 바로 초안에 채워 넣어요.",
+      "category": "자동화",
+      "tags": [
+        "프롬프트 제안"
+      ],
+      "author": {
+        "name": "Hamza Zafar",
+        "url": "https://github.com/hamzafer"
+      },
+      "homepage": "https://github.com/hamzafer/claude-code-mods/tree/main/mods/next-steps",
+      "license": "MIT",
+      "repository": "https://github.com/hamzafer/claude-code-mods"
+    },
+    {
+      "name": "switchboard",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/hamzafer/claude-code-mods",
+        "path": "mods/switchboard",
+        "sha": "adf9d72d81cb04284416371f9de8a6f937dcc631"
+      },
+      "displayName": "스위치보드",
+      "description": "서브에이전트가 시작되기 전에 Haiku/Sonnet/Opus 중 가장 싼 모델을 골라주고, /route로 각 선택과 예상 비용을 보여줘요. API 키 없이도 규칙만으로 동작해요.",
+      "category": "자동화",
+      "tags": [
+        "모델라우팅",
+        "비용",
+        "상태줄"
+      ],
+      "author": {
+        "name": "Hamza Zafar",
+        "url": "https://github.com/hamzafer"
+      },
+      "homepage": "https://github.com/hamzafer/claude-code-mods/tree/main/mods/switchboard",
+      "license": "MIT",
+      "repository": "https://github.com/hamzafer/claude-code-mods"
+    },
+    {
+      "name": "where-am-i",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/hamzafer/claude-code-mods",
+        "path": "mods/where-am-i",
+        "sha": "adf9d72d81cb04284416371f9de8a6f937dcc631"
+      },
+      "displayName": "현재 상황 요약",
+      "description": "목표·지금 하는 일·내게 기다리는 것·다음 할 일을 입력창 위에 한눈에 보여주고, /where로 더 긴 요약도 볼 수 있어요.",
+      "category": "자동화",
+      "tags": [
+        "recap",
+        "상태줄"
+      ],
+      "author": {
+        "name": "Hamza Zafar",
+        "url": "https://github.com/hamzafer"
+      },
+      "homepage": "https://github.com/hamzafer/claude-code-mods/tree/main/mods/where-am-i",
+      "license": "MIT",
+      "repository": "https://github.com/hamzafer/claude-code-mods"
+    },
+    {
+      "name": "streamer-mode",
+      "source": "./mods/streamer-mode",
+      "displayName": "스트리머 모드",
+      "description": "화면 공유·녹화할 때 토큰·이메일·전화번호·주민번호를 화면에서 가려요. Claude가 읽는 내용은 그대로예요",
+      "category": "지킴이",
+      "tags": [
+        "화면 공유",
+        "방송",
+        "개인정보"
+      ],
+      "author": {
+        "name": "SeongGwangJu",
+        "url": "https://github.com/SeongGwangJu"
+      },
+      "homepage": "https://github.com/SeongGwangJu/k-mods/tree/main/mods/streamer-mode",
+      "license": "MIT",
+      "repository": "https://github.com/SeongGwangJu/k-mods"
+    },
+    {
+      "name": "blast-radius-ko",
+      "source": "./mods/blast-radius-ko",
+      "displayName": "위험 명령 브레이크",
+      "description": "rm -rf·force push·DB 초기화처럼 되돌릴 수 없는 명령을 실행 전에 멈추고, 무엇이 바뀌는지 보여준 뒤 물어봐요",
+      "category": "지킴이",
+      "tags": [
+        "안전",
+        "rm -rf",
+        "DB"
+      ],
+      "author": {
+        "name": "Anthropic",
+        "url": "https://github.com/anthropics"
+      },
+      "homepage": "https://github.com/SeongGwangJu/k-mods/tree/main/mods/blast-radius-ko",
+      "license": "Apache-2.0",
+      "repository": "https://github.com/anthropics/claude-code-playground"
+    },
+    {
+      "name": "secret-redactor",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/davila7/claude-code-templates",
+        "path": "cli-tool/components/mods/security/secret-redactor",
+        "sha": "375af9018a40e330e81542f59054daaa088c21aa"
+      },
+      "displayName": "시크릿 리댁터",
+      "description": "도구 결과에 섞인 API 키·토큰·JWT·개인키·DB 접속 문자열을 모델이 읽기 전에 지우고, 지워진 자리표시를 다시 명령에 쓰면 막아요",
+      "category": "지킴이",
+      "tags": [
+        "보안",
+        "비밀값 마스킹",
+        "도구 결과"
+      ],
+      "author": {
+        "name": "claude-code-templates",
+        "url": "https://www.aitmpl.com"
+      },
+      "homepage": "https://github.com/davila7/claude-code-templates/tree/375af9018a40e330e81542f59054daaa088c21aa/cli-tool/components/mods/security/secret-redactor",
+      "license": "MIT",
+      "repository": "https://github.com/davila7/claude-code-templates"
+    },
+    {
+      "name": "secret-vault",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/ray-amjad/awesome-claude-code-function-hooks",
+        "path": "plugins/secret-redactor",
+        "sha": "12b5fea27a4bd1b88cd9c9b6abc1efc0756c6625"
+      },
+      "displayName": "시크릿 볼트",
+      "description": "사용자가 붙여넣거나 도구가 읽어온 API 키·이메일·IP 주소를 모델에게 보내기 전 자리표시로 가리고, 도구 실행 직전엔 원래 값으로 되돌려줘요.",
+      "category": "지킴이",
+      "tags": [
+        "민감정보",
+        "레다크션"
+      ],
+      "author": {
+        "name": "Ray Amjad",
+        "url": "https://github.com/ray-amjad"
+      },
+      "homepage": "https://github.com/ray-amjad/awesome-claude-code-function-hooks/tree/12b5fea27a4bd1b88cd9c9b6abc1efc0756c6625/plugins/secret-redactor",
+      "license": "MIT",
+      "repository": "https://github.com/ray-amjad/awesome-claude-code-function-hooks"
+    },
+    {
+      "name": "taxi-speedcam",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/devbrother2024/devbrothers-mods.git",
+        "path": "plugins/taxi-speedcam",
+        "sha": "82b075ca7af3e066a4c88f542dabb95888225e1e"
+      },
+      "displayName": "택시 과속카메라",
+      "description": "force push·rm -rf·DB 삭제·변경 폐기·운영 배포처럼 위험한 Bash 명령 앞에서 찰칵 찍고 물어봐요. 실행할지 세울지는 사용자가 정해요.",
+      "category": "지킴이",
+      "tags": [
+        "안전",
+        "Bash",
+        "korean"
+      ],
+      "author": {
+        "name": "개발동생 (devbrothers)",
+        "url": "https://github.com/devbrother2024"
+      },
+      "homepage": "https://github.com/devbrother2024/devbrothers-mods",
+      "license": "MIT",
+      "repository": "https://github.com/devbrother2024/devbrothers-mods"
+    },
+    {
+      "name": "cc-pr-tracker",
+      "source": {
+        "source": "github",
+        "repo": "sezaakgun/cc-pr-tracker",
+        "sha": "605b8fc515c3b4842b3b3b15c9757ae5bc351b86"
+      },
+      "displayName": "GitHub PR 트래커",
+      "description": "머지 상태·리뷰·필수 체크를 입력창 위에서 실시간으로 지켜보고, 바뀌면 토스트·소리로 알려줘요.",
+      "category": "연동",
+      "tags": [
+        "GitHub",
+        "PR",
+        "CI",
+        "알림"
+      ],
+      "author": {
+        "name": "Seza Akgün",
+        "url": "https://github.com/sezaakgun"
+      },
+      "homepage": "https://github.com/sezaakgun/cc-pr-tracker",
+      "license": "MIT",
+      "repository": "https://github.com/sezaakgun/cc-pr-tracker"
+    },
+    {
+      "name": "github-issues",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/MarcoCarnevali/claude-code-mods",
+        "path": "github-issues",
+        "sha": "4d6876e56e5225db26edf8eedcea467831592976"
+      },
+      "displayName": "GitHub 이슈 패널",
+      "description": "저장소의 GitHub 이슈를 카드로 보여주고 버튼 한 번으로 Claude에게 작업을 맡길 수 있어요.",
+      "category": "연동",
+      "tags": [
+        "이슈",
+        "GitHub"
+      ],
+      "author": {
+        "name": "Marco Carnevali",
+        "url": "https://github.com/MarcoCarnevali"
+      },
+      "homepage": "https://github.com/MarcoCarnevali/claude-code-mods/tree/4d6876e56e5225db26edf8eedcea467831592976/github-issues",
+      "license": "MIT",
+      "repository": "https://github.com/MarcoCarnevali/claude-code-mods"
+    },
+    {
+      "name": "glance",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/hamzafer/claude-code-mods",
+        "path": "mods/glance",
+        "sha": "adf9d72d81cb04284416371f9de8a6f937dcc631"
+      },
+      "displayName": "글랜스",
+      "description": "다음 회의·리뷰 요청된 PR·진행 중인 Linear 이슈·최근 Slack DM을 입력창 위 한 줄로 보여주고, /glance로 전체 목록을 확인해요.",
+      "category": "연동",
+      "tags": [
+        "상태줄",
+        "일정",
+        "Slack"
+      ],
+      "author": {
+        "name": "Hamza Zafar",
+        "url": "https://github.com/hamzafer"
+      },
+      "homepage": "https://github.com/hamzafer/claude-code-mods/tree/main/mods/glance",
+      "license": "MIT",
+      "repository": "https://github.com/hamzafer/claude-code-mods"
+    },
+    {
+      "name": "linear-board",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/SaharCarmel/linear-mod.git",
+        "path": "linear-mod",
+        "sha": "1e6fef15490b08080965415e9ab5406b51aa5475"
+      },
+      "displayName": "Linear 보드 패널",
+      "description": "Linear 프로젝트·마일스톤·이슈를 패널로 보여주고, 계획·실행·제품 버튼으로 바로 프롬프트를 채워 넣어요.",
+      "category": "연동",
+      "tags": [
+        "Linear",
+        "패널",
+        "GraphQL"
+      ],
+      "author": {
+        "name": "linear-mod contributors",
+        "url": "https://github.com/SaharCarmel/linear-mod"
+      },
+      "homepage": "https://github.com/SaharCarmel/linear-mod",
+      "license": "MIT",
+      "repository": "https://github.com/SaharCarmel/linear-mod"
+    },
+    {
+      "name": "linear-tickets",
+      "source": {
+        "source": "github",
+        "repo": "rjohnt/linear-claude-mod",
+        "sha": "629eb7d23bb8702fadf22e3a28b01ca61c0c4415"
+      },
+      "displayName": "Linear 티켓 패널",
+      "description": "내게 배정된 Linear 티켓을 패널로 보여주고, 클릭하면 바로 작업을 시작할 수 있어요.",
+      "category": "연동",
+      "tags": [
+        "Linear",
+        "MCP",
+        "패널"
+      ],
+      "author": {
+        "name": "rjohnt",
+        "url": "https://github.com/rjohnt"
+      },
+      "homepage": "https://github.com/rjohnt/linear-claude-mod",
+      "license": "MIT",
+      "repository": "https://github.com/rjohnt/linear-claude-mod"
+    },
+    {
+      "name": "terminal-browser",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/zenbu-labs/terminal-browser",
+        "path": "claude-code-plugin",
+        "sha": "1346bbe7d7d857e9ab99db11c06fa3d8f717ac49"
+      },
+      "displayName": "터미널 브라우저",
+      "description": "클로드 코드 화면 안에 실제 브라우저를 띄워 웹사이트를 미리 보고, 에이전트가 직접 열고 닫게 해줘요. 브라우저 엔진은 별도 설치하는 terminal-browser 앱이 맡아요.",
+      "category": "연동",
+      "tags": [
+        "브라우저",
+        "터미널",
+        "미리보기",
+        "Electron",
+        "kitty-graphics"
+      ],
+      "author": {
+        "name": "zenbu-labs",
+        "url": "https://github.com/zenbu-labs"
+      },
+      "homepage": "https://github.com/zenbu-labs/terminal-browser/tree/main/claude-code-plugin",
+      "license": "MIT",
+      "repository": "https://github.com/zenbu-labs/terminal-browser"
+    },
+    {
+      "name": "vercel-deploy-status",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/ray-amjad/awesome-claude-code-function-hooks",
+        "path": "plugins/vercel-deploy-status",
+        "sha": "12b5fea27a4bd1b88cd9c9b6abc1efc0756c6625"
+      },
+      "displayName": "Vercel 배포 현황",
+      "description": "연결된 Vercel 프로젝트의 배포 대기열을 프롬프트 위 밴드에 큐잉·빌드·완료 단계별로 보여줘요.",
+      "category": "연동",
+      "tags": [
+        "배포",
+        "Vercel"
+      ],
+      "author": {
+        "name": "Ray Amjad",
+        "url": "https://github.com/ray-amjad"
+      },
+      "homepage": "https://github.com/ray-amjad/awesome-claude-code-function-hooks/tree/12b5fea27a4bd1b88cd9c9b6abc1efc0756c6625/plugins/vercel-deploy-status",
+      "license": "MIT",
+      "repository": "https://github.com/ray-amjad/awesome-claude-code-function-hooks"
+    },
+    {
+      "name": "korean-pack",
+      "source": "./bundles/korean-pack",
+      "displayName": "한국어 팩",
+      "description": "메뉴·설정 번역(ko-ui)과 작업 상태 한국어(status-ko)를 한 번에 설치해 Claude Code 화면을 한국어로 바꿔요",
+      "category": "묶음",
+      "tags": [
+        "한국어",
+        "묶음"
+      ],
+      "author": {
+        "name": "SeongGwangJu",
+        "url": "https://github.com/SeongGwangJu"
+      },
+      "homepage": "https://github.com/SeongGwangJu/k-mods/tree/main/bundles/korean-pack",
+      "license": "MIT",
+      "repository": "https://github.com/SeongGwangJu/k-mods",
+      "dependencies": [
+        "ko-ui",
+        "status-ko"
+      ]
+    },
+    {
+      "name": "starter",
+      "source": "./bundles/starter",
+      "displayName": "추천 세트",
+      "description": "처음이라면 이것부터: 모드 상점, 한국어 팩, 메모장, 컨텍스트 막대, 위험 명령 브레이크, 작업 끝 알림",
+      "category": "묶음",
+      "tags": [
+        "추천",
+        "묶음"
+      ],
+      "author": {
+        "name": "SeongGwangJu",
+        "url": "https://github.com/SeongGwangJu"
+      },
+      "homepage": "https://github.com/SeongGwangJu/k-mods/tree/main/bundles/starter",
+      "license": "MIT",
+      "repository": "https://github.com/SeongGwangJu/k-mods",
+      "dependencies": [
+        "mod-store",
+        "ko-ui",
+        "status-ko",
+        "memo-pad",
+        "ctx-strip",
+        "blast-radius-ko",
+        "done-alarm"
+      ]
+    },
+    {
+      "name": "taxi-pack",
+      "source": "./bundles/taxi-pack",
+      "displayName": "택시팩",
+      "description": "Claude Code를 택시로: 미터기(요금·한도), 내비(할 일 경로), 과속카메라(위험 명령 확인), 블랙박스(도구 호출 녹화)를 한 번에 설치해요",
+      "category": "묶음",
+      "tags": [
+        "택시",
+        "재미",
+        "한국"
+      ],
+      "author": {
+        "name": "개발동생 (devbrothers)",
+        "url": "https://github.com/devbrother2024"
+      },
+      "homepage": "https://github.com/SeongGwangJu/k-mods/tree/main/bundles/taxi-pack",
+      "license": "MIT",
+      "repository": "https://github.com/SeongGwangJu/k-mods",
+      "dependencies": [
+        "taxi-meter",
+        "taxi-navi",
+        "taxi-speedcam",
+        "taxi-blackbox"
+      ]
+    }
+  ]
+}

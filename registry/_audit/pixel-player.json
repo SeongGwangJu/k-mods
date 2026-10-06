@@ -1,0 +1,62 @@
+{
+  "name": "pixel-player",
+  "source": {
+    "source": "github",
+    "repo": "chrisluo5311/Pixel-Play",
+    "sha": "6ebf7296332bf19898f51bba8421a1e620588423"
+  },
+  "auditedWith": "2.1.291",
+  "validate": {
+    "success": true,
+    "errors": [],
+    "warnings": [
+      "[object Object]"
+    ]
+  },
+  "hooks": [
+    "command.run{command=music}",
+    "session.end",
+    "session.start",
+    "ui.render{component=Pane, requestId=pixel-player}"
+  ],
+  "calls": [
+    "$.clock.after",
+    "$.clock.every",
+    "$.command.register",
+    "$.env.get",
+    "$.fs.exists",
+    "$.fs.read",
+    "$.fs.write",
+    "$.process.run",
+    "$.process.spawn",
+    "$.session.id",
+    "$.state.get",
+    "$.state.set",
+    "$.store.get",
+    "$.store.set",
+    "$.ui.open",
+    "$.ui.resolve"
+  ],
+  "envReads": [
+    "HOME",
+    "TMPDIR"
+  ],
+  "envWrites": [
+    "nothing"
+  ],
+  "gatingWithoutCatch": [],
+  "commands": [
+    "/music"
+  ],
+  "programs": [
+    "/bin/rm"
+  ],
+  "urls": [],
+  "license": "LICENSE",
+  "permissions": [
+    "process",
+    "fs-write",
+    "env",
+    "fs-read"
+  ]
+}

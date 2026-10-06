@@ -1,0 +1,70 @@
+{
+  "name": "linear-board",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/SaharCarmel/linear-mod.git",
+    "path": "linear-mod",
+    "sha": "1e6fef15490b08080965415e9ab5406b51aa5475"
+  },
+  "auditedWith": "2.1.291",
+  "validate": {
+    "success": true,
+    "errors": [],
+    "warnings": []
+  },
+  "hooks": [
+    "command.run{command=linear}",
+    "session.start",
+    "turn.complete",
+    "turn.start",
+    "ui.close{id=linear}",
+    "ui.focus{requestId=linear}",
+    "ui.render{component=Pane}",
+    "ui.scroll{requestId=linear}"
+  ],
+  "calls": [
+    "$.clock.after",
+    "$.clock.now",
+    "$.command.register",
+    "$.env.get",
+    "$.http.fetch",
+    "$.process.run",
+    "$.prompt.fill",
+    "$.prompt.submit",
+    "$.session.cwd",
+    "$.store.delete",
+    "$.store.get",
+    "$.store.set",
+    "$.ui.close",
+    "$.ui.focus",
+    "$.ui.invalidate",
+    "$.ui.log",
+    "$.ui.open",
+    "$.ui.resolve",
+    "$.ui.toast"
+  ],
+  "envReads": [
+    "LINEAR_API_KEY"
+  ],
+  "envWrites": [
+    "nothing"
+  ],
+  "gatingWithoutCatch": [
+    "ui.close{id=linear}",
+    "ui.focus{requestId=linear}",
+    "ui.scroll{requestId=linear}"
+  ],
+  "commands": [],
+  "programs": [],
+  "urls": [
+    "https://api.linear.app/graphql"
+  ],
+  "license": "../LICENSE",
+  "permissions": [
+    "network",
+    "process",
+    "prompt",
+    "chat",
+    "env"
+  ]
+}

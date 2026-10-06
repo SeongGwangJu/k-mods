@@ -1,0 +1,59 @@
+{
+  "name": "reels",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/hamzafer/claude-code-mods",
+    "path": "mods/reels",
+    "sha": "adf9d72d81cb04284416371f9de8a6f937dcc631"
+  },
+  "auditedWith": "2.1.291",
+  "validate": {
+    "success": true,
+    "errors": [],
+    "warnings": []
+  },
+  "hooks": [
+    "command.run{command=reels}",
+    "session.end",
+    "session.start",
+    "turn.complete",
+    "turn.start",
+    "ui.render{component=Pane, requestId=reels}"
+  ],
+  "calls": [
+    "$.command.register",
+    "$.env.get",
+    "$.fs.exists",
+    "$.http.fetch",
+    "$.process.spawn",
+    "$.state.get",
+    "$.state.set",
+    "$.ui.blit",
+    "$.ui.close",
+    "$.ui.log",
+    "$.ui.open",
+    "$.ui.resolve"
+  ],
+  "envReads": [
+    "HOME"
+  ],
+  "envWrites": [
+    "nothing"
+  ],
+  "gatingWithoutCatch": [],
+  "commands": [
+    "/reels"
+  ],
+  "programs": [],
+  "urls": [
+    "http://reels${path}"
+  ],
+  "license": "../../LICENSE",
+  "permissions": [
+    "network",
+    "process",
+    "chat",
+    "env",
+    "fs-read"
+  ]
+}

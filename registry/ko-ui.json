@@ -1,0 +1,69 @@
+{
+  "name": "ko-ui",
+  "displayName": "한국어 UI 번역 사전",
+  "summary": "슬래시 커맨드 설명, `/config` 항목, 작업 표시줄 같은 화면 문구를 사전 기반으로 한국어로 보여줘요.",
+  "summaryEn": "Dictionary-based mod that shows Claude Code's slash-command descriptions, /config rows, and some UI text in Korean.",
+  "category": "localize",
+  "tags": [
+    "한국어",
+    "번역",
+    "UI",
+    "i18n",
+    "사전"
+  ],
+  "kind": "upstream",
+  "source": {
+    "source": "github",
+    "repo": "moduvoice/claude-code-ko-ui",
+    "sha": "7a192004e6e13b40e83221c111102991b8aa9203"
+  },
+  "upstream": {
+    "repo": "moduvoice/claude-code-ko-ui",
+    "commit": "7a192004e6e13b40e83221c111102991b8aa9203",
+    "stars": 0
+  },
+  "author": {
+    "name": "moduvoice",
+    "url": "https://github.com/moduvoice"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/moduvoice/claude-code-ko-ui",
+  "commands": [
+    "/ko-dump"
+  ],
+  "surfaces": [
+    "terminal",
+    "desktop"
+  ],
+  "conflicts": [
+    {
+      "with": "status-ko",
+      "note": "둘 다 Spinner·TurnDuration 화면을 가로채요. TurnDuration은 두 mod 다 next()를 안 불러서 나중에 로드되는 쪽 표시만 보이고 다른 쪽 커스터마이징(상태별 색·도구 수·캐시 비율 또는 한국어 한 줄 요약)은 완전히 묻혀요. Spinner는 둘 다 next()를 불러 체인은 이어지지만 word를 서로 덮어써서, ko-ui가 나중이면 status-ko의 도구별 상세 표시(예: `읽는 중 · page.tsx`) 대신 ko-ui의 일반 라벨(`도구 실행 중`)로 바뀌어요. 로드 순서(설치 순서)에 따라 결과가 달라져 예측이 어려워요."
+    }
+  ],
+  "notes": [
+    "Claude Code 2.1.287 이상이 필요해요. 2.1.285에서는 `CLAUDE_CODE_ENABLE_FUNCTION_HOOKS=1` 환경 변수를 켜야 로드돼요.",
+    "모델 호출·네트워크 요청이 전혀 없는 고정 사전(dict.json) 치환 방식이라 토큰을 쓰지 않아요.",
+    "Spinner 단어 번역은 terminal 화면에서만 적용돼요(desktop은 원문 유지, 나머지 번역은 desktop에서도 적용돼요).",
+    "번역 안 된 새 문구는 `/ko-dump`로 확인해 `dict.json`에 직접 추가할 수 있어요(최대 200개까지 기록).",
+    "권한 확인 창, 환영 화면, 선택지 값, 에러 메시지, 프롬프트 아래 알약 문구는 훅이 없거나 번역하면 다른 정보가 사라져서 원문 그대로예요."
+  ],
+  "featured": true,
+  "review": {
+    "date": "2026-10-06",
+    "by": "k-mods",
+    "claudeCode": "2.1.291",
+    "method": [
+      "validate",
+      "code-read"
+    ],
+    "findings": [
+      "validate 통과, gatingHooks 없음 (tool.call/tool.check/prompt.submit 등 차단형 훅 자체가 없음).",
+      "네트워크 호출·모델 호출·외부 프로세스 실행·파일 쓰기 없음 (코드 전체 확인, validate의 calls 목록과 일치).",
+      "$.fs.read로 자기 플러그인 폴더의 dict.json만 읽음.",
+      "$.store에 번역 안 된 문구 목록만 저장(최대 200개, 로컬 전용, 외부 전송 없음).",
+      "session.start 8초 뒤 1회 $.command.list/$.config.list로 번역 누락 항목을 스캔해 토스트로 알림. 가벼운 1회성 동작, 반복 타이머 아님.",
+      "status-ko와 ui.render Spinner/TurnDuration을 동시에 가로채 표시가 섞이거나 한쪽이 가려짐 (conflicts 참고, 두 mod 코드 직접 대조함)."
+    ]
+  }
+}

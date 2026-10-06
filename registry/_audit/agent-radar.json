@@ -1,0 +1,52 @@
+{
+  "name": "agent-radar",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/hamzafer/claude-code-mods",
+    "path": "mods/agent-radar",
+    "sha": "adf9d72d81cb04284416371f9de8a6f937dcc631"
+  },
+  "auditedWith": "2.1.291",
+  "validate": {
+    "success": true,
+    "errors": [],
+    "warnings": []
+  },
+  "hooks": [
+    "agent.spawn",
+    "command.run{command=radar}",
+    "session.start",
+    "tool.call",
+    "turn.complete",
+    "ui.render{component=AbovePrompt}",
+    "ui.render{component=Pane, requestId=agent-radar}"
+  ],
+  "calls": [
+    "$.agent.list",
+    "$.clock.every",
+    "$.command.register",
+    "$.session.messages",
+    "$.state.get",
+    "$.state.set",
+    "$.ui.close",
+    "$.ui.open",
+    "$.ui.resolve",
+    "$.ui.toast"
+  ],
+  "envReads": [],
+  "envWrites": [],
+  "gatingWithoutCatch": [
+    "agent.spawn",
+    "tool.call"
+  ],
+  "commands": [
+    "/radar"
+  ],
+  "programs": [],
+  "urls": [],
+  "license": "../../LICENSE",
+  "permissions": [
+    "gate",
+    "chat"
+  ]
+}

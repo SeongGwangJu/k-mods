@@ -1,0 +1,60 @@
+{
+  "name": "pr-pulse",
+  "source": {
+    "source": "github",
+    "repo": "gerricchaplin/pr-pulse",
+    "sha": "8bf587aaa9cb3815875dcc3818c8827a37e7cb78"
+  },
+  "auditedWith": "2.1.291",
+  "validate": {
+    "success": true,
+    "errors": [],
+    "warnings": []
+  },
+  "hooks": [
+    "classic.CwdChanged",
+    "command.run{command=pulse}",
+    "session.start",
+    "ui.close",
+    "ui.render{component=AbovePrompt}",
+    "ui.render{component=Pane, requestId=pr-pulse-history}",
+    "ui.render{component=Pane, requestId=pr-pulse-reviews}",
+    "ui.render{component=Pane, requestId=pr-pulse}"
+  ],
+  "calls": [
+    "$.clock.every",
+    "$.command.register",
+    "$.config.list",
+    "$.process.run",
+    "$.prompt.fill",
+    "$.prompt.read",
+    "$.state.get",
+    "$.state.set",
+    "$.ui.close",
+    "$.ui.log",
+    "$.ui.open",
+    "$.ui.resolve",
+    "$.ui.status",
+    "$.ui.toast"
+  ],
+  "envReads": [],
+  "envWrites": [],
+  "gatingWithoutCatch": [
+    "classic.CwdChanged",
+    "ui.close"
+  ],
+  "commands": [
+    "/pulse"
+  ],
+  "programs": [
+    "gh",
+    "git",
+    "uname"
+  ],
+  "urls": [],
+  "license": "LICENSE",
+  "permissions": [
+    "process",
+    "prompt"
+  ]
+}

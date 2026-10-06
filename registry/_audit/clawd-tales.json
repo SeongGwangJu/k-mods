@@ -1,0 +1,65 @@
+{
+  "name": "clawd-tales",
+  "source": {
+    "source": "github",
+    "repo": "plaxagoras/clawd-tales",
+    "sha": "89c7f95b4d4faf480a6ee200e92c3e6df34d1432"
+  },
+  "auditedWith": "2.1.291",
+  "validate": {
+    "success": true,
+    "errors": [],
+    "warnings": []
+  },
+  "hooks": [
+    "agent.spawn",
+    "classic.PermissionRequest",
+    "classic.SessionStart",
+    "classic.UserPromptSubmit",
+    "command.run{command=tales}",
+    "prompt.submit",
+    "session.compact",
+    "session.measure",
+    "session.start",
+    "tool.call",
+    "turn.complete",
+    "turn.start",
+    "ui.render{component=AbovePrompt}"
+  ],
+  "calls": [
+    "$.agent.list",
+    "$.clock.after",
+    "$.clock.every",
+    "$.clock.now",
+    "$.command.register",
+    "$.session.root",
+    "$.session.usage",
+    "$.state.get",
+    "$.state.set",
+    "$.store.get",
+    "$.store.set",
+    "$.ui.resolve",
+    "$.ui.toast"
+  ],
+  "envReads": [],
+  "envWrites": [],
+  "gatingWithoutCatch": [
+    "agent.spawn",
+    "classic.PermissionRequest",
+    "classic.SessionStart",
+    "classic.UserPromptSubmit",
+    "prompt.submit",
+    "session.compact",
+    "tool.call"
+  ],
+  "commands": [
+    "/tales"
+  ],
+  "programs": [],
+  "urls": [],
+  "license": "LICENSE",
+  "permissions": [
+    "gate",
+    "chat"
+  ]
+}

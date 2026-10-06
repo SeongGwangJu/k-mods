@@ -1,0 +1,32 @@
+{
+  "$schema": "./_schema.json",
+  "name": "korean-pack",
+  "displayName": "한국어 팩",
+  "summary": "메뉴·설정 번역(ko-ui)과 작업 상태 한국어(status-ko)를 한 번에 설치해 Claude Code 화면을 한국어로 바꿔요",
+  "summaryEn": "One install for a Korean Claude Code: menu and settings translation (ko-ui) plus Korean status lines (status-ko)",
+  "category": "bundle",
+  "tags": [
+    "한국어",
+    "묶음"
+  ],
+  "kind": "bundle",
+  "source": "./bundles/korean-pack",
+  "dependencies": [
+    "ko-ui",
+    "status-ko"
+  ],
+  "author": {
+    "name": "SeongGwangJu",
+    "url": "https://github.com/SeongGwangJu"
+  },
+  "license": "MIT",
+  "featured": true,
+  "review": {
+    "date": "2026-10-06",
+    "by": "k-mods",
+    "claudeCode": "2.1.291",
+    "method": [
+      "validate"
+    ]
+  }
+}

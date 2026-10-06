@@ -1,0 +1,50 @@
+{
+  "name": "combo-meter",
+  "source": {
+    "source": "github",
+    "repo": "SARTHAK2511/claude-combo",
+    "sha": "7f01ec059e073901facde77b8b6e670221cc33c4"
+  },
+  "auditedWith": "2.1.291",
+  "validate": {
+    "success": true,
+    "errors": [],
+    "warnings": []
+  },
+  "hooks": [
+    "command.run{command=combo}",
+    "session.end",
+    "session.start",
+    "tool.call",
+    "turn.complete",
+    "turn.start",
+    "ui.render{component=AbovePrompt}"
+  ],
+  "calls": [
+    "$.audio.play",
+    "$.clock.now",
+    "$.command.register",
+    "$.state.get",
+    "$.state.set",
+    "$.store.delete",
+    "$.store.get",
+    "$.store.set",
+    "$.ui.resolve",
+    "$.ui.status",
+    "$.ui.toast"
+  ],
+  "envReads": [],
+  "envWrites": [],
+  "gatingWithoutCatch": [
+    "tool.call"
+  ],
+  "commands": [],
+  "programs": [],
+  "urls": [],
+  "license": "LICENSE",
+  "permissions": [
+    "gate",
+    "chat",
+    "sound"
+  ]
+}

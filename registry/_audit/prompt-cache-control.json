@@ -1,0 +1,64 @@
+{
+  "name": "prompt-cache-control",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/davila7/claude-code-templates",
+    "path": "cli-tool/components/mods/observability/prompt-cache-control",
+    "sha": "375af9018a40e330e81542f59054daaa088c21aa"
+  },
+  "auditedWith": "2.1.291",
+  "validate": {
+    "success": true,
+    "errors": [],
+    "warnings": []
+  },
+  "hooks": [
+    "command.run{command=cache}",
+    "session.end",
+    "session.start",
+    "turn.step",
+    "ui.close",
+    "ui.press",
+    "ui.render{component=AbovePrompt}",
+    "ui.render{component=Pane}"
+  ],
+  "calls": [
+    "$.clock.every",
+    "$.command.register",
+    "$.env.get",
+    "$.fs.read",
+    "$.session.cwd",
+    "$.session.usage",
+    "$.ui.close",
+    "$.ui.invalidate",
+    "$.ui.log",
+    "$.ui.open",
+    "$.ui.resolve",
+    "$.ui.status",
+    "$.ui.toast"
+  ],
+  "envReads": [
+    "CLAUDE_CODE_PROMPT_CACHE_TTL",
+    "DISABLE_PROMPT_CACHING",
+    "DISABLE_PROMPT_CACHING_HAIKU",
+    "DISABLE_PROMPT_CACHING_OPUS",
+    "DISABLE_PROMPT_CACHING_SONNET",
+    "ENABLE_PROMPT_CACHING_1H",
+    "FORCE_PROMPT_CACHING_5M",
+    "HOME"
+  ],
+  "envWrites": [
+    "nothing"
+  ],
+  "gatingWithoutCatch": [
+    "ui.close"
+  ],
+  "commands": [],
+  "programs": [],
+  "urls": [],
+  "license": null,
+  "permissions": [
+    "env",
+    "fs-read"
+  ]
+}

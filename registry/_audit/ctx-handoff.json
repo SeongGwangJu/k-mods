@@ -1,0 +1,77 @@
+{
+  "name": "ctx-handoff",
+  "source": {
+    "source": "github",
+    "repo": "cablate/ctx-handoff-mod",
+    "sha": "bd3bfd2c5b86d2587ad2155be5bf5a69c4de7711"
+  },
+  "auditedWith": "2.1.291",
+  "validate": {
+    "success": true,
+    "errors": [],
+    "warnings": [
+      "[object Object]",
+      "[object Object]"
+    ]
+  },
+  "hooks": [
+    "classic.Stop",
+    "command.run{command=handoff|ctx-handoff}",
+    "prompt.context",
+    "prompt.submit",
+    "session.start",
+    "turn.complete"
+  ],
+  "calls": [
+    "$.agent.list",
+    "$.clock.after",
+    "$.clock.now",
+    "$.command.register",
+    "$.command.run",
+    "$.env.get",
+    "$.fs.read",
+    "$.fs.write",
+    "$.model.complete",
+    "$.model.fork",
+    "$.prompt.submit",
+    "$.session.id",
+    "$.session.messages",
+    "$.session.root",
+    "$.session.turns",
+    "$.session.usage",
+    "$.store.delete",
+    "$.store.get",
+    "$.store.keys",
+    "$.store.set",
+    "$.ui.log",
+    "$.ui.status",
+    "$.ui.toast"
+  ],
+  "envReads": [
+    "CLAUDE_CONFIG_DIR",
+    "HOME",
+    "USERPROFILE"
+  ],
+  "envWrites": [
+    "nothing"
+  ],
+  "gatingWithoutCatch": [
+    "classic.Stop",
+    "prompt.submit"
+  ],
+  "commands": [
+    "/ctx-handoff",
+    "/handoff"
+  ],
+  "programs": [],
+  "urls": [],
+  "license": "LICENSE",
+  "permissions": [
+    "fs-write",
+    "model",
+    "prompt",
+    "chat",
+    "env",
+    "fs-read"
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "name": "cache-panel",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/danyuchn/claude-mods.git",
+    "path": "cache-panel",
+    "sha": "9e7d228f79538f3ed6f583b7612eaed291dabfe3"
+  },
+  "auditedWith": "2.1.291",
+  "validate": {
+    "success": true,
+    "errors": [],
+    "warnings": []
+  },
+  "hooks": [
+    "classic.SessionStart{source=clear|resume|fork}",
+    "command.run{command=warm|cache-panel}",
+    "session.compact",
+    "session.measure",
+    "session.start",
+    "turn.step",
+    "ui.render{component=AbovePrompt}",
+    "ui.render{component=Pane, requestId=cache-panel}"
+  ],
+  "calls": [
+    "$.clock.after",
+    "$.clock.every",
+    "$.clock.now",
+    "$.command.register",
+    "$.command.run",
+    "$.env.get",
+    "$.model.fork",
+    "$.process.run",
+    "$.session.cwd",
+    "$.session.model",
+    "$.session.usage",
+    "$.state.get",
+    "$.state.set",
+    "$.ui.close",
+    "$.ui.log",
+    "$.ui.open",
+    "$.ui.resolve",
+    "$.ui.toast"
+  ],
+  "envReads": [
+    "CACHE_PANEL_FAST",
+    "HERDR_BIN_PATH",
+    "HERDR_ENV"
+  ],
+  "envWrites": [
+    "nothing"
+  ],
+  "gatingWithoutCatch": [
+    "classic.SessionStart{source=clear|resume|fork}",
+    "session.compact"
+  ],
+  "commands": [
+    "/cache-panel",
+    "/warm"
+  ],
+  "programs": [],
+  "urls": [],
+  "license": "../LICENSE",
+  "permissions": [
+    "process",
+    "model",
+    "env"
+  ]
+}

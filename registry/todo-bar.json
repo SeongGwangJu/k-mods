@@ -1,0 +1,55 @@
+{
+  "$schema": "./_schema.json",
+  "name": "todo-bar",
+  "displayName": "할 일 진행 상태줄",
+  "summary": "Claude가 만든 할 일 목록의 진행 상황을 입력창 위에 막대와 경과 시간으로 보여줘요.",
+  "summaryEn": "Shows the task list's progress in a band above the prompt, read from the todo and task tools' own calls: no tool, no prompt, no tokens.",
+  "category": "statusline",
+  "tags": ["할일", "진행률", "작업표시줄", "상태줄"],
+  "kind": "upstream",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/hoobnn/hoobnn-agent-mods.git",
+    "path": "claude-code/todo-bar",
+    "sha": "8fb6f67cad9fd023cc7c06b7923518b4bbc45aea"
+  },
+  "upstream": {
+    "repo": "hoobnn/hoobnn-agent-mods",
+    "path": "claude-code/todo-bar",
+    "commit": "8fb6f67cad9fd023cc7c06b7923518b4bbc45aea",
+    "stars": 4
+  },
+  "author": { "name": "hoobnn", "url": "https://github.com/hoobnn" },
+  "license": "MIT",
+  "homepage": "https://github.com/hoobnn/hoobnn-agent-mods/tree/8fb6f67cad9fd023cc7c06b7923518b4bbc45aea/claude-code/todo-bar",
+  "commands": ["/todos"],
+  "surfaces": ["terminal", "desktop"],
+  "settings": [
+    {
+      "key": "language",
+      "value": "ko",
+      "why": "`auto`는 Claude Code 언어 설정과 시스템 로캘을 차례로 따라가다 둘 다 인식에 실패하면 영어로 빠져요. `ko`로 고정하면 진행 바와 `/todos` 응답이 항상 한국어로 나와요."
+    }
+  ],
+  "notes": [
+    "TodoWrite·TaskCreate·TaskUpdate 결과만 사후에 읽어서 그리고, 별도 도구를 등록하거나 프롬프트에 끼어들지 않아 토큰을 쓰지 않아요.",
+    "거부되거나 실패한 호출, 서브에이전트 자신의 할 일 목록은 집계하지 않아요.",
+    "세션별 진행 상황은 최근 20개 세션까지 로컬에 보관되어 세션을 재개해도 이어서 보여요."
+  ],
+  "featured": false,
+  "preview": "https://raw.githubusercontent.com/hoobnn/hoobnn-agent-mods/8fb6f67cad9fd023cc7c06b7923518b4bbc45aea/claude-code/todo-bar/assets/preview.png",
+  "review": {
+    "date": "2026-10-06",
+    "by": "k-mods",
+    "claudeCode": "2.1.291",
+    "method": ["validate", "code-read"],
+    "findings": [
+      "`scripts/cc.sh plugin validate --json` success:true, errors/warnings 없음(직접 실행 확인).",
+      "네트워크 호출·모델 호출·외부 프로세스 실행이 전혀 없음을 코드 전체(register.tsx, board.ts, config.ts, i18n.ts)를 읽고 $.http/$.process/$.model 미사용으로 확인했어요.",
+      "TodoWrite/TaskCreate/TaskUpdate 도구 호출이 끝난 뒤의 결과만 읽어 $.state·$.store(둘 다 플러그인 전용 로컬 저장소)에 기록해요. 거부된 호출(ran.deny)이나 실패한 호출, 서브에이전트(e.agentId 존재)의 호출은 집계에서 제외함을 코드로 확인했어요.",
+      "진행 중 작업의 경과 시간 표시를 위한 타이머는 30초 간격(TICK_MS)이고, 활성 작업이 있을 때만 시각을 갱신해 과도한 폴링은 아니에요.",
+      "세션별 보드는 $.store에 최근 20개 세션(KEEP_SESSIONS)까지만 보관하고 오래된 것은 자동 삭제해요. 외부로 전송되는 코드 경로는 없어요.",
+      "`tool.call`·`prompt.submit` 훅에 `.catch` 누락 validate 경고가 있으나, 두 훅 모두 거부(deny) 로직이 없는 관찰·집계용 훅이라 안전 영향은 낮아요."
+    ]
+  }
+}

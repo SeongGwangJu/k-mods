@@ -1,0 +1,75 @@
+{
+  "name": "statuspane",
+  "source": {
+    "source": "github",
+    "repo": "xuanji86/claude-statuspane",
+    "sha": "8eafdaf51de15a4177145ad58764327bdc7cbfa7"
+  },
+  "auditedWith": "2.1.291",
+  "validate": {
+    "success": true,
+    "errors": [],
+    "warnings": []
+  },
+  "hooks": [
+    "command.run{command=statuspane}",
+    "engine.create",
+    "session.compact",
+    "session.measure",
+    "session.start",
+    "tool.call{tool=Bash}",
+    "turn.complete",
+    "turn.step",
+    "ui.render{component=AbovePrompt}"
+  ],
+  "calls": [
+    "$.clock.after",
+    "$.clock.every",
+    "$.clock.now",
+    "$.command.register",
+    "$.command.run",
+    "$.env.get",
+    "$.fs.exists",
+    "$.fs.list",
+    "$.fs.read",
+    "$.process.run",
+    "$.session.cwd",
+    "$.session.model",
+    "$.session.repo",
+    "$.session.usage",
+    "$.state.get",
+    "$.state.set",
+    "$.store.get",
+    "$.store.set",
+    "$.ui.resolve",
+    "$.ui.toast"
+  ],
+  "envReads": [
+    "HOME",
+    "STATUSPANE_PROGRESS_DIR",
+    "USERPROFILE"
+  ],
+  "envWrites": [
+    "nothing"
+  ],
+  "gatingWithoutCatch": [
+    "session.compact",
+    "tool.call{tool=Bash}"
+  ],
+  "commands": [
+    "/statuspane"
+  ],
+  "programs": [
+    "gh",
+    "git"
+  ],
+  "urls": [],
+  "license": "LICENSE",
+  "permissions": [
+    "process",
+    "gate",
+    "chat",
+    "env",
+    "fs-read"
+  ]
+}

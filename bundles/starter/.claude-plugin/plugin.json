@@ -1,0 +1,21 @@
+{
+  "name": "starter",
+  "version": "0.1.0",
+  "description": "처음이라면 이것부터: 모드 상점, 한국어 팩, 메모장, 컨텍스트 막대, 위험 명령 브레이크, 작업 끝 알림",
+  "author": {
+    "name": "SeongGwangJu",
+    "url": "https://github.com/SeongGwangJu"
+  },
+  "homepage": "https://github.com/SeongGwangJu/k-mods/tree/main/bundles/starter",
+  "repository": "https://github.com/SeongGwangJu/k-mods",
+  "license": "MIT",
+  "dependencies": [
+    "mod-store",
+    "ko-ui",
+    "status-ko",
+    "memo-pad",
+    "ctx-strip",
+    "blast-radius-ko",
+    "done-alarm"
+  ]
+}

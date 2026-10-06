@@ -1,0 +1,44 @@
+{
+  "name": "mod-store",
+  "source": "./mods/mod-store",
+  "auditedWith": "2.1.291",
+  "validate": {
+    "success": true,
+    "errors": [],
+    "warnings": []
+  },
+  "hooks": [
+    "command.run{command=k-mods}",
+    "session.start",
+    "ui.render{component=Pane}"
+  ],
+  "calls": [
+    "$.command.register",
+    "$.command.run",
+    "$.process.run",
+    "$.settings.read",
+    "$.store.get",
+    "$.store.set",
+    "$.ui.ask",
+    "$.ui.close",
+    "$.ui.copy",
+    "$.ui.invalidate",
+    "$.ui.open",
+    "$.ui.panes",
+    "$.ui.resolve",
+    "$.ui.toast"
+  ],
+  "envReads": [],
+  "envWrites": [],
+  "gatingWithoutCatch": [],
+  "commands": [],
+  "programs": [
+    "claude"
+  ],
+  "urls": [],
+  "license": "../../LICENSE",
+  "permissions": [
+    "process",
+    "env"
+  ]
+}

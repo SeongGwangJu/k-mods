@@ -1,0 +1,61 @@
+{
+  "$schema": "./_schema.json",
+  "name": "vercel-deploy-status",
+  "displayName": "Vercel 배포 현황",
+  "summary": "연결된 Vercel 프로젝트의 배포 대기열을 프롬프트 위 밴드에 큐잉·빌드·완료 단계별로 보여줘요.",
+  "summaryEn": "Pins the linked Vercel project's deploy queue above the prompt, one line per deploy with phase and elapsed time.",
+  "category": "integration",
+  "tags": [
+    "배포",
+    "Vercel"
+  ],
+  "kind": "upstream",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/ray-amjad/awesome-claude-code-function-hooks",
+    "path": "plugins/vercel-deploy-status",
+    "sha": "12b5fea27a4bd1b88cd9c9b6abc1efc0756c6625"
+  },
+  "upstream": {
+    "repo": "ray-amjad/awesome-claude-code-function-hooks",
+    "path": "plugins/vercel-deploy-status",
+    "commit": "12b5fea27a4bd1b88cd9c9b6abc1efc0756c6625",
+    "stars": 4
+  },
+  "author": {
+    "name": "Ray Amjad",
+    "url": "https://github.com/ray-amjad"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/ray-amjad/awesome-claude-code-function-hooks/tree/12b5fea27a4bd1b88cd9c9b6abc1efc0756c6625/plugins/vercel-deploy-status",
+  "surfaces": [
+    "terminal"
+  ],
+  "requires": [
+    "vercel CLI(PATH에 설치 및 로그인 필요, vercel whoami로 확인)",
+    "저장소에 .vercel/project.json 연결 파일(vercel link로 생성)"
+  ],
+  "notes": [
+    "CLI나 연결 파일이 없으면 디버그 로그에 한 줄만 남기고 조용히 아무 것도 그리지 않아요.",
+    "README에는 'CLAUDE_CODE_ENABLE_FUNCTION_HOOKS=1이 필요하다'고 적혀 있지만(초기 early-access 시절 문구로 보여요), 2.1.291에서는 별도 설정 없이 validate가 바로 통과했어요."
+  ],
+  "review": {
+    "date": "2026-10-06",
+    "by": "k-mods",
+    "claudeCode": "2.1.291",
+    "method": [
+      "validate",
+      "code-read"
+    ],
+    "findings": [
+      "모드 자체는 네트워크 호출을 직접 하지 않아요. vercel CLI를 거쳐 사용자 본인 Vercel 계정과 간접 통신해요",
+      "외부 프로그램 실행: `vercel ls --format json --non-interactive`(기본 15초/60초 주기 폴링), 모노레포에서 연결 파일을 못 찾으면 `find <repo> -maxdepth 4 ...`(10초 타임아웃)로 탐색",
+      "파일 읽기: .vercel/project.json(프로젝트 이름 확인용). 파일 쓰기 없음, 상태는 메모리에만 보관",
+      "모델 호출($.model.*) 없음",
+      "tool.call{tool=Bash} 훅은 git push/gh pr merge/vercel deploy 명령을 문자열로 감지해 폴링 주기를 앞당기기만 하고, deny·승인 없이 항상 next(e)로 통과시켜요.catch는 없지만(validate: hasCatch false) 단순 문자열 매칭 후 비동기 트리거라 예외 가능성은 낮아 보여요",
+      "env 읽기 없음(옵션은 pluginConfigs로만 받아요). 트랜스크립트 읽기 없음",
+      "기기 밖 데이터 전송: vercel CLI를 통한 사용자 본인 계정 통신 외에는 없어요",
+      "타이머: 유휴 60초/활성 15초 주기 폴링(설정 가능), push 뒤 최대 6분간 활성 주기 유지. 과도하지 않은 수준이에요"
+    ]
+  }
+}

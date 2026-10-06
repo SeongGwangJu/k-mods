@@ -1,0 +1,54 @@
+{
+  "name": "token-weather",
+  "displayName": "토큰 날씨",
+  "summary": "컨텍스트 창이 얼마나 찼는지 날씨 아이콘과 최근 턴 막대그래프로 입력창 위에 보여줘요.",
+  "summaryEn": "A live weather-style forecast of the context window above the prompt, with an icon, percent, and a bar chart of recent turns.",
+  "category": "statusline",
+  "tags": [
+    "컨텍스트",
+    "사용량",
+    "날씨",
+    "차트"
+  ],
+  "kind": "upstream",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/anthropics/claude-code-playground.git",
+    "path": "claude-code/mods/token-weather",
+    "sha": "569c5283d9a0a7ee7938df85bb32e4f48cbb8c86"
+  },
+  "upstream": {
+    "repo": "anthropics/claude-code-playground",
+    "path": "claude-code/mods/token-weather",
+    "commit": "569c5283d9a0a7ee7938df85bb32e4f48cbb8c86",
+    "stars": 127
+  },
+  "author": {
+    "name": "Claude Code DevRel",
+    "url": "https://github.com/anthropics"
+  },
+  "license": "Apache-2.0",
+  "homepage": "https://github.com/anthropics/claude-code-playground/tree/main/claude-code/mods/token-weather",
+  "surfaces": [
+    "terminal",
+    "desktop"
+  ],
+  "notes": [
+    "턴이 끝날 때마다 `$.session.usage()`로 컨텍스트 사용률만 다시 읽어요. 추가 네트워크·모델 호출 없어요.",
+    "최근 12번 턴의 토큰 수를 막대그래프로 보여줘요."
+  ],
+  "review": {
+    "date": "2026-10-06",
+    "by": "k-mods",
+    "claudeCode": "2.1.291",
+    "method": [
+      "validate",
+      "code-read"
+    ],
+    "findings": [
+      "validate 통과, gatingHooks 없음.",
+      "코드 전체(단일 파일, 약 110줄) 확인: $.session.usage, $.ui.invalidate, $.ui.resolve 만 사용. 네트워크·모델 호출·외부 프로세스·파일 쓰기 전혀 없음.",
+      "명령을 등록하지 않고 자동으로 보여요(k-mods 기여 가이드가 권하는 '자동 표시' 패턴과 일치)."
+    ]
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "name": "switchboard",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/hamzafer/claude-code-mods",
+    "path": "mods/switchboard",
+    "sha": "adf9d72d81cb04284416371f9de8a6f937dcc631"
+  },
+  "auditedWith": "2.1.291",
+  "validate": {
+    "success": true,
+    "errors": [],
+    "warnings": []
+  },
+  "hooks": [
+    "agent.spawn",
+    "command.run{command=route}",
+    "session.start",
+    "turn.complete",
+    "ui.render{component=AbovePrompt}",
+    "ui.render{component=Pane, requestId=switchboard}"
+  ],
+  "calls": [
+    "$.clock.every",
+    "$.clock.sleep",
+    "$.command.register",
+    "$.env.get",
+    "$.http.fetch",
+    "$.state.get",
+    "$.state.set",
+    "$.ui.close",
+    "$.ui.open",
+    "$.ui.resolve"
+  ],
+  "envReads": [
+    "AI_GATEWAY_API_KEY",
+    "TYPESAFE_API_KEY"
+  ],
+  "envWrites": [
+    "nothing"
+  ],
+  "gatingWithoutCatch": [
+    "agent.spawn"
+  ],
+  "commands": [
+    "/route"
+  ],
+  "programs": [],
+  "urls": [
+    "https://ai-gateway.vercel.sh/v1/evaluate",
+    "https://api.typesafe.ai/v1/systemone"
+  ],
+  "license": "../../LICENSE",
+  "permissions": [
+    "network",
+    "chat",
+    "env"
+  ]
+}

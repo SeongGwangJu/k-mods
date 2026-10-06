@@ -1,0 +1,62 @@
+{
+  "$schema": "./_schema.json",
+  "name": "where-am-i",
+  "displayName": "현재 상황 요약",
+  "summary": "목표·지금 하는 일·내게 기다리는 것·다음 할 일을 입력창 위에 한눈에 보여주고, /where로 더 긴 요약도 볼 수 있어요.",
+  "summaryEn": "A live recap above the prompt (goal, doing now, waiting on you, next), with /where for a longer bullet-point summary.",
+  "category": "automation",
+  "tags": [
+    "recap",
+    "상태줄"
+  ],
+  "kind": "upstream",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/hamzafer/claude-code-mods",
+    "path": "mods/where-am-i",
+    "sha": "adf9d72d81cb04284416371f9de8a6f937dcc631"
+  },
+  "upstream": {
+    "repo": "hamzafer/claude-code-mods",
+    "path": "mods/where-am-i",
+    "commit": "adf9d72d81cb04284416371f9de8a6f937dcc631",
+    "stars": 119
+  },
+  "author": {
+    "name": "Hamza Zafar",
+    "url": "https://github.com/hamzafer"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/hamzafer/claude-code-mods/tree/main/mods/where-am-i",
+  "commands": [
+    "/where"
+  ],
+  "surfaces": [
+    "terminal",
+    "desktop"
+  ],
+  "preview": "https://raw.githubusercontent.com/hamzafer/claude-code-mods/adf9d72d81cb04284416371f9de8a6f937dcc631/images/where-am-i.png",
+  "notes": [
+    "같은 저장소의 next-steps와 서로 인지하도록 짜여 있어요. next-steps의 제안 목록이 떠 있는 동안에는 이 mod가 자기 '다음' 칸을 비워서 중복 표시를 피해요($.state로 next-steps.active를 읽음)."
+  ],
+  "review": {
+    "date": "2026-10-06",
+    "by": "k-mods",
+    "claudeCode": "2.1.291",
+    "method": [
+      "validate",
+      "code-read"
+    ],
+    "findings": [
+      "validate 성공(success:true), errors/warnings 없음. gatingHooks 2건(prompt.submit, tool.call)이 .catch 없이 등록되지만, 둘 다 '무슨 일이 일어나고 있는지' 기록만 하고 항상 next()로 통과시켜요. deny 로직이 없어요.",
+      "네트워크 목적지: 없음.",
+      "외부 프로그램 실행: 없음.",
+      "파일 쓰기: 없음. $.state(where-am-i.recap/live)에만 저장돼요.",
+      "모델 호출($.model.*): ① 메인 턴이 끝날 때마다 1회, Haiku에 이전 요약(JSON)·사용자의 최신 메시지(1500자까지)·이번 턴 도구 호출 로그·답변(2500자까지)을 보내 goal/now/waiting/next 네 칸을 갱신, ② /where 실행 시 Haiku에 최근 메시지 12개(각 800자까지)를 보내 긴 요약을 요청해요. 둘 다 사용자 자신의 Claude 사용량을 쓰고, 이 mod의 유일한 모델 호출이에요.",
+      "prompt.submit/tool.call 훅 동작: 제출과 도구 호출을 막지 않고 '지금 하는 일' 한 줄과 도구 호출 로그만 갱신해요(엔진이 직접 일으킨 호출만 집계하고 다른 mod가 백그라운드로 일으킨 호출은 제외).",
+      "env/설정 읽기: 없음. 트랜스크립트는 $.session.messages() 일부를 모델 호출 프롬프트에 포함할 뿐, 기기 밖으로 보내지 않아요.",
+      "기기 밖 데이터 전송: 없음(모델 호출은 Claude Code 자체 채널).",
+      "타이머/폴링: 없음. 턴 이벤트에만 반응해요."
+    ]
+  }
+}

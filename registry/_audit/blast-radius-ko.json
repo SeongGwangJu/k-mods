@@ -1,0 +1,40 @@
+{
+  "name": "blast-radius-ko",
+  "source": "./mods/blast-radius-ko",
+  "auditedWith": "2.1.291",
+  "validate": {
+    "success": true,
+    "errors": [],
+    "warnings": []
+  },
+  "hooks": [
+    "tool.call{tool=Bash}",
+    "ui.render{component=AbovePrompt}",
+    "ui.render{component=Pane}"
+  ],
+  "calls": [
+    "$.clock.now",
+    "$.process.run",
+    "$.session.cwd",
+    "$.ui.close",
+    "$.ui.invalidate",
+    "$.ui.open",
+    "$.ui.resolve",
+    "$.ui.toast"
+  ],
+  "envReads": [],
+  "envWrites": [],
+  "gatingWithoutCatch": [],
+  "commands": [],
+  "programs": [
+    "bash",
+    "git",
+    "sleep"
+  ],
+  "urls": [],
+  "license": "LICENSE",
+  "permissions": [
+    "process",
+    "gate"
+  ]
+}

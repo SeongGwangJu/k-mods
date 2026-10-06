@@ -1,0 +1,65 @@
+{
+  "name": "flightdeck",
+  "source": {
+    "source": "github",
+    "repo": "scasella/claude-flightdeck",
+    "sha": "f31daca523d36c501cd0df23a737a44c7dc56ad6"
+  },
+  "auditedWith": "2.1.291",
+  "validate": {
+    "success": true,
+    "errors": [],
+    "warnings": []
+  },
+  "hooks": [
+    "agent.offer",
+    "agent.spawn",
+    "classic.UserPromptSubmit",
+    "command.run{command=flightdeck}",
+    "session.append",
+    "session.compact",
+    "session.end",
+    "session.measure",
+    "session.start",
+    "tool.call",
+    "tool.check",
+    "turn.complete",
+    "turn.start",
+    "turn.step",
+    "ui.render{component=Pane, requestId=flightdeck}"
+  ],
+  "calls": [
+    "$.clock.now",
+    "$.command.register",
+    "$.session.usage",
+    "$.state.get",
+    "$.state.set",
+    "$.ui.close",
+    "$.ui.open",
+    "$.ui.resolve",
+    "$.ui.status"
+  ],
+  "envReads": [],
+  "envWrites": [],
+  "gatingWithoutCatch": [
+    "agent.offer",
+    "agent.spawn",
+    "classic.UserPromptSubmit",
+    "session.append",
+    "session.compact",
+    "tool.call",
+    "tool.check"
+  ],
+  "commands": [
+    "/flightdeck"
+  ],
+  "programs": [],
+  "urls": [
+    "http://www.w3.org/2000/svg"
+  ],
+  "license": "LICENSE",
+  "permissions": [
+    "gate",
+    "chat"
+  ]
+}

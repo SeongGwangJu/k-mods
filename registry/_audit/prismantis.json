@@ -1,0 +1,57 @@
+{
+  "name": "prismantis",
+  "source": {
+    "source": "github",
+    "repo": "NahumLitvin/prismantis",
+    "sha": "1e33faae6d36fdf4547260ea844c9f241dff87f4"
+  },
+  "auditedWith": "2.1.291",
+  "validate": {
+    "success": true,
+    "errors": [],
+    "warnings": []
+  },
+  "hooks": [
+    "command.run{command=prismantis}",
+    "prompt.submit",
+    "session.start",
+    "ui.render{component=AssistantMessage}",
+    "ui.render{component=CommandOutput}",
+    "ui.render{component=ToolGroup}",
+    "ui.render{component=ToolUse}",
+    "ui.render{component=TurnDuration}",
+    "ui.render{component=UserMessage}"
+  ],
+  "calls": [
+    "$.command.register",
+    "$.config.set",
+    "$.env.get",
+    "$.session.messages",
+    "$.ui.copy",
+    "$.ui.resolve",
+    "$.ui.toast"
+  ],
+  "envReads": [
+    "ALACRITTY_WINDOW_ID",
+    "KITTY_WINDOW_ID",
+    "KONSOLE_VERSION",
+    "TERM",
+    "TERM_PROGRAM",
+    "VTE_VERSION",
+    "WT_SESSION"
+  ],
+  "envWrites": [
+    "nothing"
+  ],
+  "gatingWithoutCatch": [
+    "prompt.submit"
+  ],
+  "commands": [],
+  "programs": [],
+  "urls": [],
+  "license": "LICENSE",
+  "permissions": [
+    "chat",
+    "env"
+  ]
+}

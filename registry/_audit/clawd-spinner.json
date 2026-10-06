@@ -1,0 +1,43 @@
+{
+  "name": "clawd-spinner",
+  "source": {
+    "source": "github",
+    "repo": "saiharsha03/clawd-spinner",
+    "sha": "83550929abac306fe71b12588a53e996321b6e76"
+  },
+  "auditedWith": "2.1.291",
+  "validate": {
+    "success": true,
+    "errors": [],
+    "warnings": []
+  },
+  "hooks": [
+    "command.run{command=clawd-talk}",
+    "session.start",
+    "turn.complete",
+    "turn.start",
+    "ui.render{component=Spinner}"
+  ],
+  "calls": [
+    "$.clock.every",
+    "$.clock.now",
+    "$.command.register",
+    "$.store.get",
+    "$.store.set",
+    "$.ui.blit",
+    "$.ui.invalidate",
+    "$.ui.resolve"
+  ],
+  "envReads": [],
+  "envWrites": [],
+  "gatingWithoutCatch": [],
+  "commands": [
+    "/clawd-talk"
+  ],
+  "programs": [],
+  "urls": [],
+  "license": "LICENSE",
+  "permissions": [
+    "chat"
+  ]
+}

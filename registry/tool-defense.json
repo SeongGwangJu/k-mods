@@ -1,0 +1,60 @@
+{
+  "$schema": "./_schema.json",
+  "name": "tool-defense",
+  "displayName": "툴 디펜스",
+  "summary": "Claude의 실제 도구 호출(Bash·Edit·웹·Agent)이 그대로 적 유닛이 되는 타워 디펜스예요. 토큰 소모 없이 입력창 위에서 플레이해요",
+  "summaryEn": "A tower defense where every enemy is one of Claude's real tool calls (Bash, Edit, web/MCP, Agent); zero tokens, played above the prompt.",
+  "category": "animation",
+  "tags": [
+    "게임",
+    "타워 디펜스",
+    "도구 호출"
+  ],
+  "kind": "upstream",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/davila7/claude-code-templates",
+    "path": "cli-tool/components/mods/games/tool-defense",
+    "sha": "375af9018a40e330e81542f59054daaa088c21aa"
+  },
+  "upstream": {
+    "repo": "davila7/claude-code-templates",
+    "path": "cli-tool/components/mods/games/tool-defense",
+    "commit": "375af9018a40e330e81542f59054daaa088c21aa",
+    "stars": 32416
+  },
+  "author": {
+    "name": "claude-code-templates",
+    "url": "https://www.aitmpl.com"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/davila7/claude-code-templates/tree/375af9018a40e330e81542f59054daaa088c21aa/cli-tool/components/mods/games/tool-defense",
+  "commands": [
+    "/defense"
+  ],
+  "surfaces": [
+    "terminal"
+  ],
+  "notes": [
+    "클릭(마우스)으로 타워를 짓고 업그레이드해요. 일시정지·재시작은 키보드(스페이스/p/r)로도 가능해요",
+    "최고 점수만 $.store(plugin 전용 저장소)에 남기고, 그 외 기기 밖 전송은 없어요",
+    "README에 'claude -p, 데스크톱 앱, 모바일에서는 아무것도 그려지지 않는다'고 명시되어 있어요(마우스 가능한 terminal 전용)"
+  ],
+  "review": {
+    "date": "2026-10-06",
+    "by": "k-mods",
+    "claudeCode": "2.1.291",
+    "method": [
+      "validate",
+      "code-read"
+    ],
+    "findings": [
+      "네트워크 호출 없음, 외부 프로그램 실행 없음, 모델 호출 없음. 저자가 'Zero tokens'라고 명시",
+      "파일 쓰기 없음. 최고 점수는 $.store.get/set(plugin 전용 키-값 저장소)에만 저장",
+      "tool.call 훅(모든 도구 대상)이 호출 시작 시점에 관찰만 해서 적 유닛을 큐에 추가. next(e)를 무조건 호출, deny 로직 없음(validate는 구조상 gatingHooks hasCatch:false로 표시)",
+      "env·설정·트랜스크립트 읽기 없음, 타이머·폴링 없음(이벤트 기반)",
+      "마우스 입력이 필수라 README에 데스크톱 앱·claude -p·모바일에서는 그려지지 않는다고 명시됨",
+      "명시된 최소 Claude Code 버전: 2.1.287. 외부 CLI 도구 불필요, 마우스를 지원하는 인터랙티브 터미널 필요"
+    ]
+  }
+}

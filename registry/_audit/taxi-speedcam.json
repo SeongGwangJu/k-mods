@@ -1,0 +1,46 @@
+{
+  "name": "taxi-speedcam",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/devbrother2024/devbrothers-mods.git",
+    "path": "plugins/taxi-speedcam",
+    "sha": "82b075ca7af3e066a4c88f542dabb95888225e1e"
+  },
+  "auditedWith": "2.1.291",
+  "validate": {
+    "success": true,
+    "errors": [],
+    "warnings": []
+  },
+  "hooks": [
+    "command.run{command=speedcam}",
+    "session.start",
+    "tool.call{tool=Bash}",
+    "ui.render{component=AbovePrompt}"
+  ],
+  "calls": [
+    "$.audio.play",
+    "$.audio.speak",
+    "$.clock.after",
+    "$.clock.now",
+    "$.command.register",
+    "$.ui.ask",
+    "$.ui.invalidate",
+    "$.ui.resolve"
+  ],
+  "envReads": [],
+  "envWrites": [],
+  "gatingWithoutCatch": [
+    "tool.call{tool=Bash}"
+  ],
+  "commands": [
+    "/speedcam"
+  ],
+  "programs": [],
+  "urls": [],
+  "license": "../../LICENSE",
+  "permissions": [
+    "gate",
+    "sound"
+  ]
+}

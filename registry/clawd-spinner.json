@@ -1,0 +1,32 @@
+{
+  "name": "clawd-spinner",
+  "displayName": "Clawd 스피너",
+  "summary": "189가지 스피너 단어마다 Clawd가 요리하거나 춤추거나 서성거리는 등 다른 몸짓을 연기해요.",
+  "summaryEn": "Clawd acts out the spinner's word above it—cooking, dancing, pacing—with a scene for every one of 189 spinner words, no model calls.",
+  "category": "animation",
+  "tags": ["Clawd", "스피너", "애니메이션", "마스코트"],
+  "kind": "upstream",
+  "source": { "source": "github", "repo": "saiharsha03/clawd-spinner", "sha": "83550929abac306fe71b12588a53e996321b6e76" },
+  "upstream": { "repo": "saiharsha03/clawd-spinner", "commit": "83550929abac306fe71b12588a53e996321b6e76", "stars": 1 },
+  "author": { "name": "Sai Rudra", "url": "https://github.com/saiharsha03" },
+  "license": "MIT",
+  "homepage": "https://github.com/saiharsha03/clawd-spinner",
+  "commands": ["/clawd-talk"],
+  "surfaces": ["terminal"],
+  "preview": "https://raw.githubusercontent.com/saiharsha03/clawd-spinner/83550929abac306fe71b12588a53e996321b6e76/icon.png",
+  "notes": [
+    "좁은 터미널(50칸 미만)에서는 자동으로 숨고 기본 스피너만 보여요.",
+    "`/clawd-talk`로 말풍선을 껐다 켤 수 있고, 설정은 세션 간 기억돼요."
+  ],
+  "review": {
+    "date": "2026-10-06",
+    "by": "k-mods",
+    "claudeCode": "2.1.291",
+    "method": ["validate", "code-read"],
+    "findings": [
+      "validate 통과, gatingHooks 없음(차단 가능한 훅 자체를 쓰지 않음).",
+      "네트워크·모델 호출·외부 프로세스·파일 쓰기 없음(validate calls: clock/command/store/ui.blit/ui.invalidate/ui.resolve 뿐).",
+      "session.start에서 e.isInteractive가 false면(-p·SDK 실행) 애니메이션 타이머 자체를 시작하지 않음을 코드로 확인함."
+    ]
+  }
+}

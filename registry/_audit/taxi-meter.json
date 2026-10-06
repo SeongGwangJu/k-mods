@@ -1,0 +1,59 @@
+{
+  "name": "taxi-meter",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/devbrother2024/devbrothers-mods.git",
+    "path": "plugins/taxi-meter",
+    "sha": "82b075ca7af3e066a4c88f542dabb95888225e1e"
+  },
+  "auditedWith": "2.1.291",
+  "validate": {
+    "success": true,
+    "errors": [],
+    "warnings": []
+  },
+  "hooks": [
+    "classic.PostModelSwitch",
+    "classic.SessionStart",
+    "command.run{command=meter}",
+    "command.run{command=receipt}",
+    "session.end",
+    "session.measure",
+    "session.start",
+    "turn.complete",
+    "turn.start",
+    "turn.step",
+    "ui.render{component=AbovePrompt}",
+    "ui.render{component=Pane}"
+  ],
+  "calls": [
+    "$.audio.play",
+    "$.clock.every",
+    "$.clock.now",
+    "$.command.register",
+    "$.session.usage",
+    "$.store.get",
+    "$.store.set",
+    "$.ui.invalidate",
+    "$.ui.open",
+    "$.ui.resolve",
+    "$.ui.toast"
+  ],
+  "envReads": [],
+  "envWrites": [],
+  "gatingWithoutCatch": [
+    "classic.PostModelSwitch",
+    "classic.SessionStart"
+  ],
+  "commands": [
+    "/meter",
+    "/receipt"
+  ],
+  "programs": [],
+  "urls": [],
+  "license": "../../LICENSE",
+  "permissions": [
+    "chat",
+    "sound"
+  ]
+}

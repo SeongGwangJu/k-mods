@@ -1,0 +1,69 @@
+{
+  "$schema": "./_schema.json",
+  "name": "glance",
+  "displayName": "글랜스",
+  "summary": "다음 회의·리뷰 요청된 PR·진행 중인 Linear 이슈·최근 Slack DM을 입력창 위 한 줄로 보여주고, /glance로 전체 목록을 확인해요.",
+  "summaryEn": "One line above the prompt for what needs you: the next meeting, PRs awaiting review, in-progress Linear issues, and recent Slack DMs.",
+  "category": "integration",
+  "tags": [
+    "상태줄",
+    "일정",
+    "Slack"
+  ],
+  "kind": "upstream",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/hamzafer/claude-code-mods",
+    "path": "mods/glance",
+    "sha": "adf9d72d81cb04284416371f9de8a6f937dcc631"
+  },
+  "upstream": {
+    "repo": "hamzafer/claude-code-mods",
+    "path": "mods/glance",
+    "commit": "adf9d72d81cb04284416371f9de8a6f937dcc631",
+    "stars": 119
+  },
+  "author": {
+    "name": "Hamza Zafar",
+    "url": "https://github.com/hamzafer"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/hamzafer/claude-code-mods/tree/main/mods/glance",
+  "commands": [
+    "/glance"
+  ],
+  "surfaces": [
+    "terminal",
+    "desktop"
+  ],
+  "requires": [
+    "gh CLI 로그인",
+    "claude.ai Google Calendar 커넥터",
+    "claude.ai Linear 커넥터",
+    "claude.ai Slack 커넥터"
+  ],
+  "notes": [
+    "원저장소 README가 이 mod를 '🔧 My setup (fork and adapt)' 섹션에 두고 '내 도구와 규칙을 중심으로 만들었으니 포크해서 자기 것으로 바꾸라'고 명시해요. gh + Google Calendar + Linear + Slack 네 가지를 모두 쓰는 팀에서만 전체 기능이 살아나고, 하나라도 없으면 그 칸만 조용히 빠져요. 범용성은 낮지만 해당 스택을 쓰는 한국 개발팀에는 실제로 유용하다고 판단해 등록해요.",
+    "Slack에는 '나를 멘션' 전용 검색 필터가 없어서, 로그인한 사용자의 Slack id를 최초 1회 slack_read_user_profile로 조회해 메모리에만 보관하고 이후 검색 키워드로 재사용해요(디스크 저장·외부 전송 없음, README에도 명시된 동작)."
+  ],
+  "review": {
+    "date": "2026-10-06",
+    "by": "k-mods",
+    "claudeCode": "2.1.291",
+    "method": [
+      "validate",
+      "code-read"
+    ],
+    "findings": [
+      "validate 성공(success:true), errors/warnings 없음, gatingHooks 없음(도구 호출을 막는 로직이 없어요).",
+      "네트워크 목적지: 이 mod가 직접 여는 네트워크 연결은 없어요. 대신 $.mcp.call로 claude.ai의 Google Calendar(list_events)·Linear(list_issues)·Slack(slack_search_public_and_private, slack_read_user_profile) 커넥터를 호출해요. 모두 사용자가 사전에 연결 승인한 통로예요.",
+      "외부 프로그램 실행: `gh api graphql -f query=<고정 쿼리>`로 '리뷰 요청된 PR'과 '내 PR의 CI/리뷰 상태'를 한 번에 조회해요(사용자 입력이 쿼리에 섞이지 않는 고정 GraphQL 문자열).",
+      "파일 쓰기: 없음.",
+      "모델 호출($.model.*): 없음.",
+      "prompt.submit/tool.call/tool.check 훅: 등록하지 않음.",
+      "env/설정 읽기: 없음. 트랜스크립트·대화 내용 읽기 없음. 다루는 데이터는 모두 캘린더·PR·이슈·Slack 메시지이지 Claude와의 대화 내용이 아니에요.",
+      "기기 밖 데이터 전송: 이미 연결된 커넥터·gh 호출 자체가 외부 서비스에 조회 요청을 보내는 것 외에, 조회해 온 개인 일정·PR·이슈·DM 내용을 다시 다른 곳으로 전송하는 코드는 없어요(화면 표시 + 로컬 $.state 저장까지만).",
+      "타이머/폴링: 세션 시작 시 1회, 이후 5분마다 자동 새로고침($.clock.every). 각 소스가 실패해도 마지막 값을 흐리게 표시하며 서로 독립적으로 재시도해요. 무거운 폴링은 아니에요."
+    ]
+  }
+}

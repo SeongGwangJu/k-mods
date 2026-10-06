@@ -1,0 +1,34 @@
+{
+  "$schema": "./_schema.json",
+  "name": "taxi-pack",
+  "displayName": "택시팩",
+  "summary": "Claude Code를 택시로: 미터기(요금·한도), 내비(할 일 경로), 과속카메라(위험 명령 확인), 블랙박스(도구 호출 녹화)를 한 번에 설치해요",
+  "summaryEn": "Claude Code as a taxi ride: meter (cost and limits), navigation (todo route), speed camera (risky-command check) and dashcam (tool-call recorder) in one install",
+  "category": "bundle",
+  "tags": [
+    "택시",
+    "재미",
+    "한국"
+  ],
+  "kind": "bundle",
+  "source": "./bundles/taxi-pack",
+  "dependencies": [
+    "taxi-meter",
+    "taxi-navi",
+    "taxi-speedcam",
+    "taxi-blackbox"
+  ],
+  "author": {
+    "name": "개발동생 (devbrothers)",
+    "url": "https://github.com/devbrother2024"
+  },
+  "license": "MIT",
+  "review": {
+    "date": "2026-10-06",
+    "by": "k-mods",
+    "claudeCode": "2.1.291",
+    "method": [
+      "validate"
+    ]
+  }
+}

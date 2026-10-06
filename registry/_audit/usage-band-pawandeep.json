@@ -1,0 +1,47 @@
+{
+  "name": "usage-band-pawandeep",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/pawandeepdhall/claude-mods",
+    "path": "plugins/usage-band",
+    "sha": "e00264e286951fd6522a12e321cc56f3ebe3c598"
+  },
+  "auditedWith": "2.1.291",
+  "validate": {
+    "success": true,
+    "errors": [],
+    "warnings": []
+  },
+  "hooks": [
+    "session.measure",
+    "session.start",
+    "ui.render{component=AbovePrompt}"
+  ],
+  "calls": [
+    "$.clock.every",
+    "$.clock.now",
+    "$.process.run",
+    "$.prompt.submit",
+    "$.session.usage",
+    "$.state.get",
+    "$.state.set",
+    "$.ui.resolve"
+  ],
+  "envReads": [],
+  "envWrites": [],
+  "gatingWithoutCatch": [],
+  "commands": [],
+  "programs": [
+    "git",
+    "osascript",
+    "wscript.exe"
+  ],
+  "urls": [
+    "http://www.w3.org/2000/svg"
+  ],
+  "license": "../../LICENSE",
+  "permissions": [
+    "process",
+    "prompt"
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "$schema": "./_schema.json",
+  "name": "ctx-strip",
+  "displayName": "컨텍스트 막대",
+  "summary": "컨텍스트가 무엇으로 차 있는지(대화·도구·스킬…) 입력창 위 막대로 보여주고, 서브에이전트가 돌면 한 줄로 알려줘요",
+  "summaryEn": "A stacked bar above the prompt showing what fills your context window, plus a live line for running subagents",
+  "category": "statusline",
+  "tags": [
+    "컨텍스트",
+    "토큰",
+    "서브에이전트"
+  ],
+  "kind": "original",
+  "source": "./mods/ctx-strip",
+  "author": {
+    "name": "SeongGwangJu",
+    "url": "https://github.com/SeongGwangJu"
+  },
+  "license": "MIT",
+  "commands": [
+    "/ctx"
+  ],
+  "surfaces": [
+    "terminal",
+    "desktop"
+  ],
+  "review": {
+    "date": "2026-10-06",
+    "by": "k-mods",
+    "claudeCode": "2.1.291",
+    "method": [
+      "validate",
+      "code-read",
+      "unit-test",
+      "live-session"
+    ]
+  }
+}

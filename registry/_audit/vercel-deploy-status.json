@@ -1,0 +1,49 @@
+{
+  "name": "vercel-deploy-status",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/ray-amjad/awesome-claude-code-function-hooks",
+    "path": "plugins/vercel-deploy-status",
+    "sha": "12b5fea27a4bd1b88cd9c9b6abc1efc0756c6625"
+  },
+  "auditedWith": "2.1.291",
+  "validate": {
+    "success": true,
+    "errors": [],
+    "warnings": []
+  },
+  "hooks": [
+    "session.start",
+    "tool.call{tool=Bash}",
+    "ui.render{component=AbovePrompt, surface=terminal}"
+  ],
+  "calls": [
+    "$.clock.after",
+    "$.clock.every",
+    "$.clock.now",
+    "$.fs.exists",
+    "$.fs.readFile",
+    "$.process.run",
+    "$.session.repo",
+    "$.ui.invalidate",
+    "$.ui.log",
+    "$.ui.resolve",
+    "$.ui.toast"
+  ],
+  "envReads": [],
+  "envWrites": [],
+  "gatingWithoutCatch": [
+    "tool.call{tool=Bash}"
+  ],
+  "commands": [],
+  "programs": [
+    "find"
+  ],
+  "urls": [],
+  "license": "../../LICENSE",
+  "permissions": [
+    "process",
+    "gate",
+    "fs-read"
+  ]
+}

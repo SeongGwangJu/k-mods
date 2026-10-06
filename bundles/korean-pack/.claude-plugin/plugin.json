@@ -1,0 +1,16 @@
+{
+  "name": "korean-pack",
+  "version": "0.1.0",
+  "description": "메뉴·설정 번역(ko-ui)과 작업 상태 한국어(status-ko)를 한 번에 설치해 Claude Code 화면을 한국어로 바꿔요",
+  "author": {
+    "name": "SeongGwangJu",
+    "url": "https://github.com/SeongGwangJu"
+  },
+  "homepage": "https://github.com/SeongGwangJu/k-mods/tree/main/bundles/korean-pack",
+  "repository": "https://github.com/SeongGwangJu/k-mods",
+  "license": "MIT",
+  "dependencies": [
+    "ko-ui",
+    "status-ko"
+  ]
+}

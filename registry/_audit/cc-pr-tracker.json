@@ -1,0 +1,78 @@
+{
+  "name": "cc-pr-tracker",
+  "source": {
+    "source": "github",
+    "repo": "sezaakgun/cc-pr-tracker",
+    "sha": "605b8fc515c3b4842b3b3b15c9757ae5bc351b86"
+  },
+  "auditedWith": "2.1.291",
+  "validate": {
+    "success": true,
+    "errors": [],
+    "warnings": []
+  },
+  "hooks": [
+    "config.describe{key=\"cc-pr-tracker.muteAll\"}",
+    "config.set",
+    "prompt.submit",
+    "session.end",
+    "session.start",
+    "tool.call{tool=Bash}",
+    "tool.call{tool=mcp__cc-pr-tracker__pr_status}",
+    "turn.complete",
+    "ui.render{component=AbovePrompt}",
+    "ui.render{component=Pane}"
+  ],
+  "calls": [
+    "$.clock.after",
+    "$.clock.every",
+    "$.clock.now",
+    "$.env.get",
+    "$.fs.exists",
+    "$.process.run",
+    "$.session.append",
+    "$.session.root",
+    "$.state.get",
+    "$.state.set",
+    "$.store.get",
+    "$.store.set",
+    "$.tool.register",
+    "$.ui.close",
+    "$.ui.copy",
+    "$.ui.invalidate",
+    "$.ui.log",
+    "$.ui.open",
+    "$.ui.resolve",
+    "$.ui.toast"
+  ],
+  "envReads": [
+    "CMUX_BUNDLED_CLI_PATH",
+    "CMUX_SURFACE_ID"
+  ],
+  "envWrites": [
+    "nothing"
+  ],
+  "gatingWithoutCatch": [
+    "config.set",
+    "prompt.submit",
+    "tool.call{tool=Bash}",
+    "tool.call{tool=mcp__cc-pr-tracker__pr_status}"
+  ],
+  "commands": [],
+  "programs": [
+    "afplay",
+    "open",
+    "xdg-open"
+  ],
+  "urls": [
+    "http://localhost"
+  ],
+  "license": "LICENSE",
+  "permissions": [
+    "process",
+    "gate",
+    "chat",
+    "env",
+    "fs-read"
+  ]
+}

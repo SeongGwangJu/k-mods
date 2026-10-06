@@ -1,0 +1,57 @@
+{
+  "name": "replay-theater",
+  "displayName": "Replay 극장",
+  "summary": "이번 턴에서 Claude가 고친 파일들을 한 스텝씩 diff로 넘겨보며 다시 볼 수 있어요.",
+  "summaryEn": "Step through the file edits Claude made in the last turn, one diff at a time, in a pane.",
+  "category": "tool",
+  "tags": [
+    "diff",
+    "리플레이",
+    "편집기록"
+  ],
+  "kind": "upstream",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/anthropics/claude-code-playground.git",
+    "path": "claude-code/mods/replay-theater",
+    "sha": "569c5283d9a0a7ee7938df85bb32e4f48cbb8c86"
+  },
+  "upstream": {
+    "repo": "anthropics/claude-code-playground",
+    "path": "claude-code/mods/replay-theater",
+    "commit": "569c5283d9a0a7ee7938df85bb32e4f48cbb8c86",
+    "stars": 127
+  },
+  "author": {
+    "name": "Claude Code DevRel",
+    "url": "https://github.com/anthropics"
+  },
+  "license": "Apache-2.0",
+  "homepage": "https://github.com/anthropics/claude-code-playground/tree/main/claude-code/mods/replay-theater",
+  "commands": [
+    "/replay"
+  ],
+  "surfaces": [
+    "terminal",
+    "desktop"
+  ],
+  "preview": "https://raw.githubusercontent.com/anthropics/claude-code-playground/569c5283d9a0a7ee7938df85bb32e4f48cbb8c86/claude-code/mods/replay-theater/screenshots/replay-theater-pane.png",
+  "notes": [
+    "Write로 기존 파일을 덮어쓸 때는 그 파일의 원래 내용을 읽어와 diff를 만들어요(그 외 다른 파일은 읽지 않아요).",
+    "리플레이 기록은 메모리에만 있어서 세션을 새로고침하면 사라져요."
+  ],
+  "review": {
+    "date": "2026-10-06",
+    "by": "k-mods",
+    "claudeCode": "2.1.291",
+    "method": [
+      "validate",
+      "code-read"
+    ],
+    "findings": [
+      "validate 통과. tool.call·ui.close가 .catch 없이 플래그됐지만, 코드 주석 'Never blocks the call'대로 try/catch로 기록 단계만 감싸고 무조건 next(e)를 반환. 실제 편집을 막는 로직 없음.",
+      "네트워크·모델 호출·외부 프로세스 없음. $.fs.read/$.fs.exists는 Write 대상 파일 자신의 이전 내용을 diff 생성용으로만 읽음.",
+      "편집 기록은 모듈 변수에만 보관되고 파일·store에 저장하지 않음. 세션 종료 시 사라짐."
+    ]
+  }
+}

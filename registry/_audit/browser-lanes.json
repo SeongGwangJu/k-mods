@@ -1,0 +1,60 @@
+{
+  "name": "browser-lanes",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/hamzafer/claude-code-mods",
+    "path": "mods/browser-lanes",
+    "sha": "adf9d72d81cb04284416371f9de8a6f937dcc631"
+  },
+  "auditedWith": "2.1.291",
+  "validate": {
+    "success": true,
+    "errors": [],
+    "warnings": []
+  },
+  "hooks": [
+    "agent.spawn",
+    "command.run{command=browser}",
+    "session.end",
+    "session.start",
+    "tool.call",
+    "turn.complete",
+    "ui.render{component=AbovePrompt}"
+  ],
+  "calls": [
+    "$.command.register",
+    "$.process.run",
+    "$.session.cwd",
+    "$.session.id",
+    "$.state.get",
+    "$.state.set",
+    "$.store.get",
+    "$.store.set",
+    "$.ui.ask",
+    "$.ui.resolve",
+    "$.ui.toast"
+  ],
+  "envReads": [],
+  "envWrites": [],
+  "gatingWithoutCatch": [
+    "agent.spawn",
+    "tool.call"
+  ],
+  "commands": [
+    "/browser"
+  ],
+  "programs": [
+    "kill",
+    "lsof",
+    "ps",
+    "sh",
+    "sleep"
+  ],
+  "urls": [],
+  "license": "../../LICENSE",
+  "permissions": [
+    "process",
+    "gate",
+    "chat"
+  ]
+}

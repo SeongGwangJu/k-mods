@@ -1,0 +1,48 @@
+{
+  "name": "taxi-blackbox",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/devbrother2024/devbrothers-mods.git",
+    "path": "plugins/taxi-blackbox",
+    "sha": "82b075ca7af3e066a4c88f542dabb95888225e1e"
+  },
+  "auditedWith": "2.1.291",
+  "validate": {
+    "success": true,
+    "errors": [],
+    "warnings": []
+  },
+  "hooks": [
+    "command.run{command=blackbox}",
+    "session.end",
+    "session.start",
+    "tool.call",
+    "turn.complete",
+    "turn.start",
+    "ui.render{component=AbovePrompt}",
+    "ui.render{component=Pane}"
+  ],
+  "calls": [
+    "$.clock.every",
+    "$.clock.now",
+    "$.command.register",
+    "$.ui.invalidate",
+    "$.ui.open",
+    "$.ui.resolve"
+  ],
+  "envReads": [],
+  "envWrites": [],
+  "gatingWithoutCatch": [
+    "tool.call"
+  ],
+  "commands": [
+    "/blackbox"
+  ],
+  "programs": [],
+  "urls": [],
+  "license": "../../LICENSE",
+  "permissions": [
+    "gate",
+    "chat"
+  ]
+}

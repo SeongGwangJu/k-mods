@@ -1,0 +1,53 @@
+{
+  "$schema": "./_schema.json",
+  "name": "taxi-speedcam",
+  "displayName": "택시 과속카메라",
+  "summary": "force push·rm -rf·DB 삭제·변경 폐기·운영 배포처럼 위험한 Bash 명령 앞에서 찰칵 찍고 물어봐요. 실행할지 세울지는 사용자가 정해요.",
+  "summaryEn": "A speed camera for dangerous Bash commands: force push, rm -rf, DB drops, discarding changes, prod deploys. Asks first, or always blocks.",
+  "category": "guard",
+  "tags": [
+    "안전",
+    "Bash",
+    "korean"
+  ],
+  "kind": "upstream",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/devbrother2024/devbrothers-mods.git",
+    "path": "plugins/taxi-speedcam",
+    "sha": "82b075ca7af3e066a4c88f542dabb95888225e1e"
+  },
+  "upstream": {
+    "repo": "devbrother2024/devbrothers-mods",
+    "path": "plugins/taxi-speedcam",
+    "commit": "82b075ca7af3e066a4c88f542dabb95888225e1e",
+    "stars": 6
+  },
+  "author": {
+    "name": "개발동생 (devbrothers)",
+    "url": "https://github.com/devbrother2024"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/devbrother2024/devbrothers-mods",
+  "commands": [
+    "/speedcam"
+  ],
+  "surfaces": [
+    "terminal",
+    "desktop"
+  ],
+  "review": {
+    "date": "2026-10-06",
+    "by": "k-mods",
+    "claudeCode": "2.1.291",
+    "method": [
+      "validate",
+      "code-read"
+    ],
+    "findings": [
+      "네트워크 호출 없음, 외부 프로그램 실행 없음(음성·효과음은 $.audio.* 엔진 API), 모델 호출 없음, 파일 쓰기 없음. 전부 로컬 정규식 패턴 매칭(force push, rm -rf, DB drop/truncate, git reset --hard 등, 운영 배포 플래그).",
+      "tool.call{tool=Bash} 훅이 .catch 없이 등록돼 --strict에서는 탈락하지만, 내부 로직은 fail-closed로 설계됨: mode='ask'(기본값)일 때 $.ui.ask가 실패하면 answer 변수가 초기값 '세워주세요'(STOP)로 남아 명령을 막고, mode='block'이면 물어보지 않고 항상 막음. 예외 상황에서도 위험한 명령을 통과시키지 않는 쪽으로 떨어짐.",
+      "env 읽기 없음, 트랜스크립트 읽기 없음. 기기 밖 데이터 전송 없음."
+    ]
+  }
+}

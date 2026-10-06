@@ -1,0 +1,51 @@
+{
+  "$schema": "./_schema.json",
+  "name": "gfm-render",
+  "displayName": "GFM 렌더러",
+  "summary": "트랜스크립트에서 GFM 경고문·체크리스트·취소선·Mermaid 다이어그램을 그려줘요.",
+  "summaryEn": "Renders GitHub Flavored Markdown alerts, task lists, strikethrough and Mermaid diagrams in the Claude Code transcript.",
+  "category": "theme",
+  "tags": [
+    "마크다운",
+    "Mermaid",
+    "렌더러"
+  ],
+  "kind": "upstream",
+  "source": {
+    "source": "github",
+    "repo": "briangtn/claude-gfm-render",
+    "sha": "a209ad5a0ec35c0813d2d80ab62b596140b0c807"
+  },
+  "upstream": {
+    "repo": "briangtn/claude-gfm-render",
+    "commit": "a209ad5a0ec35c0813d2d80ab62b596140b0c807",
+    "stars": 13
+  },
+  "author": {
+    "name": "briangtn",
+    "url": "https://github.com/briangtn"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/briangtn/claude-gfm-render",
+  "surfaces": [
+    "terminal",
+    "desktop"
+  ],
+  "review": {
+    "date": "2026-10-06",
+    "by": "k-mods",
+    "claudeCode": "2.1.291",
+    "method": [
+      "validate",
+      "code-read"
+    ],
+    "findings": [
+      "네트워크 호출 없음. $.http.fetch 사용처 없음.",
+      "외부 프로그램 실행: $.process.run으로 플러그인에 내장된 로컬 Node 스크립트(renderer/svg.mjs, 번들된 beautiful-mermaid·elkjs)만 실행. Mermaid 다이어그램을 SVG로 레이아웃하는 용도, 네트워크·외부 바이너리 없음.",
+      "파일 쓰기 없음. 모델 호출 없음 ($.model.* 미사용).",
+      "gating 훅 없음. tool.call/prompt.submit/tool.check 등록 안 함.",
+      "env 읽기 없음, 트랜스크립트 직접 읽기 없음 (ui.render로 받은 AssistantMessage만 처리). 기기 밖 데이터 전송 없음. 무거운 타이머 없음.",
+      "renderer/ 폴더에 MIT(beautiful-mermaid, Craft Docs 저작권)와 EPL-2.0(elkjs) 두 서드파티 라이브러리를 라이선스 파일과 함께 번들. 저장소 자체 라이선스(MIT)와 별개로 고지되어 있음."
+    ]
+  }
+}

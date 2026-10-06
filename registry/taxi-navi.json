@@ -1,0 +1,55 @@
+{
+  "$schema": "./_schema.json",
+  "name": "taxi-navi",
+  "displayName": "택시 내비게이션",
+  "summary": "할 일 목록을 내비게이션처럼 보여줘요. 진행 경로와 다음 안내가 표시되고, 계획이 바뀌면 경로를 다시 찾아줘요.",
+  "summaryEn": "Shows your todo list like a car navigation: progress path, next-step guidance, 'recalculating' on plan changes, an arrival announcement.",
+  "category": "tool",
+  "tags": [
+    "할일",
+    "네비게이션",
+    "음성안내",
+    "korean"
+  ],
+  "kind": "upstream",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/devbrother2024/devbrothers-mods.git",
+    "path": "plugins/taxi-navi",
+    "sha": "82b075ca7af3e066a4c88f542dabb95888225e1e"
+  },
+  "upstream": {
+    "repo": "devbrother2024/devbrothers-mods",
+    "path": "plugins/taxi-navi",
+    "commit": "82b075ca7af3e066a4c88f542dabb95888225e1e",
+    "stars": 6
+  },
+  "author": {
+    "name": "개발동생 (devbrothers)",
+    "url": "https://github.com/devbrother2024"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/devbrother2024/devbrothers-mods",
+  "commands": [
+    "/navi"
+  ],
+  "surfaces": [
+    "terminal",
+    "desktop"
+  ],
+  "review": {
+    "date": "2026-10-06",
+    "by": "k-mods",
+    "claudeCode": "2.1.291",
+    "method": [
+      "validate",
+      "code-read"
+    ],
+    "findings": [
+      "네트워크 호출 없음, 외부 프로그램 실행 없음, 모델 호출 없음, 파일 쓰기 없음.",
+      "음성 안내는 $.audio.speak(엔진 자체 TTS API, macOS say 음성 중 하나를 이름으로 지정)만 쓰고 직접 프로세스를 실행하지 않음. 사용자가 끌 수 있음(voice 옵션, 기본 on).",
+      "tool.call{tool=TaskCreate|TaskUpdate|TaskList|TodoWrite} 훅이 .catch 없이 등록되나 next(e) 통과 후 결과만 관찰하는 패스스루. 차단 로직 없음.",
+      "env 읽기: CLAUDE_CODE_ENABLE_TODO_TOOLS 하나뿐. 기기 밖 데이터 전송 없음."
+    ]
+  }
+}

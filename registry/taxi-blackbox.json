@@ -1,0 +1,55 @@
+{
+  "$schema": "./_schema.json",
+  "name": "taxi-blackbox",
+  "displayName": "택시 블랙박스",
+  "summary": "도구 호출을 블랙박스처럼 녹화해서, 오류나 거부 직전 상황을 /blackbox에서 돌려볼 수 있어요. 토큰·비밀번호는 가려서 기록해요.",
+  "summaryEn": "Records tool calls like a car's black box; replay the moments before an error or denial with /blackbox. Tokens and passwords are masked.",
+  "category": "tool",
+  "tags": [
+    "디버깅",
+    "로그",
+    "패널",
+    "korean"
+  ],
+  "kind": "upstream",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/devbrother2024/devbrothers-mods.git",
+    "path": "plugins/taxi-blackbox",
+    "sha": "82b075ca7af3e066a4c88f542dabb95888225e1e"
+  },
+  "upstream": {
+    "repo": "devbrother2024/devbrothers-mods",
+    "path": "plugins/taxi-blackbox",
+    "commit": "82b075ca7af3e066a4c88f542dabb95888225e1e",
+    "stars": 6
+  },
+  "author": {
+    "name": "개발동생 (devbrothers)",
+    "url": "https://github.com/devbrother2024"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/devbrother2024/devbrothers-mods",
+  "commands": [
+    "/blackbox"
+  ],
+  "surfaces": [
+    "terminal",
+    "desktop"
+  ],
+  "review": {
+    "date": "2026-10-06",
+    "by": "k-mods",
+    "claudeCode": "2.1.291",
+    "method": [
+      "validate",
+      "code-read"
+    ],
+    "findings": [
+      "네트워크 호출 없음, 외부 프로그램 실행 없음, 모델 호출 없음, 파일 쓰기 없음. 녹화 내용은 전부 모듈 변수(메모리)에만 보관되고 $.state/$.store에도 저장 안 함(세션 종료 시 사라짐).",
+      "비밀값 보호: 기록 전에 정규식(api key/token/secret/password/Bearer/sk-/gh_·xox-/AKIA 패턴)으로 마스킹 처리. plugin.json 설명과 일치함을 코드로 확인.",
+      "tool.call 훅이 .catch 없이 등록되지만 next(e)를 먼저 호출해 실제 도구 실행을 절대 막지 않고 결과만 기록(에러 시 재throw). 순수 관찰용, 차단 로직 없음.",
+      "기기 밖 데이터 전송 없음. 무거운 타이머 없음(1초 간격 blink 효과뿐)."
+    ]
+  }
+}

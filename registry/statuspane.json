@@ -1,0 +1,61 @@
+{
+  "$schema": "./_schema.json",
+  "name": "statuspane",
+  "displayName": "상태 카드",
+  "summary": "모델, 이펙트, 컨텍스트, 5시간·주간 한도, 비용, 브랜치를 프롬프트 위 카드 하나로 보여줘요.",
+  "summaryEn": "A status card above the prompt: model, effort, context, 5h/week limits, cost, directory and branch, with optional GitHub CI rows.",
+  "category": "statusline",
+  "tags": [
+    "사용량",
+    "CI"
+  ],
+  "kind": "upstream",
+  "source": {
+    "source": "github",
+    "repo": "xuanji86/claude-statuspane",
+    "sha": "8eafdaf51de15a4177145ad58764327bdc7cbfa7"
+  },
+  "upstream": {
+    "repo": "xuanji86/claude-statuspane",
+    "commit": "8eafdaf51de15a4177145ad58764327bdc7cbfa7",
+    "stars": 2
+  },
+  "author": {
+    "name": "Anji Xu",
+    "url": "https://github.com/xuanji86"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/xuanji86/claude-statuspane",
+  "commands": [
+    "/statuspane"
+  ],
+  "surfaces": [
+    "terminal"
+  ],
+  "requires": [
+    "gh CLI (ciBranch 또는 ciPush 설정을 켰을 때만 필요해요, 기본은 둘 다 꺼져 있어요)"
+  ],
+  "notes": [
+    "데스크톱 앱에서는 모델·이펙트·컨텍스트를 자체적으로 보여주기 때문에 이 카드는 터미널에서만 그려져요.",
+    "Claude Code 2.1.287 이상 필요, 2.1.288에서 테스트됐다고 README에 적혀 있어요."
+  ],
+  "review": {
+    "date": "2026-10-06",
+    "by": "k-mods",
+    "claudeCode": "2.1.291",
+    "method": [
+      "validate",
+      "code-read"
+    ],
+    "findings": [
+      "모드 자체는 네트워크 호출을 직접 하지 않아요. ciBranch/ciPush 옵션을 사용자가 직접 켜야(기본 둘 다 꺼짐) gh CLI를 거쳐 GitHub API를 간접 조회해요",
+      "외부 프로그램 실행: `git branch --show-current`(브랜치 표시용, 3초 타임아웃), ciBranch/ciPush를 켰을 때만 `gh run list`, `gh run view`, `gh pr view`",
+      "파일 쓰기 없음. 진행률 표시줄은 다른 모드·스크립트가 로컬에 적어 둔 JSON 파일을 읽기만 해요(기본 경로 ~/.claude/statuspane/progress, STATUSPANE_PROGRESS_DIR로 변경 가능)",
+      "모델 호출($.model.*) 없음",
+      "tool.call{tool=Bash} 훅은 git push/gh pr merge 명령을 감지해 CI 폴링을 깨우기만 하고 deny·승인 로직 없이 항상 next(e)로 통과시켜요.catch는 없지만(validate: hasCatch false) 명령 문자열 매칭 후 비동기로 폴링만 트리거하는 단순 구조라 예외 발생 가능성은 낮아 보여요",
+      "env 읽기: HOME, USERPROFILE, STATUSPANE_PROGRESS_DIR",
+      "기기 밖 데이터 전송: 기본값으로는 없어요. ciBranch/ciPush를 사용자가 켜면 이미 인증된 gh 세션으로 브랜치·PR 상태를 조회해요(새로운 전송은 아니에요)",
+      "타이머: 30초마다 브랜치 재확인, 1초마다 진행률 파일 재확인, CI를 켰을 때만 5초마다 폴링 대상 확인. 과도하지 않은 수준이에요"
+    ]
+  }
+}

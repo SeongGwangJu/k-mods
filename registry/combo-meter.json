@@ -1,0 +1,53 @@
+{
+  "$schema": "./_schema.json",
+  "name": "combo-meter",
+  "displayName": "콤보 미터",
+  "summary": "도구 호출이 성공하면 콤보가 이어지고 실패하면 끊기는 격투 게임 스타일 콤보 미터예요. D부터 SSS까지 랭크가 올라가요.",
+  "summaryEn": "A fighting-game combo meter: every clean tool call is a hit, every error breaks the chain. D to SSS ranks, pixel-art visuals.",
+  "category": "animation",
+  "tags": [
+    "게임",
+    "콤보",
+    "statusline",
+    "픽셀아트"
+  ],
+  "kind": "upstream",
+  "source": {
+    "source": "github",
+    "repo": "SARTHAK2511/claude-combo",
+    "sha": "7f01ec059e073901facde77b8b6e670221cc33c4"
+  },
+  "upstream": {
+    "repo": "SARTHAK2511/claude-combo",
+    "commit": "7f01ec059e073901facde77b8b6e670221cc33c4",
+    "stars": 1
+  },
+  "author": {
+    "name": "Sarthak Bhatore",
+    "url": "https://github.com/sarthak2511"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/sarthak2511/claude-combo",
+  "commands": [
+    "/combo"
+  ],
+  "surfaces": [
+    "terminal",
+    "desktop"
+  ],
+  "review": {
+    "date": "2026-10-06",
+    "by": "k-mods",
+    "claudeCode": "2.1.291",
+    "method": [
+      "validate",
+      "code-read"
+    ],
+    "findings": [
+      "네트워크 호출 없음, 외부 프로그램 실행 없음, 파일 쓰기 없음, 모델 호출 없음.",
+      "tool.call 훅이 .catch 없이 등록되지만 next(e)를 먼저 호출해 실제 도구 실행 결과를 그대로 통과시키고 그 결과만 관찰해 콤보를 올리거나 깨뜨림. 차단 로직이 아예 없는 순수 관전용(fail-open).",
+      "효과음(sfx/*.wav)은 번들된 로컬 파일을 $.audio.play로 재생. 네트워크 아님.",
+      "env 읽기 없음, 트랜스크립트 읽기 없음. 기기 밖 데이터 전송 없음. 무거운 타이머 없음."
+    ]
+  }
+}

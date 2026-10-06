@@ -1,0 +1,66 @@
+{
+  "$schema": "./_schema.json",
+  "name": "reels",
+  "displayName": "릴스",
+  "summary": "Claude가 작업하는 동안 YouTube Shorts를 터미널 패널에 재생하고, Claude가 끝나면 자동으로 멈춰요. /reels를 쳐야만 켜져요.",
+  "summaryEn": "Plays YouTube Shorts in a terminal pane while Claude works and pauses when it's done. Nothing starts until you run /reels.",
+  "category": "animation",
+  "tags": [
+    "엔터테인먼트",
+    "YouTube",
+    "재미"
+  ],
+  "kind": "upstream",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/hamzafer/claude-code-mods",
+    "path": "mods/reels",
+    "sha": "adf9d72d81cb04284416371f9de8a6f937dcc631"
+  },
+  "upstream": {
+    "repo": "hamzafer/claude-code-mods",
+    "path": "mods/reels",
+    "commit": "adf9d72d81cb04284416371f9de8a6f937dcc631",
+    "stars": 119
+  },
+  "author": {
+    "name": "Hamza Zafar",
+    "url": "https://github.com/hamzafer"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/hamzafer/claude-code-mods/tree/main/mods/reels",
+  "commands": [
+    "/reels"
+  ],
+  "surfaces": [
+    "terminal"
+  ],
+  "requires": [
+    "Playwright (최초 /reels 실행 시 설치 안내가 떠요: npm install --prefix <plugin> playwright)"
+  ],
+  "preview": "https://raw.githubusercontent.com/hamzafer/claude-code-mods/adf9d72d81cb04284416371f9de8a6f937dcc631/images/reels-demo.gif",
+  "notes": [
+    "코드(helper/reels.cjs)까지 직접 읽어 확인했어요. Playwright로 헤드리스 Chrome을 띄워 https://www.youtube.com/shorts 를 열고, 화면을 CDP 스크린캐스트로 캡처해 PNG로 저장한 뒤 패널에 보여줘요. 제어는 로컬 유닉스 소켓(파일 경로를 쓰는 IPC)으로만 하고, 바깥에 열린 네트워크 포트는 아니에요.",
+    "프로필(쿠키 등)은 ~/.claude-mods/reels/profile에 로컬로만 저장돼요."
+  ],
+  "review": {
+    "date": "2026-10-06",
+    "by": "k-mods",
+    "claudeCode": "2.1.291",
+    "method": [
+      "validate",
+      "code-read"
+    ],
+    "findings": [
+      "validate 성공(success:true), errors/warnings 없음, gatingHooks 없음.",
+      "네트워크 목적지: https://www.youtube.com/shorts. 이 mod의 핵심 기능 자체(Shorts 재생)라 당연한 목적지예요. /reels login으로 쿠키 동의·로그인을 할 때도 같은 YouTube 도메인이에요.",
+      "외부 프로그램 실행: `node <plugin>/helper/reels.cjs <소켓> <프로필폴더> <프레임폴더> pane|login`. Playwright로 Chrome을 실행하는 헬퍼 프로세스예요(소스 코드까지 직접 읽어 확인).",
+      "파일 쓰기: ~/.claude-mods/reels/ 아래에 Chrome 프로필, 캡처된 프레임 PNG(f-0/1/2.png 순환)만 로컬로 써요.",
+      "모델 호출($.model.*): 없음.",
+      "prompt.submit/tool.call/tool.check 훅: 등록하지 않음.",
+      "env/설정/트랜스크립트 읽기: HOME(저장 경로 계산)만 읽어요.",
+      "기기 밖 데이터 전송: YouTube 접속 자체 외에는 없음.",
+      "타이머/폴링: 헬퍼 프로세스가 초당 약 15프레임으로 화면을 캡처해 파일에 쓰고, 이 mod는 그 줄 출력을 그대로 읽어 패널만 갱신해요. opt-in이고 /snake처럼 Claude가 쉬면 자동으로 영상을 멈춰요(watch 쿼리 자체는 멈추지 않지만 overlay로 가리고 video.pause()를 호출)."
+    ]
+  }
+}

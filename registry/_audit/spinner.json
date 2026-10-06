@@ -1,0 +1,78 @@
+{
+  "name": "spinner",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/hoobnn/hoobnn-agent-mods.git",
+    "path": "claude-code/spinner",
+    "sha": "8fb6f67cad9fd023cc7c06b7923518b4bbc45aea"
+  },
+  "auditedWith": "2.1.291",
+  "validate": {
+    "success": true,
+    "errors": [],
+    "warnings": []
+  },
+  "hooks": [
+    "command.run{command=spinner}",
+    "prompt.edit",
+    "prompt.submit",
+    "session.start",
+    "state.set{plugin=hud, key=petPats}",
+    "tool.call",
+    "tool.check",
+    "turn.complete",
+    "turn.start",
+    "ui.message",
+    "ui.render{component=AbovePrompt}",
+    "ui.render{component=SessionMode}",
+    "ui.render{component=Spinner}"
+  ],
+  "calls": [
+    "$.clock.after",
+    "$.clock.now",
+    "$.command.register",
+    "$.config.set",
+    "$.env.get",
+    "$.fs.stat",
+    "$.process.run",
+    "$.process.spawn",
+    "$.settings.read",
+    "$.state.get",
+    "$.state.set",
+    "$.store.delete",
+    "$.store.get",
+    "$.store.set",
+    "$.ui.ask",
+    "$.ui.resolve",
+    "$.ui.toast"
+  ],
+  "envReads": [
+    "LANG",
+    "LC_ALL",
+    "LC_MESSAGES"
+  ],
+  "envWrites": [
+    "nothing"
+  ],
+  "gatingWithoutCatch": [
+    "prompt.submit",
+    "state.set{plugin=hud, key=petPats}",
+    "tool.call",
+    "tool.check"
+  ],
+  "commands": [
+    "/spinner"
+  ],
+  "programs": [
+    "swiftc"
+  ],
+  "urls": [],
+  "license": "../../LICENSE",
+  "permissions": [
+    "process",
+    "gate",
+    "chat",
+    "env",
+    "fs-read"
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "name": "prompt-rail",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/oikon48/prompt-rail.git",
+    "path": "plugins/prompt-rail",
+    "sha": "2ac50fb87fc426fed89ba0f09f1784ef6f289ae8"
+  },
+  "auditedWith": "2.1.291",
+  "validate": {
+    "success": true,
+    "errors": [],
+    "warnings": []
+  },
+  "hooks": [
+    "classic.SessionStart",
+    "classic.Stop",
+    "command.run",
+    "prompt.submit",
+    "session.receive",
+    "session.start",
+    "turn.complete",
+    "turn.start",
+    "ui.focus{component=AbovePrompt, plugin=prompt-rail}",
+    "ui.focus{component=Pane, requestId=prompt-rail, plugin=prompt-rail}",
+    "ui.press{plugin=prompt-rail}",
+    "ui.render{component=AbovePrompt}",
+    "ui.render{component=AssistantMessage}",
+    "ui.render{component=Pane, requestId=prompt-rail}",
+    "ui.render{component=ToolGroup}",
+    "ui.render{component=ToolResult}",
+    "ui.render{component=ToolUse}",
+    "ui.render{component=UserMessage}"
+  ],
+  "calls": [
+    "$.clock.after",
+    "$.command.register",
+    "$.config.set",
+    "$.fs.read",
+    "$.fs.stat",
+    "$.process.spawn",
+    "$.session.id",
+    "$.state.get",
+    "$.state.set",
+    "$.store.delete",
+    "$.store.get",
+    "$.store.keys",
+    "$.store.set",
+    "$.ui.close",
+    "$.ui.open",
+    "$.ui.resolve",
+    "$.ui.scroll",
+    "$.ui.toast"
+  ],
+  "envReads": [],
+  "envWrites": [],
+  "gatingWithoutCatch": [
+    "classic.SessionStart",
+    "classic.Stop",
+    "prompt.submit",
+    "session.receive",
+    "ui.focus{component=AbovePrompt, plugin=prompt-rail}",
+    "ui.focus{component=Pane, requestId=prompt-rail, plugin=prompt-rail}"
+  ],
+  "commands": [
+    "/prompt-rail"
+  ],
+  "programs": [],
+  "urls": [],
+  "license": "../../LICENSE",
+  "permissions": [
+    "process",
+    "chat",
+    "fs-read"
+  ]
+}
