@@ -97,7 +97,7 @@ mods/<name>/
 - 새 mod는 TypeScript로 써요. 빌드 단계는 없어요 (Claude Code가 `.ts`를 바로 읽어요).
 - 이름은 영문 소문자·숫자·`-`. `claude-`, `anthropic-`로 시작하면 검증에서 떨어져요.
 - 내용을 바꾸면 `version`을 올려요. 설치본은 버전별로 캐시돼요.
-- 다른 프로젝트를 고친 수정판은 원본 LICENSE와 저작권 표기를 그대로 두고, `CHANGES-KO.md`에 바뀐 점을 적고, [NOTICE.md](NOTICE.md)에 출처를 추가해요. 일반적인 버그 수정은 원본에도 보내요.
+- 다른 프로젝트를 고친 수정판은 원본 LICENSE와 저작권 표기를 그대로 두고, `CHANGES-KO.md`에 바뀐 점을 적고, [NOTICE.md](NOTICE.md)에 출처를 추가해요. 일반적인 버그 수정이라면 원본 저장소에도 보내 주면 좋아요.
 
 ### 검증
 

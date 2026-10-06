@@ -27,7 +27,7 @@ Every external mod is pinned to the exact commit we reviewed and labeled with wh
 
 1. **Pinned, reviewed commits.** External mods install straight from the author's repository, but only at the commit we reviewed. Updates are re-reviewed.
 2. **Access labels.** Mods run unsandboxed with your permissions. We statically analyze each one (`claude plugin validate`) and label network access, programs run, file writes, model calls, tool-call gating and more.
-3. **Fixes for CJK users.** Patched editions fix bugs that only show up with wide characters (e.g. cut-off Korean tables), and the fixes go upstream too.
+3. **Fixes for CJK users.** Patched editions fix bugs that only show up with wide characters (e.g. cut-off Korean tables), with every change listed in the mod's `CHANGES-KO.md`.
 4. **Respect for authors.** No code is copied for external mods. Unlicensed mods are not listed without permission, and takedown requests are honored right away.
 
 ## Catalog
