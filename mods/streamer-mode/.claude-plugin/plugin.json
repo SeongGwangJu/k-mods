@@ -1,0 +1,72 @@
+{
+  "name": "streamer-mode",
+  "version": "1.0.0",
+  "description": "유튜브·라이브 방송, 화면 공유 회의, 페어 프로그래밍 중에 화면에서만 비밀 키·주민번호·전화번호·이메일 같은 민감한 값을 가려요. 화면만 바꿀 뿐, Claude가 읽는 내용과 저장되는 대화 기록은 그대로예요.",
+  "author": {
+    "name": "SeongGwangJu",
+    "url": "https://github.com/SeongGwangJu"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/SeongGwangJu/k-mods/tree/main/mods/streamer-mode",
+  "repository": "https://github.com/SeongGwangJu/k-mods",
+  "keywords": [
+    "보안",
+    "개인정보",
+    "마스킹",
+    "스트리밍",
+    "화면공유",
+    "방송",
+    "페어프로그래밍"
+  ],
+  "userConfig": {
+    "start_on": {
+      "type": "boolean",
+      "title": "설치하면 바로 켜기",
+      "description": "설치하면 기본으로 가려줘요. 꺼 두면 다음에 켤 때까지 꺼진 채로 있어요.",
+      "default": true
+    },
+    "mask_secrets": {
+      "type": "boolean",
+      "title": "비밀 키·토큰 가리기",
+      "description": "API 키, 토큰, 비밀번호, Bearer 토큰, 개인 키 같은 값을 가려요.",
+      "default": true
+    },
+    "mask_korean_id": {
+      "type": "boolean",
+      "title": "주민번호·카드번호 가리기",
+      "description": "주민등록번호, 외국인등록번호, 운전면허번호, 사업자등록번호, 카드번호를 가려요.",
+      "default": true
+    },
+    "mask_contact": {
+      "type": "boolean",
+      "title": "전화번호·이메일 가리기",
+      "description": "휴대폰·일반전화 번호와 이메일 주소를 가려요.",
+      "default": true
+    },
+    "mask_ip": {
+      "type": "boolean",
+      "title": "IP 주소 가리기",
+      "description": "공인 IPv4·IPv6 주소를 가려요. 1.2.3.4 같은 버전 번호와 헷갈릴 수 있어 기본은 꺼져 있어요.",
+      "default": false
+    },
+    "mask_home": {
+      "type": "boolean",
+      "title": "홈 폴더 이름 가리기",
+      "description": "/Users/이름 같은 경로에서 사용자 이름 부분을 가려요.",
+      "default": false
+    },
+    "custom_words": {
+      "type": "string",
+      "title": "항상 가릴 단어",
+      "description": "회사 이름, 실명, 고객사 이름처럼 항상 가리고 싶은 단어예요. 여러 개 추가할 수 있어요.",
+      "multiple": true
+    },
+    "style": {
+      "type": "string",
+      "title": "가리는 모양",
+      "description": "label은 [이메일 가림]처럼 종류를 보여줘요. dots는 ●●●●●●로만 가려요.",
+      "options": ["label", "dots"],
+      "default": "label"
+    }
+  }
+}
