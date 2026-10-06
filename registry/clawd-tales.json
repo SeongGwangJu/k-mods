@@ -1,7 +1,7 @@
 {
   "name": "clawd-tales",
   "displayName": "Clawd 이야기",
-  "summary": "입력창 위에서 픽셀 Clawd가 Claude의 모든 도구 호출을 몸짓으로 연기하고, 서브에이전트마다 작은 동료도 등장해요.",
+  "summary": "입력창 위에서 픽셀 Clawd가 Claude의 모든 도구 호출에 맞춰 몸짓을 해요. 서브에이전트마다 작은 동료도 등장해요.",
   "summaryEn": "A pixel Clawd acts out every tool call above the prompt, with helper characters for each subagent—terminal-first, no model calls.",
   "category": "animation",
   "tags": [

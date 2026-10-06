@@ -1,6 +1,6 @@
 # 할 일 진행 상태줄
 
-> Claude가 만든 할 일 목록의 진행 상황을 입력창 위에 막대와 경과 시간으로 보여줘요.
+> Claude가 만든 할 일 목록의 진행 상황과 경과 시간을 입력창 위 막대로 표시해요.
 
 <img src="https://raw.githubusercontent.com/hoobnn/hoobnn-agent-mods/8fb6f67cad9fd023cc7c06b7923518b4bbc45aea/claude-code/todo-bar/assets/preview.png" alt="할 일 진행 상태줄" width="640">
 

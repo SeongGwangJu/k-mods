@@ -2,7 +2,7 @@
   "$schema": "./_schema.json",
   "name": "ts-band",
   "displayName": "테일스케일 노드 상태줄",
-  "summary": "입력창 위에 Tailscale 노드들의 연결 상태를 보여주고, 노드가 끊기거나 다시 연결되면 토스트로 알려줘요.",
+  "summary": "입력창 위에 Tailscale 노드들의 연결 상태를 표시해요. 노드가 끊기거나 다시 연결되면 화면 알림으로 알려줘요.",
   "summaryEn": "Shows Tailscale nodes' state in a band above the prompt, with a toast when a node comes up or goes down.",
   "category": "statusline",
   "tags": ["테일스케일", "네트워크", "VPN", "상태줄", "알림"],

@@ -2,7 +2,7 @@
   "$schema": "./_schema.json",
   "name": "ctx-strip",
   "displayName": "컨텍스트 막대",
-  "summary": "컨텍스트가 무엇으로 차 있는지(대화·도구·스킬…) 입력창 위 막대로 보여주고, 서브에이전트가 돌면 한 줄로 알려줘요",
+  "summary": "컨텍스트 구성(대화·도구·스킬…)을 입력창 위 막대로 표시해요. 서브에이전트가 실행되면 한 줄로 알려줘요",
   "summaryEn": "A stacked bar above the prompt showing what fills your context window, plus a live line for running subagents",
   "category": "statusline",
   "tags": [

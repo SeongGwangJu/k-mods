@@ -1,6 +1,6 @@
 # 턴 영수증
 
-> 매 턴이 끝나면 바뀐 파일·실행한 명령·읽은 횟수를 입력창 위에 한 줄 영수증으로 보여주고, 제자리걸음을 하면 알려줘요.
+> 매 턴이 끝나면 바뀐 파일·실행한 명령·읽은 횟수를 입력창 위 한 줄 요약으로 표시해요. 같은 작업을 반복하면 알려줘요.
 
 <img src="https://raw.githubusercontent.com/hoobnn/hoobnn-agent-mods/8fb6f67cad9fd023cc7c06b7923518b4bbc45aea/claude-code/receipt/assets/preview.png" alt="턴 영수증" width="640">
 

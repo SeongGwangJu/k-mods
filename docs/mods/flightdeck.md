@@ -1,6 +1,6 @@
 # 플라이트덱 대시보드
 
-> 메인 모델 상태·비용·컨텍스트, 온콜 아키텍트 상담, 권한 검사, 서브에이전트 카드를 실시간 세션 이벤트로 한 화면에 보여줘요
+> 메인 모델의 상태·비용·컨텍스트, 온콜 아키텍트 상담, 권한 검사, 서브에이전트 카드를 한 화면에 표시해요. 세션 이벤트가 발생하면 실시간으로 갱신해요
 
 <img src="https://raw.githubusercontent.com/scasella/claude-flightdeck/f31daca523d36c501cd0df23a737a44c7dc56ad6/docs/media/demo.gif" alt="플라이트덱 대시보드" width="640">
 

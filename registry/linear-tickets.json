@@ -2,7 +2,7 @@
   "$schema": "./_schema.json",
   "name": "linear-tickets",
   "displayName": "Linear 티켓 패널",
-  "summary": "내게 배정된 Linear 티켓을 패널로 보여주고, 클릭하면 바로 작업을 시작할 수 있어요.",
+  "summary": "내게 배정된 Linear 티켓을 패널에 표시해요. 클릭하면 바로 작업을 시작할 수 있어요.",
   "summaryEn": "Shows your assigned Linear tickets in a pane; click one to load it into the session, read details, comment, or change status and priority.",
   "category": "integration",
   "tags": [

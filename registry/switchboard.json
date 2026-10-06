@@ -2,7 +2,7 @@
   "$schema": "./_schema.json",
   "name": "switchboard",
   "displayName": "스위치보드",
-  "summary": "서브에이전트가 시작되기 전에 Haiku/Sonnet/Opus 중 가장 싼 모델을 골라주고, /route로 각 선택과 예상 비용을 보여줘요. API 키 없이도 규칙만으로 동작해요.",
+  "summary": "서브에이전트가 시작되기 전에 Haiku/Sonnet/Opus 중 비용이 가장 낮은 모델을 골라요. `/route`에서 선택 결과와 예상 비용을 확인할 수 있어요. API 키 없이도 규칙만으로 동작해요.",
   "summaryEn": "Picks Haiku, Sonnet, or Opus for each subagent before it starts (an external routing API, or local rules), showing each pick and its cost.",
   "category": "automation",
   "tags": [

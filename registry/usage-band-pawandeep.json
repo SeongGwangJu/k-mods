@@ -2,7 +2,7 @@
   "$schema": "./_schema.json",
   "name": "usage-band-pawandeep",
   "displayName": "사용량 밴드 (5시간·주간)",
-  "summary": "입력창 위에 5시간·주간 사용량 퍼센트와 초기화 카운트다운을 항상 보여주고, 새 채팅·GitHub 푸시 버튼도 함께 제공해요.",
+  "summary": "입력창 위에 5시간·주간 사용량 퍼센트와 초기화 카운트다운을 항상 표시해요. 새 채팅·GitHub 푸시 버튼도 함께 제공해요.",
   "summaryEn": "Always-visible 5-hour and weekly Claude usage percentages with a reset countdown above the prompt, plus new-chat and GitHub push buttons.",
   "category": "statusline",
   "tags": [

@@ -2,7 +2,7 @@
   "$schema": "./_schema.json",
   "name": "statuspane",
   "displayName": "상태 카드",
-  "summary": "모델, 이펙트, 컨텍스트, 5시간·주간 한도, 비용, 브랜치를 프롬프트 위 카드 하나로 보여줘요.",
+  "summary": "모델, 이펙트, 컨텍스트, 5시간·주간 한도, 비용, 브랜치를 프롬프트 위 카드 하나에 표시해요.",
   "summaryEn": "A status card above the prompt: model, effort, context, 5h/week limits, cost, directory and branch, with optional GitHub CI rows.",
   "category": "statusline",
   "tags": [

@@ -2,7 +2,7 @@
   "$schema": "./_schema.json",
   "name": "context-bar",
   "displayName": "컨텍스트 바 (hamzafer)",
-  "summary": "컨텍스트 창을 /context와 같은 색으로 구간별 막대 그래프로 보여주고, 토큰 수·압축 시점·범례까지 입력창 위에 표시해요.",
+  "summary": "컨텍스트 창을 /context와 같은 색의 구간별 막대 그래프로 표시해요. 토큰 수·압축 시점·범례도 입력창 위에서 확인할 수 있어요.",
   "summaryEn": "Your context window as a stacked bar above the prompt, colored per category as /context does, with token counts and the compaction point.",
   "category": "statusline",
   "tags": [

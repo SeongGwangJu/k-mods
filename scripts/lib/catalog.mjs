@@ -11,13 +11,13 @@ export const REPO_URL = `https://github.com/${REPO}`
 
 export const CATEGORIES = [
   { id: 'localize', label: '한국어화', emoji: '🇰🇷', en: 'Korean UI', desc: '메뉴·설정·안내 문구를 한국어로 바꿔요' },
-  { id: 'theme', label: '테마', emoji: '🎨', en: 'Themes', desc: '대화·도구 줄·표·코드의 모양을 새로 그려요' },
-  { id: 'animation', label: '애니메이션', emoji: '🐾', en: 'Animation & fun', desc: '기다리는 동안 캐릭터·장면·게임이 움직여요' },
-  { id: 'statusline', label: '상태줄', emoji: '📊', en: 'Status lines', desc: '컨텍스트·사용량·작업 상태를 늘 보이게 해요' },
+  { id: 'theme', label: '테마', emoji: '🎨', en: 'Themes', desc: '대화·도구 호출 결과·표·코드의 표시 방식을 바꿔요' },
+  { id: 'animation', label: '애니메이션', emoji: '🐾', en: 'Animation & fun', desc: 'Claude가 일하는 동안 애니메이션이나 게임을 표시해요' },
+  { id: 'statusline', label: '상태줄', emoji: '📊', en: 'Status lines', desc: '컨텍스트·사용량·작업 상태를 항상 표시해요' },
   { id: 'tool', label: '도구', emoji: '🧰', en: 'Tools', desc: '패널·명령으로 직접 쓰는 기능이에요' },
-  { id: 'automation', label: '자동화', emoji: '⚡', en: 'Automation', desc: '알아서 알리고, 넘기고, 채워 줘요' },
-  { id: 'guard', label: '지킴이', emoji: '🛡️', en: 'Guards', desc: '위험한 명령과 민감한 정보를 지켜요' },
-  { id: 'integration', label: '연동', emoji: '🔗', en: 'Integrations', desc: 'GitHub·Linear 같은 외부 서비스와 이어요' },
+  { id: 'automation', label: '자동화', emoji: '⚡', en: 'Automation', desc: '알림, 대화 전환, 프롬프트 입력을 자동으로 처리해요' },
+  { id: 'guard', label: '지킴이', emoji: '🛡️', en: 'Guards', desc: '위험한 명령을 차단하고 민감한 정보를 가려요' },
+  { id: 'integration', label: '연동', emoji: '🔗', en: 'Integrations', desc: 'GitHub·Linear 같은 외부 서비스의 상태와 작업을 Claude Code에 표시해요' },
   { id: 'bundle', label: '묶음', emoji: '📦', en: 'Bundles', desc: '여러 mod를 한 번에 설치해요' },
 ]
 

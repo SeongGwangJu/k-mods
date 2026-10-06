@@ -2,7 +2,7 @@
   "$schema": "./_schema.json",
   "name": "status-ko",
   "displayName": "작업 상태 한국어",
-  "summary": "작업 중 줄을 '읽는 중 · page.tsx'처럼 지금 하는 일로, 끝난 줄을 모델·시간·도구·캐시 한 줄로 보여줘요",
+  "summary": "작업 중에는 '읽는 중 · page.tsx'처럼 지금 하는 일을 보여줘요. 끝나면 모델·시간·도구·캐시를 한 줄로 정리해요",
   "summaryEn": "Spinner shows what Claude is doing now in Korean; the turn footer becomes one line of model, time, tools and cache hit",
   "category": "statusline",
   "tags": [

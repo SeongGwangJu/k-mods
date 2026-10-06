@@ -1,6 +1,6 @@
 # 픽셀 뮤직 플레이어
 
-> mpv로 재생목록을 재생하면서 픽셀 아트 캐릭터가 음악에 맞춰 반응하는 패널을 보여줘요.
+> mpv로 재생목록을 재생하면서 음악에 맞춰 반응하는 픽셀 아트 캐릭터를 패널에 표시해요.
 
 <img src="https://raw.githubusercontent.com/chrisluo5311/Pixel-Play/6ebf7296332bf19898f51bba8421a1e620588423/assets/demo/demo.gif" alt="픽셀 뮤직 플레이어" width="640">
 

@@ -2,7 +2,7 @@
   "$schema": "./_schema.json",
   "name": "taxi-navi",
   "displayName": "택시 내비게이션",
-  "summary": "할 일 목록을 내비게이션처럼 보여줘요. 진행 경로와 다음 안내가 표시되고, 계획이 바뀌면 경로를 다시 찾아줘요.",
+  "summary": "할 일 목록에서 현재 진행 상태와 다음 할 일을 표시해요. 계획이 바뀌면 새 순서에 맞춰 목록을 갱신해요.",
   "summaryEn": "Shows your todo list like a car navigation: progress path, next-step guidance, 'recalculating' on plan changes, an arrival announcement.",
   "category": "tool",
   "tags": [

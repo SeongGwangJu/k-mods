@@ -2,7 +2,7 @@
   "$schema": "./_schema.json",
   "name": "prompt-cache-control",
   "displayName": "프롬프트 캐시 미터",
-  "summary": "요청마다 캐시가 얼마나 읽히고 새로 쓰였는지 입력창 위에 보여주고, 만료 임박이면 알려주며 /compact·/clear 시점을 제안해요",
+  "summary": "요청마다 캐시를 읽고 새로 쓴 양을 입력창 위에 표시해요. 만료가 임박하면 알리고 /compact·/clear 시점을 제안해요",
   "summaryEn": "Shows how much of each request's prompt the cache served vs wrote, counts down to expiry, and suggests /compact or /clear before it lapses.",
   "category": "statusline",
   "tags": [

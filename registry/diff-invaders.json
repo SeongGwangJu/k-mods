@@ -2,7 +2,7 @@
   "$schema": "./_schema.json",
   "name": "diff-invaders",
   "displayName": "디프 인베이더",
-  "summary": "Claude가 방금 쓴 diff 줄이 그대로 외계인 편대가 되는 스페이스 인베이더예요. 토큰 소모 없이 입력창 위에서 플레이해요",
+  "summary": "Claude가 방금 쓴 diff 줄에 대응하는 외계인 편대를 표시하는 스페이스 인베이더예요. 토큰 소모 없이 입력창 위에서 플레이해요",
   "summaryEn": "Space Invaders where every wave is made from the lines Claude's last Edit/Write actually added; zero tokens, played above the prompt.",
   "category": "animation",
   "tags": [

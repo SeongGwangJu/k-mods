@@ -2,7 +2,7 @@
   "$schema": "./_schema.json",
   "name": "linear-board",
   "displayName": "Linear 보드 패널",
-  "summary": "Linear 프로젝트·마일스톤·이슈를 패널로 보여주고, 계획·실행·제품 버튼으로 바로 프롬프트를 채워 넣어요.",
+  "summary": "Linear 프로젝트·마일스톤·이슈를 패널에 표시해요. 계획·실행·제품 버튼으로 프롬프트를 바로 입력할 수 있어요.",
   "summaryEn": "Your Linear projects, milestones and issues in a pane; plan, execute or product buttons send a ready prompt into the session.",
   "category": "integration",
   "tags": [

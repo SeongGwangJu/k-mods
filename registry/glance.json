@@ -2,7 +2,7 @@
   "$schema": "./_schema.json",
   "name": "glance",
   "displayName": "글랜스",
-  "summary": "다음 회의·리뷰 요청된 PR·진행 중인 Linear 이슈·최근 Slack DM을 입력창 위 한 줄로 보여주고, /glance로 전체 목록을 확인해요.",
+  "summary": "다음 회의·리뷰 요청된 PR·진행 중인 Linear 이슈·최근 Slack DM을 입력창 위 한 줄에 표시해요. /glance로 전체 목록을 확인할 수 있어요.",
   "summaryEn": "One line above the prompt for what needs you: the next meeting, PRs awaiting review, in-progress Linear issues, and recent Slack DMs.",
   "category": "integration",
   "tags": [

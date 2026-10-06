@@ -1,6 +1,6 @@
 # 테일스케일 노드 상태줄
 
-> 입력창 위에 Tailscale 노드들의 연결 상태를 보여주고, 노드가 끊기거나 다시 연결되면 토스트로 알려줘요.
+> 입력창 위에 Tailscale 노드들의 연결 상태를 표시해요. 노드가 끊기거나 다시 연결되면 화면 알림으로 알려줘요.
 
 <img src="https://raw.githubusercontent.com/hoobnn/hoobnn-agent-mods/8fb6f67cad9fd023cc7c06b7923518b4bbc45aea/claude-code/ts-band/assets/preview.png" alt="테일스케일 노드 상태줄" width="640">
 

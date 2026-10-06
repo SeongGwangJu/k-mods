@@ -2,7 +2,7 @@
   "$schema": "./_schema.json",
   "name": "memo-pad",
   "displayName": "메모장",
-  "summary": "Claude가 일하는 동안 다음에 시킬 일을 적어 두고, 버튼 한 번으로 입력창에 넣어요",
+  "summary": "Claude가 일하는 동안 다음에 시킬 일을 적어 두고 버튼 한 번으로 입력창에 추가해요",
   "summaryEn": "Jot down your next instructions while Claude works, then drop one into the prompt with a button",
   "category": "tool",
   "tags": [

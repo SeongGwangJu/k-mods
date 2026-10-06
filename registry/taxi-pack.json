@@ -2,7 +2,7 @@
   "$schema": "./_schema.json",
   "name": "taxi-pack",
   "displayName": "택시팩",
-  "summary": "Claude Code를 택시로: 미터기(요금·한도), 내비(할 일 경로), 과속카메라(위험 명령 확인), 블랙박스(도구 호출 녹화)를 한 번에 설치해요",
+  "summary": "미터기(요금·한도), 내비(할 일 진행 상황), 과속카메라(위험 명령 확인), 블랙박스(도구 호출 기록)를 한 번에 설치해요",
   "summaryEn": "Claude Code as a taxi ride: meter (cost and limits), navigation (todo route), speed camera (risky-command check) and dashcam (tool-call recorder) in one install",
   "category": "bundle",
   "tags": [

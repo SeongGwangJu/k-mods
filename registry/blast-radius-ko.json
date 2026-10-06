@@ -2,7 +2,7 @@
   "$schema": "./_schema.json",
   "name": "blast-radius-ko",
   "displayName": "위험 명령 브레이크",
-  "summary": "rm -rf·force push·DB 초기화처럼 되돌릴 수 없는 명령을 실행 전에 멈추고, 무엇이 바뀌는지 보여준 뒤 물어봐요",
+  "summary": "rm -rf·force push·DB 초기화처럼 되돌릴 수 없는 명령은 실행 전에 멈춰요. 변경 범위를 보여준 뒤 실행할지 물어봐요",
   "summaryEn": "Holds irreversible commands (rm -rf, force push, DB resets, volume prunes) and shows what they would change before asking",
   "category": "guard",
   "tags": [

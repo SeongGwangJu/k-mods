@@ -1,7 +1,7 @@
 {
   "name": "terminal-browser",
   "displayName": "터미널 브라우저",
-  "summary": "클로드 코드 화면 안에 실제 브라우저를 띄워 웹사이트를 미리 보고, 에이전트가 직접 열고 닫게 해줘요. 브라우저 엔진은 별도 설치하는 terminal-browser 앱이 맡아요.",
+  "summary": "Claude Code 화면에서 브라우저를 열어 웹사이트를 미리 볼 수 있어요. 에이전트가 직접 열고 닫으며, 별도로 설치한 terminal-browser 앱이 브라우저 엔진을 실행해요.",
   "summaryEn": "Renders a real browser inside Claude Code's terminal so you/the agent can preview web pages; needs the separate terminal-browser app.",
   "category": "integration",
   "tags": [

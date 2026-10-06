@@ -1,6 +1,6 @@
 # 리뷰 워치
 
-> 실행 중인 codex review나 '리뷰' 서브에이전트마다 모델·대상·경과 시간을 한 줄로 보여주고, 끝나면 발견 개수를 토스트로 알려줘요.
+> 실행 중인 codex review나 '리뷰' 서브에이전트마다 모델·대상·경과 시간을 한 줄로 표시해요. 끝나면 발견 항목 수를 화면 알림으로 알려줘요.
 
 <img src="https://raw.githubusercontent.com/hamzafer/claude-code-mods/adf9d72d81cb04284416371f9de8a6f937dcc631/images/review-watch.png" alt="리뷰 워치" width="640">
 

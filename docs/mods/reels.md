@@ -1,6 +1,6 @@
 # 릴스
 
-> Claude가 작업하는 동안 YouTube Shorts를 터미널 패널에 재생하고, Claude가 끝나면 자동으로 멈춰요. /reels를 쳐야만 켜져요.
+> Claude가 작업하는 동안 YouTube Shorts를 터미널 패널에서 재생하고 작업이 끝나면 자동으로 멈춰요. `/reels`를 입력했을 때만 재생돼요.
 
 <img src="https://raw.githubusercontent.com/hamzafer/claude-code-mods/adf9d72d81cb04284416371f9de8a6f937dcc631/images/reels-demo.gif" alt="릴스" width="640">
 

@@ -1,7 +1,7 @@
 {
   "name": "cc-pr-tracker",
   "displayName": "GitHub PR 트래커",
-  "summary": "머지 상태·리뷰·필수 체크를 입력창 위에서 실시간으로 지켜보고, 바뀌면 토스트·소리로 알려줘요.",
+  "summary": "머지 상태·리뷰·필수 체크를 입력창 위에 실시간으로 표시해요. 바뀌면 화면 알림과 소리로 알려줘요.",
   "summaryEn": "Watches GitHub PRs from your session—merge state, review, and required checks above the prompt—with alerts when they change.",
   "category": "integration",
   "tags": [

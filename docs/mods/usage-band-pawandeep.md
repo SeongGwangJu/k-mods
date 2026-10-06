@@ -1,6 +1,6 @@
 # 사용량 밴드 (5시간·주간)
 
-> 입력창 위에 5시간·주간 사용량 퍼센트와 초기화 카운트다운을 항상 보여주고, 새 채팅·GitHub 푸시 버튼도 함께 제공해요.
+> 입력창 위에 5시간·주간 사용량 퍼센트와 초기화 카운트다운을 항상 표시해요. 새 채팅·GitHub 푸시 버튼도 함께 제공해요.
 
 <img src="https://raw.githubusercontent.com/pawandeepdhall/claude-mods/e00264e286951fd6522a12e321cc56f3ebe3c598/docs/usage-band.png" alt="사용량 밴드 (5시간·주간)" width="640">
 

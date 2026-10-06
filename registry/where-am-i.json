@@ -2,7 +2,7 @@
   "$schema": "./_schema.json",
   "name": "where-am-i",
   "displayName": "현재 상황 요약",
-  "summary": "목표·지금 하는 일·내게 기다리는 것·다음 할 일을 입력창 위에 한눈에 보여주고, /where로 더 긴 요약도 볼 수 있어요.",
+  "summary": "목표·지금 하는 일·사용자의 답변이 필요한 항목·다음 할 일을 입력창 위에 한눈에 보여줘요. `/where`에서 더 긴 요약도 볼 수 있어요.",
   "summaryEn": "A live recap above the prompt (goal, doing now, waiting on you, next), with /where for a longer bullet-point summary.",
   "category": "automation",
   "tags": [

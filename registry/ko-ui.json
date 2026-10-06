@@ -1,7 +1,7 @@
 {
   "name": "ko-ui",
   "displayName": "한국어 UI 번역 사전",
-  "summary": "슬래시 커맨드 설명, `/config` 항목, 작업 표시줄 같은 화면 문구를 사전 기반으로 한국어로 보여줘요.",
+  "summary": "슬래시 커맨드 설명, `/config` 항목, 작업 표시줄 같은 화면 문구를 번역 사전에 맞춰 한국어로 표시해요.",
   "summaryEn": "Dictionary-based mod that shows Claude Code's slash-command descriptions, /config rows, and some UI text in Korean.",
   "category": "localize",
   "tags": [

@@ -2,7 +2,7 @@
   "$schema": "./_schema.json",
   "name": "pr-pulse",
   "displayName": "PR 펄스",
-  "summary": "GitHub PR의 머지 준비 상태·CI 체크·리뷰 코멘트·리뷰 대기열을 입력창 위 띠와 패널로 실시간으로 보여줘요",
+  "summary": "GitHub PR의 머지 준비 상태·CI 체크·리뷰 코멘트·리뷰 대기열을 입력창 위 한 줄과 패널에 실시간으로 표시해요",
   "summaryEn": "Live GitHub PR status in Claude Code: merge readiness, CI checks, review comments and your review queue, in a collapsible band and panes.",
   "category": "statusline",
   "tags": [

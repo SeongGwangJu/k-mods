@@ -71,7 +71,7 @@ export const CATALOG: CatalogEntry[] = [
   {
     "name": "ko-ui",
     "displayName": "한국어 UI 번역 사전",
-    "summary": "슬래시 커맨드 설명, `/config` 항목, 작업 표시줄 같은 화면 문구를 사전 기반으로 한국어로 보여줘요.",
+    "summary": "슬래시 커맨드 설명, `/config` 항목, 작업 표시줄 같은 화면 문구를 번역 사전에 맞춰 한국어로 표시해요.",
     "category": "localize",
     "kind": "upstream",
     "author": "moduvoice",
@@ -97,7 +97,7 @@ export const CATALOG: CatalogEntry[] = [
   {
     "name": "skins",
     "displayName": "스킨 (한국 수정판)",
-    "summary": "도구 호출·표·코드·셸 출력을 테마 카드로 다시 그려요. 원본에서 한글 표가 잘리던 문제를 고쳤어요",
+    "summary": "도구 호출·표·코드·셸 출력을 테마 카드 형식으로 표시해요. 원본에서 한글 표가 잘리던 문제를 고쳤어요",
     "category": "theme",
     "kind": "patched",
     "author": "hellosverre",
@@ -118,7 +118,7 @@ export const CATALOG: CatalogEntry[] = [
   {
     "name": "gfm-render",
     "displayName": "GFM 렌더러",
-    "summary": "트랜스크립트에서 GFM 경고문·체크리스트·취소선·Mermaid 다이어그램을 그려줘요.",
+    "summary": "대화 기록에 있는 GFM 경고문·체크리스트·취소선·Mermaid 다이어그램을 화면에 표시해요.",
     "category": "theme",
     "kind": "upstream",
     "author": "briangtn",
@@ -135,7 +135,7 @@ export const CATALOG: CatalogEntry[] = [
   {
     "name": "prismantis",
     "displayName": "프리즈만티스",
-    "summary": "표·코드·다이어그램·도구 줄을 15가지 테마로 색입혀 보여주고, 복사 버튼도 달아줘요.",
+    "summary": "표·코드·다이어그램·도구 호출 결과를 15가지 테마로 표시하고 복사 버튼을 추가해요.",
     "category": "theme",
     "kind": "upstream",
     "author": "Nahum Litvin",
@@ -154,7 +154,7 @@ export const CATALOG: CatalogEntry[] = [
   {
     "name": "spinner",
     "displayName": "픽셀 장면 스피너 (한국 수정판)",
-    "summary": "Claude가 일하는 동안 입력창 위에 냥캣·Clawd 같은 픽셀 장면을 띄우고 펫을 키워요. 한국어·간결한 기본값으로 고친 수정판이에요",
+    "summary": "Claude가 일하는 동안 입력창 위에 냥캣·Clawd 같은 픽셀 장면을 표시하고 펫을 키워요. 한국어·간결한 기본값으로 고친 수정판이에요",
     "category": "animation",
     "kind": "patched",
     "author": "hoobnn",
@@ -185,7 +185,7 @@ export const CATALOG: CatalogEntry[] = [
   {
     "name": "cc-arcade",
     "displayName": "CC 아케이드",
-    "summary": "입력창 위에서 스네이크·테트리스·2048·지뢰찾기 등 9가지 미니게임을 즐기고, Claude가 일하는 동안 자라는 펫도 키울 수 있어요.",
+    "summary": "입력창 위에서 스네이크·테트리스·2048·지뢰찾기 등 9가지 미니게임을 즐길 수 있어요. Claude가 일하는 동안 자라는 펫도 키울 수 있어요.",
     "category": "animation",
     "kind": "upstream",
     "author": "Seza Akgün",
@@ -211,7 +211,7 @@ export const CATALOG: CatalogEntry[] = [
   {
     "name": "clawd-spinner",
     "displayName": "Clawd 스피너",
-    "summary": "189가지 스피너 단어마다 Clawd가 요리하거나 춤추거나 서성거리는 등 다른 몸짓을 연기해요.",
+    "summary": "189가지 스피너 단어마다 Clawd가 요리·춤·서성거리기 등 서로 다른 몸짓을 해요.",
     "category": "animation",
     "kind": "upstream",
     "author": "Sai Rudra",
@@ -232,7 +232,7 @@ export const CATALOG: CatalogEntry[] = [
   {
     "name": "clawd-tales",
     "displayName": "Clawd 이야기",
-    "summary": "입력창 위에서 픽셀 Clawd가 Claude의 모든 도구 호출을 몸짓으로 연기하고, 서브에이전트마다 작은 동료도 등장해요.",
+    "summary": "입력창 위에서 픽셀 Clawd가 Claude의 모든 도구 호출에 맞춰 몸짓을 해요. 서브에이전트마다 작은 동료도 등장해요.",
     "category": "animation",
     "kind": "upstream",
     "author": "plaxagoras",
@@ -255,7 +255,7 @@ export const CATALOG: CatalogEntry[] = [
   {
     "name": "combo-meter",
     "displayName": "콤보 미터",
-    "summary": "도구 호출이 성공하면 콤보가 이어지고 실패하면 끊기는 격투 게임 스타일 콤보 미터예요. D부터 SSS까지 랭크가 올라가요.",
+    "summary": "도구 호출이 성공하면 콤보 수치와 랭크가 올라가고 실패하면 콤보가 끊겨요. 랭크는 D부터 SSS까지예요.",
     "category": "animation",
     "kind": "upstream",
     "author": "Sarthak Bhatore",
@@ -275,7 +275,7 @@ export const CATALOG: CatalogEntry[] = [
   {
     "name": "diff-invaders",
     "displayName": "디프 인베이더",
-    "summary": "Claude가 방금 쓴 diff 줄이 그대로 외계인 편대가 되는 스페이스 인베이더예요. 토큰 소모 없이 입력창 위에서 플레이해요",
+    "summary": "Claude가 방금 쓴 diff 줄에 대응하는 외계인 편대를 표시하는 스페이스 인베이더예요. 토큰 소모 없이 입력창 위에서 플레이해요",
     "category": "animation",
     "kind": "upstream",
     "author": "claude-code-templates",
@@ -298,7 +298,7 @@ export const CATALOG: CatalogEntry[] = [
   {
     "name": "reels",
     "displayName": "릴스",
-    "summary": "Claude가 작업하는 동안 YouTube Shorts를 터미널 패널에 재생하고, Claude가 끝나면 자동으로 멈춰요. /reels를 쳐야만 켜져요.",
+    "summary": "Claude가 작업하는 동안 YouTube Shorts를 터미널 패널에서 재생하고 작업이 끝나면 자동으로 멈춰요. `/reels`를 입력했을 때만 재생돼요.",
     "category": "animation",
     "kind": "upstream",
     "author": "Hamza Zafar",
@@ -325,7 +325,7 @@ export const CATALOG: CatalogEntry[] = [
   {
     "name": "tool-defense",
     "displayName": "툴 디펜스",
-    "summary": "Claude의 실제 도구 호출(Bash·Edit·웹·Agent)이 그대로 적 유닛이 되는 타워 디펜스예요. 토큰 소모 없이 입력창 위에서 플레이해요",
+    "summary": "Claude의 실제 도구 호출(Bash·Edit·웹·Agent)에 대응하는 적 유닛을 표시하는 타워 디펜스예요. 토큰 소모 없이 입력창 위에서 플레이해요",
     "category": "animation",
     "kind": "upstream",
     "author": "claude-code-templates",
@@ -348,7 +348,7 @@ export const CATALOG: CatalogEntry[] = [
   {
     "name": "status-ko",
     "displayName": "작업 상태 한국어",
-    "summary": "작업 중 줄을 '읽는 중 · page.tsx'처럼 지금 하는 일로, 끝난 줄을 모델·시간·도구·캐시 한 줄로 보여줘요",
+    "summary": "작업 중에는 '읽는 중 · page.tsx'처럼 지금 하는 일을 보여줘요. 끝나면 모델·시간·도구·캐시를 한 줄로 정리해요",
     "category": "statusline",
     "kind": "original",
     "author": "SeongGwangJu",
@@ -366,7 +366,7 @@ export const CATALOG: CatalogEntry[] = [
   {
     "name": "ctx-strip",
     "displayName": "컨텍스트 막대",
-    "summary": "컨텍스트가 무엇으로 차 있는지(대화·도구·스킬…) 입력창 위 막대로 보여주고, 서브에이전트가 돌면 한 줄로 알려줘요",
+    "summary": "컨텍스트 구성(대화·도구·스킬…)을 입력창 위 막대로 표시해요. 서브에이전트가 실행되면 한 줄로 알려줘요",
     "category": "statusline",
     "kind": "original",
     "author": "SeongGwangJu",
@@ -388,7 +388,7 @@ export const CATALOG: CatalogEntry[] = [
   {
     "name": "agent-radar",
     "displayName": "에이전트 레이더",
-    "summary": "실행 중인 서브에이전트마다 입력창 위에 경과 시간·도구 호출 수·현재 작업을 한 줄로 보여주고, /radar로 전체 목록과 대화 내용을 확인해요.",
+    "summary": "실행 중인 서브에이전트마다 경과 시간·도구 호출 수·현재 작업을 입력창 위 한 줄로 표시해요. /radar로 전체 목록과 대화 내용을 확인할 수 있어요.",
     "category": "statusline",
     "kind": "upstream",
     "author": "Hamza Zafar",
@@ -409,7 +409,7 @@ export const CATALOG: CatalogEntry[] = [
   {
     "name": "browser-lanes",
     "displayName": "브라우저 레인",
-    "summary": "이 세션이 Playwright 브라우저를 갖고 있는지, 누가 쓰고 있는지 입력창 위에 보여주고, 서브에이전트끼리는 순서를 기다리게 해요.",
+    "summary": "이 세션에 Playwright 브라우저가 있는지, 현재 누가 쓰는지 입력창 위에 표시해요. 서브에이전트끼리는 차례대로 사용하게 해요.",
     "category": "statusline",
     "kind": "upstream",
     "author": "Hamza Zafar",
@@ -433,7 +433,7 @@ export const CATALOG: CatalogEntry[] = [
   {
     "name": "cache-panel",
     "displayName": "캐시 패널",
-    "summary": "프롬프트 캐시가 식기 50분 전에 알려주고, 계속 데우기·한 번 핑·압축 중 하나를 비용 추정과 함께 고를 수 있어요.",
+    "summary": "프롬프트 캐시가 만료되기 50분 전에 알려줘요. 주기적 갱신, 한 번 갱신, 대화 압축 중 하나를 예상 비용과 함께 선택할 수 있어요.",
     "category": "statusline",
     "kind": "upstream",
     "author": "Dustin Yuchen Teng",
@@ -453,7 +453,7 @@ export const CATALOG: CatalogEntry[] = [
   {
     "name": "context-bar",
     "displayName": "컨텍스트 바 (hamzafer)",
-    "summary": "컨텍스트 창을 /context와 같은 색으로 구간별 막대 그래프로 보여주고, 토큰 수·압축 시점·범례까지 입력창 위에 표시해요.",
+    "summary": "컨텍스트 창을 /context와 같은 색의 구간별 막대 그래프로 표시해요. 토큰 수·압축 시점·범례도 입력창 위에서 확인할 수 있어요.",
     "category": "statusline",
     "kind": "upstream",
     "author": "Hamza Zafar",
@@ -473,7 +473,7 @@ export const CATALOG: CatalogEntry[] = [
   {
     "name": "flightdeck",
     "displayName": "플라이트덱 대시보드",
-    "summary": "메인 모델 상태·비용·컨텍스트, 온콜 아키텍트 상담, 권한 검사, 서브에이전트 카드를 실시간 세션 이벤트로 한 화면에 보여줘요",
+    "summary": "메인 모델의 상태·비용·컨텍스트, 온콜 아키텍트 상담, 권한 검사, 서브에이전트 카드를 한 화면에 표시해요. 세션 이벤트가 발생하면 실시간으로 갱신해요",
     "category": "statusline",
     "kind": "upstream",
     "author": "Stephen Casella",
@@ -492,7 +492,7 @@ export const CATALOG: CatalogEntry[] = [
   {
     "name": "hud",
     "displayName": "claude-hud 상태 대시보드",
-    "summary": "모델·프로젝트·Git·컨텍스트·사용량·도구·할 일을 HUD 한 줄로 보여주고, 예산·이력·작업 요약·상세 패널·테마까지 지원해요.",
+    "summary": "모델·프로젝트·Git·컨텍스트·사용량·도구·할 일을 HUD 한 줄로 표시해요. 예산·이력·작업 요약·상세 패널·테마도 지원해요.",
     "category": "statusline",
     "kind": "upstream",
     "author": "hoobnn",
@@ -525,7 +525,7 @@ export const CATALOG: CatalogEntry[] = [
   {
     "name": "mod-usage",
     "displayName": "사용량 진행률 막대",
-    "summary": "컨텍스트·5시간·7일 사용량을 입력창 위 그라데이션 막대 3개로 보여줘요. Desktop/VS Code 전용, 12개 언어를 지원하지만 한국어는 아직 없어요.",
+    "summary": "컨텍스트·5시간·7일 사용량을 입력창 위 그라데이션 막대 3개로 표시해요. Desktop/VS Code 전용이며 12개 언어를 지원하지만 한국어는 아직 없어요.",
     "category": "statusline",
     "kind": "upstream",
     "author": "Jack Chiang",
@@ -548,7 +548,7 @@ export const CATALOG: CatalogEntry[] = [
   {
     "name": "pr-pulse",
     "displayName": "PR 펄스",
-    "summary": "GitHub PR의 머지 준비 상태·CI 체크·리뷰 코멘트·리뷰 대기열을 입력창 위 띠와 패널로 실시간으로 보여줘요",
+    "summary": "GitHub PR의 머지 준비 상태·CI 체크·리뷰 코멘트·리뷰 대기열을 입력창 위 한 줄과 패널에 실시간으로 표시해요",
     "category": "statusline",
     "kind": "upstream",
     "author": "Gerric Chaplin",
@@ -571,7 +571,7 @@ export const CATALOG: CatalogEntry[] = [
   {
     "name": "prompt-cache-control",
     "displayName": "프롬프트 캐시 미터",
-    "summary": "요청마다 캐시가 얼마나 읽히고 새로 쓰였는지 입력창 위에 보여주고, 만료 임박이면 알려주며 /compact·/clear 시점을 제안해요",
+    "summary": "요청마다 캐시를 읽고 새로 쓴 양을 입력창 위에 표시해요. 만료가 임박하면 알리고 /compact·/clear 시점을 제안해요",
     "category": "statusline",
     "kind": "upstream",
     "author": "claude-code-templates",
@@ -593,7 +593,7 @@ export const CATALOG: CatalogEntry[] = [
   {
     "name": "receipt",
     "displayName": "턴 영수증",
-    "summary": "매 턴이 끝나면 바뀐 파일·실행한 명령·읽은 횟수를 입력창 위에 한 줄 영수증으로 보여주고, 제자리걸음을 하면 알려줘요.",
+    "summary": "매 턴이 끝나면 바뀐 파일·실행한 명령·읽은 횟수를 입력창 위 한 줄 요약으로 표시해요. 같은 작업을 반복하면 알려줘요.",
     "category": "statusline",
     "kind": "upstream",
     "author": "hoobnn",
@@ -616,7 +616,7 @@ export const CATALOG: CatalogEntry[] = [
   {
     "name": "review-watch",
     "displayName": "리뷰 워치",
-    "summary": "실행 중인 codex review나 '리뷰' 서브에이전트마다 모델·대상·경과 시간을 한 줄로 보여주고, 끝나면 발견 개수를 토스트로 알려줘요.",
+    "summary": "실행 중인 codex review나 '리뷰' 서브에이전트마다 모델·대상·경과 시간을 한 줄로 표시해요. 끝나면 발견 항목 수를 화면 알림으로 알려줘요.",
     "category": "statusline",
     "kind": "upstream",
     "author": "Hamza Zafar",
@@ -640,7 +640,7 @@ export const CATALOG: CatalogEntry[] = [
   {
     "name": "statuspane",
     "displayName": "상태 카드",
-    "summary": "모델, 이펙트, 컨텍스트, 5시간·주간 한도, 비용, 브랜치를 프롬프트 위 카드 하나로 보여줘요.",
+    "summary": "모델, 이펙트, 컨텍스트, 5시간·주간 한도, 비용, 브랜치를 프롬프트 위 카드 하나에 표시해요.",
     "category": "statusline",
     "kind": "upstream",
     "author": "Anji Xu",
@@ -667,7 +667,7 @@ export const CATALOG: CatalogEntry[] = [
   {
     "name": "taxi-meter",
     "displayName": "택시 미터기",
-    "summary": "입력창 위 택시 미터기 패널로 세션 요금과 5시간·주간 한도를 보여줘요. /meter·/receipt로 자세히 볼 수 있어요.",
+    "summary": "입력창 위 택시 미터기 패널에 세션 요금과 5시간·주간 한도를 표시해요. /meter·/receipt로 자세히 볼 수 있어요.",
     "category": "statusline",
     "kind": "upstream",
     "author": "개발동생 (devbrothers)",
@@ -687,7 +687,7 @@ export const CATALOG: CatalogEntry[] = [
   {
     "name": "todo-bar",
     "displayName": "할 일 진행 상태줄",
-    "summary": "Claude가 만든 할 일 목록의 진행 상황을 입력창 위에 막대와 경과 시간으로 보여줘요.",
+    "summary": "Claude가 만든 할 일 목록의 진행 상황과 경과 시간을 입력창 위 막대로 표시해요.",
     "category": "statusline",
     "kind": "upstream",
     "author": "hoobnn",
@@ -711,7 +711,7 @@ export const CATALOG: CatalogEntry[] = [
   {
     "name": "token-weather",
     "displayName": "토큰 날씨",
-    "summary": "컨텍스트 창이 얼마나 찼는지 날씨 아이콘과 최근 턴 막대그래프로 입력창 위에 보여줘요.",
+    "summary": "컨텍스트 사용량을 날씨 아이콘과 최근 턴 막대그래프로 입력창 위에 표시해요.",
     "category": "statusline",
     "kind": "upstream",
     "author": "Claude Code DevRel",
@@ -730,7 +730,7 @@ export const CATALOG: CatalogEntry[] = [
   {
     "name": "ts-band",
     "displayName": "테일스케일 노드 상태줄",
-    "summary": "입력창 위에 Tailscale 노드들의 연결 상태를 보여주고, 노드가 끊기거나 다시 연결되면 토스트로 알려줘요.",
+    "summary": "입력창 위에 Tailscale 노드들의 연결 상태를 표시해요. 노드가 끊기거나 다시 연결되면 화면 알림으로 알려줘요.",
     "category": "statusline",
     "kind": "upstream",
     "author": "hoobnn",
@@ -757,7 +757,7 @@ export const CATALOG: CatalogEntry[] = [
   {
     "name": "usage-band-pawandeep",
     "displayName": "사용량 밴드 (5시간·주간)",
-    "summary": "입력창 위에 5시간·주간 사용량 퍼센트와 초기화 카운트다운을 항상 보여주고, 새 채팅·GitHub 푸시 버튼도 함께 제공해요.",
+    "summary": "입력창 위에 5시간·주간 사용량 퍼센트와 초기화 카운트다운을 항상 표시해요. 새 채팅·GitHub 푸시 버튼도 함께 제공해요.",
     "category": "statusline",
     "kind": "upstream",
     "author": "Pawandeep",
@@ -779,7 +779,7 @@ export const CATALOG: CatalogEntry[] = [
   {
     "name": "mod-store",
     "displayName": "모드 상점",
-    "summary": "/k-mods 한 번이면 카탈로그를 둘러보고 버튼으로 설치·제거해요",
+    "summary": "`/k-mods`를 입력하면 카탈로그가 열려요. 버튼으로 mod를 설치하거나 제거할 수 있어요",
     "category": "tool",
     "kind": "original",
     "author": "SeongGwangJu",
@@ -799,7 +799,7 @@ export const CATALOG: CatalogEntry[] = [
   {
     "name": "memo-pad",
     "displayName": "메모장",
-    "summary": "Claude가 일하는 동안 다음에 시킬 일을 적어 두고, 버튼 한 번으로 입력창에 넣어요",
+    "summary": "Claude가 일하는 동안 다음에 시킬 일을 적어 두고 버튼 한 번으로 입력창에 추가해요",
     "category": "tool",
     "kind": "original",
     "author": "SeongGwangJu",
@@ -817,7 +817,7 @@ export const CATALOG: CatalogEntry[] = [
   {
     "name": "agent-flow",
     "displayName": "에이전트 플로우",
-    "summary": "메인 루프와 서브에이전트들을 나무 구조로 보여주고, 각 에이전트에 오간 컨텍스트 양과 답변을 클릭해서 볼 수 있어요",
+    "summary": "메인 루프와 서브에이전트의 관계를 트리 구조로 표시해요. 각 에이전트에 오간 컨텍스트 양과 답변은 클릭해서 볼 수 있어요",
     "category": "tool",
     "kind": "upstream",
     "author": "claude-code-templates",
@@ -839,7 +839,7 @@ export const CATALOG: CatalogEntry[] = [
   {
     "name": "agent-quick-menu",
     "displayName": "퀵 메뉴",
-    "summary": "설치된 플러그인들의 명령과 설정을 한 패널에 모아서 찾고 바로 실행하게 해줘요.",
+    "summary": "설치된 플러그인의 명령과 설정을 한 패널에서 찾아 바로 실행할 수 있어요.",
     "category": "tool",
     "kind": "upstream",
     "author": "dasganni",
@@ -861,7 +861,7 @@ export const CATALOG: CatalogEntry[] = [
   {
     "name": "image-view",
     "displayName": "이미지 미리보기",
-    "summary": "붙여넣은 이미지를 입력창 위에 썸네일로 보여줘요. [Image #1] 같은 표시 대신이에요.",
+    "summary": "붙여넣은 이미지를 `[Image #1]` 같은 글자 대신 입력창 위 썸네일로 보여줘요.",
     "category": "tool",
     "kind": "upstream",
     "author": "gggodlin",
@@ -880,7 +880,7 @@ export const CATALOG: CatalogEntry[] = [
   {
     "name": "now-playing",
     "displayName": "나우 플레잉",
-    "summary": "macOS에서 Spotify로 재생 중인 곡과 가사를 입력창 위에 보여주고, 버튼이나 /music으로 재생·일시정지·이전·다음을 조작해요.",
+    "summary": "macOS에서 Spotify로 재생 중인 곡과 가사를 입력창 위에 표시해요. 버튼이나 /music으로 재생·일시정지·이전·다음을 조작할 수 있어요.",
     "category": "tool",
     "kind": "upstream",
     "author": "Hamza Zafar",
@@ -904,7 +904,7 @@ export const CATALOG: CatalogEntry[] = [
   {
     "name": "paste-view",
     "displayName": "붙여넣기 미리보기",
-    "summary": "붙여넣은 이미지와 긴 텍스트를 입력창 위에서 바로 미리 보여줘요.",
+    "summary": "붙여넣은 이미지와 긴 텍스트를 입력창 위에서 미리 확인할 수 있어요.",
     "category": "tool",
     "kind": "upstream",
     "author": "Clément Décou",
@@ -922,7 +922,7 @@ export const CATALOG: CatalogEntry[] = [
   {
     "name": "pixel-player",
     "displayName": "픽셀 뮤직 플레이어",
-    "summary": "mpv로 재생목록을 재생하면서 픽셀 아트 캐릭터가 음악에 맞춰 반응하는 패널을 보여줘요.",
+    "summary": "mpv로 재생목록을 재생하면서 음악에 맞춰 반응하는 픽셀 아트 캐릭터를 패널에 표시해요.",
     "category": "tool",
     "kind": "upstream",
     "author": "chrisluo5311",
@@ -952,7 +952,7 @@ export const CATALOG: CatalogEntry[] = [
   {
     "name": "prompt-rail",
     "displayName": "프롬프트 레일",
-    "summary": "세션에서 보낸 프롬프트들을 레일 하나로 모아 보여주고, 마우스를 올리면 읽고 클릭하면 그 지점으로 이동해요.",
+    "summary": "세션에서 보낸 프롬프트를 탐색 막대에 모아 표시해요. 마우스를 올리면 내용을 미리 보고 클릭하면 해당 지점으로 이동해요.",
     "category": "tool",
     "kind": "upstream",
     "author": "oikon48",
@@ -972,7 +972,7 @@ export const CATALOG: CatalogEntry[] = [
   {
     "name": "replay-theater",
     "displayName": "Replay 극장",
-    "summary": "이번 턴에서 Claude가 고친 파일들을 한 스텝씩 diff로 넘겨보며 다시 볼 수 있어요.",
+    "summary": "이번 턴에서 Claude가 고친 파일을 한 단계씩 diff로 다시 확인할 수 있어요.",
     "category": "tool",
     "kind": "upstream",
     "author": "Claude Code DevRel",
@@ -995,7 +995,7 @@ export const CATALOG: CatalogEntry[] = [
   {
     "name": "session-wrapped",
     "displayName": "세션 랩드",
-    "summary": "`/wrapped`로 이번 세션의 도구 호출·테스트·비용 통계를 애니메이션으로 보여주고, 공유용 PNG 카드를 데스크톱에 저장해요.",
+    "summary": "`/wrapped`로 이번 세션의 도구 호출·테스트·비용 통계를 애니메이션으로 표시해요. 공유용 PNG 카드는 데스크톱에 저장해요.",
     "category": "tool",
     "kind": "upstream",
     "author": "OneWave AI",
@@ -1022,7 +1022,7 @@ export const CATALOG: CatalogEntry[] = [
   {
     "name": "taxi-blackbox",
     "displayName": "택시 블랙박스",
-    "summary": "도구 호출을 블랙박스처럼 녹화해서, 오류나 거부 직전 상황을 /blackbox에서 돌려볼 수 있어요. 토큰·비밀번호는 가려서 기록해요.",
+    "summary": "도구 호출을 기록하고 오류나 거부 직전의 기록을 /blackbox에서 다시 확인할 수 있어요. 토큰·비밀번호는 가려서 기록해요.",
     "category": "tool",
     "kind": "upstream",
     "author": "개발동생 (devbrothers)",
@@ -1041,7 +1041,7 @@ export const CATALOG: CatalogEntry[] = [
   {
     "name": "taxi-navi",
     "displayName": "택시 내비게이션",
-    "summary": "할 일 목록을 내비게이션처럼 보여줘요. 진행 경로와 다음 안내가 표시되고, 계획이 바뀌면 경로를 다시 찾아줘요.",
+    "summary": "할 일 목록에서 현재 진행 상태와 다음 할 일을 표시해요. 계획이 바뀌면 새 순서에 맞춰 목록을 갱신해요.",
     "category": "tool",
     "kind": "upstream",
     "author": "개발동생 (devbrothers)",
@@ -1083,7 +1083,7 @@ export const CATALOG: CatalogEntry[] = [
   {
     "name": "agent-compact-advisor",
     "displayName": "컴팩트 타이밍 어드바이저",
-    "summary": "지금이 /compact 하기 좋은 때인지 0~100점으로 상태줄에 보여주고, 압축할 때마다 목표·결정·남은 일을 지키는 보존 템플릿을 자동으로 넣어줘요.",
+    "summary": "지금이 /compact 하기 좋은 때인지 상태줄에 0~100점으로 표시해요. 압축할 때마다 목표·결정·남은 일을 포함한 보존 템플릿을 자동으로 추가해요.",
     "category": "automation",
     "kind": "upstream",
     "author": "apolenkov",
@@ -1108,7 +1108,7 @@ export const CATALOG: CatalogEntry[] = [
   {
     "name": "auto-handoff",
     "displayName": "오토 핸드오프",
-    "summary": "컨텍스트가 꽉 차기 전에 Haiku가 요약한 브리핑과 함께 새 대화로 넘겨주고, 필요하면 브리핑 페이지를 따로 열어볼 수 있어요.",
+    "summary": "컨텍스트가 한도에 도달하기 전에 Haiku가 요약한 브리핑을 만들고 새 대화로 전환해요. 필요하면 브리핑 페이지를 따로 열어 확인할 수 있어요.",
     "category": "automation",
     "kind": "upstream",
     "author": "Alex Hillman",
@@ -1131,7 +1131,7 @@ export const CATALOG: CatalogEntry[] = [
   {
     "name": "ctx-handoff",
     "displayName": "컨텍스트 핸드오프",
-    "summary": "컨텍스트가 한계에 가까워지면 핸드오프를 만들어 새 대화로 넘겨주고, 자리를 비운 사이엔 프롬프트 캐시를 데워둬요.",
+    "summary": "컨텍스트가 한계에 가까워지면 새 대화용 핸드오프를 만들고 자동으로 전환해요. 사용자가 55분 동안 입력하지 않으면 프롬프트 캐시를 최대 3번 갱신해요.",
     "category": "automation",
     "kind": "upstream",
     "author": "cablate",
@@ -1154,7 +1154,7 @@ export const CATALOG: CatalogEntry[] = [
   {
     "name": "jev-skill-suggestion",
     "displayName": "스킬 자동 추천",
-    "summary": "프롬프트마다 맞는 스킬 하나를 판단해 자동으로 불러오고 목록은 컨텍스트에서 빼요. API 키가 있으면 TypeSafe Jev로, 없으면 Claude 분류기로 판단해요",
+    "summary": "프롬프트마다 맞는 스킬 하나를 판단해 자동으로 불러오고, 스킬 목록은 컨텍스트에 넣지 않아요. API 키가 있으면 TypeSafe Jev로, 없으면 Claude 분류기로 판단해요",
     "category": "automation",
     "kind": "upstream",
     "author": "claude-code-templates",
@@ -1181,7 +1181,7 @@ export const CATALOG: CatalogEntry[] = [
   {
     "name": "next-steps",
     "displayName": "다음 할 일 제안",
-    "summary": "턴이 끝날 때마다 다음에 보낼 법한 프롬프트 2~3개를 입력창 위에 제안하고, 숫자 키 하나로 바로 초안에 채워 넣어요.",
+    "summary": "턴이 끝날 때마다 다음에 보낼 법한 프롬프트 2~3개를 입력창 위에 제안해요. 숫자 키를 누르면 선택한 문구가 입력창에 입력돼요.",
     "category": "automation",
     "kind": "upstream",
     "author": "Hamza Zafar",
@@ -1200,7 +1200,7 @@ export const CATALOG: CatalogEntry[] = [
   {
     "name": "switchboard",
     "displayName": "스위치보드",
-    "summary": "서브에이전트가 시작되기 전에 Haiku/Sonnet/Opus 중 가장 싼 모델을 골라주고, /route로 각 선택과 예상 비용을 보여줘요. API 키 없이도 규칙만으로 동작해요.",
+    "summary": "서브에이전트가 시작되기 전에 Haiku/Sonnet/Opus 중 비용이 가장 낮은 모델을 골라요. `/route`에서 선택 결과와 예상 비용을 확인할 수 있어요. API 키 없이도 규칙만으로 동작해요.",
     "category": "automation",
     "kind": "upstream",
     "author": "Hamza Zafar",
@@ -1223,7 +1223,7 @@ export const CATALOG: CatalogEntry[] = [
   {
     "name": "where-am-i",
     "displayName": "현재 상황 요약",
-    "summary": "목표·지금 하는 일·내게 기다리는 것·다음 할 일을 입력창 위에 한눈에 보여주고, /where로 더 긴 요약도 볼 수 있어요.",
+    "summary": "목표·지금 하는 일·사용자의 답변이 필요한 항목·다음 할 일을 입력창 위에 한눈에 보여줘요. `/where`에서 더 긴 요약도 볼 수 있어요.",
     "category": "automation",
     "kind": "upstream",
     "author": "Hamza Zafar",
@@ -1245,7 +1245,7 @@ export const CATALOG: CatalogEntry[] = [
   {
     "name": "streamer-mode",
     "displayName": "스트리머 모드",
-    "summary": "화면 공유·녹화할 때 토큰·이메일·전화번호·주민번호를 화면에서 가려요. Claude가 읽는 내용은 그대로예요",
+    "summary": "화면을 공유·녹화할 때 토큰·이메일·전화번호·주민번호를 화면에서 가려요. Claude가 읽는 내용은 그대로예요",
     "category": "guard",
     "kind": "original",
     "author": "SeongGwangJu",
@@ -1264,7 +1264,7 @@ export const CATALOG: CatalogEntry[] = [
   {
     "name": "blast-radius-ko",
     "displayName": "위험 명령 브레이크",
-    "summary": "rm -rf·force push·DB 초기화처럼 되돌릴 수 없는 명령을 실행 전에 멈추고, 무엇이 바뀌는지 보여준 뒤 물어봐요",
+    "summary": "rm -rf·force push·DB 초기화처럼 되돌릴 수 없는 명령은 실행 전에 멈춰요. 변경 범위를 보여준 뒤 실행할지 물어봐요",
     "category": "guard",
     "kind": "patched",
     "author": "Anthropic",
@@ -1281,7 +1281,7 @@ export const CATALOG: CatalogEntry[] = [
   {
     "name": "secret-redactor",
     "displayName": "시크릿 리댁터",
-    "summary": "도구 결과에 섞인 API 키·토큰·JWT·개인키·DB 접속 문자열을 모델이 읽기 전에 지우고, 지워진 자리표시를 다시 명령에 쓰면 막아요",
+    "summary": "도구 결과에 섞인 API 키·토큰·JWT·개인키·DB 접속 문자열을 모델이 읽기 전에 지워요. 지워진 자리표시를 다시 명령에 쓰려 하면 차단해요",
     "category": "guard",
     "kind": "upstream",
     "author": "claude-code-templates",
@@ -1301,7 +1301,7 @@ export const CATALOG: CatalogEntry[] = [
   {
     "name": "secret-vault",
     "displayName": "시크릿 볼트",
-    "summary": "사용자가 붙여넣거나 도구가 읽어온 API 키·이메일·IP 주소를 모델에게 보내기 전 자리표시로 가리고, 도구 실행 직전엔 원래 값으로 되돌려줘요.",
+    "summary": "사용자가 붙여넣거나 도구가 읽어온 API 키·이메일·IP 주소를 모델에게 보내기 전 자리표시로 바꿔요. 도구 실행 직전에는 원래 값으로 되돌려줘요.",
     "category": "guard",
     "kind": "upstream",
     "author": "Ray Amjad",
@@ -1321,7 +1321,7 @@ export const CATALOG: CatalogEntry[] = [
   {
     "name": "taxi-speedcam",
     "displayName": "택시 과속카메라",
-    "summary": "force push·rm -rf·DB 삭제·변경 폐기·운영 배포처럼 위험한 Bash 명령 앞에서 찰칵 찍고 물어봐요. 실행할지 세울지는 사용자가 정해요.",
+    "summary": "force push·rm -rf·DB 삭제·변경 폐기·운영 배포처럼 위험한 Bash 명령을 실행하기 전에 확인을 요청해요. 실행하거나 차단할지는 사용자가 정해요.",
     "category": "guard",
     "kind": "upstream",
     "author": "개발동생 (devbrothers)",
@@ -1340,7 +1340,7 @@ export const CATALOG: CatalogEntry[] = [
   {
     "name": "cc-pr-tracker",
     "displayName": "GitHub PR 트래커",
-    "summary": "머지 상태·리뷰·필수 체크를 입력창 위에서 실시간으로 지켜보고, 바뀌면 토스트·소리로 알려줘요.",
+    "summary": "머지 상태·리뷰·필수 체크를 입력창 위에 실시간으로 표시해요. 바뀌면 화면 알림과 소리로 알려줘요.",
     "category": "integration",
     "kind": "upstream",
     "author": "Seza Akgün",
@@ -1367,7 +1367,7 @@ export const CATALOG: CatalogEntry[] = [
   {
     "name": "github-issues",
     "displayName": "GitHub 이슈 패널",
-    "summary": "저장소의 GitHub 이슈를 카드로 보여주고 버튼 한 번으로 Claude에게 작업을 맡길 수 있어요.",
+    "summary": "저장소의 GitHub 이슈를 카드로 표시해요. 버튼 한 번으로 Claude에게 해당 이슈 작업을 요청할 수 있어요.",
     "category": "integration",
     "kind": "upstream",
     "author": "Marco Carnevali",
@@ -1392,7 +1392,7 @@ export const CATALOG: CatalogEntry[] = [
   {
     "name": "glance",
     "displayName": "글랜스",
-    "summary": "다음 회의·리뷰 요청된 PR·진행 중인 Linear 이슈·최근 Slack DM을 입력창 위 한 줄로 보여주고, /glance로 전체 목록을 확인해요.",
+    "summary": "다음 회의·리뷰 요청된 PR·진행 중인 Linear 이슈·최근 Slack DM을 입력창 위 한 줄에 표시해요. /glance로 전체 목록을 확인할 수 있어요.",
     "category": "integration",
     "kind": "upstream",
     "author": "Hamza Zafar",
@@ -1419,7 +1419,7 @@ export const CATALOG: CatalogEntry[] = [
   {
     "name": "linear-board",
     "displayName": "Linear 보드 패널",
-    "summary": "Linear 프로젝트·마일스톤·이슈를 패널로 보여주고, 계획·실행·제품 버튼으로 바로 프롬프트를 채워 넣어요.",
+    "summary": "Linear 프로젝트·마일스톤·이슈를 패널에 표시해요. 계획·실행·제품 버튼으로 프롬프트를 바로 입력할 수 있어요.",
     "category": "integration",
     "kind": "upstream",
     "author": "linear-mod contributors",
@@ -1443,7 +1443,7 @@ export const CATALOG: CatalogEntry[] = [
   {
     "name": "linear-tickets",
     "displayName": "Linear 티켓 패널",
-    "summary": "내게 배정된 Linear 티켓을 패널로 보여주고, 클릭하면 바로 작업을 시작할 수 있어요.",
+    "summary": "내게 배정된 Linear 티켓을 패널에 표시해요. 클릭하면 바로 작업을 시작할 수 있어요.",
     "category": "integration",
     "kind": "upstream",
     "author": "rjohnt",
@@ -1465,7 +1465,7 @@ export const CATALOG: CatalogEntry[] = [
   {
     "name": "terminal-browser",
     "displayName": "터미널 브라우저",
-    "summary": "클로드 코드 화면 안에 실제 브라우저를 띄워 웹사이트를 미리 보고, 에이전트가 직접 열고 닫게 해줘요. 브라우저 엔진은 별도 설치하는 terminal-browser 앱이 맡아요.",
+    "summary": "Claude Code 화면에서 브라우저를 열어 웹사이트를 미리 볼 수 있어요. 에이전트가 직접 열고 닫으며, 별도로 설치한 terminal-browser 앱이 브라우저 엔진을 실행해요.",
     "category": "integration",
     "kind": "upstream",
     "author": "zenbu-labs",
@@ -1495,7 +1495,7 @@ export const CATALOG: CatalogEntry[] = [
   {
     "name": "vercel-deploy-status",
     "displayName": "Vercel 배포 현황",
-    "summary": "연결된 Vercel 프로젝트의 배포 대기열을 프롬프트 위 밴드에 큐잉·빌드·완료 단계별로 보여줘요.",
+    "summary": "연결된 Vercel 프로젝트의 배포 상태를 프롬프트 위 상태줄에 대기·빌드·완료 단계별로 표시해요.",
     "category": "integration",
     "kind": "upstream",
     "author": "Ray Amjad",
@@ -1542,7 +1542,7 @@ export const CATALOG: CatalogEntry[] = [
   {
     "name": "starter",
     "displayName": "추천 세트",
-    "summary": "처음이라면 이것부터: 모드 상점, 한국어 팩, 메모장, 컨텍스트 막대, 위험 명령 브레이크, 작업 끝 알림",
+    "summary": "처음 설치하기 좋은 추천 세트예요. 모드 상점, 한국어 팩, 메모장, 컨텍스트 막대, 위험 명령 브레이크, 작업 끝 알림을 한 번에 설치해요",
     "category": "bundle",
     "kind": "bundle",
     "author": "SeongGwangJu",
@@ -1575,7 +1575,7 @@ export const CATALOG: CatalogEntry[] = [
   {
     "name": "taxi-pack",
     "displayName": "택시팩",
-    "summary": "Claude Code를 택시로: 미터기(요금·한도), 내비(할 일 경로), 과속카메라(위험 명령 확인), 블랙박스(도구 호출 녹화)를 한 번에 설치해요",
+    "summary": "미터기(요금·한도), 내비(할 일 진행 상황), 과속카메라(위험 명령 확인), 블랙박스(도구 호출 기록)를 한 번에 설치해요",
     "category": "bundle",
     "kind": "bundle",
     "author": "개발동생 (devbrothers)",
