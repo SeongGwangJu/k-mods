@@ -91,12 +91,6 @@ function permissionsOf(entry, seen = new Set()) {
   return audit ? audit.permissions : null
 }
 
-function permEmoji(ids) {
-  if (ids === null) return '⏳'
-  if (ids.length === 0) return SCREEN_ONLY.emoji
-  return ids.map((id) => permissionMeta(id).emoji).join('')
-}
-
 function permLabels(ids) {
   if (ids === null) return ['검토 전']
   if (ids.length === 0) return [SCREEN_ONLY.label]
@@ -185,34 +179,18 @@ function catalogTables(lang) {
     if (list.length === 0) continue
     lines.push(`### ${cat.emoji} ${lang === 'ko' ? cat.label : cat.en}`, '')
     if (lang === 'ko' && cat.desc) lines.push(cat.desc, '')
-    if (lang === 'ko') lines.push('| mod | 무엇을 해 주나요 | 출처 | 권한 |', '| --- | --- | --- | :-: |')
-    else lines.push('| mod | What it does | Source | Access |', '| --- | --- | --- | :-: |')
+    if (lang === 'ko') lines.push('| mod | 무엇을 해 주나요 | 출처 |', '| --- | --- | --- |')
+    else lines.push('| mod | What it does | Source |', '| --- | --- | --- |')
     for (const e of list) {
       const title = lang === 'ko' ? e.displayName : e.name
       const star = e.featured ? ' ⭐' : ''
       const doc = `docs/mods/${e.name}.md`
       const summary = lang === 'ko' ? e.summary : e.summaryEn
-      lines.push(`| [**${title}**](${doc})${star}<br>\`${e.name}\` | ${summary} | ${sourceLabel(e, lang)} | ${permEmoji(permissionsOf(e))} |`)
+      lines.push(`| [**${title}**](${doc})${star}<br>\`${e.name}\` | ${summary} | ${sourceLabel(e, lang)} |`)
     }
     lines.push('')
   }
   return lines.join('\n').trimEnd()
-}
-
-function permLegend(lang) {
-  const items = [...PERMISSIONS, SCREEN_ONLY].map((p) => `${p.emoji} ${lang === 'ko' ? p.label : p.en}`)
-  if (lang === 'ko') {
-    return [
-      '권한 표시: ' + items.join(' · '),
-      '',
-      '읽는 법: 화면을 그리는 mod는 대부분 👀(대화 읽기)가 붙어요. 👀가 있어도 🌐(네트워크)·⚙️(프로그램 실행)·💬(프롬프트 입력)이 없으면 대화를 기기 밖으로 내보낼 방법이 없어요. 자세한 기준은 [안전 가이드](docs/guide/safety.md)에 있어요.',
-    ].join('\n')
-  }
-  return [
-    'Access legend: ' + items.join(' · '),
-    '',
-    'How to read it: most UI mods carry 👀 (reads conversation). Without 🌐 (network), ⚙️ (runs programs) or 💬 (submits prompts), a mod has no way to send that data off your machine.',
-  ].join('\n')
 }
 
 function featured(lang) {
@@ -230,8 +208,8 @@ function featured(lang) {
 
 const COUNT = String(entries.filter((e) => e.kind !== 'bundle').length)
 const sections = {
-  ko: { count: COUNT, featured: featured('ko'), catalog: catalogTables('ko') + '\n\n' + permLegend('ko') },
-  en: { count: COUNT, featured: featured('en'), catalog: catalogTables('en') + '\n\n' + permLegend('en') },
+  ko: { count: COUNT, featured: featured('ko'), catalog: catalogTables('ko') },
+  en: { count: COUNT, featured: featured('en'), catalog: catalogTables('en') },
 }
 
 function fillMarkers(file, values) {
