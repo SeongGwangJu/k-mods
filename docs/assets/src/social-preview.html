@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<style>
+  @font-face { font-family: "Mono"; src: local("D2Coding ligature"), local("D2Coding"), local("Menlo"); }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { width: 1280px; height: 640px; }
+  body {
+    background: radial-gradient(1200px 600px at 85% -10%, #3b2a22 0%, transparent 60%), #16181d;
+    color: #e8e6e3;
+    font-family: "Apple SD Gothic Neo", "Pretendard", system-ui, sans-serif;
+    display: flex; flex-direction: column; justify-content: center;
+    padding: 0 88px; position: relative; overflow: hidden;
+  }
+  .eyebrow { font-family: "Mono", monospace; color: #d97757; font-size: 26px; letter-spacing: 0.5px; margin-bottom: 18px; }
+  h1 { font-size: 112px; font-weight: 800; letter-spacing: -2px; line-height: 1; }
+  h1 span { color: #d97757; }
+  .tagline { margin-top: 22px; font-size: 40px; font-weight: 600; color: #f3f1ee; }
+  .sub { margin-top: 10px; font-size: 26px; color: #a9a6a1; }
+  .term {
+    margin-top: 40px; width: 760px; border-radius: 14px; background: #0f1115; border: 1px solid #2b2f37;
+    font-family: "Mono", monospace; font-size: 25px; padding: 20px 26px; line-height: 1.6;
+  }
+  .term .p { color: #d97757; }
+  .term .c { color: #e8e6e3; }
+  .term .dim { color: #6b7079; }
+  .chips { position: absolute; right: 88px; top: 150px; display: flex; flex-direction: column; gap: 16px; align-items: flex-end; }
+  .chip {
+    font-size: 25px; font-weight: 600; padding: 10px 20px; border-radius: 999px;
+    background: #22262e; border: 1px solid #343a45; color: #e8e6e3; white-space: nowrap;
+  }
+  .chip b { color: #d97757; font-weight: 700; }
+</style>
+</head>
+<body>
+  <div class="eyebrow">Claude Code mods · 한국어 큐레이션</div>
+  <h1>k<span>-</span>mods</h1>
+  <div class="tagline">한국어로 고르고, 한 줄로 설치하는 mod 모음</div>
+  <div class="sub">검토한 커밋만 설치 · 권한 라벨 · 한국 환경 수정판</div>
+  <div class="term">
+    <div><span class="p">❯</span> <span class="c">/plugin marketplace add SeongGwangJu/k-mods</span></div>
+    <div><span class="p">❯</span> <span class="c">/plugin install starter@k-mods</span></div>
+  </div>
+  <div class="chips">
+    <div class="chip">🇰🇷 <b>한국어 팩</b> 메뉴·상태줄</div>
+    <div class="chip">🐾 <b>냥캣</b> 스피너</div>
+    <div class="chip">🙈 <b>스트리머 모드</b></div>
+    <div class="chip">🔔 <b>작업 끝</b> 폰 알림</div>
+    <div class="chip">🛡️ <b>위험 명령</b> 브레이크</div>
+  </div>
+</body>
+</html>
