@@ -1,0 +1,17 @@
+{
+  "name": "k-mods",
+  "version": "0.1.0",
+  "private": true,
+  "description": "한국어로 고르고 한 줄로 설치하는 Claude Code mods 모음",
+  "type": "module",
+  "license": "MIT",
+  "repository": "github:SeongGwangJu/k-mods",
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "build:check": "node scripts/build.mjs --check",
+    "audit": "node scripts/audit.mjs",
+    "check": "sh scripts/check.sh",
+    "verify": "node scripts/build.mjs --check && sh scripts/check.sh"
+  }
+}

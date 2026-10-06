@@ -1,0 +1,10 @@
+.DS_Store
+node_modules/
+.cache/
+# Claude Code가 mod를 불러올 때 버전별로 생성하는 타입 선언과 tsconfig (커밋하지 않음)
+mods/*/.claude-plugin/types/
+mods/*/tsconfig.json
+bundles/*/.claude-plugin/types/
+# 로컬 실험·런치 초안
+.scratch/
+.launch/
