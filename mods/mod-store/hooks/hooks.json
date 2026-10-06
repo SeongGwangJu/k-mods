@@ -1,0 +1,4 @@
+{
+  "description": "k-mods 모드 상점: /k-mods 패널에서 카탈로그를 둘러보고 한 키로 설치·제거한다",
+  "modules": ["./register.ts"]
+}

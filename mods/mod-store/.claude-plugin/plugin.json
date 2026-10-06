@@ -1,0 +1,12 @@
+{
+  "name": "mod-store",
+  "version": "1.0.0",
+  "description": "k-mods 카탈로그를 한 패널에서 보고 설치·제거하는 모드 상점. /k-mods 하나면 충분해요.",
+  "author": {
+    "name": "SeongGwangJu",
+    "url": "https://github.com/SeongGwangJu"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/SeongGwangJu/k-mods/tree/main/mods/mod-store",
+  "repository": "https://github.com/SeongGwangJu/k-mods"
+}
