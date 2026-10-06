@@ -1,0 +1,101 @@
+{
+  "name": "spinner",
+  "version": "0.6.0-ko.1",
+  "description": "[k-mods 한국 수정판] Claude가 일하는 동안 입력창 위에 냥캣·Clawd 같은 픽셀 장면을 띄우고, 턴마다 자라는 펫을 키워요. 원본: hoobnn/hoobnn-agent-mods (MIT)",
+  "author": {
+    "name": "hoobnn",
+    "url": "https://github.com/hoobnn"
+  },
+  "homepage": "https://github.com/SeongGwangJu/k-mods/tree/main/mods/spinner",
+  "repository": "https://github.com/SeongGwangJu/k-mods",
+  "license": "MIT",
+  "keywords": [
+    "spinner",
+    "animation",
+    "pet",
+    "pixel-art",
+    "mod"
+  ],
+  "types": "./types/index.d.ts",
+  "userConfig": {
+    "visible": {
+      "type": "boolean",
+      "title": "Show the animations",
+      "description": "The animations at all: the mascot, the band and the companion (/spinner off and /spinner on change this too)",
+      "default": true
+    },
+    "footerButton": {
+      "type": "boolean",
+      "title": "Footer button",
+      "description": "A Spinner button in the prompt footer that turns the animations off and on, as /spinner off and /spinner on do",
+      "default": false
+    },
+    "theme": {
+      "type": "string",
+      "title": "Theme",
+      "description": "The animations' look: clawd (Claude's mascot), thunder (a shoot-em-up), chomp, sparky, bluecat, nyan (pixel homages), cat, bunny, sakura, mecha, neon, dino, ocean, matrix, audio (this Mac's sound as a spectrum, macOS 14.2+; never drawn at random), or random for a new one each session. /spinner <theme> switches it live",
+      "options": [
+        "random",
+        "clawd",
+        "thunder",
+        "chomp",
+        "sparky",
+        "bluecat",
+        "nyan",
+        "cat",
+        "bunny",
+        "sakura",
+        "mecha",
+        "neon",
+        "dino",
+        "ocean",
+        "matrix",
+        "audio"
+      ],
+      "default": "random"
+    },
+    "stage": {
+      "type": "boolean",
+      "title": "Animation band",
+      "description": "An animated scene above the prompt (two to four rows, by theme) while the model works (/spinner stage off|on overrides it)",
+      "default": true
+    },
+    "celebrate": {
+      "type": "boolean",
+      "title": "Finale",
+      "description": "A short finale in the band when a turn ends: confetti and the time it took, or a sad face when interrupted",
+      "default": true
+    },
+    "companion": {
+      "type": "boolean",
+      "title": "Companion",
+      "description": "A pet in a row above the prompt: it shows what the model is doing (the tool running, a permission waiting), stays between turns, levels up as turns finish, and a click or /spinner pet pats it (/spinner companion off|on overrides it)",
+      "default": false
+    },
+    "reducedMotion": {
+      "type": "boolean",
+      "title": "Reduced motion",
+      "description": "Draw the mascot, the band's scene and the pet as still pictures: they still change with what the model does, without moving",
+      "default": false
+    },
+    "language": {
+      "type": "string",
+      "title": "Language",
+      "description": "Language of /spinner's replies and the finale's label; auto follows Claude Code's language setting, then the system locale",
+      "options": [
+        "auto",
+        "en",
+        "zh-Hans",
+        "zh-Hant",
+        "ja",
+        "ko",
+        "es",
+        "fr",
+        "de",
+        "pt-BR",
+        "ru"
+      ],
+      "default": "ko"
+    }
+  }
+}

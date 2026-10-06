@@ -153,10 +153,10 @@ export const CATALOG: CatalogEntry[] = [
   },
   {
     "name": "spinner",
-    "displayName": "픽셀 장면 스피너 (냥캣 등 15종)",
-    "summary": "Claude가 일하는 동안 입력창 위에 냥캣·천둥·청크 같은 픽셀 장면을 띄우고, 턴마다 자라는 펫도 키워요",
+    "displayName": "픽셀 장면 스피너 (한국 수정판)",
+    "summary": "Claude가 일하는 동안 입력창 위에 냥캣·Clawd 같은 픽셀 장면을 띄우고 펫을 키워요. 한국어·간결한 기본값으로 고친 수정판이에요",
     "category": "animation",
-    "kind": "upstream",
+    "kind": "patched",
     "author": "hoobnn",
     "license": "MIT",
     "homepage": "https://github.com/hoobnn/hoobnn-agent-mods",
@@ -167,7 +167,7 @@ export const CATALOG: CatalogEntry[] = [
       "swiftc/Xcode Command Line Tools (오디오 테마 전용, macOS 14.2+ 및 '시스템 오디오 녹음' 권한 필요)"
     ],
     "notes": [
-      "k-mods 권장 설정은 `theme`를 `random` 대신 nyan · clawd · thunder · chomp 중에서 고르길 권해요. 좁은 터미널과 한국어 환경에서 알아보기 쉬운 테마들을 k-mods가 추린 목록이며, 업스트림 작성자의 권장 사항은 아니에요.",
+      "원본과 다른 기본값: 한국어, 펫 줄 꺼짐, 하단 버튼 꺼짐, 스피너 줄 앞 마스코트 없음, random은 nyan·clawd·thunder·chomp 중 턴마다. 자세한 내용은 mod 설명서의 \"원본과 다른 점\"에 있어요.",
       "`theme`를 audio로 바꾸면 첫 실행 시 `swiftc`로 `audio-tap.swift`를 로컬 컴파일해 실행하고, macOS Core Audio로 시스템 출력 소리의 레벨만 읽어 보여줘요(macOS 14.2+, 터미널에 '시스템 오디오 녹음' 권한 허용 필요). 저장·전송은 하지 않지만 Xcode Command Line Tools가 필요해요.",
       "터미널이 느리거나 저전력 환경이면 `reducedMotion`을 켜서 마스코트·밴드·펫을 정지 이미지로 바꿀 수 있어요.",
       "같은 작성자(hoobnn)의 `hud` 모드를 함께 쓰면 펫을 hud 쪽에 표시하고 쓰다듬은 횟수를 공유해요. `hud`가 없어도 정상 동작해요(안전한 no-op).",

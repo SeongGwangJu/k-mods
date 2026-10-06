@@ -1,11 +1,6 @@
 {
   "name": "spinner",
-  "source": {
-    "source": "git-subdir",
-    "url": "https://github.com/hoobnn/hoobnn-agent-mods.git",
-    "path": "claude-code/spinner",
-    "sha": "8fb6f67cad9fd023cc7c06b7923518b4bbc45aea"
-  },
+  "source": "./mods/spinner",
   "auditedWith": "2.1.291",
   "validate": {
     "success": true,
@@ -67,7 +62,7 @@
     "swiftc"
   ],
   "urls": [],
-  "license": "../../LICENSE",
+  "license": "LICENSE",
   "permissions": [
     "process",
     "gate",

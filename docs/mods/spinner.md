@@ -1,13 +1,13 @@
-# 픽셀 장면 스피너 (냥캣 등 15종)
+# 픽셀 장면 스피너 (한국 수정판)
 
-> Claude가 일하는 동안 입력창 위에 냥캣·천둥·청크 같은 픽셀 장면을 띄우고, 턴마다 자라는 펫도 키워요
+> Claude가 일하는 동안 입력창 위에 냥캣·Clawd 같은 픽셀 장면을 띄우고 펫을 키워요. 한국어·간결한 기본값으로 고친 수정판이에요
 
-<img src="https://raw.githubusercontent.com/hoobnn/hoobnn-agent-mods/8fb6f67cad9fd023cc7c06b7923518b4bbc45aea/claude-code/spinner/assets/nyan.gif" alt="픽셀 장면 스피너 (냥캣 등 15종)" width="640">
+<img src="https://raw.githubusercontent.com/hoobnn/hoobnn-agent-mods/8fb6f67cad9fd023cc7c06b7923518b4bbc45aea/claude-code/spinner/assets/nyan.gif" alt="픽셀 장면 스피너 (한국 수정판)" width="640">
 
 | | |
 | --- | --- |
 | 설치 이름 | `spinner` |
-| 종류 | 원본 (검토한 커밋 고정) |
+| 종류 | 한국 수정판 |
 | 만든 사람 | [hoobnn](https://github.com/hoobnn) |
 | 라이선스 | MIT |
 | 원본 | [hoobnn/hoobnn-agent-mods/claude-code/spinner @ `8fb6f67`](https://github.com/hoobnn/hoobnn-agent-mods/tree/8fb6f67cad9fd023cc7c06b7923518b4bbc45aea/claude-code/spinner) |
@@ -35,19 +35,9 @@ claude plugin install spinner@k-mods
 
 이미 열려 있는 세션에는 `/reload-plugins`로 바로 적용돼요. Claude Code 2.1.287 이상이 필요해요.
 
-## 추천 설정
-
-`/plugin configure spinner@k-mods` 또는 `/config`에서 바꿀 수 있어요.
-
-| 설정 | 값 | 이유 |
-| --- | --- | --- |
-| `companion` | `false` | 입력창 위에 상시 떠 있는 펫 줄을 끄고 마스코트는 스피너 옆에서만 보이게 해 터미널 공간을 아껴요. |
-| `language` | `"ko"` | `auto`는 로캘 인식에 실패하면 영어로 빠질 수 있어, 명령 응답과 피날레 문구를 한국어로 고정해요. |
-| `footerButton` | `false` | 토글은 `/spinner off`로 충분해서 풋터 버튼을 빼고 더 간결하게 유지해요. |
-
 ## 알아 둘 점
 
-- k-mods 권장 설정은 `theme`를 `random` 대신 nyan · clawd · thunder · chomp 중에서 고르길 권해요. 좁은 터미널과 한국어 환경에서 알아보기 쉬운 테마들을 k-mods가 추린 목록이며, 업스트림 작성자의 권장 사항은 아니에요.
+- 원본과 다른 기본값: 한국어, 펫 줄 꺼짐, 하단 버튼 꺼짐, 스피너 줄 앞 마스코트 없음, random은 nyan·clawd·thunder·chomp 중 턴마다. 자세한 내용은 mod 설명서의 "원본과 다른 점"에 있어요.
 - `theme`를 audio로 바꾸면 첫 실행 시 `swiftc`로 `audio-tap.swift`를 로컬 컴파일해 실행하고, macOS Core Audio로 시스템 출력 소리의 레벨만 읽어 보여줘요(macOS 14.2+, 터미널에 '시스템 오디오 녹음' 권한 허용 필요). 저장·전송은 하지 않지만 Xcode Command Line Tools가 필요해요.
 - 터미널이 느리거나 저전력 환경이면 `reducedMotion`을 켜서 마스코트·밴드·펫을 정지 이미지로 바꿀 수 있어요.
 - 같은 작성자(hoobnn)의 `hud` 모드를 함께 쓰면 펫을 hud 쪽에 표시하고 쓰다듬은 횟수를 공유해요. `hud`가 없어도 정상 동작해요(안전한 no-op).
@@ -73,8 +63,7 @@ claude plugin install spinner@k-mods
 
 ## 검토 기록
 
-- 2026-10-06 · k-mods · Claude Code 2.1.291 · 정적 검사, 코드 읽기
-- 이 항목은 위 커밋에 고정돼 있어요. 원본이 바뀌면 다시 검토한 뒤에 올려요.
+- 2026-10-07 · k-mods · Claude Code 2.1.291 · 정적 검사, 코드 읽기, 테스트
 
 <details><summary>검토 노트 8개 (코드를 읽으며 확인한 것)</summary>
 
@@ -91,5 +80,6 @@ claude plugin install spinner@k-mods
 
 ## 더 보기
 
+- [mod 설명서](../../mods/spinner/README.md)
 - [원본 저장소](https://github.com/hoobnn/hoobnn-agent-mods/tree/8fb6f67cad9fd023cc7c06b7923518b4bbc45aea/claude-code/spinner)
 - [카탈로그로 돌아가기](../../README.md#mod-목록)

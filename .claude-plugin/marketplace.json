@@ -100,14 +100,9 @@
     },
     {
       "name": "spinner",
-      "source": {
-        "source": "git-subdir",
-        "url": "https://github.com/hoobnn/hoobnn-agent-mods.git",
-        "path": "claude-code/spinner",
-        "sha": "8fb6f67cad9fd023cc7c06b7923518b4bbc45aea"
-      },
-      "displayName": "픽셀 장면 스피너 (냥캣 등 15종)",
-      "description": "Claude가 일하는 동안 입력창 위에 냥캣·천둥·청크 같은 픽셀 장면을 띄우고, 턴마다 자라는 펫도 키워요",
+      "source": "./mods/spinner",
+      "displayName": "픽셀 장면 스피너 (한국 수정판)",
+      "description": "Claude가 일하는 동안 입력창 위에 냥캣·Clawd 같은 픽셀 장면을 띄우고 펫을 키워요. 한국어·간결한 기본값으로 고친 수정판이에요",
       "category": "애니메이션",
       "tags": [
         "애니메이션",
