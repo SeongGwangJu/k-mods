@@ -1,0 +1,318 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/SeongGwangJu/k-mods/registry/_schema.json",
+  "title": "k-mods 카탈로그 항목",
+  "description": "registry/<name>.json 하나가 마켓플레이스 항목 하나. scripts/build.mjs가 이 파일들로 marketplace.json, README 표, docs/mods/*.md, 모드 상점 데이터를 만든다.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "name",
+    "displayName",
+    "summary",
+    "summaryEn",
+    "category",
+    "kind",
+    "source",
+    "author",
+    "license",
+    "review"
+  ],
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9-]{0,63}$",
+      "description": "설치 이름 (/plugin install <name>@k-mods). 파일 이름과 같아야 한다."
+    },
+    "displayName": {
+      "type": "string",
+      "maxLength": 40,
+      "description": "목록에 보일 한국어 이름"
+    },
+    "summary": {
+      "type": "string",
+      "maxLength": 120,
+      "description": "한국어 한 문장. 해요체, 무엇을 해 주는지"
+    },
+    "summaryEn": {
+      "type": "string",
+      "maxLength": 140,
+      "description": "English one-liner for README.en.md"
+    },
+    "category": {
+      "enum": [
+        "localize",
+        "theme",
+        "animation",
+        "statusline",
+        "tool",
+        "automation",
+        "guard",
+        "integration",
+        "bundle"
+      ],
+      "description": "mod가 어떤 식으로 나타나는지(유형). localize 한국어화 · theme 테마 · animation 애니메이션(캐릭터·장면·게임) · statusline 상태줄(늘 보이는 정보) · tool 도구(패널·명령) · automation 자동화(알아서 동작) · guard 지킴이(위험 명령·민감 정보) · integration 연동(외부 서비스) · bundle 묶음"
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "maxItems": 8
+    },
+    "kind": {
+      "enum": [
+        "upstream",
+        "patched",
+        "original",
+        "bundle"
+      ],
+      "description": "upstream 원본 그대로(검토한 커밋 고정) · patched 원본을 k-mods가 고친 수정판(mods/) · original k-mods 오리지널(mods/) · bundle 다른 항목을 묶은 설치 세트(bundles/)"
+    },
+    "source": {
+      "description": "마켓플레이스 source. upstream은 github/git-subdir + sha 필수, patched/original은 ./mods/<name>, bundle은 ./bundles/<name>",
+      "oneOf": [
+        {
+          "type": "string",
+          "pattern": "^\\./(mods|bundles)/[a-z0-9-]+$"
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "source",
+            "repo",
+            "sha"
+          ],
+          "properties": {
+            "source": {
+              "const": "github"
+            },
+            "repo": {
+              "type": "string",
+              "pattern": "^[^/]+/[^/]+$"
+            },
+            "ref": {
+              "type": "string"
+            },
+            "sha": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{40}$"
+            }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "source",
+            "url",
+            "path",
+            "sha"
+          ],
+          "properties": {
+            "source": {
+              "const": "git-subdir"
+            },
+            "url": {
+              "type": "string"
+            },
+            "path": {
+              "type": "string"
+            },
+            "ref": {
+              "type": "string"
+            },
+            "sha": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{40}$"
+            }
+          }
+        }
+      ]
+    },
+    "upstream": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "repo",
+        "commit"
+      ],
+      "description": "upstream·patched 항목의 원본 정보",
+      "properties": {
+        "repo": {
+          "type": "string",
+          "description": "owner/repo"
+        },
+        "path": {
+          "type": "string",
+          "description": "저장소 안의 플러그인 폴더 (루트면 생략)"
+        },
+        "commit": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{7,40}$"
+        },
+        "stars": {
+          "type": "integer",
+          "description": "검토 시점의 GitHub 스타 수"
+        }
+      }
+    },
+    "dependencies": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z0-9][a-z0-9-]*$"
+      },
+      "description": "bundle 전용: 함께 설치할 k-mods 항목 이름"
+    },
+    "author": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "name"
+      ],
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string"
+        }
+      }
+    },
+    "license": {
+      "type": "string",
+      "description": "SPDX 식별자 (MIT, Apache-2.0 ...)"
+    },
+    "homepage": {
+      "type": "string"
+    },
+    "commands": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^/"
+      },
+      "description": "사용자가 칠 수 있는 명령 (없으면 비워 둔다. 자동으로 보이는 mod가 좋다)"
+    },
+    "surfaces": {
+      "type": "array",
+      "items": {
+        "enum": [
+          "terminal",
+          "desktop"
+        ]
+      },
+      "description": "그림이 보이는 곳"
+    },
+    "requires": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "외부 준비물 (예: gh CLI 로그인, mpv). 없으면 생략"
+    },
+    "settings": {
+      "type": "array",
+      "description": "한국 사용자에게 권하는 설정 (/plugin configure 또는 /config)",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "key",
+          "value",
+          "why"
+        ],
+        "properties": {
+          "key": {
+            "type": "string"
+          },
+          "value": {},
+          "why": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "conflicts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "with",
+          "note"
+        ],
+        "properties": {
+          "with": {
+            "type": "string"
+          },
+          "note": {
+            "type": "string"
+          }
+        }
+      },
+      "description": "함께 쓸 때 주의할 항목"
+    },
+    "preview": {
+      "type": "string",
+      "description": "스크린샷·GIF (저장소 상대 경로 또는 https URL)"
+    },
+    "notes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "한국어 주의사항·팁"
+    },
+    "featured": {
+      "type": "boolean",
+      "description": "README 맨 위 추천 목록에 노출"
+    },
+    "review": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "date",
+        "by",
+        "claudeCode",
+        "method"
+      ],
+      "properties": {
+        "date": {
+          "type": "string",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+        },
+        "by": {
+          "type": "string"
+        },
+        "claudeCode": {
+          "type": "string",
+          "description": "검토에 쓴 Claude Code 버전"
+        },
+        "method": {
+          "type": "array",
+          "items": {
+            "enum": [
+              "validate",
+              "code-read",
+              "unit-test",
+              "live-session"
+            ]
+          },
+          "description": "validate: claude plugin validate 통과 · code-read: 코드 전체 읽음 · unit-test: 테스트 통과 · live-session: 실제 세션에서 확인"
+        },
+        "findings": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "검토 중 발견한 점 (네트워크 목적지, 외부 프로그램 실행 등)"
+        }
+      }
+    }
+  }
+}
