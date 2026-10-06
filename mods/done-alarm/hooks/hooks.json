@@ -1,0 +1,4 @@
+{
+  "description": "작업이 끝나거나 Claude가 확인을 기다릴 때 데스크톱·음성·휴대폰으로 알려주는 훅",
+  "modules": ["./register.ts"]
+}

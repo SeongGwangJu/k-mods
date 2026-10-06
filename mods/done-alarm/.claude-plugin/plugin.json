@@ -1,0 +1,67 @@
+{
+  "name": "done-alarm",
+  "version": "1.0.0",
+  "displayName": "작업 끝 알림",
+  "description": "긴 작업을 맡기고 자리를 비워도 끝나거나 확인이 필요할 때 데스크톱·음성·휴대폰 푸시로 알려줘요",
+  "author": { "name": "SeongGwangJu", "url": "https://github.com/SeongGwangJu" },
+  "license": "MIT",
+  "homepage": "https://github.com/SeongGwangJu/k-mods/tree/main/mods/done-alarm",
+  "repository": "https://github.com/SeongGwangJu/k-mods",
+  "keywords": ["notification", "alarm", "ntfy", "telegram", "webhook", "desktop", "voice", "korean"],
+  "userConfig": {
+    "min_seconds": {
+      "type": "number",
+      "title": "최소 작업 시간(초)",
+      "description": "이 시간보다 짧게 끝난 작업은 알리지 않아요",
+      "default": 30,
+      "min": 0
+    },
+    "desktop": {
+      "type": "boolean",
+      "title": "데스크톱 알림",
+      "description": "macOS·Linux 알림센터로 바로 알려줘요",
+      "default": true
+    },
+    "voice": {
+      "type": "boolean",
+      "title": "음성 알림",
+      "description": "짧은 한국어 음성으로 알려줘요",
+      "default": false
+    },
+    "ntfy_topic": {
+      "type": "string",
+      "title": "ntfy 주제(topic)",
+      "description": "휴대폰에 무료로 푸시를 보낼 ntfy 주제예요. 비워두면 꺼져 있어요. 주제는 외부에 공개되니 추측하기 어려운 값을 쓰세요",
+      "default": ""
+    },
+    "ntfy_server": {
+      "type": "string",
+      "title": "ntfy 서버",
+      "description": "직접 운영하는 ntfy 서버가 있으면 주소를 바꾸세요",
+      "default": "https://ntfy.sh"
+    },
+    "telegram_bot_token": {
+      "type": "string",
+      "title": "Telegram 봇 토큰",
+      "description": "BotFather에서 발급받은 토큰이에요",
+      "sensitive": true
+    },
+    "telegram_chat_id": {
+      "type": "string",
+      "title": "Telegram 채팅 ID",
+      "description": "알림을 받을 사용자 또는 채팅의 ID예요"
+    },
+    "webhook_url": {
+      "type": "string",
+      "title": "Webhook 주소",
+      "description": "Slack·Discord 등으로 알려줄 Incoming Webhook 주소예요",
+      "sensitive": true
+    },
+    "include_summary": {
+      "type": "boolean",
+      "title": "답변 요약 포함",
+      "description": "ntfy·Telegram·Webhook처럼 기기 밖으로 나가는 알림에 Claude 답변 첫 줄을 함께 보내요. 데스크톱 알림에는 항상 포함돼요",
+      "default": false
+    }
+  }
+}
