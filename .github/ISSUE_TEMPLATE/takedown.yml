@@ -1,0 +1,23 @@
+name: 목록에서 내리기
+description: 내 mod를 k-mods에서 내리고 싶어요. 이유를 묻지 않고 내려요.
+title: "[삭제 요청] "
+labels: ["삭제 요청"]
+body:
+  - type: input
+    id: name
+    attributes:
+      label: k-mods 설치 이름
+      placeholder: spinner
+    validations:
+      required: true
+  - type: input
+    id: repo
+    attributes:
+      label: 원본 저장소
+      description: 원작자 확인을 위해 저장소 주소를 적어 주세요. 원작자 계정으로 남겨 주시면 가장 빨라요.
+    validations:
+      required: true
+  - type: textarea
+    id: note
+    attributes:
+      label: 남기실 말 (선택)

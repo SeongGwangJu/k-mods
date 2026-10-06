@@ -1,0 +1,23 @@
+name: 최신 Claude Code 호환성
+
+# mods API는 아직 바뀔 수 있어요. 매일 최신 Claude Code로 검증해서 깨지는 mod를 일찍 찾아요.
+on:
+  schedule:
+    - cron: "17 21 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  latest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: 최신 Claude Code로 검증
+        run: CC_PINNED=1 CC_VERSION=latest sh scripts/check.sh
+      - name: 고정 커밋 이후 원본 업데이트 확인
+        run: node scripts/outdated.mjs >> "$GITHUB_STEP_SUMMARY"

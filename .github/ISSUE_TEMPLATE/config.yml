@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Claude Code mods 공식 문서
+    url: https://code.claude.com/docs/en/plugins/mods/overview
+    about: mod 기능 자체에 대한 질문은 공식 문서를 먼저 확인해 주세요.

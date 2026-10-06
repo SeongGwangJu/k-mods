@@ -1,0 +1,48 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Claude Code 캐시
+        uses: actions/cache@v4
+        with:
+          path: .cache/claude-code
+          key: claude-code-${{ hashFiles('scripts/claude-code-version') }}
+
+      - name: 생성물이 최신인지
+        run: node scripts/build.mjs --check
+
+      - name: 바뀐 카탈로그 항목 정적 분석
+        if: github.event_name == 'pull_request'
+        run: |
+          changed=$(git diff --name-only --diff-filter=AM "origin/${{ github.base_ref }}...HEAD" -- 'registry/*.json' \
+            | grep -v '/_' | sed 's#registry/##; s#\.json$##' | tr '\n' ' ')
+          if [ -n "$changed" ]; then
+            echo "정적 분석: $changed"
+            CC_PINNED=1 node scripts/audit.mjs $changed
+            if ! git diff --quiet -- registry/_audit; then
+              git --no-pager diff --stat -- registry/_audit
+              echo "::error::registry/_audit 가 최신이 아니에요. node scripts/audit.mjs $changed 를 돌린 뒤 커밋해 주세요."
+              exit 1
+            fi
+          fi
+
+      - name: mod 검증과 테스트
+        run: CC_PINNED=1 sh scripts/check.sh

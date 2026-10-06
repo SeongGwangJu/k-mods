@@ -1,0 +1,50 @@
+name: mod 추천하기
+description: 좋은 Claude Code mod를 알려 주세요. 코드를 몰라도 돼요.
+title: "[추천] "
+labels: ["mod 추천"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        알려 주신 mod는 k-mods가 라이선스·정적 분석·코드 읽기로 검토한 뒤 카탈로그에 올려요.
+        라이선스가 없는 저장소는 원작자의 허락을 받은 뒤에 올려요.
+  - type: input
+    id: repo
+    attributes:
+      label: 저장소 주소
+      description: mod가 있는 GitHub 주소. 저장소 안의 폴더라면 폴더 주소를 적어 주세요.
+      placeholder: https://github.com/owner/repo/tree/main/plugins/my-mod
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: 어떤 점이 좋은가요?
+      description: 무엇이 보이고 무엇이 편해지는지 적어 주세요. 스크린샷이 있으면 더 좋아요.
+    validations:
+      required: true
+  - type: dropdown
+    id: category
+    attributes:
+      label: 유형
+      options:
+        - 한국어화 (메뉴·문구를 한국어로)
+        - 테마 (대화·도구 줄 모양)
+        - 애니메이션 (캐릭터·장면·게임)
+        - 상태줄 (컨텍스트·사용량 등 늘 보이는 정보)
+        - 도구 (패널·명령으로 쓰는 기능)
+        - 자동화 (알림·인계 등 알아서 동작)
+        - 지킴이 (위험 명령·민감 정보)
+        - 연동 (GitHub·Linear 등 외부 서비스)
+        - 잘 모르겠어요
+  - type: checkboxes
+    id: relation
+    attributes:
+      label: 원작자와의 관계
+      options:
+        - label: 제가 만든 mod예요
+  - type: input
+    id: tested
+    attributes:
+      label: 써 본 Claude Code 버전 (선택)
+      placeholder: "2.1.291"
