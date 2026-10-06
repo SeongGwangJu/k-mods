@@ -1,0 +1,20 @@
+{
+  "name": "skins",
+  "version": "0.1.0-ko.1",
+  "description": "hellosverre/claude-skins의 k-mods 수정판. 한글 표 너비, 터미널 셸 출력 카드 등 한국어 환경에서 보이던 문제를 고쳤습니다. /skin으로 테마를 바꿉니다.",
+  "author": { "name": "hellosverre", "url": "https://github.com/hellosverre" },
+  "license": "MIT",
+  "homepage": "https://github.com/SeongGwangJu/k-mods/tree/main/mods/skins",
+  "repository": "https://github.com/SeongGwangJu/k-mods",
+  "keywords": ["claude-code-mods", "claude-mods", "function-hooks", "theme", "skin", "korean"],
+  "types": "./types/index.d.ts",
+  "userConfig": {
+    "status_lines": {
+      "type": "string",
+      "title": "스피너·턴 종료 줄 담당",
+      "description": "auto는 status-ko가 켜져 있으면 그 줄들을 status-ko에 맡깁니다. skins는 항상 이 mod가, engine은 항상 Claude Code 기본이 그립니다.",
+      "options": ["auto", "skins", "engine"],
+      "default": "auto"
+    }
+  }
+}
