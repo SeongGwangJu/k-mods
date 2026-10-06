@@ -1,0 +1,32 @@
+{
+  "name": "status-ko",
+  "version": "1.1.0",
+  "description": "작업 중 줄을 지금 하는 일로, 턴이 끝난 줄을 모델·시간·도구·캐시 한 줄로 한국어로 보여줘요",
+  "author": {
+    "name": "SeongGwangJu",
+    "url": "https://github.com/SeongGwangJu"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/SeongGwangJu/k-mods/tree/main/mods/status-ko",
+  "repository": "https://github.com/SeongGwangJu/k-mods",
+  "keywords": [
+    "korean",
+    "한국어",
+    "상태줄",
+    "spinner",
+    "turn-duration"
+  ],
+  "userConfig": {
+    "palette": {
+      "type": "string",
+      "title": "색상 팔레트",
+      "description": "색. dark: 어두운 터미널용 파스텔(기본). theme: Claude Code 테마 색을 따라가요(밝은 터미널). gray: 회색 배경 터미널용.",
+      "options": [
+        "dark",
+        "theme",
+        "gray"
+      ],
+      "default": "dark"
+    }
+  }
+}
