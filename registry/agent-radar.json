@@ -2,6 +2,7 @@
   "$schema": "./_schema.json",
   "name": "agent-radar",
   "displayName": "에이전트 레이더",
+  "displayNameEn": "Agent Radar",
   "summary": "실행 중인 서브에이전트마다 경과 시간·도구 호출 수·현재 작업을 입력창 위 한 줄로 표시해요. /radar로 전체 목록과 대화 내용을 확인할 수 있어요.",
   "summaryEn": "Shows one live line per running subagent above the prompt: time, tool count, current action. /radar lists every agent and its messages.",
   "category": "statusline",
@@ -37,6 +38,9 @@
   ],
   "notes": [
     "같은 저장소의 mission-control도 서브에이전트를 추적하지만 코드맵까지 포함한 더 무거운 패널이에요. agent-radar는 가볍고 단일 목적(에이전트 상태)이라 함께 설치해도 역할이 겹치지 않는다고 판단했어요."
+  ],
+  "notesEn": [
+    "mission-control in the same repository also tracks subagents, but it is a heavier panel that includes a code map. agent-radar is light and single-purpose (agent status), so we judged that the two do not overlap in role when installed together."
   ],
   "review": {
     "date": "2026-10-06",

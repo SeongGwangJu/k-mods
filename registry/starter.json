@@ -2,6 +2,7 @@
   "$schema": "./_schema.json",
   "name": "starter",
   "displayName": "추천 세트",
+  "displayNameEn": "Starter Set",
   "summary": "처음 설치하기 좋은 추천 세트예요. 모드 상점, 한국어 팩, 메모장, 컨텍스트 막대, 위험 명령 브레이크, 작업 끝 알림을 한 번에 설치해요",
   "summaryEn": "The k-mods starter set: mod store, Korean pack, memo pad, context bar, risky-command brake and done alarm",
   "category": "bundle",

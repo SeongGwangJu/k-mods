@@ -2,6 +2,7 @@
   "$schema": "./_schema.json",
   "name": "review-watch",
   "displayName": "리뷰 워치",
+  "displayNameEn": "Review Watch",
   "summary": "실행 중인 codex review나 '리뷰' 서브에이전트마다 모델·대상·경과 시간을 한 줄로 표시해요. 끝나면 발견 항목 수를 화면 알림으로 알려줘요.",
   "summaryEn": "Shows one live line per running code review (a codex review command, or a review subagent): model, target, elapsed time, latest output.",
   "category": "statusline",
@@ -37,9 +38,16 @@
     "ps, tail (macOS/Linux 기본 제공)",
     "Codex CLI (선택. codex review 추적 시에만 의미 있음)"
   ],
+  "requiresEn": [
+    "ps, tail (included by default on macOS/Linux)",
+    "Codex CLI (optional; only meaningful when tracking codex review)"
+  ],
   "preview": "https://raw.githubusercontent.com/hamzafer/claude-code-mods/adf9d72d81cb04284416371f9de8a6f937dcc631/images/review-watch.png",
   "notes": [
     "저장소 설명에 'codex review 감시' 기능이 있다고 해서 codex 바이너리를 직접 실행하는지 코드로 확인했어요. 직접 실행하지 않아요. Claude가 이미 Bash로 실행한 `codex review` 명령을 ps/tail로 관찰만 하고, 실행 여부 결정이나 차단은 merge-gate(같은 저장소)의 역할이에요."
+  ],
+  "notesEn": [
+    "The repository description mentions a 'codex review watching' feature, so we checked in the code whether it runs the codex binary itself. It does not. It only observes, with ps/tail, a `codex review` command that Claude has already run through Bash. Deciding whether to run it, or blocking it, is the role of merge-gate (same repository)."
   ],
   "review": {
     "date": "2026-10-06",

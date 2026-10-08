@@ -1,6 +1,7 @@
 {
   "name": "clawd-spinner",
   "displayName": "Clawd 스피너",
+  "displayNameEn": "Clawd Spinner",
   "summary": "189가지 스피너 단어마다 Clawd가 요리·춤·서성거리기 등 서로 다른 몸짓을 해요.",
   "summaryEn": "Clawd acts out the spinner's word above it—cooking, dancing, pacing—with a scene for every one of 189 spinner words, no model calls.",
   "category": "animation",
@@ -17,6 +18,10 @@
   "notes": [
     "좁은 터미널(50칸 미만)에서는 자동으로 숨고 기본 스피너만 보여요.",
     "`/clawd-talk`로 말풍선을 껐다 켤 수 있고, 설정은 세션 간 기억돼요."
+  ],
+  "notesEn": [
+    "On a narrow terminal (under 50 columns) it hides automatically and only the default spinner is shown.",
+    "`/clawd-talk` turns the speech bubble on and off, and the setting is remembered across sessions."
   ],
   "review": {
     "date": "2026-10-06",

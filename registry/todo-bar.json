@@ -2,6 +2,7 @@
   "$schema": "./_schema.json",
   "name": "todo-bar",
   "displayName": "할 일 진행 상태줄",
+  "displayNameEn": "Todo Bar",
   "summary": "Claude가 만든 할 일 목록의 진행 상황과 경과 시간을 입력창 위 막대로 표시해요.",
   "summaryEn": "Shows the task list's progress in a band above the prompt, read from the todo and task tools' own calls: no tool, no prompt, no tokens.",
   "category": "statusline",
@@ -35,6 +36,11 @@
     "TodoWrite·TaskCreate·TaskUpdate 결과만 사후에 읽어서 그리고, 별도 도구를 등록하거나 프롬프트에 끼어들지 않아 토큰을 쓰지 않아요.",
     "거부되거나 실패한 호출, 서브에이전트 자신의 할 일 목록은 집계하지 않아요.",
     "세션별 진행 상황은 최근 20개 세션까지 로컬에 보관되어 세션을 재개해도 이어서 보여요."
+  ],
+  "notesEn": [
+    "It draws only by reading the results of TodoWrite, TaskCreate and TaskUpdate after the fact. It registers no tool of its own and does not touch the prompt, so it uses no tokens.",
+    "Rejected or failed calls, and a subagent's own todo list, are not counted.",
+    "Per-session progress is kept locally for up to the 20 most recent sessions, so it carries on when you resume a session."
   ],
   "featured": false,
   "preview": "https://raw.githubusercontent.com/hoobnn/hoobnn-agent-mods/8fb6f67cad9fd023cc7c06b7923518b4bbc45aea/claude-code/todo-bar/assets/preview.png",

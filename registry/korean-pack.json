@@ -2,6 +2,7 @@
   "$schema": "./_schema.json",
   "name": "korean-pack",
   "displayName": "한국어 팩",
+  "displayNameEn": "Korean Pack",
   "summary": "메뉴·설정 번역(ko-ui)과 작업 상태 한국어(status-ko)를 한 번에 설치해 Claude Code 화면을 한국어로 바꿔요",
   "summaryEn": "One install for a Korean Claude Code: menu and settings translation (ko-ui) plus Korean status lines (status-ko)",
   "category": "bundle",

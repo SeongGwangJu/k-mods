@@ -1,6 +1,7 @@
 {
   "name": "cc-arcade",
   "displayName": "CC 아케이드",
+  "displayNameEn": "CC Arcade",
   "summary": "입력창 위에서 스네이크·테트리스·2048·지뢰찾기 등 9가지 미니게임을 즐길 수 있어요. Claude가 일하는 동안 자라는 펫도 키울 수 있어요.",
   "summaryEn": "Nine terminal mini-games above the prompt (snake, Tetris, 2048, and more), plus a pet that grows as Claude works.",
   "category": "animation",
@@ -38,10 +39,19 @@
     "대화형 터미널(비대화형 `-p` 모드에서는 동작하지 않아요)",
     "Claude Code 2.1.287 미만이면 CLAUDE_CODE_ENABLE_FUNCTION_HOOKS=1 환경 변수 필요"
   ],
+  "requiresEn": [
+    "Interactive terminal (does not work in non-interactive `-p` mode)",
+    "On Claude Code versions below 2.1.287, the CLAUDE_CODE_ENABLE_FUNCTION_HOOKS=1 environment variable is required"
+  ],
   "notes": [
     "장르를 본뜬 클론이며 Tetris Holding·Taito·Atari·id Software와 무관해요(업스트림 설명 그대로).",
     "최고 점수와 펫 상태는 로컬 $.store에만 저장돼요.",
     "`/arcade colorblind`로 Doom을 빨강·초록 구분 없는 팔레트로 바꿀 수 있어요."
+  ],
+  "notesEn": [
+    "These are clones modeled on the genres and have no affiliation with Tetris Holding, Taito, Atari or id Software (as stated in the upstream description).",
+    "High scores and pet state are stored only in the local $.store.",
+    "`/arcade colorblind` switches Doom to a palette that does not rely on telling red from green."
   ],
   "review": {
     "date": "2026-10-06",

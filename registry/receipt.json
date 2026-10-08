@@ -2,6 +2,7 @@
   "$schema": "./_schema.json",
   "name": "receipt",
   "displayName": "턴 영수증",
+  "displayNameEn": "Turn Receipt",
   "summary": "매 턴이 끝나면 바뀐 파일·실행한 명령·읽은 횟수를 입력창 위 한 줄 요약으로 표시해요. 같은 작업을 반복하면 알려줘요.",
   "summaryEn": "What each turn did, in a band above the prompt: files/lines changed, commands and failures, reads, subagents; a toast when the model loops.",
   "category": "statusline",
@@ -34,6 +35,10 @@
   "notes": [
     "같은 작성자의 `hud`·`ts-band`·`todo-bar`·`hitokoto`와 같은 Box/Text 기반 렌더링을 쓰지만, 이 mod의 테스트 스위트만 유일하게 terminal 서피스만 돌려 확인해 surfaces를 terminal로만 표기했어요(desktop이 안 되는 것을 확인한 건 아니고, 작성자가 desktop으로 검증한 기록이 없다는 뜻이에요).",
     "채팅만 하고 도구를 쓰지 않은 턴은 영수증을 남기지 않고, 다음 턴이 시작되면 자동으로 접혀요."
+  ],
+  "notesEn": [
+    "It uses the same Box/Text-based rendering as the same author's `hud`, `ts-band`, `todo-bar` and `hitokoto`, but this mod's test suite alone runs only the terminal surface, so surfaces is listed as terminal only (this does not mean we confirmed that desktop fails; it means there is no record of the author verifying on desktop).",
+    "A turn that is only chat with no tool use leaves no receipt, and the receipt collapses automatically when the next turn starts."
   ],
   "featured": false,
   "preview": "https://raw.githubusercontent.com/hoobnn/hoobnn-agent-mods/8fb6f67cad9fd023cc7c06b7923518b4bbc45aea/claude-code/receipt/assets/preview.png",

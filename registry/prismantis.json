@@ -2,6 +2,7 @@
   "$schema": "./_schema.json",
   "name": "prismantis",
   "displayName": "프리즈만티스",
+  "displayNameEn": "Prismantis",
   "summary": "표·코드·다이어그램·도구 호출 결과를 15가지 테마로 표시하고 복사 버튼을 추가해요.",
   "summaryEn": "Colorful, themeable rendering for Claude Code replies across 15 themes: tables, code, diagrams, charts and tool rows, with copy buttons.",
   "category": "theme",

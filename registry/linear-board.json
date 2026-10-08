@@ -2,6 +2,7 @@
   "$schema": "./_schema.json",
   "name": "linear-board",
   "displayName": "Linear 보드 패널",
+  "displayNameEn": "Linear Board",
   "summary": "Linear 프로젝트·마일스톤·이슈를 패널에 표시해요. 계획·실행·제품 버튼으로 프롬프트를 바로 입력할 수 있어요.",
   "summaryEn": "Your Linear projects, milestones and issues in a pane; plan, execute or product buttons send a ready prompt into the session.",
   "category": "integration",
@@ -38,6 +39,9 @@
   ],
   "requires": [
     "Linear API 키 (lin_api_...). /plugin configure 또는 LINEAR_API_KEY 환경 변수"
+  ],
+  "requiresEn": [
+    "Linear API key (lin_api_...). Set it with /plugin configure or the LINEAR_API_KEY environment variable"
   ],
   "review": {
     "date": "2026-10-06",

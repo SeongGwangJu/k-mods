@@ -2,6 +2,7 @@
   "$schema": "./_schema.json",
   "name": "streamer-mode",
   "displayName": "스트리머 모드",
+  "displayNameEn": "Streamer Mode",
   "summary": "화면을 공유·녹화할 때 토큰·이메일·전화번호·주민번호를 화면에서 가려요. Claude가 읽는 내용은 그대로예요",
   "summaryEn": "Hides API keys, emails, phone numbers and Korean ID numbers on screen while you stream or share; Claude still sees the originals",
   "category": "guard",

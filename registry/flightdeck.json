@@ -2,6 +2,7 @@
   "$schema": "./_schema.json",
   "name": "flightdeck",
   "displayName": "플라이트덱 대시보드",
+  "displayNameEn": "Flightdeck",
   "summary": "메인 모델의 상태·비용·컨텍스트, 온콜 아키텍트 상담, 권한 검사, 서브에이전트 카드를 한 화면에 표시해요. 세션 이벤트가 발생하면 실시간으로 갱신해요",
   "summaryEn": "A live terminal dashboard: model vitals, cost/context, an on-call architect, permission checks and subagent cards from real session events.",
   "category": "statusline",

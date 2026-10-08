@@ -2,6 +2,7 @@
   "$schema": "./_schema.json",
   "name": "switchboard",
   "displayName": "스위치보드",
+  "displayNameEn": "Switchboard",
   "summary": "서브에이전트가 시작되기 전에 Haiku/Sonnet/Opus 중 비용이 가장 낮은 모델을 골라요. `/route`에서 선택 결과와 예상 비용을 확인할 수 있어요. API 키 없이도 규칙만으로 동작해요.",
   "summaryEn": "Picks Haiku, Sonnet, or Opus for each subagent before it starts (an external routing API, or local rules), showing each pick and its cost.",
   "category": "automation",
@@ -39,6 +40,10 @@
   "notes": [
     "이 저장소 22개 mod 중 대화 관련 데이터를 외부 제3자로 보낼 수 있는 유일한 mod예요. 반드시 사용자가 jevApiKey를 설정(/config)하거나 TYPESAFE_API_KEY/AI_GATEWAY_API_KEY 환경변수를 넣어야 작동하고, 기본값(키 없음)에서는 전송이 전혀 없이 로컬 규칙만 써요. jevApiKey는 plugin.json에 sensitive:true로 선언돼 있고, 설명 문구에도 '각 스폰마다 작업 설명과 처음 6,000자를 api.typesafe.ai로 보낸다'고 명시돼 있어요. k-mods의 '대화 내용을 기기 밖으로 보내는 기능은 기본값 꺼짐, 사용자가 켤 때만' 원칙을 만족해요.",
     "Jev 호출은 $.model.*이 아니라 $.http.fetch로 외부 유료 API를 직접 부르는 방식이라, 사용자의 Claude 사용량이 아니라 TypeSafe/Vercel AI Gateway 계정에 별도로 과금돼요(콜당 약 $0.00003, 2.5초 안에 답이 없으면 규칙으로 대체)."
+  ],
+  "notesEn": [
+    "Of this repository's 22 mods, this is the only one that can send conversation-related data to an external third party. It works only if you set jevApiKey (/config) or put in the TYPESAFE_API_KEY/AI_GATEWAY_API_KEY environment variable, and with the default (no key) nothing is sent and only local rules are used. jevApiKey is declared sensitive:true in plugin.json, and its description states that 'for each spawn, the task description and the first 6,000 characters are sent to api.typesafe.ai'. This satisfies the k-mods principle that 'features that send conversation content off the device are off by default and on only when the user turns them on'.",
+    "The Jev call does not use $.model.*. It calls an external paid API directly with $.http.fetch, so it is billed separately to your TypeSafe/Vercel AI Gateway account, not to your Claude usage (about $0.00003 per call; if there is no answer within 2.5 seconds, it falls back to the rules)."
   ],
   "review": {
     "date": "2026-10-06",

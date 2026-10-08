@@ -1,6 +1,7 @@
 {
   "name": "terminal-browser",
   "displayName": "터미널 브라우저",
+  "displayNameEn": "Terminal Browser",
   "summary": "Claude Code 화면에서 브라우저를 열어 웹사이트를 미리 볼 수 있어요. 에이전트가 직접 열고 닫으며, 별도로 설치한 terminal-browser 앱이 브라우저 엔진을 실행해요.",
   "summaryEn": "Renders a real browser inside Claude Code's terminal so you/the agent can preview web pages; needs the separate terminal-browser app.",
   "category": "integration",
@@ -40,11 +41,21 @@
     "terminal-browser CLI/앱 설치 (curl -fsSL https://terminal-browser.sh/install | bash 또는 brew install terminal-browser). Electron 기반 별도 프로그램, 이 플러그인 코드에는 포함되지 않음",
     "Kitty 그래픽 프로토콜을 지원하는 터미널(ghostty, kitty, 또는 libghostty 기반). 미지원 터미널·멀티플렉서(tmux 등)에서는 TUI가 깨질 수 있음"
   ],
+  "requiresEn": [
+    "terminal-browser CLI/app installed (curl -fsSL https://terminal-browser.sh/install | bash or brew install terminal-browser). A separate Electron-based program, not included in this plugin's code",
+    "A terminal that supports the Kitty graphics protocol (ghostty, kitty, or libghostty-based). On unsupported terminals and multiplexers (such as tmux), the TUI may break"
+  ],
   "notes": [
     "실제 브라우저 엔진(Electron+크로미움, 네이티브 입력 리스너)은 별도 설치되는 terminal-browser 앱에 있고, 이 mod는 그 앱을 띄워 로컬 HTTP로 통신하는 얇은 다리 역할만 해요. 그 앱은 `terminal-browser upgrade`로 독립적으로 업데이트되므로 여기 고정한 커밋과 무관하게 바뀔 수 있어요.",
     "terminal-browser 앱은 기본적으로 의사 익명 사용량·크래시 텔레메트리를 수집해요(`~/.local/state/terminal-browser-*/logs/telemetry.jsonl`에 평문 기록, `DO_NOT_TRACK=1` 등으로 끌 수 있음). 이 mod의 훅 코드 자체는 텔레메트리를 보내지 않아요.",
     "에이전트가 브라우저를 직접 열고 닫는 도구(`open`/`close`)는 `agentTool` 설정이 기본 꺼짐이라 기본값에서는 등록되지 않아요. 켜면 에이전트가 임의 URL을 열 수 있어요.",
     "명시된 최소 Claude Code 버전은 없어요. README는 `CLAUDE_CODE_ENABLE_FUNCTION_HOOKS=1` 설정을 안내하는데, k-mods의 다른 리뷰(ko-ui)에서는 이 플래그가 2.1.285 이하에서만 필요하고 2.1.287부터 함수 훅이 기본 활성화라고 확인했어요. terminal-browser 쪽 안내가 구버전 기준일 가능성이 있고, 직접 실행 검증은 하지 않았어요."
+  ],
+  "notesEn": [
+    "The real browser engine (Electron + Chromium, with a native input listener) is in the separately installed terminal-browser app. This mod is only a thin bridge that launches that app and talks to it over local HTTP. That app is updated independently with `terminal-browser upgrade`, so it can change regardless of the commit pinned here.",
+    "The terminal-browser app collects pseudonymous usage and crash telemetry by default (recorded in plain text in `~/.local/state/terminal-browser-*/logs/telemetry.jsonl`; it can be turned off with `DO_NOT_TRACK=1` and similar). This mod's own hook code does not send telemetry.",
+    "The tools that let the agent open and close the browser itself (`open`/`close`) are not registered by default, because the `agentTool` setting is off by default. If you turn it on, the agent can open arbitrary URLs.",
+    "No minimum Claude Code version is stated. The README tells you to set `CLAUDE_CODE_ENABLE_FUNCTION_HOOKS=1`, but another k-mods review (ko-ui) confirmed that this flag is needed only on 2.1.285 and below, and that function hooks are on by default from 2.1.287. The terminal-browser guidance may be based on an older version, and we did not verify it by running it."
   ],
   "review": {
     "date": "2026-10-06",

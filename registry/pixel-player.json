@@ -1,6 +1,7 @@
 {
   "name": "pixel-player",
   "displayName": "픽셀 뮤직 플레이어",
+  "displayNameEn": "Pixel Player",
   "summary": "mpv로 재생목록을 재생하면서 음악에 맞춰 반응하는 픽셀 아트 캐릭터를 패널에 표시해요.",
   "summaryEn": "A pixel-art music player pane that streams your playlist through mpv, with a character that reacts to the music.",
   "category": "tool",
@@ -38,6 +39,10 @@
     "mpv (필수. 없으면 설치 안내만 뜨고 재생되지 않아요)",
     "yt-dlp (유튜브 링크를 재생하려면 권장)"
   ],
+  "requiresEn": [
+    "mpv (required; without it only an install guide is shown and nothing plays)",
+    "yt-dlp (recommended for playing YouTube links)"
+  ],
   "preview": "https://raw.githubusercontent.com/chrisluo5311/Pixel-Play/6ebf7296332bf19898f51bba8421a1e620588423/assets/demo/demo.gif",
   "notes": [
     "재생목록(`~/.claude/pixel-play/playlist.txt`)에 유튜브 링크·직접 오디오 URL·로컬 파일 경로를 한 줄씩 추가해요. mpv가 그 주소로 직접 접속해 재생할 뿐, 모드 자체가 다른 곳에 접속하지는 않아요.",
@@ -45,6 +50,13 @@
     "재생 제어(일시정지·재개)는 로컬 유닉스 소켓(IPC)으로만 이뤄지고 네트워크를 쓰지 않아요.",
     "mpv 실행 인자 끝에 `--` 구분자가 없어서, 재생목록 줄이 `--`로 시작하면 mpv 옵션(예: `--script=`로 임의 Lua 스크립트 로드)으로 해석될 수 있어요. 재생목록은 본인이 직접 적는 로컬 파일이라 위험은 낮지만, 남이 준 재생목록 줄을 그대로 붙여넣지 않는 게 안전해요.",
     "Windows는 지원하지 않고 macOS에서만 테스트됐어요."
+  ],
+  "notesEn": [
+    "Add YouTube links, direct audio URLs or local file paths to the playlist (`~/.claude/pixel-play/playlist.txt`), one per line. mpv connects directly to those addresses to play them; the mod itself does not connect anywhere else.",
+    "The playlist file is stored under `~/.claude/`, not in the plugin folder, so it persists across updates.",
+    "Playback control (pause and resume) goes only through a local Unix socket (IPC) and uses no network.",
+    "The mpv launch arguments have no `--` separator at the end, so a playlist line that starts with `--` can be interpreted as an mpv option (for example, `--script=` loads an arbitrary Lua script). The playlist is a local file you write yourself, so the risk is low, but it is safer not to paste playlist lines from other people as they are.",
+    "Windows is not supported; it has only been tested on macOS."
   ],
   "review": {
     "date": "2026-10-06",

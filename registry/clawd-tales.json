@@ -1,6 +1,7 @@
 {
   "name": "clawd-tales",
   "displayName": "Clawd 이야기",
+  "displayNameEn": "Clawd Tales",
   "summary": "입력창 위에서 픽셀 Clawd가 Claude의 모든 도구 호출에 맞춰 몸짓을 해요. 서브에이전트마다 작은 동료도 등장해요.",
   "summaryEn": "A pixel Clawd acts out every tool call above the prompt, with helper characters for each subagent—terminal-first, no model calls.",
   "category": "animation",
@@ -39,6 +40,11 @@
     "히어로의 걷기·환호 스프라이트 원형과 기본 팔레트는 Claude Fables(henrik-thevibe, MIT)에서 가져왔다고 NOTICE 파일에 명시돼 있어요.",
     "서브에이전트가 뜨면 작은 동료가 따로 등장하고, 모델 색깔에 따라 외형이 달라져요.",
     "mobile 화면에서는 그려지지 않도록 코드로 명시돼 있어요."
+  ],
+  "notesEn": [
+    "The NOTICE file states that the hero's walking and cheering sprite base and the default palette come from Claude Fables (henrik-thevibe, MIT).",
+    "When a subagent starts, a small companion appears separately, and its look changes with the model's color.",
+    "The code explicitly prevents it from being drawn on mobile screens."
   ],
   "review": {
     "date": "2026-10-06",

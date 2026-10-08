@@ -2,6 +2,7 @@
   "$schema": "./_schema.json",
   "name": "diff-invaders",
   "displayName": "디프 인베이더",
+  "displayNameEn": "Diff Invaders",
   "summary": "Claude가 방금 쓴 diff 줄에 대응하는 외계인 편대를 표시하는 스페이스 인베이더예요. 토큰 소모 없이 입력창 위에서 플레이해요",
   "summaryEn": "Space Invaders where every wave is made from the lines Claude's last Edit/Write actually added; zero tokens, played above the prompt.",
   "category": "animation",
@@ -39,6 +40,11 @@
     "마우스 없이 방향키(←→/ad)와 스페이스만으로 플레이 가능해요(클릭도 지원)",
     "최고 점수만 $.store(plugin 전용 저장소)에 남기고, 그 외 기기 밖 전송은 없어요",
     "README에 'claude -p, 데스크톱 앱, 모바일에서는 아무것도 그려지지 않는다'고 명시되어 있어요(terminal 전용)"
+  ],
+  "notesEn": [
+    "It can be played with only the arrow keys (←→/ad) and space, no mouse (clicking is also supported).",
+    "Only the high score is kept in $.store (plugin-only storage); nothing else is sent off the device.",
+    "The README states that 'nothing is drawn in claude -p, the desktop app or mobile' (terminal only)."
   ],
   "review": {
     "date": "2026-10-06",

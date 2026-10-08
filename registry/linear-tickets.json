@@ -2,6 +2,7 @@
   "$schema": "./_schema.json",
   "name": "linear-tickets",
   "displayName": "Linear 티켓 패널",
+  "displayNameEn": "Linear Tickets",
   "summary": "내게 배정된 Linear 티켓을 패널에 표시해요. 클릭하면 바로 작업을 시작할 수 있어요.",
   "summaryEn": "Shows your assigned Linear tickets in a pane; click one to load it into the session, read details, comment, or change status and priority.",
   "category": "integration",
@@ -36,6 +37,9 @@
   ],
   "requires": [
     "Linear MCP 서버 연결 (plugin.json 기본값 plugin:linear:linear)"
+  ],
+  "requiresEn": [
+    "Linear MCP server connection (plugin.json default plugin:linear:linear)"
   ],
   "review": {
     "date": "2026-10-06",

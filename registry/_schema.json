@@ -31,6 +31,11 @@
       "maxLength": 40,
       "description": "목록에 보일 한국어 이름"
     },
+    "displayNameEn": {
+      "type": "string",
+      "maxLength": 40,
+      "description": "영어 화면에 보일 이름 (없으면 name을 써요)"
+    },
     "summary": {
       "type": "string",
       "maxLength": 120,
@@ -215,6 +220,13 @@
       },
       "description": "외부 준비물 (예: gh CLI 로그인, mpv). 없으면 생략"
     },
+    "requiresEn": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "requires의 영어판. 같은 순서·같은 개수로 써요"
+    },
     "settings": {
       "type": "array",
       "description": "한국 사용자에게 권하는 설정 (/plugin configure 또는 /config)",
@@ -267,6 +279,13 @@
         "type": "string"
       },
       "description": "한국어 주의사항·팁"
+    },
+    "notesEn": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "notes의 영어판. 같은 순서·같은 개수로 써요"
     },
     "featured": {
       "type": "boolean",

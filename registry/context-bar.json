@@ -2,6 +2,7 @@
   "$schema": "./_schema.json",
   "name": "context-bar",
   "displayName": "컨텍스트 바 (hamzafer)",
+  "displayNameEn": "Context Bar (hamzafer)",
   "summary": "컨텍스트 창을 /context와 같은 색의 구간별 막대 그래프로 표시해요. 토큰 수·압축 시점·범례도 입력창 위에서 확인할 수 있어요.",
   "summaryEn": "Your context window as a stacked bar above the prompt, colored per category as /context does, with token counts and the compaction point.",
   "category": "statusline",
@@ -38,6 +39,9 @@
   "preview": "https://raw.githubusercontent.com/hamzafer/claude-code-mods/adf9d72d81cb04284416371f9de8a6f937dcc631/images/context-bar.png",
   "notes": [
     "k-mods 자체 mod인 ctx-strip과 개념이 겹쳐요(둘 다 컨텍스트 창을 막대로 보여줌). 이름은 다르므로(string 충돌 아님) 등록은 했지만, 기계적으로는 ctx-strip이 '막대 + 서브에이전트 한 줄'을 한 번에 보여주는 반면 context-bar는 /context와 동일한 카테고리별 색상·범례·압축 임계값 표시에 집중한 순수 컨텍스트 전용 버전이라는 차이가 있어요. 최종적으로 사용자에게 둘 다 보여줄지, 하나만 추천할지는 교차 조율이 필요해 보여요."
+  ],
+  "notesEn": [
+    "It overlaps in concept with ctx-strip, a k-mods original mod (both show the context window as a bar). The names differ, so there is no string collision, and it is registered. Mechanically, ctx-strip shows a bar plus one line for subagents in a single view, while context-bar is a pure context-only version that focuses on the same per-category colors, legend and compaction threshold display as /context. Whether to finally show both to users or recommend only one seems to need cross-coordination."
   ],
   "review": {
     "date": "2026-10-06",

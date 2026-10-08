@@ -2,6 +2,7 @@
   "$schema": "./_schema.json",
   "name": "combo-meter",
   "displayName": "콤보 미터",
+  "displayNameEn": "Combo Meter",
   "summary": "도구 호출이 성공하면 콤보 수치와 랭크가 올라가고 실패하면 콤보가 끊겨요. 랭크는 D부터 SSS까지예요.",
   "summaryEn": "A fighting-game combo meter: every clean tool call is a hit, every error breaks the chain. D to SSS ranks, pixel-art visuals.",
   "category": "animation",

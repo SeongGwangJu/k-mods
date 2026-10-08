@@ -2,6 +2,7 @@
   "$schema": "./_schema.json",
   "name": "mod-usage",
   "displayName": "사용량 진행률 막대",
+  "displayNameEn": "Usage Bars",
   "summary": "컨텍스트·5시간·7일 사용량을 입력창 위 그라데이션 막대 3개로 표시해요. Desktop/VS Code 전용이며 12개 언어를 지원하지만 한국어는 아직 없어요.",
   "summaryEn": "Shows context, 5-hour, and 7-day usage as gradient bars above the prompt. Desktop/VS Code only; 12 languages supported, not Korean yet.",
   "category": "statusline",
@@ -39,6 +40,13 @@
     "터미널에서는 그려지지 않아요. Claude Code Desktop/VS Code/모바일 전용이고, CLI는 자체 상태 표시줄을 그대로 써요.",
     "5시간·7일 막대는 Claude 구독 사용자에게만 보여요. API 키로 쓰면 컨텍스트 막대만 보여요 (원본 README 기준, k-mods가 직접 확인한 건 아니에요).",
     "macOS에서 `LANG`류 환경변수가 하나도 없을 때만 내부적으로 `/usr/bin/defaults read -g AppleLanguages`를 1회 실행해 시스템 언어를 읽어요. 인자가 고정돼 있고 사용자 입력은 들어가지 않아요."
+  ],
+  "notesEn": [
+    "Korean is not a supported language yet. It displays in English even on a Korean locale.",
+    "Even on a Korean locale (`ko_KR` and so on), `ko` is not among the 12 supported languages, so it falls back to English automatically. Until a translation patch is merged, Korean is also missing from the language choices in `/plugin configure`.",
+    "It is not drawn in the terminal. It is for Claude Code Desktop/VS Code/mobile only, and the CLI keeps using its own status line.",
+    "The 5-hour and 7-day bars are shown only to Claude subscribers. With an API key, only the context bar is shown (per the original README; k-mods did not verify this directly).",
+    "Only when no `LANG`-type environment variable is set at all on macOS, it runs `/usr/bin/defaults read -g AppleLanguages` once internally to read the system language. The arguments are fixed and no user input goes in."
   ],
   "review": {
     "date": "2026-10-06",

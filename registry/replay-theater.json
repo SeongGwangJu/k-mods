@@ -1,6 +1,7 @@
 {
   "name": "replay-theater",
   "displayName": "Replay 극장",
+  "displayNameEn": "Replay Theater",
   "summary": "이번 턴에서 Claude가 고친 파일을 한 단계씩 diff로 다시 확인할 수 있어요.",
   "summaryEn": "Step through the file edits Claude made in the last turn, one diff at a time, in a pane.",
   "category": "tool",
@@ -39,6 +40,10 @@
   "notes": [
     "Write로 기존 파일을 덮어쓸 때는 그 파일의 원래 내용을 읽어와 diff를 만들어요(그 외 다른 파일은 읽지 않아요).",
     "리플레이 기록은 메모리에만 있어서 세션을 새로고침하면 사라져요."
+  ],
+  "notesEn": [
+    "When Write overwrites an existing file, it reads that file's original content to build the diff (it does not read any other files).",
+    "The replay record exists only in memory, so it is lost when you reload the session."
   ],
   "review": {
     "date": "2026-10-06",

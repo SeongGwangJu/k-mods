@@ -2,6 +2,7 @@
   "$schema": "./_schema.json",
   "name": "agent-flow",
   "displayName": "에이전트 플로우",
+  "displayNameEn": "Agent Flow",
   "summary": "메인 루프와 서브에이전트의 관계를 트리 구조로 표시해요. 각 에이전트에 오간 컨텍스트 양과 답변은 클릭해서 볼 수 있어요",
   "summaryEn": "A side pane showing the main loop and every subagent as a live tree, with the context handed down and the answer handed back for each.",
   "category": "tool",
@@ -38,6 +39,10 @@
   "notes": [
     "데스크톱 앱에서의 동작은 README·코드에 명시적 확인이 없어 이번 리뷰에서는 terminal만 표시했어요(테스트도 terminal surface 기준)",
     "순수 관찰용 mod예요. 모든 훅이 next(e) 결과를 그대로 통과시키고 $.agent.list·$.session.usage만 추가로 읽어요"
+  ],
+  "notesEn": [
+    "Behavior in the desktop app is not explicitly confirmed in the README or code, so this review lists terminal only (the tests also run against the terminal surface).",
+    "A pure observer mod. Every hook passes the result of next(e) straight through, and it only additionally reads $.agent.list and $.session.usage."
   ],
   "review": {
     "date": "2026-10-06",

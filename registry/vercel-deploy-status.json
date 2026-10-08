@@ -2,6 +2,7 @@
   "$schema": "./_schema.json",
   "name": "vercel-deploy-status",
   "displayName": "Vercel 배포 현황",
+  "displayNameEn": "Vercel Deploy Status",
   "summary": "연결된 Vercel 프로젝트의 배포 상태를 프롬프트 위 상태줄에 대기·빌드·완료 단계별로 표시해요.",
   "summaryEn": "Pins the linked Vercel project's deploy queue above the prompt, one line per deploy with phase and elapsed time.",
   "category": "integration",
@@ -35,9 +36,17 @@
     "vercel CLI(PATH에 설치 및 로그인 필요, vercel whoami로 확인)",
     "저장소에 .vercel/project.json 연결 파일(vercel link로 생성)"
   ],
+  "requiresEn": [
+    "vercel CLI (installed in PATH and logged in; check with vercel whoami)",
+    "A link file at .vercel/project.json in the repository (created by vercel link)"
+  ],
   "notes": [
     "CLI나 연결 파일이 없으면 디버그 로그에 한 줄만 남기고 조용히 아무 것도 그리지 않아요.",
     "README에는 'CLAUDE_CODE_ENABLE_FUNCTION_HOOKS=1이 필요하다'고 적혀 있지만(초기 early-access 시절 문구로 보여요), 2.1.291에서는 별도 설정 없이 validate가 바로 통과했어요."
+  ],
+  "notesEn": [
+    "If the CLI or the link file is missing, it leaves one line in the debug log and quietly draws nothing.",
+    "The README says 'CLAUDE_CODE_ENABLE_FUNCTION_HOOKS=1 is required' (this looks like wording from the early-access period), but on 2.1.291 validate passed right away with no extra setup."
   ],
   "review": {
     "date": "2026-10-06",

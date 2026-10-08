@@ -2,6 +2,7 @@
   "$schema": "./_schema.json",
   "name": "tool-defense",
   "displayName": "툴 디펜스",
+  "displayNameEn": "Tool Defense",
   "summary": "Claude의 실제 도구 호출(Bash·Edit·웹·Agent)에 대응하는 적 유닛을 표시하는 타워 디펜스예요. 토큰 소모 없이 입력창 위에서 플레이해요",
   "summaryEn": "A tower defense where every enemy is one of Claude's real tool calls (Bash, Edit, web/MCP, Agent); zero tokens, played above the prompt.",
   "category": "animation",
@@ -39,6 +40,11 @@
     "클릭(마우스)으로 타워를 짓고 업그레이드해요. 일시정지·재시작은 키보드(스페이스/p/r)로도 가능해요",
     "최고 점수만 $.store(plugin 전용 저장소)에 남기고, 그 외 기기 밖 전송은 없어요",
     "README에 'claude -p, 데스크톱 앱, 모바일에서는 아무것도 그려지지 않는다'고 명시되어 있어요(마우스 가능한 terminal 전용)"
+  ],
+  "notesEn": [
+    "You build and upgrade towers by clicking (mouse). Pause and restart are also available from the keyboard (space/p/r).",
+    "Only the high score is kept in $.store (plugin-only storage); nothing else is sent off the device.",
+    "The README states that 'nothing is drawn in claude -p, the desktop app or mobile' (terminal only, with mouse support)."
   ],
   "review": {
     "date": "2026-10-06",

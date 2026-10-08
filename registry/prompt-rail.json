@@ -2,6 +2,7 @@
   "$schema": "./_schema.json",
   "name": "prompt-rail",
   "displayName": "프롬프트 레일",
+  "displayNameEn": "Prompt Rail",
   "summary": "세션에서 보낸 프롬프트를 탐색 막대에 모아 표시해요. 마우스를 올리면 내용을 미리 보고 클릭하면 해당 지점으로 이동해요.",
   "summaryEn": "A rail of your session's prompts beside the transcript or above the prompt; hover to read one, click to jump to it.",
   "category": "tool",

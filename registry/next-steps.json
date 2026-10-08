@@ -2,6 +2,7 @@
   "$schema": "./_schema.json",
   "name": "next-steps",
   "displayName": "다음 할 일 제안",
+  "displayNameEn": "Next Steps",
   "summary": "턴이 끝날 때마다 다음에 보낼 법한 프롬프트 2~3개를 입력창 위에 제안해요. 숫자 키를 누르면 선택한 문구가 입력창에 입력돼요.",
   "summaryEn": "After each turn, suggests 2 or 3 likely next prompts above the input box; pressing 1, 2, or 3 drafts one into the empty prompt, 0 dismisses.",
   "category": "automation",
@@ -34,6 +35,9 @@
   ],
   "notes": [
     "같은 저장소의 where-am-i와 서로 인지하도록 짜여 있어요. next-steps 목록이 떠 있는 동안 where-am-i는 자기 '다음 할 일' 칸을 비워서 같은 내용이 중복 표시되지 않게 해요."
+  ],
+  "notesEn": [
+    "It is built to be aware of where-am-i in the same repository. While the next-steps list is showing, where-am-i empties its own 'next steps' slot so the same content is not shown twice."
   ],
   "review": {
     "date": "2026-10-06",

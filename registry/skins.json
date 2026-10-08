@@ -2,6 +2,7 @@
   "$schema": "./_schema.json",
   "name": "skins",
   "displayName": "스킨 (한국 수정판)",
+  "displayNameEn": "Skins (KR patch)",
   "summary": "도구 호출·표·코드·셸 출력을 테마 카드 형식으로 표시해요. 원본에서 한글 표가 잘리던 문제를 고쳤어요",
   "summaryEn": "Themed cards for tool rows, tables, code and shell output; fixes CJK table widths and missing shell output in the terminal",
   "category": "theme",

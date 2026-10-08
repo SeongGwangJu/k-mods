@@ -2,6 +2,7 @@
   "$schema": "./_schema.json",
   "name": "cache-panel",
   "displayName": "캐시 패널",
+  "displayNameEn": "Cache Panel",
   "summary": "프롬프트 캐시가 만료되기 50분 전에 알려줘요. 주기적 갱신, 한 번 갱신, 대화 압축 중 하나를 예상 비용과 함께 선택할 수 있어요.",
   "summaryEn": "A passive 50-minute prompt-cache reminder with keep-warm, ping-once or compact choices, each shown with a live cost estimate.",
   "category": "statusline",

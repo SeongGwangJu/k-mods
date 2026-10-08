@@ -2,6 +2,7 @@
   "$schema": "./_schema.json",
   "name": "now-playing",
   "displayName": "나우 플레잉",
+  "displayNameEn": "Now Playing",
   "summary": "macOS에서 Spotify로 재생 중인 곡과 가사를 입력창 위에 표시해요. 버튼이나 /music으로 재생·일시정지·이전·다음을 조작할 수 있어요.",
   "summaryEn": "Shows Spotify's current track, progress, and synced lyrics above the prompt on macOS, with transport buttons and /music commands.",
   "category": "tool",
@@ -39,9 +40,16 @@
     "macOS",
     "Spotify 데스크톱 앱"
   ],
+  "requiresEn": [
+    "macOS",
+    "Spotify desktop app"
+  ],
   "preview": "https://raw.githubusercontent.com/hamzafer/claude-code-mods/adf9d72d81cb04284416371f9de8a6f937dcc631/images/now-playing.png",
   "notes": [
     "macOS가 아니면 session.start에서 uname -s로 확인해 명령 등록·폴링을 전혀 하지 않고 조용히 꺼져 있어요(Linux/Windows에서 아무 영향 없음)."
+  ],
+  "notesEn": [
+    "On anything other than macOS, it checks with uname -s at session.start, registers no commands, does no polling, and stays quietly off (no effect on Linux/Windows)."
   ],
   "review": {
     "date": "2026-10-06",

@@ -2,6 +2,7 @@
   "$schema": "./_schema.json",
   "name": "browser-lanes",
   "displayName": "브라우저 레인",
+  "displayNameEn": "Browser Lanes",
   "summary": "이 세션에 Playwright 브라우저가 있는지, 현재 누가 쓰는지 입력창 위에 표시해요. 서브에이전트끼리는 차례대로 사용하게 해요.",
   "summaryEn": "Shows whether this session has a Playwright browser and who holds it, and makes subagents in the same session take turns using it.",
   "category": "statusline",
@@ -38,8 +39,14 @@
   "requires": [
     "Playwright MCP 서버 (claude mcp add playwright --scope user -- npx @playwright/mcp@latest --isolated 권장)"
   ],
+  "requiresEn": [
+    "Playwright MCP server (recommended: claude mcp add playwright --scope user -- npx @playwright/mcp@latest --isolated)"
+  ],
   "notes": [
     "--isolated 없이 Playwright MCP를 쓰면 세션마다 Chrome 프로필을 공유해 두 번째 세션이 'Browser is already in use' 오류를 겪는데, 이 mod는 그 상황을 알려주고 /browser clean으로 정리해 주는 역할이에요. 근본 해결은 --isolated 설정이라고 README에도 명시돼 있어요."
+  ],
+  "notesEn": [
+    "Without --isolated, Playwright MCP shares the Chrome profile across sessions, so a second session hits the 'Browser is already in use' error. This mod tells you about that situation and cleans it up with /browser clean. The README also states that the root fix is the --isolated setting."
   ],
   "review": {
     "date": "2026-10-06",

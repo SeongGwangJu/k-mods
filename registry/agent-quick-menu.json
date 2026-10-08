@@ -2,6 +2,7 @@
   "$schema": "./_schema.json",
   "name": "agent-quick-menu",
   "displayName": "퀵 메뉴",
+  "displayNameEn": "Quick Menu",
   "summary": "설치된 플러그인의 명령과 설정을 한 패널에서 찾아 바로 실행할 수 있어요.",
   "summaryEn": "A pane and prompt band listing every installed plugin's commands and settings, with favourites and Claude Code's own /config rows.",
   "category": "tool",
@@ -26,6 +27,10 @@
   "notes": [
     "다른 플러그인의 명령을 대신 실행해 주는 구조라, 자기 플러그인이 아닌 명령은 두 번 눌러야(5초 내 재확인) 실행돼요.",
     "Claude Code 2.1.287 이상, macOS/Linux 터미널이나 데스크톱 Code 탭 기준이에요. VS Code 채팅 패널은 지원 안 하고 Windows는 저자가 테스트하지 않았다고 README에 적혀 있어요."
+  ],
+  "notesEn": [
+    "It runs other plugins' commands on your behalf, so a command that does not belong to its own plugin has to be pressed twice (reconfirm within 5 seconds) to run.",
+    "Requires Claude Code 2.1.287 or later, on a macOS/Linux terminal or the desktop Code tab. The README says the VS Code chat panel is not supported and the author did not test on Windows."
   ],
   "review": {
     "date": "2026-10-06",

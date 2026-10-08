@@ -2,6 +2,7 @@
   "$schema": "./_schema.json",
   "name": "reels",
   "displayName": "릴스",
+  "displayNameEn": "Reels",
   "summary": "Claude가 작업하는 동안 YouTube Shorts를 터미널 패널에서 재생하고 작업이 끝나면 자동으로 멈춰요. `/reels`를 입력했을 때만 재생돼요.",
   "summaryEn": "Plays YouTube Shorts in a terminal pane while Claude works and pauses when it's done. Nothing starts until you run /reels.",
   "category": "animation",
@@ -38,10 +39,17 @@
   "requires": [
     "Playwright (최초 /reels 실행 시 설치 안내가 떠요: npm install --prefix <plugin> playwright)"
   ],
+  "requiresEn": [
+    "Playwright (an install guide appears on the first /reels run: npm install --prefix <plugin> playwright)"
+  ],
   "preview": "https://raw.githubusercontent.com/hamzafer/claude-code-mods/adf9d72d81cb04284416371f9de8a6f937dcc631/images/reels-demo.gif",
   "notes": [
     "코드(helper/reels.cjs)까지 직접 읽어 확인했어요. Playwright로 헤드리스 Chrome을 띄워 https://www.youtube.com/shorts 를 열고, 화면을 CDP 스크린캐스트로 캡처해 PNG로 저장한 뒤 패널에 보여줘요. 제어는 로컬 유닉스 소켓(파일 경로를 쓰는 IPC)으로만 하고, 바깥에 열린 네트워크 포트는 아니에요.",
     "프로필(쿠키 등)은 ~/.claude-mods/reels/profile에 로컬로만 저장돼요."
+  ],
+  "notesEn": [
+    "We read the code (helper/reels.cjs) directly to confirm. It launches headless Chrome with Playwright, opens https://www.youtube.com/shorts, captures the screen with a CDP screencast, saves it as PNG, and shows it in the pane. Control goes only through a local Unix socket (IPC using a file path), not a network port open to the outside.",
+    "The profile (cookies and so on) is stored only locally in ~/.claude-mods/reels/profile."
   ],
   "review": {
     "date": "2026-10-06",

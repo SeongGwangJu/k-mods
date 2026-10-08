@@ -1,6 +1,7 @@
 {
   "name": "cc-pr-tracker",
   "displayName": "GitHub PR 트래커",
+  "displayNameEn": "GitHub PR Tracker",
   "summary": "머지 상태·리뷰·필수 체크를 입력창 위에 실시간으로 표시해요. 바뀌면 화면 알림과 소리로 알려줘요.",
   "summaryEn": "Watches GitHub PRs from your session—merge state, review, and required checks above the prompt—with alerts when they change.",
   "category": "integration",
@@ -34,11 +35,20 @@
   "requires": [
     "gh CLI 설치 및 로그인"
   ],
+  "requiresEn": [
+    "gh CLI installed and logged in"
+  ],
   "notes": [
     "GitHub 접근은 전부 사용자의 `gh` CLI 인증을 그대로 써요. 별도 토큰을 저장하지 않아요.",
     "체크 이름·PR 제목처럼 GitHub에서 온 텍스트는 제어문자를 제거하고, Claude에게 보내는 알림 문구는 '자동 생성된 데이터'라고 명시해서 프롬프트 주입을 막아요.",
     "cmux라는 특정 환경(CMUX_BUNDLED_CLI_PATH 등)에서만 추가 알림을 보내고, 없으면 조용히 건너뛰어요.",
     "notifyClaude 설정이 켜져 있으면(기본값) PR 상태가 바뀔 때 Claude가 다음 턴에 읽는 안내 메시지를 대화에 추가해요. 끄려면 /config에서 notifyClaude를 꺼요."
+  ],
+  "notesEn": [
+    "All GitHub access uses your `gh` CLI login as is. No separate token is stored.",
+    "Text that comes from GitHub, such as check names and PR titles, has control characters stripped. Notification text sent to Claude is labeled 'auto-generated data' to prevent prompt injection.",
+    "It sends extra notifications only in a specific environment called cmux (CMUX_BUNDLED_CLI_PATH and so on), and skips them quietly otherwise.",
+    "If the notifyClaude setting is on (the default), a guidance message that Claude reads on its next turn is added to the conversation whenever a PR's state changes. To turn this off, set notifyClaude to off in /config."
   ],
   "review": {
     "date": "2026-10-06",

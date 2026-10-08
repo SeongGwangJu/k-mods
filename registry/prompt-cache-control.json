@@ -2,6 +2,7 @@
   "$schema": "./_schema.json",
   "name": "prompt-cache-control",
   "displayName": "프롬프트 캐시 미터",
+  "displayNameEn": "Prompt Cache Control",
   "summary": "요청마다 캐시를 읽고 새로 쓴 양을 입력창 위에 표시해요. 만료가 임박하면 알리고 /compact·/clear 시점을 제안해요",
   "summaryEn": "Shows how much of each request's prompt the cache served vs wrote, counts down to expiry, and suggests /compact or /clear before it lapses.",
   "category": "statusline",
@@ -39,6 +40,10 @@
   "notes": [
     "TTL(캐시 유지 시간)은 환경변수·설정·계정 종류(구독/API 키)로 자동 추정되고, 요청 간격을 관찰해 스스로 보정해요",
     "1초 간격 타이머가 돌지만 표시 내용이 바뀔 때만 다시 그려서 유휴 세션엔 비용이 없어요"
+  ],
+  "notesEn": [
+    "The TTL (how long the cache is kept) is estimated automatically from environment variables, settings and account type (subscription/API key), and it corrects itself by watching the intervals between requests.",
+    "A 1-second timer runs, but it redraws only when the displayed content changes, so an idle session costs nothing."
   ],
   "review": {
     "date": "2026-10-06",

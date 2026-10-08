@@ -1,6 +1,7 @@
 {
   "name": "agent-compact-advisor",
   "displayName": "컴팩트 타이밍 어드바이저",
+  "displayNameEn": "Compact Advisor",
   "summary": "지금이 /compact 하기 좋은 때인지 상태줄에 0~100점으로 표시해요. 압축할 때마다 목표·결정·남은 일을 포함한 보존 템플릿을 자동으로 추가해요.",
   "summaryEn": "Scores 0-100 how ready your session is to /compact, and adds a template to every compaction that preserves goals, decisions and leftovers.",
   "category": "automation",
@@ -52,6 +53,11 @@
     "P1(목표 달성 확률, 점수 비중 20)은 로컬 127.0.0.1:8010에 떠 있는 'Kev의 System One'이라는 별도 서비스가 있어야 값이 나와요. 없으면 조용히 빠지고 나머지 항목만으로 재계산돼요. 추가 설치 없이도 상태줄 점수·압축 보존 템플릿 같은 핵심 기능은 전부 동작해요.",
     "같은 저자의 다른 mod agent-shell-watch가 설치돼 있으면 백그라운드 작업(대기·실행 중)도 점수에 반영돼요. 없으면 그 부분이 '알 수 없음' 취급돼 점수가 60점에 캡돼요(정상 동작, 설치 필수 아님).",
     "리더오버 판정은 에이전트의 마지막 답변에서 정해진 접두어로 시작하는 줄만 봐요. 프롬프트에 '해야 할 일이 남아있다'는 식의 자연어 서술은 감지 못 해요(README에 명시된 한계)."
+  ],
+  "notesEn": [
+    "P1 (goal-completion probability, score weight 20) only gets a value if a separate service called 'Kev's System One' is running locally at 127.0.0.1:8010. Without it, P1 is dropped quietly and the score is recalculated from the remaining items. The core features, such as the status line score and the template that preserves information on compaction, all work without any extra install.",
+    "If the same author's other mod agent-shell-watch is installed, background tasks (waiting or running) also count toward the score. Without it, that part is treated as 'unknown' and the score is capped at 60 (normal behavior, not a required install).",
+    "Leftover detection only looks at lines in the agent's last answer that start with a fixed prefix. It cannot detect natural-language statements in the prompt such as 'there is work left to do' (a limitation stated in the README)."
   ],
   "review": {
     "date": "2026-10-06",

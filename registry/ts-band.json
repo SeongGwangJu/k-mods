@@ -2,6 +2,7 @@
   "$schema": "./_schema.json",
   "name": "ts-band",
   "displayName": "테일스케일 노드 상태줄",
+  "displayNameEn": "Tailscale Band",
   "summary": "입력창 위에 Tailscale 노드들의 연결 상태를 표시해요. 노드가 끊기거나 다시 연결되면 화면 알림으로 알려줘요.",
   "summaryEn": "Shows Tailscale nodes' state in a band above the prompt, with a toast when a node comes up or goes down.",
   "category": "statusline",
@@ -25,6 +26,9 @@
   "commands": ["/ts"],
   "surfaces": ["terminal", "desktop"],
   "requires": ["tailscale CLI"],
+  "requiresEn": [
+    "tailscale CLI"
+  ],
   "settings": [
     {
       "key": "language",
@@ -36,6 +40,11 @@
     "Tailscale이 설치되어 있어야 동작해요(없으면 '찾을 수 없음' 오류만 조용히 표시).",
     "기본 새로고침 주기는 60초(최소 10초)이고, 조회 실패가 이어지면 최대 10분까지 점점 느리게 재시도해요.",
     "`tailscalePath`를 비워두면 PATH, Homebrew 설치 경로, macOS 앱 내장 CLI 순서로 자동으로 찾아요."
+  ],
+  "notesEn": [
+    "Tailscale must be installed for it to work (if it is not, it quietly shows only a 'not found' error).",
+    "The default refresh interval is 60 seconds (minimum 10 seconds), and if lookups keep failing, it retries more and more slowly, up to 10 minutes.",
+    "If you leave `tailscalePath` empty, it finds the CLI automatically in this order: PATH, the Homebrew install path, the CLI bundled in the macOS app."
   ],
   "featured": false,
   "preview": "https://raw.githubusercontent.com/hoobnn/hoobnn-agent-mods/8fb6f67cad9fd023cc7c06b7923518b4bbc45aea/claude-code/ts-band/assets/preview.png",

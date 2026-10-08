@@ -2,6 +2,7 @@
   "$schema": "./_schema.json",
   "name": "statuspane",
   "displayName": "상태 카드",
+  "displayNameEn": "Statuspane",
   "summary": "모델, 이펙트, 컨텍스트, 5시간·주간 한도, 비용, 브랜치를 프롬프트 위 카드 하나에 표시해요.",
   "summaryEn": "A status card above the prompt: model, effort, context, 5h/week limits, cost, directory and branch, with optional GitHub CI rows.",
   "category": "statusline",
@@ -35,9 +36,16 @@
   "requires": [
     "gh CLI (ciBranch 또는 ciPush 설정을 켰을 때만 필요해요, 기본은 둘 다 꺼져 있어요)"
   ],
+  "requiresEn": [
+    "gh CLI (only needed when you turn on the ciBranch or ciPush setting; both are off by default)"
+  ],
   "notes": [
     "데스크톱 앱에서는 모델·이펙트·컨텍스트를 자체적으로 보여주기 때문에 이 카드는 터미널에서만 그려져요.",
     "Claude Code 2.1.287 이상 필요, 2.1.288에서 테스트됐다고 README에 적혀 있어요."
+  ],
+  "notesEn": [
+    "The desktop app already shows model, effort and context on its own, so this card is drawn only in the terminal.",
+    "Requires Claude Code 2.1.287 or later; the README says it was tested on 2.1.288."
   ],
   "review": {
     "date": "2026-10-06",
