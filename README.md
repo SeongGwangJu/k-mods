@@ -4,6 +4,7 @@
 [![CI](https://github.com/SeongGwangJu/k-mods/actions/workflows/ci.yml/badge.svg)](https://github.com/SeongGwangJu/k-mods/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
 [![English](https://img.shields.io/badge/README-English-lightgrey)](README.en.md)
+[![Website](https://img.shields.io/badge/website-k--mods-49B3EF)](https://seonggwangju.github.io/k-mods/)
 
 <!-- HERO: 데모 GIF가 정해지면 아래 줄의 주석을 풀어요
 <img src="docs/assets/hero.gif" alt="k-mods를 설치한 Claude Code: 한국어 상태줄, 냥캣 스피너, 컨텍스트 막대" width="760">
@@ -13,6 +14,7 @@ Claude Code에 **mods**가 생겼어요. 이제 화면과 동작을 원하는 �
 어떤 mod를 설치해야 할지가 문제죠. 공개된 mod 중 **직접 검토한 것만** 골라 한국어로 소개해요.
 
 한국어 메뉴, 냥캣 애니메이션, 화면 공유 시 개인정보 가리기, 작업 완료 시 휴대전화 알림, 위험 명령 차단까지. 지금 <!-- BEGIN:count -->64<!-- END:count -->개가 있어요.
+미리보기 화면과 함께 보려면 [웹사이트](https://seonggwangju.github.io/k-mods/)에서 둘러보세요.
 
 ## 설치
 

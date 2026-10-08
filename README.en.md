@@ -4,6 +4,7 @@
 [![CI](https://github.com/SeongGwangJu/k-mods/actions/workflows/ci.yml/badge.svg)](https://github.com/SeongGwangJu/k-mods/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
 [![한국어](https://img.shields.io/badge/README-한국어-lightgrey)](README.md)
+[![Website](https://img.shields.io/badge/website-k--mods-49B3EF)](https://seonggwangju.github.io/k-mods/en/)
 
 <!-- HERO: 데모 GIF가 정해지면 아래 줄의 주석을 풀어요
 <img src="docs/assets/hero.gif" alt="Claude Code with k-mods: Korean status lines, a Nyan Cat spinner and a context bar" width="760">
@@ -11,6 +12,7 @@
 
 A reviewed, installable catalog of **Claude Code mods**, curated in Korea.
 Every external mod is pinned to the exact commit we reviewed and labeled with what it can do on your machine. <!-- BEGIN:count -->64<!-- END:count --> mods so far.
+Browse them with previews on the [website](https://seonggwangju.github.io/k-mods/en/).
 
 ## Install
 
