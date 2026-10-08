@@ -180,6 +180,17 @@ function joinDir(dir, arg) {
   return dir ? `${dir}/${arg}` : arg;
 }
 
+// k-mods: Claude Code keeps per-session temp files under /tmp/claude-<uid>/<project>/<session>/
+// (/private/tmp/... on macOS). A literal path at least that deep belongs to one session,
+// so rm there skips the prompt. Variables, globs before the session folder, `.` and `..`
+// don't count: the real target can't be read from the command line.
+const CLAUDE_SCRATCH = /^\/(?:private\/)?tmp\/claude-\d+\/[^/*?[]+\/[^/*?[]+(?:\/|$)/;
+
+/** True when an rm target is a literal path inside one Claude session's temp folder. */
+export function isClaudeScratch(target) {
+  return CLAUDE_SCRATCH.test(target) && !/[$`~]/.test(target) && !target.split("/").some((part) => part === "." || part === "..");
+}
+
 /** The first risky segment of a shell command, or null. Exported for direct unit tests. */
 export function classify(command) {
   let dir = null; // where a `cd` earlier on the line moved to; null means the session folder
@@ -258,6 +269,12 @@ function classifySegment(segment, dir, pushed) {
       const force = flags.some((f) => f === "--force" || (/^-[^-]/.test(f) && f.includes("f")));
       if (recursive || force) {
         const targets = args.filter((a) => !a.startsWith("-") || a === "-");
+        // k-mods: cleaning up Claude's own session temp folders isn't worth a prompt.
+        // A relative target counts only after a literal `cd /abs/...` on the same line.
+        const resolve = (t) => (t.startsWith("/") ? t : dir?.startsWith("/") ? `${dir}/${t}` : t);
+        if (targets.length > 0 && targets.map(resolve).every(isClaudeScratch)) {
+          return null;
+        }
         return { kind: "rm", label: `rm ${flags.join(" ")}`.trim(), targets, dir };
       }
     }

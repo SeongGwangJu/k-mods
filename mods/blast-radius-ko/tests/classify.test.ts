@@ -2,7 +2,7 @@
 // a risk (or null) out. CONTRIBUTING.md: pure logic (classification) gets a unit test.
 import { expect, test } from 'claude-code/testing'
 
-import { classify } from '../hooks/register.mjs'
+import { classify, isClaudeScratch } from '../hooks/register.mjs'
 
 test('rm variants: recursive or force (or both), long or short flags, are risky', async () => {
   expect(classify('rm -rf build')?.kind).toBe('rm')
@@ -84,4 +84,41 @@ test('routine, harmless and merely-mentioning commands are not held', async () =
   expect(classify('echo "rm -rf"')).toBeNull() // "rm -rf" is a string argument to echo, not a command
   expect(classify('ls -la')).toBeNull()
   expect(classify('npm install')).toBeNull()
+})
+
+test("rm inside one Claude session's temp folder is not held; anything wider still is", async () => {
+  const scratch = '/private/tmp/claude-502/-Users-me-repo/0b1c-session/scratchpad'
+  expect(classify(`rm -rf ${scratch}/out`)).toBeNull()
+  expect(classify(`rm -rf "${scratch}/a b" ${scratch}/*`)).toBeNull() // quotes, a glob below the session folder
+  expect(classify('rm -rf /tmp/claude-1000/-home-me-repo/sess-1')).toBeNull() // Linux, the session folder itself
+  // One target outside the scratch folder makes the whole rm risky.
+  expect(classify(`rm -rf ${scratch}/out build`)?.kind).toBe('rm')
+  // A relative target after a literal cd into the scratch folder.
+  expect(classify(`cd ${scratch}; rm -rf cfg && mkdir cfg`)).toBeNull()
+  expect(classify(`cd ${scratch} && rm -rf cfg out/*`)).toBeNull()
+  expect(classify(`cd ${scratch} && cd sub && rm -rf cfg`)).toBeNull()
+  // ...but not when the cd can't be read, climbs out, or isn't there.
+  expect(classify('rm -rf cfg')?.kind).toBe('rm')
+  expect(classify('cd "$SCRATCH" && rm -rf cfg')?.kind).toBe('rm')
+  expect(classify(`cd ${scratch} && rm -rf ../other`)?.kind).toBe('rm')
+  expect(classify(`cd ${scratch} && rm -rf .`)?.kind).toBe('rm')
+  expect(classify(`cd ${scratch} && cd - && rm -rf cfg`)?.kind).toBe('rm')
+  expect(classify(`(cd ${scratch} && make) && rm -rf cfg`)?.kind).toBe('rm')
+  expect(classify('cd /private/tmp/claude-502/-Users-me-repo && rm -rf sess')).toBeNull() // lands in a session folder
+  expect(classify('cd /private/tmp/claude-502 && rm -rf proj')?.kind).toBe('rm') // project folder: too shallow
+  // Too shallow: the uid or project folder holds other sessions' files.
+  expect(isClaudeScratch('/private/tmp/claude-502')).toBe(false)
+  expect(isClaudeScratch('/private/tmp/claude-502/-Users-me-repo')).toBe(false)
+  expect(isClaudeScratch('/private/tmp/claude-502/-Users-me-repo/')).toBe(false)
+  // The target can't be read from the command line.
+  expect(isClaudeScratch('/tmp/claude-*/proj/sess')).toBe(false)
+  expect(isClaudeScratch('/tmp/claude-502/proj/*')).toBe(false)
+  expect(isClaudeScratch('/tmp/claude-502/$PROJ/sess')).toBe(false)
+  expect(isClaudeScratch('$TMPDIR/claude-502/proj/sess')).toBe(false)
+  expect(isClaudeScratch('/tmp/claude-502/proj/sess/../..')).toBe(false)
+  expect(isClaudeScratch('/tmp/claude-502/proj/.')).toBe(false)
+  // Look-alikes that aren't Claude's folder.
+  expect(isClaudeScratch('/tmp/claude-code/proj/sess')).toBe(false)
+  expect(isClaudeScratch('tmp/claude-502/proj/sess')).toBe(false)
+  expect(isClaudeScratch('/var/tmp/claude-502/proj/sess')).toBe(false)
 })
