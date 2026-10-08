@@ -51,7 +51,7 @@ claude plugin install banana@k-mods
 
 <details><summary>정적 분석 결과 (<code>claude plugin validate</code>)</summary>
 
-- 검사한 Claude Code: 2.1.294
+- 검사한 Claude Code: 2.1.291
 - 결과: 통과
 - 다루는 이벤트: `command.run{command=banana}`, `session.start`, `turn.complete`, `turn.start`, `ui.render{component=Pane, requestId=banana}`
 - 부르는 API: `$.clock.every`, `$.clock.sleep`, `$.command.register`, `$.fs.exists`, `$.fs.read`, `$.http.fetch`, `$.process.run`, `$.state.get`, `$.state.set`, `$.store.get`, `$.store.set`, `$.ui.close`, `$.ui.copy`, `$.ui.open`, `$.ui.panes`, `$.ui.resolve`, `$.ui.toast`

@@ -5,7 +5,7 @@
     "repo": "somethingwentwell/cc-mod-banana-game",
     "sha": "ee3d1660c509716fc8fbd893cb363c513220e2d8"
   },
-  "auditedWith": "2.1.294",
+  "auditedWith": "2.1.291",
   "validate": {
     "success": true,
     "errors": [],
