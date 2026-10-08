@@ -144,7 +144,7 @@ Browse them with previews on the [website](https://seonggwangju.github.io/k-mods
 | mod | What it does | Source |
 | --- | --- | --- |
 | [**korean-pack**](docs/mods/korean-pack.md) ⭐<br>`korean-pack` | One install for a Korean Claude Code: menu and settings translation (ko-ui) plus Korean status lines (status-ko) | 📦 bundle |
-| [**starter**](docs/mods/starter.md)<br>`starter` | The k-mods starter set: mod store, Korean pack, memo pad, context bar, risky-command brake and done alarm | 📦 bundle |
+| [**starter**](docs/mods/starter.md)<br>`starter` | The k-mods starter set: mod store, Korean pack, pixel-scene spinner, memo pad, context bar, risky-command brake and done alarm | 📦 bundle |
 | [**taxi-pack**](docs/mods/taxi-pack.md)<br>`taxi-pack` | Claude Code as a taxi ride: meter (cost and limits), navigation (todo route), speed camera (risky-command check) and dashcam (tool-call recorder) in one install | 📦 bundle |
 <!-- END:catalog -->
 

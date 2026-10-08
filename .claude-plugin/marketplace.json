@@ -5,7 +5,7 @@
     "url": "https://github.com/SeongGwangJu"
   },
   "description": "한국어로 고르고 한 줄로 설치하는 Claude Code mods 모음. 검토한 커밋만 설치돼요.",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "plugins": [
     {
       "name": "ko-ui",
@@ -1520,7 +1520,7 @@
       "name": "starter",
       "source": "./bundles/starter",
       "displayName": "추천 세트",
-      "description": "처음 설치하기 좋은 추천 세트예요. 모드 상점, 한국어 팩, 메모장, 컨텍스트 막대, 위험 명령 브레이크, 작업 끝 알림을 한 번에 설치해요",
+      "description": "처음 설치하기 좋은 추천 세트예요. 모드 상점, 한국어 팩, 픽셀 장면 스피너, 메모장, 컨텍스트 막대, 위험 명령 브레이크, 작업 끝 알림을 한 번에 설치해요",
       "category": "묶음",
       "tags": [
         "추천",
@@ -1537,6 +1537,7 @@
         "mod-store",
         "ko-ui",
         "status-ko",
+        "spinner",
         "memo-pad",
         "ctx-strip",
         "blast-radius-ko",

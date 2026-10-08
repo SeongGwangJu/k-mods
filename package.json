@@ -1,6 +1,6 @@
 {
   "name": "k-mods",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "description": "한국어로 고르고 한 줄로 설치하는 Claude Code mods 모음",
   "type": "module",

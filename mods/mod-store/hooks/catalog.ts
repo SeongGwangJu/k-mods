@@ -20,7 +20,7 @@ export type CatalogEntry = {
 }
 
 export const MARKETPLACE = 'k-mods'
-export const CATALOG_VERSION = '0.1.0'
+export const CATALOG_VERSION = '0.2.0'
 
 // 상점 자신은 목록에서 숨긴다
 export const SELF_NAME = 'mod-store'
@@ -1542,7 +1542,7 @@ export const CATALOG: CatalogEntry[] = [
   {
     "name": "starter",
     "displayName": "추천 세트",
-    "summary": "처음 설치하기 좋은 추천 세트예요. 모드 상점, 한국어 팩, 메모장, 컨텍스트 막대, 위험 명령 브레이크, 작업 끝 알림을 한 번에 설치해요",
+    "summary": "처음 설치하기 좋은 추천 세트예요. 모드 상점, 한국어 팩, 픽셀 장면 스피너, 메모장, 컨텍스트 막대, 위험 명령 브레이크, 작업 끝 알림을 한 번에 설치해요",
     "category": "bundle",
     "kind": "bundle",
     "author": "SeongGwangJu",
@@ -1566,6 +1566,7 @@ export const CATALOG: CatalogEntry[] = [
       "mod-store",
       "ko-ui",
       "status-ko",
+      "spinner",
       "memo-pad",
       "ctx-strip",
       "blast-radius-ko",

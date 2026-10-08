@@ -65,7 +65,7 @@ claude plugin install starter@k-mods
 
 k-mods also has sets that are bundled in advance.
 
-- `starter@k-mods`: The recommended set. Installs the mod store, Korean pack, memo pad, context bar, risky-command brake, and done alarm in one go.
+- `starter@k-mods`: The recommended set. Installs the mod store, Korean pack, pixel-scene spinner, memo pad, context bar, risky-command brake, and done alarm in one go.
 - `korean-pack@k-mods`: The Korean pack only (menu and settings translation + Korean status lines).
 
 To pick mods one by one, install `mod-store@k-mods`, then enter `/k-mods` in a session. The catalog opens in a pane, and you can install and delete with buttons.
