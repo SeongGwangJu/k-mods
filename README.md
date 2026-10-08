@@ -13,7 +13,7 @@
 Claude Code에 **mods**가 생겼어요. 이제 화면과 동작을 원하는 대로 바꿀 수 있어요.
 어떤 mod를 설치해야 할지가 문제죠. 공개된 mod 중 **직접 검토한 것만** 골라 한국어로 소개해요.
 
-한국어 메뉴, 냥캣 애니메이션, 화면 공유 시 개인정보 가리기, 작업 완료 시 휴대전화 알림, 위험 명령 차단까지. 지금 <!-- BEGIN:count -->64<!-- END:count -->개가 있어요.
+한국어 메뉴, 냥캣 애니메이션, 화면 공유 시 개인정보 가리기, 작업 완료 시 휴대전화 알림, 위험 명령 차단까지. 지금 <!-- BEGIN:count -->65<!-- END:count -->개가 있어요.
 미리보기 화면과 함께 보려면 [웹사이트](https://seonggwangju.github.io/k-mods/)에서 둘러보세요.
 
 ## 설치
@@ -89,6 +89,7 @@ Claude가 일하는 동안 애니메이션이나 게임을 표시해요
 | mod | 무엇을 해 주나요 | 출처 |
 | --- | --- | --- |
 | [**픽셀 장면 스피너 (한국 수정판)**](docs/mods/spinner.md) ⭐<br>`spinner` | Claude가 일하는 동안 입력창 위에 냥캣·Clawd 같은 픽셀 장면을 표시하고 펫을 키워요. 한국어·간결한 기본값으로 고친 수정판이에요 | 🔧 [hoobnn](https://github.com/hoobnn) 원작 · 한국 수정판 |
+| [**바나나 클리커**](docs/mods/banana.md)<br>`banana` | Claude가 생각하는 동안 대화 옆에 바나나 창이 열려요. 바나나를 눌러 코인과 희귀 바나나를 모으고, 모은 코인을 스폰서가 주는 LLM 토큰 $1과 바꿀 수 있어요. | [somethingwentwell](https://github.com/somethingwentwell) |
 | [**CC 아케이드**](docs/mods/cc-arcade.md)<br>`cc-arcade` | 입력창 위에서 스네이크·테트리스·2048·지뢰찾기 등 9가지 미니게임을 즐길 수 있어요. Claude가 일하는 동안 자라는 펫도 키울 수 있어요. | [Seza Akgün](https://github.com/sezaakgun) |
 | [**Clawd 스피너**](docs/mods/clawd-spinner.md)<br>`clawd-spinner` | 189가지 스피너 단어마다 Clawd가 요리·춤·서성거리기 등 서로 다른 몸짓을 해요. | [Sai Rudra](https://github.com/saiharsha03) |
 | [**Clawd 이야기**](docs/mods/clawd-tales.md)<br>`clawd-tales` | 입력창 위에서 픽셀 Clawd가 Claude의 모든 도구 호출에 맞춰 몸짓을 해요. 서브에이전트마다 작은 동료도 등장해요. | [plaxagoras](https://github.com/plaxagoras) |

@@ -123,6 +123,31 @@
       "repository": "https://github.com/hoobnn/hoobnn-agent-mods"
     },
     {
+      "name": "banana",
+      "source": {
+        "source": "github",
+        "repo": "somethingwentwell/cc-mod-banana-game",
+        "sha": "ee3d1660c509716fc8fbd893cb363c513220e2d8"
+      },
+      "displayName": "바나나 클리커",
+      "description": "Claude가 생각하는 동안 대화 옆에 바나나 창이 열려요. 바나나를 눌러 코인과 희귀 바나나를 모으고, 모은 코인을 스폰서가 주는 LLM 토큰 $1과 바꿀 수 있어요.",
+      "category": "애니메이션",
+      "tags": [
+        "게임",
+        "클리커",
+        "바나나",
+        "리더보드",
+        "LLM 토큰"
+      ],
+      "author": {
+        "name": "somethingwentwell",
+        "url": "https://github.com/somethingwentwell"
+      },
+      "homepage": "https://github.com/somethingwentwell/cc-mod-banana-game",
+      "license": "MIT",
+      "repository": "https://github.com/somethingwentwell/cc-mod-banana-game"
+    },
+    {
       "name": "cc-arcade",
       "source": {
         "source": "github",

@@ -1,0 +1,78 @@
+{
+  "$schema": "./_schema.json",
+  "name": "banana",
+  "displayName": "바나나 클리커",
+  "displayNameEn": "Banana",
+  "summary": "Claude가 생각하는 동안 대화 옆에 바나나 창이 열려요. 바나나를 눌러 코인과 희귀 바나나를 모으고, 모은 코인을 스폰서가 주는 LLM 토큰 $1과 바꿀 수 있어요.",
+  "summaryEn": "A clicker pane that opens while Claude thinks: clicks earn coins and rare bananas, which trade for $1 of LLM tokens from a sponsor.",
+  "category": "animation",
+  "tags": [
+    "게임",
+    "클리커",
+    "바나나",
+    "리더보드",
+    "LLM 토큰"
+  ],
+  "kind": "upstream",
+  "source": {
+    "source": "github",
+    "repo": "somethingwentwell/cc-mod-banana-game",
+    "sha": "ee3d1660c509716fc8fbd893cb363c513220e2d8"
+  },
+  "upstream": {
+    "repo": "somethingwentwell/cc-mod-banana-game",
+    "commit": "ee3d1660c509716fc8fbd893cb363c513220e2d8"
+  },
+  "author": {
+    "name": "somethingwentwell",
+    "url": "https://github.com/somethingwentwell"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/somethingwentwell/cc-mod-banana-game",
+  "commands": [
+    "/banana"
+  ],
+  "surfaces": [
+    "terminal",
+    "desktop"
+  ],
+  "requires": [
+    "Claude Code 2.1.287 이상",
+    "토큰으로 바꾸려면 스폰서 게이트웨이(New API) 계정이 필요해요. 가입한 뒤 `/banana link <아이디>`로 연결해요"
+  ],
+  "requiresEn": [
+    "Claude Code 2.1.287 or newer",
+    "Redeeming tokens needs an account on the sponsor's New API gateway, linked with `/banana link <username>`"
+  ],
+  "preview": "https://raw.githubusercontent.com/somethingwentwell/cc-mod-banana-game/main/docs/hero.png",
+  "notes": [
+    "설정이 없으면 스폰서 서버 https://banana.jevable.ai/game 에 접속해요. 보내는 것은 무작위 플레이어 ID, 클릭·코인·드롭 수, 직접 설정한 리더보드 이름과 게이트웨이 아이디, mod 버전, 화면 종류(터미널·데스크톱)뿐이에요. 프롬프트·코드·파일·대화는 보내지 않아요.",
+    "플러그인 설정에서 Server URL과 Content URL을 비우면 서버 없이 혼자 플레이해요.",
+    "코인과 바나나는 얻은 지 7일 뒤 사라져요. 누적 클릭·코인은 사라지지 않고 리더보드에 쓰여요.",
+    "터미널이 144칸 이상이면 Claude가 생각할 때 저절로 열리고, 좁으면 `/banana`로 열어요."
+  ],
+  "notesEn": [
+    "With no settings it talks to the sponsor server at https://banana.jevable.ai/game. It sends only a random player id, click, coin and drop counts, the leaderboard name and gateway login if you set them, the mod version, and the surface (terminal or desktop). Never prompts, code, files or conversation.",
+    "Emptying the Server URL and Content URL settings makes it play offline.",
+    "Coins and bananas expire 7 days after they are earned. Lifetime clicks and coins never expire and drive the leaderboard.",
+    "The pane opens by itself while Claude thinks at 144+ terminal columns; on a narrower terminal, `/banana` opens it."
+  ],
+  "review": {
+    "date": "2026-10-08",
+    "by": "somethingwentwell",
+    "claudeCode": "2.1.291",
+    "method": [
+      "validate",
+      "code-read",
+      "unit-test",
+      "live-session"
+    ],
+    "findings": [
+      "작성자 본인 등록. validate 통과, claude plugin test 22개 통과, 터미널 실제 세션에서 클릭·가방·상점·교환·순위를 확인.",
+      "네트워크: $.http.fetch로 serverUrl(기본 https://banana.jevable.ai/game)의 /hello·/sync·/rate·/stock·/leaderboard·/redeem과 contentUrl(기본 .../game/content)만 호출. 프롬프트·대화·파일 내용은 보내지 않음.",
+      "외부 프로세스: 'Update required' 화면의 Update now 버튼을 누를 때만 $.process.run을 argv로 실행. 마켓플레이스 설치면 `claude plugin marketplace update banana`와 `claude plugin update banana@banana`, 클론이면 `git -C <플러그인 루트> pull --ff-only`.",
+      "파일: $.fs.read로 자기 plugin.json만 읽고, $.fs.exists로 .git 존재만 확인. 파일 쓰기 없음. 진행 상황은 $.store에 저장.",
+      "모델 호출·도구 승인/거절 없음. 훅은 session.start·turn.start·turn.complete·command.run·ui.render뿐. audit의 chat 표시는 turn.complete 훅 때문이며, 이 훅은 답변 내용(e.answer)을 읽지 않고 e.agentId만 보고 창을 닫은 뒤 클릭 수 동기화를 최대 2초 기다리고 next(e)를 넘김."
+    ]
+  }
+}

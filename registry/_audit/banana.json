@@ -1,0 +1,59 @@
+{
+  "name": "banana",
+  "source": {
+    "source": "github",
+    "repo": "somethingwentwell/cc-mod-banana-game",
+    "sha": "ee3d1660c509716fc8fbd893cb363c513220e2d8"
+  },
+  "auditedWith": "2.1.291",
+  "validate": {
+    "success": true,
+    "errors": [],
+    "warnings": []
+  },
+  "hooks": [
+    "command.run{command=banana}",
+    "session.start",
+    "turn.complete",
+    "turn.start",
+    "ui.render{component=Pane, requestId=banana}"
+  ],
+  "calls": [
+    "$.clock.every",
+    "$.clock.sleep",
+    "$.command.register",
+    "$.fs.exists",
+    "$.fs.read",
+    "$.http.fetch",
+    "$.process.run",
+    "$.state.get",
+    "$.state.set",
+    "$.store.get",
+    "$.store.set",
+    "$.ui.close",
+    "$.ui.copy",
+    "$.ui.open",
+    "$.ui.panes",
+    "$.ui.resolve",
+    "$.ui.toast"
+  ],
+  "envReads": [],
+  "envWrites": [],
+  "gatingWithoutCatch": [],
+  "commands": [
+    "/banana"
+  ],
+  "programs": [],
+  "urls": [
+    "http://localhost",
+    "http://www.w3.org/2000/svg",
+    "https://banana.jevable.ai/register"
+  ],
+  "license": "LICENSE",
+  "permissions": [
+    "network",
+    "process",
+    "chat",
+    "fs-read"
+  ]
+}
