@@ -183,6 +183,35 @@ export const CATALOG: CatalogEntry[] = [
     "featured": true
   },
   {
+    "name": "banana",
+    "displayName": "바나나 클리커",
+    "summary": "Claude가 생각하는 동안 대화 옆에 바나나 창이 열려요. 바나나를 눌러 코인과 희귀 바나나를 모으고, 모은 코인을 스폰서가 주는 LLM 토큰 $1과 바꿀 수 있어요.",
+    "category": "animation",
+    "kind": "upstream",
+    "author": "somethingwentwell",
+    "license": "MIT",
+    "homepage": "https://github.com/somethingwentwell/cc-mod-banana-game",
+    "commands": [
+      "/banana"
+    ],
+    "requires": [
+      "Claude Code 2.1.287 이상",
+      "토큰으로 바꾸려면 스폰서 게이트웨이(New API) 계정이 필요해요. 가입한 뒤 `/banana link <아이디>`로 연결해요"
+    ],
+    "notes": [
+      "설정이 없으면 스폰서 서버 https://banana.jevable.ai/game 에 접속해요. 보내는 것은 무작위 플레이어 ID, 클릭·코인·드롭 수, 직접 설정한 리더보드 이름과 게이트웨이 아이디, mod 버전, 화면 종류(터미널·데스크톱)뿐이에요. 프롬프트·코드·파일·대화는 보내지 않아요.",
+      "플러그인 설정에서 Server URL과 Content URL을 비우면 서버 없이 혼자 플레이해요.",
+      "코인과 바나나는 얻은 지 7일 뒤 사라져요. 누적 클릭·코인은 사라지지 않고 리더보드에 쓰여요.",
+      "터미널이 144칸 이상이면 Claude가 생각할 때 저절로 열리고, 좁으면 `/banana`로 열어요."
+    ],
+    "permissions": [
+      "네트워크",
+      "프로그램 실행",
+      "대화 읽기",
+      "파일 읽기"
+    ]
+  },
+  {
     "name": "cc-arcade",
     "displayName": "CC 아케이드",
     "summary": "입력창 위에서 스네이크·테트리스·2048·지뢰찾기 등 9가지 미니게임을 즐길 수 있어요. Claude가 일하는 동안 자라는 펫도 키울 수 있어요.",

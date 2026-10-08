@@ -11,7 +11,7 @@
 -->
 
 A reviewed, installable catalog of **Claude Code mods**, curated in Korea.
-Every external mod is pinned to the exact commit we reviewed and labeled with what it can do on your machine. <!-- BEGIN:count -->64<!-- END:count --> mods so far.
+Every external mod is pinned to the exact commit we reviewed and labeled with what it can do on your machine. <!-- BEGIN:count -->65<!-- END:count --> mods so far.
 Browse them with previews on the [website](https://seonggwangju.github.io/k-mods/en/).
 
 ## Install
@@ -54,6 +54,7 @@ Browse them with previews on the [website](https://seonggwangju.github.io/k-mods
 | mod | What it does | Source |
 | --- | --- | --- |
 | [**spinner**](docs/mods/spinner.md) ⭐<br>`spinner` | Pixel scenes above the prompt while Claude works (Nyan Cat, Clawd and more) plus a pet; a patched edition with Korean and leaner defaults | 🔧 [hoobnn](https://github.com/hoobnn) · patched |
+| [**banana**](docs/mods/banana.md)<br>`banana` | A clicker pane that opens while Claude thinks: clicks earn coins and rare bananas, which trade for $1 of LLM tokens from a sponsor. | [somethingwentwell](https://github.com/somethingwentwell) |
 | [**cc-arcade**](docs/mods/cc-arcade.md)<br>`cc-arcade` | Nine terminal mini-games above the prompt (snake, Tetris, 2048, and more), plus a pet that grows as Claude works. | [Seza Akgün](https://github.com/sezaakgun) |
 | [**clawd-spinner**](docs/mods/clawd-spinner.md)<br>`clawd-spinner` | Clawd acts out the spinner's word above it—cooking, dancing, pacing—with a scene for every one of 189 spinner words, no model calls. | [Sai Rudra](https://github.com/saiharsha03) |
 | [**clawd-tales**](docs/mods/clawd-tales.md)<br>`clawd-tales` | A pixel Clawd acts out every tool call above the prompt, with helper characters for each subagent—terminal-first, no model calls. | [plaxagoras](https://github.com/plaxagoras) |
