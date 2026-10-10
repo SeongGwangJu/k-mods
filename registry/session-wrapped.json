@@ -1,8 +1,6 @@
 {
   "$schema": "./_schema.json",
   "name": "session-wrapped",
-  "displayName": "세션 랩드",
-  "displayNameEn": "Session Wrapped",
   "summary": "`/wrapped`로 이번 세션의 도구 호출·테스트·비용 통계를 애니메이션으로 표시해요. 공유용 PNG 카드는 데스크톱에 저장해요.",
   "summaryEn": "Spotify-Wrapped-style recap for a Claude Code session: run /wrapped for an animated stat reveal, saved as a shareable PNG on your Desktop.",
   "category": "tool",

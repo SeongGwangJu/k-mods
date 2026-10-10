@@ -1,8 +1,8 @@
-# 사용량 진행률 막대
+# mod-usage
 
 > 컨텍스트·5시간·7일 사용량을 입력창 위 그라데이션 막대 3개로 표시해요. Desktop/VS Code 전용이며 12개 언어를 지원하지만 한국어는 아직 없어요.
 
-<img src="https://raw.githubusercontent.com/jack21/claude-mod-usage/534b16ecf4c5580f611f270100025eef552d89e7/assets/preview.png" alt="사용량 진행률 막대" width="640">
+<img src="https://raw.githubusercontent.com/jack21/claude-mod-usage/534b16ecf4c5580f611f270100025eef552d89e7/assets/preview.png" alt="mod-usage" width="640">
 
 | | |
 | --- | --- |

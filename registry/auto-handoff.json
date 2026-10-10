@@ -1,8 +1,6 @@
 {
   "$schema": "./_schema.json",
   "name": "auto-handoff",
-  "displayName": "오토 핸드오프",
-  "displayNameEn": "Auto Handoff",
   "summary": "컨텍스트가 한도에 도달하기 전에 Haiku가 요약한 브리핑을 만들고 새 대화로 전환해요. 필요하면 브리핑 페이지를 따로 열어 확인할 수 있어요.",
   "summaryEn": "Hands a long session off to a fresh one with a Haiku-written brief instead of auto-compacting, with an optional viewer page for the brief.",
   "category": "automation",

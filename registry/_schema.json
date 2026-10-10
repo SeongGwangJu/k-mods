@@ -7,7 +7,6 @@
   "additionalProperties": false,
   "required": [
     "name",
-    "displayName",
     "summary",
     "summaryEn",
     "category",
@@ -29,12 +28,12 @@
     "displayName": {
       "type": "string",
       "maxLength": 40,
-      "description": "목록에 보일 한국어 이름"
+      "description": "목록에 보일 한국어 이름. k-mods 오리지널·묶음만 써요. 외부·수정판 mod는 원래 이름(name)을 그대로 보여 줘요"
     },
     "displayNameEn": {
       "type": "string",
       "maxLength": 40,
-      "description": "영어 화면에 보일 이름 (없으면 name을 써요)"
+      "description": "영어 화면에 보일 이름. k-mods 오리지널·묶음만 써요 (없으면 name을 써요)"
     },
     "summary": {
       "type": "string",

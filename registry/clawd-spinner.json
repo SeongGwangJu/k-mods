@@ -1,7 +1,5 @@
 {
   "name": "clawd-spinner",
-  "displayName": "Clawd 스피너",
-  "displayNameEn": "Clawd Spinner",
   "summary": "189가지 스피너 단어마다 Clawd가 요리·춤·서성거리기 등 서로 다른 몸짓을 해요.",
   "summaryEn": "Clawd acts out the spinner's word above it—cooking, dancing, pacing—with a scene for every one of 189 spinner words, no model calls.",
   "category": "animation",

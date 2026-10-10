@@ -4,10 +4,10 @@
 
 이 플러그인에는 코드가 없어요. 설치하면 아래 mod가 함께 설치돼요.
 
-- [택시 미터기](../../docs/mods/taxi-meter.md) `taxi-meter`
-- [택시 내비게이션](../../docs/mods/taxi-navi.md) `taxi-navi`
-- [택시 과속카메라](../../docs/mods/taxi-speedcam.md) `taxi-speedcam`
-- [택시 블랙박스](../../docs/mods/taxi-blackbox.md) `taxi-blackbox`
+- [taxi-meter](../../docs/mods/taxi-meter.md)
+- [taxi-navi](../../docs/mods/taxi-navi.md)
+- [taxi-speedcam](../../docs/mods/taxi-speedcam.md)
+- [taxi-blackbox](../../docs/mods/taxi-blackbox.md)
 
 ```
 /plugin marketplace add SeongGwangJu/k-mods

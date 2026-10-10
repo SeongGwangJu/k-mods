@@ -1,8 +1,8 @@
-# claude-hud 상태 대시보드
+# hud
 
 > 모델·프로젝트·Git·컨텍스트·사용량·도구·할 일을 HUD 한 줄로 표시해요. 예산·이력·작업 요약·상세 패널·테마도 지원해요.
 
-<img src="https://raw.githubusercontent.com/hoobnn/hoobnn-agent-mods/8fb6f67cad9fd023cc7c06b7923518b4bbc45aea/claude-code/hud/assets/themes/neon.png" alt="claude-hud 상태 대시보드" width="640">
+<img src="https://raw.githubusercontent.com/hoobnn/hoobnn-agent-mods/8fb6f67cad9fd023cc7c06b7923518b4bbc45aea/claude-code/hud/assets/themes/neon.png" alt="hud" width="640">
 
 | | |
 | --- | --- |

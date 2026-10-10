@@ -1,8 +1,8 @@
-# PR 펄스
+# pr-pulse
 
 > GitHub PR의 머지 준비 상태·CI 체크·리뷰 코멘트·리뷰 대기열을 입력창 위 한 줄과 패널에 실시간으로 표시해요
 
-<img src="https://raw.githubusercontent.com/gerricchaplin/pr-pulse/8bf587aaa9cb3815875dcc3818c8827a37e7cb78/assets/pr-pulse.png" alt="PR 펄스" width="640">
+<img src="https://raw.githubusercontent.com/gerricchaplin/pr-pulse/8bf587aaa9cb3815875dcc3818c8827a37e7cb78/assets/pr-pulse.png" alt="pr-pulse" width="640">
 
 | | |
 | --- | --- |

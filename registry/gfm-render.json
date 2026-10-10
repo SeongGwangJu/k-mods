@@ -1,8 +1,6 @@
 {
   "$schema": "./_schema.json",
   "name": "gfm-render",
-  "displayName": "GFM 렌더러",
-  "displayNameEn": "GFM Render",
   "summary": "대화 기록에 있는 GFM 경고문·체크리스트·취소선·Mermaid 다이어그램을 화면에 표시해요.",
   "summaryEn": "Renders GitHub Flavored Markdown alerts, task lists, strikethrough and Mermaid diagrams in the Claude Code transcript.",
   "category": "theme",

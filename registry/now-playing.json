@@ -1,8 +1,6 @@
 {
   "$schema": "./_schema.json",
   "name": "now-playing",
-  "displayName": "나우 플레잉",
-  "displayNameEn": "Now Playing",
   "summary": "macOS에서 Spotify로 재생 중인 곡과 가사를 입력창 위에 표시해요. 버튼이나 /music으로 재생·일시정지·이전·다음을 조작할 수 있어요.",
   "summaryEn": "Shows Spotify's current track, progress, and synced lyrics above the prompt on macOS, with transport buttons and /music commands.",
   "category": "tool",

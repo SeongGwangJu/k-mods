@@ -1,7 +1,5 @@
 {
   "name": "replay-theater",
-  "displayName": "Replay 극장",
-  "displayNameEn": "Replay Theater",
   "summary": "이번 턴에서 Claude가 고친 파일을 한 단계씩 diff로 다시 확인할 수 있어요.",
   "summaryEn": "Step through the file edits Claude made in the last turn, one diff at a time, in a pane.",
   "category": "tool",

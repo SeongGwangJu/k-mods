@@ -1,8 +1,8 @@
-# Replay 극장
+# replay-theater
 
 > 이번 턴에서 Claude가 고친 파일을 한 단계씩 diff로 다시 확인할 수 있어요.
 
-<img src="https://raw.githubusercontent.com/anthropics/claude-code-playground/569c5283d9a0a7ee7938df85bb32e4f48cbb8c86/claude-code/mods/replay-theater/screenshots/replay-theater-pane.png" alt="Replay 극장" width="640">
+<img src="https://raw.githubusercontent.com/anthropics/claude-code-playground/569c5283d9a0a7ee7938df85bb32e4f48cbb8c86/claude-code/mods/replay-theater/screenshots/replay-theater-pane.png" alt="replay-theater" width="640">
 
 | | |
 | --- | --- |

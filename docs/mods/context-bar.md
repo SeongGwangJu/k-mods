@@ -1,8 +1,8 @@
-# 컨텍스트 바 (hamzafer)
+# context-bar
 
 > 컨텍스트 창을 /context와 같은 색의 구간별 막대 그래프로 표시해요. 토큰 수·압축 시점·범례도 입력창 위에서 확인할 수 있어요.
 
-<img src="https://raw.githubusercontent.com/hamzafer/claude-code-mods/adf9d72d81cb04284416371f9de8a6f937dcc631/images/context-bar.png" alt="컨텍스트 바 (hamzafer)" width="640">
+<img src="https://raw.githubusercontent.com/hamzafer/claude-code-mods/adf9d72d81cb04284416371f9de8a6f937dcc631/images/context-bar.png" alt="context-bar" width="640">
 
 | | |
 | --- | --- |

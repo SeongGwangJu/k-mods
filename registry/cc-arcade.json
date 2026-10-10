@@ -1,7 +1,5 @@
 {
   "name": "cc-arcade",
-  "displayName": "CC 아케이드",
-  "displayNameEn": "CC Arcade",
   "summary": "입력창 위에서 스네이크·테트리스·2048·지뢰찾기 등 9가지 미니게임을 즐길 수 있어요. Claude가 일하는 동안 자라는 펫도 키울 수 있어요.",
   "summaryEn": "Nine terminal mini-games above the prompt (snake, Tetris, 2048, and more), plus a pet that grows as Claude works.",
   "category": "animation",

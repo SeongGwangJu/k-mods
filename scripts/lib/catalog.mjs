@@ -64,6 +64,8 @@ export function loadRegistry() {
   const entries = files.map((f) => {
     const entry = JSON.parse(fs.readFileSync(path.join(dir, f), 'utf8'))
     entry.__file = `registry/${f}`
+    // 외부·수정판 mod는 원래 이름(name)을 그대로 보여 준다
+    entry.displayName ??= entry.name
     return entry
   })
   return entries

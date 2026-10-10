@@ -1,8 +1,8 @@
-# 세션 랩드
+# session-wrapped
 
 > `/wrapped`로 이번 세션의 도구 호출·테스트·비용 통계를 애니메이션으로 표시해요. 공유용 PNG 카드는 데스크톱에 저장해요.
 
-<img src="https://raw.githubusercontent.com/OneWave-AI/claude-code-mods/e6da26ca36a88eec3be25605d30fa20f2c1c0cec/screenshots/session-wrapped.png" alt="세션 랩드" width="640">
+<img src="https://raw.githubusercontent.com/OneWave-AI/claude-code-mods/e6da26ca36a88eec3be25605d30fa20f2c1c0cec/screenshots/session-wrapped.png" alt="session-wrapped" width="640">
 
 | | |
 | --- | --- |

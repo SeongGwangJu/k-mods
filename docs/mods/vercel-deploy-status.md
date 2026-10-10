@@ -1,4 +1,4 @@
-# Vercel 배포 현황
+# vercel-deploy-status
 
 > 연결된 Vercel 프로젝트의 배포 상태를 프롬프트 위 상태줄에 대기·빌드·완료 단계별로 표시해요.
 

@@ -1,4 +1,4 @@
-# 스킬 자동 추천
+# jev-skill-suggestion
 
 > 프롬프트마다 맞는 스킬 하나를 판단해 자동으로 불러오고, 스킬 목록은 컨텍스트에 넣지 않아요. API 키가 있으면 TypeSafe Jev로, 없으면 Claude 분류기로 판단해요
 

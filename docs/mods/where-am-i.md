@@ -1,8 +1,8 @@
-# 현재 상황 요약
+# where-am-i
 
 > 목표·지금 하는 일·사용자의 답변이 필요한 항목·다음 할 일을 입력창 위에 한눈에 보여줘요. `/where`에서 더 긴 요약도 볼 수 있어요.
 
-<img src="https://raw.githubusercontent.com/hamzafer/claude-code-mods/adf9d72d81cb04284416371f9de8a6f937dcc631/images/where-am-i.png" alt="현재 상황 요약" width="640">
+<img src="https://raw.githubusercontent.com/hamzafer/claude-code-mods/adf9d72d81cb04284416371f9de8a6f937dcc631/images/where-am-i.png" alt="where-am-i" width="640">
 
 | | |
 | --- | --- |

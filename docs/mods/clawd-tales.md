@@ -1,8 +1,8 @@
-# Clawd 이야기
+# clawd-tales
 
 > 입력창 위에서 픽셀 Clawd가 Claude의 모든 도구 호출에 맞춰 몸짓을 해요. 서브에이전트마다 작은 동료도 등장해요.
 
-<img src="https://raw.githubusercontent.com/plaxagoras/clawd-tales/89c7f95b4d4faf480a6ee200e92c3e6df34d1432/assets/demo.gif" alt="Clawd 이야기" width="640">
+<img src="https://raw.githubusercontent.com/plaxagoras/clawd-tales/89c7f95b4d4faf480a6ee200e92c3e6df34d1432/assets/demo.gif" alt="clawd-tales" width="640">
 
 | | |
 | --- | --- |

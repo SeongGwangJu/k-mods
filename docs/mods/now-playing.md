@@ -1,8 +1,8 @@
-# 나우 플레잉
+# now-playing
 
 > macOS에서 Spotify로 재생 중인 곡과 가사를 입력창 위에 표시해요. 버튼이나 /music으로 재생·일시정지·이전·다음을 조작할 수 있어요.
 
-<img src="https://raw.githubusercontent.com/hamzafer/claude-code-mods/adf9d72d81cb04284416371f9de8a6f937dcc631/images/now-playing.png" alt="나우 플레잉" width="640">
+<img src="https://raw.githubusercontent.com/hamzafer/claude-code-mods/adf9d72d81cb04284416371f9de8a6f937dcc631/images/now-playing.png" alt="now-playing" width="640">
 
 | | |
 | --- | --- |

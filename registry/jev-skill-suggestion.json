@@ -1,8 +1,6 @@
 {
   "$schema": "./_schema.json",
   "name": "jev-skill-suggestion",
-  "displayName": "스킬 자동 추천",
-  "displayNameEn": "Jev Skill Suggestion",
   "summary": "프롬프트마다 맞는 스킬 하나를 판단해 자동으로 불러오고, 스킬 목록은 컨텍스트에 넣지 않아요. API 키가 있으면 TypeSafe Jev로, 없으면 Claude 분류기로 판단해요",
   "summaryEn": "Picks one skill per prompt and loads it while hiding the listing from context; uses TypeSafe's Jev with a key, else Claude's classifier.",
   "category": "automation",

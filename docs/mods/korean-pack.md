@@ -33,7 +33,7 @@ claude plugin install korean-pack@k-mods
 
 ## 함께 설치되는 mod
 
-- [한국어 UI 번역 사전](ko-ui.md) `ko-ui`: 슬래시 커맨드 설명, `/config` 항목, 작업 표시줄 같은 화면 문구를 번역 사전에 맞춰 한국어로 표시해요.
+- [ko-ui](ko-ui.md): 슬래시 커맨드 설명, `/config` 항목, 작업 표시줄 같은 화면 문구를 번역 사전에 맞춰 한국어로 표시해요.
 - [작업 상태 한국어](status-ko.md) `status-ko`: 작업 중에는 '읽는 중 · page.tsx'처럼 지금 하는 일을 보여줘요. 끝나면 모델·시간·도구·캐시를 한 줄로 정리해요
 
 ## 이 mod가 내 컴퓨터에서 하는 일

@@ -1,8 +1,8 @@
-# Clawd 스피너
+# clawd-spinner
 
 > 189가지 스피너 단어마다 Clawd가 요리·춤·서성거리기 등 서로 다른 몸짓을 해요.
 
-<img src="https://raw.githubusercontent.com/saiharsha03/clawd-spinner/83550929abac306fe71b12588a53e996321b6e76/icon.png" alt="Clawd 스피너" width="640">
+<img src="https://raw.githubusercontent.com/saiharsha03/clawd-spinner/83550929abac306fe71b12588a53e996321b6e76/icon.png" alt="clawd-spinner" width="640">
 
 | | |
 | --- | --- |

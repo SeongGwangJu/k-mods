@@ -1,8 +1,6 @@
 {
   "$schema": "./_schema.json",
   "name": "review-watch",
-  "displayName": "리뷰 워치",
-  "displayNameEn": "Review Watch",
   "summary": "실행 중인 codex review나 '리뷰' 서브에이전트마다 모델·대상·경과 시간을 한 줄로 표시해요. 끝나면 발견 항목 수를 화면 알림으로 알려줘요.",
   "summaryEn": "Shows one live line per running code review (a codex review command, or a review subagent): model, target, elapsed time, latest output.",
   "category": "statusline",

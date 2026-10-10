@@ -1,8 +1,8 @@
-# GitHub 이슈 패널
+# github-issues
 
 > 저장소의 GitHub 이슈를 카드로 표시해요. 버튼 한 번으로 Claude에게 해당 이슈 작업을 요청할 수 있어요.
 
-<img src="https://raw.githubusercontent.com/MarcoCarnevali/claude-code-mods/4d6876e56e5225db26edf8eedcea467831592976/github-issues/docs/issues.png" alt="GitHub 이슈 패널" width="640">
+<img src="https://raw.githubusercontent.com/MarcoCarnevali/claude-code-mods/4d6876e56e5225db26edf8eedcea467831592976/github-issues/docs/issues.png" alt="github-issues" width="640">
 
 | | |
 | --- | --- |

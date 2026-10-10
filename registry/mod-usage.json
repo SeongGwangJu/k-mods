@@ -1,8 +1,6 @@
 {
   "$schema": "./_schema.json",
   "name": "mod-usage",
-  "displayName": "사용량 진행률 막대",
-  "displayNameEn": "Usage Bars",
   "summary": "컨텍스트·5시간·7일 사용량을 입력창 위 그라데이션 막대 3개로 표시해요. Desktop/VS Code 전용이며 12개 언어를 지원하지만 한국어는 아직 없어요.",
   "summaryEn": "Shows context, 5-hour, and 7-day usage as gradient bars above the prompt. Desktop/VS Code only; 12 languages supported, not Korean yet.",
   "category": "statusline",

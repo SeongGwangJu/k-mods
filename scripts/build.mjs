@@ -38,7 +38,7 @@ const problems = []
 
 const NAME_RE = /^[a-z0-9][a-z0-9-]{0,63}$/
 const SHA_RE = /^[0-9a-f]{40}$/
-const REQUIRED = ['name', 'displayName', 'summary', 'summaryEn', 'category', 'kind', 'source', 'author', 'license', 'review']
+const REQUIRED = ['name', 'summary', 'summaryEn', 'category', 'kind', 'source', 'author', 'license', 'review']
 
 function validateEntry(e, names) {
   const where = e.__file
@@ -49,6 +49,8 @@ function validateEntry(e, names) {
   if (!KINDS[e.kind]) problems.push(`${where}: kind '${e.kind}'를 몰라요`)
   if ((e.summary ?? '').length > 120) problems.push(`${where}: summary가 120자를 넘어요`)
   if ((e.displayName ?? '').length > 40) problems.push(`${where}: displayName이 40자를 넘어요`)
+  if (!['original', 'bundle'].includes(e.kind) && (e.displayName !== e.name || e.displayNameEn))
+    problems.push(`${where}: 외부 mod는 displayName·displayNameEn을 쓰지 않아요 (원래 이름 name을 그대로 보여 줘요)`)
   const src = e.source
   if (e.kind === 'upstream') {
     if (typeof src !== 'object' || !['github', 'git-subdir'].includes(src.source)) problems.push(`${where}: upstream은 github/git-subdir source여야 해요`)
@@ -118,7 +120,7 @@ const marketplace = {
     const plugin = {
       name: e.name,
       source: e.source,
-      displayName: e.displayName,
+      displayName: e.displayName === e.name ? undefined : e.displayName,
       description: e.summary,
       category: cat ? cat.label : e.category,
       tags: e.tags ?? [],
@@ -159,7 +161,7 @@ for (const e of entries.filter((x) => x.kind === 'bundle')) {
       '',
       '이 플러그인에는 코드가 없어요. 설치하면 아래 mod가 함께 설치돼요.',
       '',
-      ...e.dependencies.map((d) => `- [${byName.get(d)?.displayName ?? d}](../../docs/mods/${d}.md) \`${d}\``),
+      ...e.dependencies.map((d) => `- [${byName.get(d)?.displayName ?? d}](../../docs/mods/${d}.md)${idSuffix(d)}`),
       '',
       '```',
       `/plugin marketplace add ${REPO}`,
@@ -168,6 +170,12 @@ for (const e of entries.filter((x) => x.kind === 'bundle')) {
       '',
     ].join('\n'),
   )
+}
+
+// 표시 이름이 설치 이름과 다를 때만 설치 이름을 덧붙인다
+function idSuffix(name) {
+  const shown = byName.get(name)?.displayName ?? name
+  return shown === name ? '' : ` \`${name}\``
 }
 
 // ---- README 생성 구간 ----------------------------------------------------------
@@ -186,7 +194,8 @@ function catalogTables(lang) {
       const star = e.featured ? ' ⭐' : ''
       const doc = `docs/mods/${e.name}.md`
       const summary = lang === 'ko' ? e.summary : e.summaryEn
-      lines.push(`| [**${title}**](${doc})${star}<br>\`${e.name}\` | ${summary} | ${sourceLabel(e, lang)} |`)
+      const id = title === e.name ? '' : `<br>\`${e.name}\``
+      lines.push(`| [**${title}**](${doc})${star}${id} | ${summary} | ${sourceLabel(e, lang)} |`)
     }
     lines.push('')
   }
@@ -202,7 +211,7 @@ function featured(lang) {
     const img = e.preview ? `<br><img src="${e.preview}" alt="${title}" width="420">` : ''
     return `| [**${title}**](docs/mods/${e.name}.md)<br>\`/plugin install ${e.name}@${MARKETPLACE}\`${img} | ${summary} |`
   })
-  const head = lang === 'ko' ? ['| 먼저 써 보세요 | |', '| --- | --- |'] : ['| Start here | |', '| --- | --- |']
+  const head = lang === 'ko' ? ['| mod | 무엇을 해 주나요 |', '| --- | --- |'] : ['| mod | What it does |', '| --- | --- |']
   return [...head, ...rows].join('\n')
 }
 
@@ -258,7 +267,7 @@ function docPage(e) {
   out.push('이미 열려 있는 세션에는 `/reload-plugins`로 바로 적용돼요. Claude Code 2.1.287 이상이 필요해요.', '')
   if (e.kind === 'bundle') {
     out.push('## 함께 설치되는 mod', '')
-    for (const d of e.dependencies) out.push(`- [${byName.get(d)?.displayName ?? d}](${d}.md) \`${d}\`: ${byName.get(d)?.summary ?? ''}`)
+    for (const d of e.dependencies) out.push(`- [${byName.get(d)?.displayName ?? d}](${d}.md)${idSuffix(d)}: ${byName.get(d)?.summary ?? ''}`)
     out.push('')
   }
   if (e.settings && e.settings.length) {

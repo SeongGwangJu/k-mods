@@ -1,8 +1,6 @@
 {
   "$schema": "./_schema.json",
   "name": "ctx-handoff",
-  "displayName": "컨텍스트 핸드오프",
-  "displayNameEn": "Context Handoff",
   "summary": "컨텍스트가 한계에 가까워지면 새 대화용 핸드오프를 만들고 자동으로 전환해요. 사용자가 55분 동안 입력하지 않으면 프롬프트 캐시를 최대 3번 갱신해요.",
   "summaryEn": "Auto handoff to a fresh conversation when context hits a threshold, with idle cache refresh and background project notes while you're away.",
   "category": "automation",

@@ -1,4 +1,4 @@
-# 터미널 브라우저
+# terminal-browser
 
 > Claude Code 화면에서 브라우저를 열어 웹사이트를 미리 볼 수 있어요. 에이전트가 직접 열고 닫으며, 별도로 설치한 terminal-browser 앱이 브라우저 엔진을 실행해요.
 

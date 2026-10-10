@@ -1,8 +1,8 @@
-# 컴팩트 타이밍 어드바이저
+# agent-compact-advisor
 
 > 지금이 /compact 하기 좋은 때인지 상태줄에 0~100점으로 표시해요. 압축할 때마다 목표·결정·남은 일을 포함한 보존 템플릿을 자동으로 추가해요.
 
-<img src="https://raw.githubusercontent.com/apolenkov/agent-compact-advisor/86b6831edea7e7f413e146a8c063dce06344a420/demo/demo.gif" alt="컴팩트 타이밍 어드바이저" width="640">
+<img src="https://raw.githubusercontent.com/apolenkov/agent-compact-advisor/86b6831edea7e7f413e146a8c063dce06344a420/demo/demo.gif" alt="agent-compact-advisor" width="640">
 
 | | |
 | --- | --- |

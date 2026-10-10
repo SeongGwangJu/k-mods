@@ -1,4 +1,4 @@
-# 픽셀 장면 스피너 (한국 수정판)
+# spinner (한국 수정판)
 
 Claude가 일하는 동안 입력창 위에 냥캣·Clawd 같은 픽셀 장면을 띄우고, 턴마다 자라는 펫을 키워요.
 [hoobnn/hoobnn-agent-mods](https://github.com/hoobnn/hoobnn-agent-mods/tree/8fb6f67cad9fd023cc7c06b7923518b4bbc45aea/claude-code/spinner)의 spinner를 한국 사용자에게 맞게 고친 k-mods 수정판이에요.

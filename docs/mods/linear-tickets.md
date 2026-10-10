@@ -1,4 +1,4 @@
-# Linear 티켓 패널
+# linear-tickets
 
 > 내게 배정된 Linear 티켓을 패널에 표시해요. 클릭하면 바로 작업을 시작할 수 있어요.
 

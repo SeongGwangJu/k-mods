@@ -1,8 +1,8 @@
-# 퀵 메뉴
+# agent-quick-menu
 
 > 설치된 플러그인의 명령과 설정을 한 패널에서 찾아 바로 실행할 수 있어요.
 
-<img src="https://raw.githubusercontent.com/agentic-workbench/agent-quick-menu/29aef14bbe7814e8c7284e2a1dca601435d2dcbe/docs/screenshot.png" alt="퀵 메뉴" width="640">
+<img src="https://raw.githubusercontent.com/agentic-workbench/agent-quick-menu/29aef14bbe7814e8c7284e2a1dca601435d2dcbe/docs/screenshot.png" alt="agent-quick-menu" width="640">
 
 | | |
 | --- | --- |

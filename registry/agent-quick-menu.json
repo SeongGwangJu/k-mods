@@ -1,8 +1,6 @@
 {
   "$schema": "./_schema.json",
   "name": "agent-quick-menu",
-  "displayName": "퀵 메뉴",
-  "displayNameEn": "Quick Menu",
   "summary": "설치된 플러그인의 명령과 설정을 한 패널에서 찾아 바로 실행할 수 있어요.",
   "summaryEn": "A pane and prompt band listing every installed plugin's commands and settings, with favourites and Claude Code's own /config rows.",
   "category": "tool",

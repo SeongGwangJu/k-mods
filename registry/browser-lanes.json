@@ -1,8 +1,6 @@
 {
   "$schema": "./_schema.json",
   "name": "browser-lanes",
-  "displayName": "브라우저 레인",
-  "displayNameEn": "Browser Lanes",
   "summary": "이 세션에 Playwright 브라우저가 있는지, 현재 누가 쓰는지 입력창 위에 표시해요. 서브에이전트끼리는 차례대로 사용하게 해요.",
   "summaryEn": "Shows whether this session has a Playwright browser and who holds it, and makes subagents in the same session take turns using it.",
   "category": "statusline",

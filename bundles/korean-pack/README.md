@@ -4,7 +4,7 @@
 
 이 플러그인에는 코드가 없어요. 설치하면 아래 mod가 함께 설치돼요.
 
-- [한국어 UI 번역 사전](../../docs/mods/ko-ui.md) `ko-ui`
+- [ko-ui](../../docs/mods/ko-ui.md)
 - [작업 상태 한국어](../../docs/mods/status-ko.md) `status-ko`
 
 ```

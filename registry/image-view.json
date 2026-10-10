@@ -1,8 +1,6 @@
 {
   "$schema": "./_schema.json",
   "name": "image-view",
-  "displayName": "이미지 미리보기",
-  "displayNameEn": "Image View",
   "summary": "붙여넣은 이미지를 `[Image #1]` 같은 글자 대신 입력창 위 썸네일로 보여줘요.",
   "summaryEn": "See the images you paste into Claude Code: thumbnails above the prompt instead of bare [Image #1] tags.",
   "category": "tool",

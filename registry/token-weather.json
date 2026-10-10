@@ -1,7 +1,5 @@
 {
   "name": "token-weather",
-  "displayName": "토큰 날씨",
-  "displayNameEn": "Token Weather",
   "summary": "컨텍스트 사용량을 날씨 아이콘과 최근 턴 막대그래프로 입력창 위에 표시해요.",
   "summaryEn": "A live weather-style forecast of the context window above the prompt, with an icon, percent, and a bar chart of recent turns.",
   "category": "statusline",

@@ -1,8 +1,6 @@
 {
   "$schema": "./_schema.json",
   "name": "taxi-meter",
-  "displayName": "택시 미터기",
-  "displayNameEn": "Taxi Meter",
   "summary": "입력창 위 택시 미터기 패널에 세션 요금과 5시간·주간 한도를 표시해요. /meter·/receipt로 자세히 볼 수 있어요.",
   "summaryEn": "A taxi-meter panel above the prompt: session cost, model/tier, 5-hour and weekly limits with reset time, via /meter and /receipt.",
   "category": "statusline",

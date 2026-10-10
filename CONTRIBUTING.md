@@ -36,7 +36,6 @@ k-mods는 외부 mod의 코드를 복사하지 않아요. 항목의 `source`가 
    {
      "$schema": "./_schema.json",
      "name": "token-weather",
-     "displayName": "컨텍스트 일기예보",
      "summary": "입력창 위에 컨텍스트가 얼마나 찼는지 날씨 아이콘과 막대로 보여줘요",
      "summaryEn": "A weather-style forecast of your context window above the prompt",
      "category": "statusline",
@@ -69,7 +68,8 @@ k-mods는 외부 mod의 코드를 복사하지 않아요. 항목의 `source`가 
 - **검증 통과**: `claude plugin validate`가 통과해야 해요.
 - **코드 읽기**: 검토자는 hooks 모듈 전체를 읽고, 네트워크 목적지·실행하는 프로그램·파일 쓰기·모델 호출·도구 호출 승인/거절·대화 내용 전송을 `review.findings`에 적어요. 설명되지 않은 외부 전송이 있으면 올리지 않아요.
 - **쓸모**: 실제로 쓸 만하거나 즐거운 것. 거의 같은 기능이 여럿이면 가장 나은 것을 골라요.
-- **한국어 설명**: `displayName`, `summary`는 해요체로, 무엇이 보이고 무엇을 얻는지 구체적으로 써요.
+- **한국어 설명**: `summary`는 해요체로, 무엇이 보이고 무엇을 얻는지 구체적으로 써요.
+- **이름은 원래 이름 그대로**: 외부 mod에는 `displayName`을 쓰지 않아요. 목록에는 `name`이 그대로 보여요. 한국어 발음으로 옮기거나 새 이름을 붙이지 않아요.
 - 자기 mod를 올려도 괜찮아요. 기준은 같아요.
 
 ### 업데이트

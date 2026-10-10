@@ -1,8 +1,6 @@
 {
   "$schema": "./_schema.json",
   "name": "reels",
-  "displayName": "릴스",
-  "displayNameEn": "Reels",
   "summary": "Claude가 작업하는 동안 YouTube Shorts를 터미널 패널에서 재생하고 작업이 끝나면 자동으로 멈춰요. `/reels`를 입력했을 때만 재생돼요.",
   "summaryEn": "Plays YouTube Shorts in a terminal pane while Claude works and pauses when it's done. Nothing starts until you run /reels.",
   "category": "animation",

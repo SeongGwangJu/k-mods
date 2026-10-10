@@ -1,8 +1,6 @@
 {
   "$schema": "./_schema.json",
   "name": "github-issues",
-  "displayName": "GitHub 이슈 패널",
-  "displayNameEn": "GitHub Issues",
   "summary": "저장소의 GitHub 이슈를 카드로 표시해요. 버튼 한 번으로 Claude에게 해당 이슈 작업을 요청할 수 있어요.",
   "summaryEn": "A side pane of a repository's GitHub issues as cards, with search, label filters and a button to hand one to Claude.",
   "category": "integration",

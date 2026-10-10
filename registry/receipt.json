@@ -1,8 +1,6 @@
 {
   "$schema": "./_schema.json",
   "name": "receipt",
-  "displayName": "턴 영수증",
-  "displayNameEn": "Turn Receipt",
   "summary": "매 턴이 끝나면 바뀐 파일·실행한 명령·읽은 횟수를 입력창 위 한 줄 요약으로 표시해요. 같은 작업을 반복하면 알려줘요.",
   "summaryEn": "What each turn did, in a band above the prompt: files/lines changed, commands and failures, reads, subagents; a toast when the model loops.",
   "category": "statusline",

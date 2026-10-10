@@ -1,8 +1,6 @@
 {
   "$schema": "./_schema.json",
   "name": "paste-view",
-  "displayName": "붙여넣기 미리보기",
-  "displayNameEn": "Paste View",
   "summary": "붙여넣은 이미지와 긴 텍스트를 입력창 위에서 미리 확인할 수 있어요.",
   "summaryEn": "See what you paste into Claude Code: image thumbnails and long-text previews above the prompt instead of bare placeholder tags.",
   "category": "tool",
