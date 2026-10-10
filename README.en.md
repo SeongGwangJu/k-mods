@@ -54,7 +54,7 @@ Descriptions in `/plugin` are in Korean; this page and each mod's source link ar
 
 | mod | What it does | Source |
 | --- | --- | --- |
-| [**spinner**](docs/mods/spinner.md) ⭐ | Pixel scenes above the prompt while Claude works (Nyan Cat, Clawd and more) plus a pet; a patched edition with Korean and leaner defaults | 🔧 [hoobnn](https://github.com/hoobnn) · patched |
+| [**pixel-pals**](docs/mods/pixel-pals.md) ⭐ | Pixel pals cross the band above the prompt while Claude works: Nyan Cat, Clawd, a shoot-em-up and more. Six curated scenes plus clawd-tales' Clawd story, in Korean | 🔧 hoobnn · plaxagoras · patched |
 | [**cc-arcade**](docs/mods/cc-arcade.md) | Nine terminal mini-games above the prompt (snake, Tetris, 2048, and more), plus a pet that grows as Claude works. | [Seza Akgün](https://github.com/sezaakgun) |
 | [**clawd-spinner**](docs/mods/clawd-spinner.md) | Clawd acts out the spinner's word above it—cooking, dancing, pacing—with a scene for every one of 189 spinner words, no model calls. | [Sai Rudra](https://github.com/saiharsha03) |
 | [**clawd-tales**](docs/mods/clawd-tales.md) | A pixel Clawd acts out every tool call above the prompt, with helper characters for each subagent—terminal-first, no model calls. | [plaxagoras](https://github.com/plaxagoras) |
@@ -144,8 +144,8 @@ Descriptions in `/plugin` are in Korean; this page and each mod's source link ar
 
 | mod | What it does | Source |
 | --- | --- | --- |
-| [**korean-pack**](docs/mods/korean-pack.md) | One install for a Korean Claude Code: menu and settings translation (ko-ui) plus Korean status lines (status-ko) | 📦 bundle |
-| [**starter**](docs/mods/starter.md) | The k-mods starter set: ko-ui, skins, spinner, ctx-strip and mod-store in one install | 📦 bundle |
+| [**korean-pack**](docs/mods/korean-pack.md) | One install for a Korean Claude Code: menu, settings and status-line translation (ko-ui). status-ko is left out because it overwrites the same lines as ko-ui | 📦 bundle |
+| [**starter**](docs/mods/starter.md) | The k-mods starter set: ko-ui, skins, pixel-pals, ctx-strip and mod-store in one install | 📦 bundle |
 | [**taxi-pack**](docs/mods/taxi-pack.md) | Claude Code as a taxi ride: meter (cost and limits), navigation (todo route), speed camera (risky-command check) and dashcam (tool-call recorder) in one install | 📦 bundle |
 <!-- END:catalog -->
 

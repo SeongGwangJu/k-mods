@@ -41,7 +41,7 @@ claude plugin install hud@k-mods
 - `summaryEveryTurns`(기본 5턴, 0으로 끌 수 있음)마다 세션 작업을 한 줄로 요약하는 모델 호출이 있어요. 대화를 포크해 프롬프트 캐시를 재사용하는 호출이라 비용은 적지만 사용자 사용량을 소모해요.
 - `extraCmd`(claude-hud의 --extra-cmd, 임의 쉘 명령 실행)는 기본 빈 값이고, 쓰려면 옵션 설정과 `CLAUDE_HUD_ALLOW_EXTRA_CMD=1` 환경 변수를 모두 켜야 해요.
 - 계정 인증 방식·이메일 일부를 보여주는 기능(claude-hud의 showAuth/showAuthUser)과 다른 로컬 도구로 사용량을 공유하는 파일(externalUsagePath/externalUsageWritePath)은 claude-hud 자체 설정 파일에서만 켤 수 있고 둘 다 기본값이 꺼짐이에요.
-- 같은 작성자(hoobnn)의 `spinner` mod를 함께 설치하면 pet이 HUD 옆(below 위치일 때)에 표시돼요. spinner가 없어도 정상 동작해요.
+- 같은 작성자(hoobnn)의 원본 `spinner` mod와 함께 쓰면 pet이 HUD 옆(below 위치일 때)에 표시돼요. k-mods의 pixel-pals와는 연동되지 않고, 없어도 정상 동작해요.
 
 ## 이 mod가 내 컴퓨터에서 하는 일
 

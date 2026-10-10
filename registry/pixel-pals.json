@@ -1,0 +1,79 @@
+{
+  "$schema": "./_schema.json",
+  "name": "pixel-pals",
+  "summary": "Claude가 일하는 동안 입력창 위에 냥캣·Clawd·썬더 같은 픽셀 친구들이 지나가요. 엄선한 장면 6종에 clawd-tales의 Clawd 이야기를 합친 한국어판이에요",
+  "summaryEn": "Pixel pals cross the band above the prompt while Claude works: Nyan Cat, Clawd, a shoot-em-up and more. Six curated scenes plus clawd-tales' Clawd story, in Korean",
+  "category": "animation",
+  "tags": [
+    "애니메이션",
+    "펫",
+    "픽셀아트",
+    "냥캣",
+    "Clawd",
+    "마스코트",
+    "한국어"
+  ],
+  "kind": "patched",
+  "source": "./mods/pixel-pals",
+  "upstream": {
+    "repo": "hoobnn/hoobnn-agent-mods",
+    "path": "claude-code/spinner",
+    "commit": "8fb6f67cad9fd023cc7c06b7923518b4bbc45aea",
+    "stars": 4
+  },
+  "author": {
+    "name": "hoobnn · plaxagoras"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/SeongGwangJu/k-mods/tree/main/mods/pixel-pals",
+  "commands": [
+    "/pals",
+    "/tales"
+  ],
+  "surfaces": [
+    "terminal"
+  ],
+  "conflicts": [
+    {
+      "with": "clawd-tales",
+      "note": "pixel-pals에 clawd-tales가 tales 테마로 들어 있어요. 같이 설치하면 Clawd 이야기 띠가 두 번 그려질 수 있어요"
+    },
+    {
+      "with": "clawd-spinner",
+      "note": "둘 다 입력창 위에 Clawd 장면을 그려요. 같이 켜면 띠가 겹쳐 보여요"
+    }
+  ],
+  "notes": [
+    "원본 두 개를 합쳤어요: 장면·펫은 hoobnn의 spinner(hoobnn/hoobnn-agent-mods @ 8fb6f67), tales 테마는 plaxagoras의 clawd-tales(@ 89c7f95). 둘 다 MIT이고 원본 저작권 표기를 LICENSE·LICENSE-clawd-tales·NOTICE에 그대로 뒀어요.",
+    "원본 spinner의 15종 중 nyan·clawd·thunder·chomp·sparky·bluecat 6종만 남기고, clawd-tales를 7번째 테마 tales로 더했어요. random은 7종 중 턴마다 골라요. 시스템 소리를 읽던 audio 테마는 빼서 프로그램 실행(swiftc) 권한이 없어요.",
+    "기본값이 한국어예요. /pals·/tales 응답과 피날레, Clawd 이야기의 캡션까지 한국어로 나와요(Clawd 이야기는 한국어·영어만).",
+    "명령은 /pals(테마·펫·끄기)와 /tales(Clawd 이야기의 데모·모자·calm 모드) 두 개예요. tales 미리 보기는 /tales demo로 해요.",
+    "nyan·chomp·sparky·bluecat은 원작자가 '픽셀 오마주'라고 부른 장면이고, Clawd는 Anthropic 마스코트예요. 비공식 팬 작품이에요.",
+    "터미널에서만 장면이 보여요. 데스크톱 앱에서는 tales 테마일 때만 띠가 그려져요."
+  ],
+  "notesEn": [
+    "Two originals merged: the scenes and pet are hoobnn's spinner (hoobnn/hoobnn-agent-mods @ 8fb6f67), the tales theme is plaxagoras' clawd-tales (@ 89c7f95). Both MIT; their copyright notices stay as-is in LICENSE, LICENSE-clawd-tales and NOTICE.",
+    "Of spinner's 15 themes only nyan, clawd, thunder, chomp, sparky and bluecat stay, and clawd-tales joins as a seventh theme, tales. random picks one of the seven each turn. The audio theme that read the system's sound is gone, so it runs no programs (swiftc).",
+    "Korean by default: /pals and /tales replies, the finale and the Clawd story's captions (the story speaks Korean or English only).",
+    "Two commands: /pals (themes, pet, off) and /tales (the story's demo, hats, calm mode). Preview tales with /tales demo.",
+    "nyan, chomp, sparky and bluecat are what the original author calls pixel homages, and Clawd is Anthropic's mascot. An unofficial fan work.",
+    "The scenes draw in the terminal only. In the desktop app the band shows only with the tales theme."
+  ],
+  "featured": true,
+  "preview": "docs/assets/mods/pixel-pals.gif",
+  "review": {
+    "date": "2026-10-11",
+    "by": "k-mods",
+    "claudeCode": "2.1.296",
+    "method": [
+      "validate",
+      "code-read",
+      "unit-test"
+    ],
+    "findings": [
+      "장면 쪽은 spinner 한국 수정판(이전 k-mods 항목)의 코드를 그대로 이어받고, audio 탭(swiftc 컴파일·프로세스 실행)과 hud 연동(hud.dock 읽기, hud.petPats 훅)을 뺐다. 네트워크 호출 없음.",
+      "tales 쪽은 clawd-tales 89c7f95의 hooks를 옮겨 상태 이름만 pixel-pals로 바꾸고 화면 문구를 tr(영어, 한국어)로 감쌌다. 이야기 로직·그림은 원본 그대로이며 네트워크·모델 호출 없음($.agent.list 폴링, $.session.usage 읽기만).",
+      "입력창 위 띠(AbovePrompt)는 테마가 tales이고 숨김·띠 끄기·미리 보기가 아닐 때만 clawd-tales가, 그 밖에는 장면 쪽이 그린다. 두 쪽이 한 번에 그리지 않는다."
+    ]
+  }
+}

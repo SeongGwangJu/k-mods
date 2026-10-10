@@ -1,7 +1,7 @@
 {
   "name": "starter",
-  "version": "0.4.0",
-  "description": "처음 설치하기 좋은 추천 세트예요. ko-ui, skins, spinner, ctx-strip, mod-store를 한 번에 설치해요",
+  "version": "0.5.0",
+  "description": "처음 설치하기 좋은 추천 세트예요. ko-ui, skins, pixel-pals, ctx-strip, mod-store를 한 번에 설치해요",
   "author": {
     "name": "SeongGwangJu",
     "url": "https://github.com/SeongGwangJu"
@@ -12,7 +12,7 @@
   "dependencies": [
     "ko-ui",
     "skins",
-    "spinner",
+    "pixel-pals",
     "ctx-strip",
     "mod-store"
   ]

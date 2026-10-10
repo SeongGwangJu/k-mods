@@ -12,6 +12,14 @@ export function formatDuration(ms: number): string {
   return `${Math.floor(s / 3600)}h ${String(Math.floor(s / 60) % 60).padStart(2, '0')}m`
 }
 
+/** pixel-pals: 한국어 시간 표기 (12초, 3분 05초, 1시간 02분). 피날레에 쓴다. */
+export function formatDurationKo(ms: number): string {
+  const s = Math.max(0, Math.round(ms / 1000))
+  if (s < 60) return `${s}초`
+  if (s < 3600) return `${Math.floor(s / 60)}분 ${String(s % 60).padStart(2, '0')}초`
+  return `${Math.floor(s / 3600)}시간 ${String(Math.floor(s / 60) % 60).padStart(2, '0')}분`
+}
+
 /** Lv.1 at 0 xp, Lv.2 at 2, Lv.3 at 8, Lv.4 at 18: one xp a finished turn. */
 export function levelOf(xp: number): number {
   return Math.floor(Math.sqrt(Math.max(0, xp) / 2)) + 1

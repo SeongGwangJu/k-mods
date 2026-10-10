@@ -20,7 +20,7 @@ export type CatalogEntry = {
 }
 
 export const MARKETPLACE = 'k-mods'
-export const CATALOG_VERSION = '0.4.0'
+export const CATALOG_VERSION = '0.5.0'
 
 // 상점 자신은 목록에서 숨긴다
 export const SELF_NAME = 'mod-store'
@@ -152,33 +152,31 @@ export const CATALOG: CatalogEntry[] = [
     ]
   },
   {
-    "name": "spinner",
-    "displayName": "spinner",
-    "summary": "Claude가 일하는 동안 입력창 위에 냥캣·Clawd 같은 픽셀 장면을 표시하고 펫을 키워요. 한국어·간결한 기본값으로 고친 수정판이에요",
+    "name": "pixel-pals",
+    "displayName": "pixel-pals",
+    "summary": "Claude가 일하는 동안 입력창 위에 냥캣·Clawd·썬더 같은 픽셀 친구들이 지나가요. 엄선한 장면 6종에 clawd-tales의 Clawd 이야기를 합친 한국어판이에요",
     "category": "animation",
     "kind": "patched",
-    "author": "hoobnn",
+    "author": "hoobnn · plaxagoras",
     "license": "MIT",
-    "homepage": "https://github.com/hoobnn/hoobnn-agent-mods",
+    "homepage": "https://github.com/SeongGwangJu/k-mods/tree/main/mods/pixel-pals",
     "commands": [
-      "/spinner"
+      "/pals",
+      "/tales"
     ],
-    "requires": [
-      "swiftc/Xcode Command Line Tools (오디오 테마 전용, macOS 14.2+ 및 '시스템 오디오 녹음' 권한 필요)"
-    ],
+    "requires": [],
     "notes": [
-      "원본과 다른 기본값: 한국어, 펫 줄 꺼짐, 하단 버튼 꺼짐, 스피너 줄 앞 마스코트 없음, random은 nyan·clawd·thunder·chomp 중 턴마다. 자세한 내용은 mod 설명서의 \"원본과 다른 점\"에 있어요.",
-      "`theme`를 audio로 바꾸면 첫 실행 시 `swiftc`로 `audio-tap.swift`를 로컬 컴파일해 실행하고, macOS Core Audio로 시스템 출력 소리의 레벨만 읽어 보여줘요(macOS 14.2+, 터미널에 '시스템 오디오 녹음' 권한 허용 필요). 저장·전송은 하지 않지만 Xcode Command Line Tools가 필요해요.",
-      "터미널이 느리거나 저전력 환경이면 `reducedMotion`을 켜서 마스코트·밴드·펫을 정지 이미지로 바꿀 수 있어요.",
-      "같은 작성자(hoobnn)의 `hud` 모드를 함께 쓰면 펫을 hud 쪽에 표시하고 쓰다듬은 횟수를 공유해요. `hud`가 없어도 정상 동작해요(안전한 no-op).",
-      "`language: ko`는 `/spinner` 응답과 레벨업·피날레 문구까지 전부 한국어로 번역되어 있어요(자리표시자 아님)."
+      "원본 두 개를 합쳤어요: 장면·펫은 hoobnn의 spinner(hoobnn/hoobnn-agent-mods @ 8fb6f67), tales 테마는 plaxagoras의 clawd-tales(@ 89c7f95). 둘 다 MIT이고 원본 저작권 표기를 LICENSE·LICENSE-clawd-tales·NOTICE에 그대로 뒀어요.",
+      "원본 spinner의 15종 중 nyan·clawd·thunder·chomp·sparky·bluecat 6종만 남기고, clawd-tales를 7번째 테마 tales로 더했어요. random은 7종 중 턴마다 골라요. 시스템 소리를 읽던 audio 테마는 빼서 프로그램 실행(swiftc) 권한이 없어요.",
+      "기본값이 한국어예요. /pals·/tales 응답과 피날레, Clawd 이야기의 캡션까지 한국어로 나와요(Clawd 이야기는 한국어·영어만).",
+      "명령은 /pals(테마·펫·끄기)와 /tales(Clawd 이야기의 데모·모자·calm 모드) 두 개예요. tales 미리 보기는 /tales demo로 해요.",
+      "nyan·chomp·sparky·bluecat은 원작자가 '픽셀 오마주'라고 부른 장면이고, Clawd는 Anthropic 마스코트예요. 비공식 팬 작품이에요.",
+      "터미널에서만 장면이 보여요. 데스크톱 앱에서는 tales 테마일 때만 띠가 그려져요."
     ],
     "permissions": [
-      "프로그램 실행",
       "도구 호출 제어",
       "대화 읽기",
-      "환경·설정 읽기",
-      "파일 읽기"
+      "환경·설정 읽기"
     ],
     "featured": true
   },
@@ -509,7 +507,7 @@ export const CATALOG: CatalogEntry[] = [
       "`summaryEveryTurns`(기본 5턴, 0으로 끌 수 있음)마다 세션 작업을 한 줄로 요약하는 모델 호출이 있어요. 대화를 포크해 프롬프트 캐시를 재사용하는 호출이라 비용은 적지만 사용자 사용량을 소모해요.",
       "`extraCmd`(claude-hud의 --extra-cmd, 임의 쉘 명령 실행)는 기본 빈 값이고, 쓰려면 옵션 설정과 `CLAUDE_HUD_ALLOW_EXTRA_CMD=1` 환경 변수를 모두 켜야 해요.",
       "계정 인증 방식·이메일 일부를 보여주는 기능(claude-hud의 showAuth/showAuthUser)과 다른 로컬 도구로 사용량을 공유하는 파일(externalUsagePath/externalUsageWritePath)은 claude-hud 자체 설정 파일에서만 켤 수 있고 둘 다 기본값이 꺼짐이에요.",
-      "같은 작성자(hoobnn)의 `spinner` mod를 함께 설치하면 pet이 HUD 옆(below 위치일 때)에 표시돼요. spinner가 없어도 정상 동작해요."
+      "같은 작성자(hoobnn)의 원본 `spinner` mod와 함께 쓰면 pet이 HUD 옆(below 위치일 때)에 표시돼요. k-mods의 pixel-pals와는 연동되지 않고, 없어도 정상 동작해요."
     ],
     "permissions": [
       "프로그램 실행",
@@ -1518,7 +1516,7 @@ export const CATALOG: CatalogEntry[] = [
   {
     "name": "korean-pack",
     "displayName": "한국어 팩",
-    "summary": "메뉴·설정 번역(ko-ui)과 작업 상태 한국어(status-ko)를 한 번에 설치해 Claude Code 화면을 한국어로 바꿔요",
+    "summary": "메뉴·설정·작업 표시줄 번역(ko-ui)을 설치해 Claude Code 화면을 한국어로 바꿔요. 작업 상태 한국어(status-ko)는 ko-ui와 같은 줄을 덮어써서 뺐어요",
     "category": "bundle",
     "kind": "bundle",
     "author": "SeongGwangJu",
@@ -1528,19 +1526,17 @@ export const CATALOG: CatalogEntry[] = [
     "requires": [],
     "notes": [],
     "permissions": [
-      "도구 호출 제어",
       "대화 읽기",
       "파일 읽기"
     ],
     "dependencies": [
-      "ko-ui",
-      "status-ko"
+      "ko-ui"
     ]
   },
   {
     "name": "starter",
     "displayName": "추천 세트",
-    "summary": "처음 설치하기 좋은 추천 세트예요. ko-ui, skins, spinner, ctx-strip, mod-store를 한 번에 설치해요",
+    "summary": "처음 설치하기 좋은 추천 세트예요. ko-ui, skins, pixel-pals, ctx-strip, mod-store를 한 번에 설치해요",
     "category": "bundle",
     "kind": "bundle",
     "author": "SeongGwangJu",
@@ -1560,7 +1556,7 @@ export const CATALOG: CatalogEntry[] = [
     "dependencies": [
       "ko-ui",
       "skins",
-      "spinner",
+      "pixel-pals",
       "ctx-strip",
       "mod-store"
     ]

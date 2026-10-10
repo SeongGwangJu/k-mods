@@ -49,14 +49,14 @@
     "`summaryEveryTurns`(기본 5턴, 0으로 끌 수 있음)마다 세션 작업을 한 줄로 요약하는 모델 호출이 있어요. 대화를 포크해 프롬프트 캐시를 재사용하는 호출이라 비용은 적지만 사용자 사용량을 소모해요.",
     "`extraCmd`(claude-hud의 --extra-cmd, 임의 쉘 명령 실행)는 기본 빈 값이고, 쓰려면 옵션 설정과 `CLAUDE_HUD_ALLOW_EXTRA_CMD=1` 환경 변수를 모두 켜야 해요.",
     "계정 인증 방식·이메일 일부를 보여주는 기능(claude-hud의 showAuth/showAuthUser)과 다른 로컬 도구로 사용량을 공유하는 파일(externalUsagePath/externalUsageWritePath)은 claude-hud 자체 설정 파일에서만 켤 수 있고 둘 다 기본값이 꺼짐이에요.",
-    "같은 작성자(hoobnn)의 `spinner` mod를 함께 설치하면 pet이 HUD 옆(below 위치일 때)에 표시돼요. spinner가 없어도 정상 동작해요."
+    "같은 작성자(hoobnn)의 원본 `spinner` mod와 함께 쓰면 pet이 HUD 옆(below 위치일 때)에 표시돼요. k-mods의 pixel-pals와는 연동되지 않고, 없어도 정상 동작해요."
   ],
   "notesEn": [
     "This is [jarrodwatts/claude-hud](https://github.com/jarrodwatts/claude-hud) 0.10.0 ported to a mod, and it keeps the original copyright under a separate LICENSE.claude-hud (MIT, Jarrod Watts). The display language follows the `language` field (default en) in claude-hud's own config file (`~/.claude/plugins/claude-hud/config.json` or `~/.claude/claude-hud.json`), not k-mods' `/config`. plugin.json userConfig has no language option, so we did not recommend a language setting here.",
     "Every `summaryEveryTurns` turns (default 5, can be turned off with 0), a model call summarizes the session's work in one line. It forks the conversation to reuse the prompt cache, so the cost is small, but it does use your usage.",
     "`extraCmd` (claude-hud's --extra-cmd, which runs an arbitrary shell command) is empty by default. To use it, you must turn on both the option setting and the `CLAUDE_HUD_ALLOW_EXTRA_CMD=1` environment variable.",
     "The features that show your account auth method and part of your email (claude-hud's showAuth/showAuthUser) and the files that share usage with other local tools (externalUsagePath/externalUsageWritePath) can only be turned on in claude-hud's own config file, and both are off by default.",
-    "If you install the same author's (hoobnn) `spinner` mod together, the pet is shown next to the HUD (when in the below position). It works normally without spinner too."
+    "With the same author's (hoobnn) original `spinner` mod, the pet is shown next to the HUD (when in the below position). It does not pair with k-mods' pixel-pals, and works normally without it."
   ],
   "featured": false,
   "preview": "https://raw.githubusercontent.com/hoobnn/hoobnn-agent-mods/8fb6f67cad9fd023cc7c06b7923518b4bbc45aea/claude-code/hud/assets/themes/neon.png",

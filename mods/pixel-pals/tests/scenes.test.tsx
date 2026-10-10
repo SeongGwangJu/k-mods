@@ -1,9 +1,8 @@
 import type { On } from 'claude-code'
 import { expect, mock, test } from 'claude-code/testing'
 
-import { AUDIO_BANDS, AudioMeter, lineSplitter, parseTapLine } from '../hooks/audio'
 import { parseCommand } from '../hooks/command'
-import { busyLabel, formatDuration, levelOf, newsOf, toolLabel } from '../hooks/pet'
+import { busyLabel, formatDuration, formatDurationKo, levelOf, newsOf, toolLabel } from '../hooks/pet'
 import { FINALE_MS, RANDOM_POOL, SPRITE_MS, STAGE_MS, THEMES, THEME_NAMES, finaleScene, petRow, pickRandom, segments, textWidth } from '../hooks/themes'
 import type { Act } from '../hooks/themes'
 
@@ -37,7 +36,7 @@ async function drawn(ui: { drawn: (scope?: { in?: string }) => Promise<unknown> 
 
 // The /config rows the plugin wrote, as `[key, value]`.
 let rows: [string, unknown][] = []
-// What the AskUserQuestion dialog answers (`/spinner theme`); null: dismissed.
+// What the AskUserQuestion dialog answers (`/pals theme`); null: dismissed.
 let asked: { question: string; options: string[] } | null = null
 let answer: string | null = null
 // The id of the last tool call the host ran, for a check about it.
@@ -113,122 +112,12 @@ test('every scene, finale and companion row fills exactly its width, every frame
   }
 })
 
-test('the audio scene fills its width with live levels, silence, no tap and a made-up signal', { options: UPSTREAM }, async () => {
-  const theme = THEMES.audio
-  const loud = { b: Array.from({ length: AUDIO_BANDS }, (_, i) => (i * 37) % 100), p: new Array(AUDIO_BANDS).fill(99), beat: 3 }
-  const quiet = { b: new Array(AUDIO_BANDS).fill(0), p: new Array(AUDIO_BANDS).fill(0), beat: 0 }
-  for (const feed of [loud, quiet, null, undefined]) {
-    for (const w of [16, 31, 32, 80, 160]) {
-      for (let t = 0; t < 40; t += 3) {
-        const scene = theme.scene(t, w, 'tool', feed)
-        expect(scene).toHaveLength(theme.rows)
-        for (const row of scene) expect(textWidth(segments(row).map(s => s.text).join(''))).toBe(w)
-      }
-    }
-  }
-  const text = (feed: Parameters<typeof theme.scene>[3]) => theme.scene(0, 80, 'think', feed).map(row => segments(row).map(s => s.text).join('')).join('\n')
-  expect(text(loud)).toContain('█')
-  expect(text(loud)).toContain('┗(・o・)┓')
-  expect(text(quiet)).not.toContain('█')
-  expect(text(null)).toContain('zZ')
-})
-
-test('the audio meter: tap lines to gained levels, falling peaks, beats and silence', { options: UPSTREAM }, async () => {
-  expect(parseTapLine('L 40 1 2 3')).toEqual({ loud: 40, bands: [1, 2, 3] })
-  expect(parseTapLine('E tap')).toBe(null)
-  expect(parseTapLine('L 4 x')).toBe(null)
-  const split = lineSplitter()
-  expect(split('L 1 2\nL 3')).toEqual(['L 1 2'])
-  expect(split(' 4\n')).toEqual(['L 3 4'])
-
-  const meter = new AudioMeter()
-  expect(meter.isAudible).toBe(false)
-  const line = (loud: number, level: number) => `L ${loud} ${new Array(AUDIO_BANDS).fill(level).join(' ')}`
-  meter.push(line(5, 0))
-  meter.push(line(60, 50))
-  // The loudest of late is the top of the scale; a jump in loudness is a beat.
-  expect(meter.view().b[0]).toBe(99)
-  expect(meter.view().beat).toBe(1)
-  expect(meter.isAudible).toBe(true)
-  meter.push(line(60, 0))
-  expect(meter.view().b[0]).toBe(0)
-  expect(meter.view().p[0]).toBe(95)
-  for (let i = 0; i < 60; i++) meter.push(line(0, 0))
-  expect(meter.isAudible).toBe(false)
-})
-
-test('the audio theme taps the sound output only while drawn, and feeds the band each frame', { options: UPSTREAM }, async ($, on) => {
-  const clock = host(on)
-  const ran: string[][] = []
-  const spawned: string[][] = []
-  let isTapEnded = false
-  // A binary older than its source: built again.
-  on('fs.stat', ($, e) => ({ value: { kind: 'file', size: 1, mtimeMs: e.path.endsWith('.swift') ? 2 : 1, isLink: false } }))
-  on('process.run', ($, e) => {
-    ran.push([...e.argv])
-    return { value: { exitCode: 0, stdout: '', stderr: '', isStdoutTruncated: false, isStderrTruncated: false } }
-  })
-  on('process.spawn', async function* ($, e) {
-    spawned.push([...e.argv])
-    try {
-      // Readings, a line cut across two pieces among them; then the child runs on quietly.
-      for (let i = 0; i < 3; i++) {
-        yield { stream: 'stdout' as const, text: `L 60 ${new Array(AUDIO_BANDS).fill(i % 2 ? 80 : 40).join(' ')}\nL 6` }
-        yield { stream: 'stdout' as const, text: `0 ${new Array(AUDIO_BANDS).fill(80).join(' ')}\n` }
-      }
-      await clock.sleep(10_000)
-      yield { stream: 'stdout' as const, text: 'L 0 0\n' }
-    } finally {
-      isTapEnded = true
-    }
-    return { value: { code: 0, signal: null } }
-  })
-
-  await $.session.start(START)
-  await clock.settle()
-  expect(spawned).toHaveLength(0)
-  await $.command.run({ ...RUN, command: 'spinner', args: 'audio' })
-  await clock.advance(200)
-  expect(ran[0]?.[0]).toBe('swiftc')
-  expect(spawned[0]?.[0]).toMatch(/audio-tap$/)
-  expect((await $.command.run({ ...RUN, command: 'spinner', args: '' })).text).toContain('正在显示本机的声音输出')
-
-  // Between turns the band stays up while sound plays, and asks for levels each frame.
-  const ui = await $.ui.mount({ plugin: 'spinner', surface: 'terminal', ...IDLE })
-  expect(await ui.findAll({ type: 'Client' })).toHaveLength(2)
-  await ui.post({ audio: true }, { in: 'listen' })
-  expect(await drawn(ui, 'listen')).toContain('█')
-  await ui.unmount()
-
-  // Another theme stops the tap.
-  await $.command.run({ ...RUN, command: 'spinner', args: 'cat' })
-  await clock.advance(10_000)
-  expect(isTapEnded).toBe(true)
-  expect(spawned).toHaveLength(1)
-})
-
-test('the audio theme says why when it cannot tap', { options: UPSTREAM }, async ($, on) => {
-  const clock = host(on)
-  on('fs.stat', ($, e) => ({ value: { kind: 'file', size: 1, mtimeMs: e.path.endsWith('.swift') ? 2 : 1, isLink: false } }))
-  on('process.run', () => ({ value: { exitCode: 1, stdout: '', stderr: 'error: no such module CoreAudio', isStdoutTruncated: false, isStderrTruncated: false } }))
-  await $.session.start(START)
-  await clock.settle()
-  await $.command.run({ ...RUN, command: 'spinner', args: 'audio' })
-  await clock.advance(200)
-  expect((await $.command.run({ ...RUN, command: 'spinner', args: '' })).text).toContain('音频：无法显示（swiftc: error: no such module CoreAudio）')
-  await $.turn.start({ text: 'hi', turnId: 't1' })
-  const ui = await $.ui.mount({ plugin: 'spinner', surface: 'terminal', ...BAND })
-  expect(await drawn(ui, 'work')).toContain('zZ')
-  await ui.unmount()
-})
-
 test('helpers', { options: UPSTREAM }, async () => {
   expect(formatDuration(12_400)).toBe('12s')
   expect(formatDuration(185_000)).toBe('3m 05s')
   expect(formatDuration(3_720_000)).toBe('1h 02m')
+  expect([12_400, 185_000, 3_720_000].map(formatDurationKo)).toEqual(['12초', '3분 05초', '1시간 02분'])
   for (let i = 0; i < 50; i++) expect(THEME_NAMES).toContain(pickRandom(i))
-  // The audio theme starts a process: chosen by name only.
-  for (let i = 0; i < 200; i++) expect(pickRandom(i)).not.toBe('audio')
   expect([0, 1, 2, 8, 18].map(levelOf)).toEqual([1, 1, 2, 3, 4])
   expect(toolLabel({ tool: 'Bash', command: 'npm test\nnpm run lint' })).toBe('Bash: npm test')
   expect(toolLabel({ tool: 'Edit', file_path: '/a/b/themes.ts' })).toBe('Edit: themes.ts')
@@ -252,14 +141,14 @@ test('k-mods: no mascot in front of the engine line, even with the companion off
   const clock = host(on)
   await $.session.start(START)
   await clock.settle()
-  await $.command.run({ ...RUN, command: 'spinner', args: 'cat' })
-  const plain = await $.ui.mount({ plugin: 'spinner', surface: 'terminal', ...SPINNER })
+  await $.command.run({ ...RUN, command: 'pals', args: 'chomp' })
+  const plain = await $.ui.mount({ plugin: 'pixel-pals', surface: 'terminal', ...SPINNER })
   expect(await plain.findAll({ type: 'Client' })).toHaveLength(0)
   await plain.unmount()
 
-  await $.command.run({ ...RUN, command: 'spinner', args: 'companion off' })
+  await $.command.run({ ...RUN, command: 'pals', args: 'companion off' })
   for (const surface of ['terminal', 'desktop'] as const) {
-    const ui = await $.ui.mount({ plugin: 'spinner', surface, ...SPINNER })
+    const ui = await $.ui.mount({ plugin: 'pixel-pals', surface, ...SPINNER })
     expect(await ui.find({ type: 'Text', text: 'Sauteing…' })).toBeDefined()
     expect(await ui.findAll({ type: 'Client' })).toHaveLength(0)
     await ui.unmount()
@@ -270,24 +159,25 @@ test('band plays the scene and the companion while working, keeps other bands', 
   const clock = host(on)
   await $.session.start(START)
   await clock.settle()
-  await $.command.run({ ...RUN, command: 'spinner', args: 'dino' })
+  await $.command.run({ ...RUN, command: 'pals', args: 'thunder' })
   await $.turn.start({ text: 'hi', turnId: 't1' })
 
   for (const surface of ['terminal', 'desktop'] as const) {
-    const ui = await $.ui.mount({ plugin: 'spinner', surface, ...BAND })
+    const ui = await $.ui.mount({ plugin: 'pixel-pals', surface, ...BAND })
     expect(await ui.find({ type: 'Text', text: 'Sauteing…' })).toBeDefined()
-    expect(await drawn(ui, 'work')).toContain('HI 00000')
+    const first = await drawn(ui, 'work')
+    expect(first).toContain('SCORE 000000')
     expect(await said(ui)).toContain('Lv.1 ♥0')
     expect(await ui.findAll({ type: 'Client' })).toHaveLength(2)
     // Thinking is the engine's line to say; the bubble stays quiet.
     expect(await ui.findAll({ type: 'Text' })).toHaveLength(2)
     await ui.advance(STAGE_MS * 5)
-    expect(await drawn(ui, 'work')).toContain('HI 00005')
+    expect(await drawn(ui, 'work')).not.toBe(first)
     await ui.unmount()
   }
 
-  await $.command.run({ ...RUN, command: 'spinner', args: 'stage off' })
-  const off = await $.ui.mount({ plugin: 'spinner', surface: 'terminal', ...BAND })
+  await $.command.run({ ...RUN, command: 'pals', args: 'stage off' })
+  const off = await $.ui.mount({ plugin: 'pixel-pals', surface: 'terminal', ...BAND })
   expect(await off.findAll({ type: 'Client' })).toHaveLength(1)
   expect(await said(off)).toContain('Lv.1 ♥0')
   await off.unmount()
@@ -297,7 +187,7 @@ test('a short band gets the pet in one row', { options: UPSTREAM }, async ($, on
   const clock = host(on)
   await $.session.start(START)
   await clock.settle()
-  const ui = await $.ui.mount({ plugin: 'spinner', surface: 'terminal', ...BAND, props: { ...BAND.props, maxRows: 2 } })
+  const ui = await $.ui.mount({ plugin: 'pixel-pals', surface: 'terminal', ...BAND, props: { ...BAND.props, maxRows: 2 } })
   expect(await ui.findAll({ type: 'Client' })).toHaveLength(0)
   expect(await said(ui)).toContain('Lv.1 ♥0')
   await ui.unmount()
@@ -307,12 +197,13 @@ test('reduced motion draws one still frame', { options: { ...UPSTREAM, reducedMo
   const clock = host(on)
   await $.session.start(START)
   await clock.settle()
-  await $.command.run({ ...RUN, command: 'spinner', args: 'dino' })
+  await $.command.run({ ...RUN, command: 'pals', args: 'thunder' })
   await $.turn.start({ text: 'hi', turnId: 't1' })
-  const ui = await $.ui.mount({ plugin: 'spinner', surface: 'terminal', ...BAND })
-  expect(await drawn(ui, 'work')).toContain('HI 00000')
+  const ui = await $.ui.mount({ plugin: 'pixel-pals', surface: 'terminal', ...BAND })
+  const still = await drawn(ui, 'work')
+  expect(still).toContain('SCORE 000000')
   await ui.advance(STAGE_MS * 5)
-  expect(await drawn(ui, 'work')).toContain('HI 00000')
+  expect(await drawn(ui, 'work')).toBe(still)
   await ui.unmount()
 })
 
@@ -324,23 +215,23 @@ test('the companion follows tool calls and permission prompts', { options: UPSTR
 
   const call = $.tool.call({ tool: 'Bash', command: 'npm test' })
   await clock.settle()
-  let ui = await $.ui.mount({ plugin: 'spinner', surface: 'terminal', ...BAND })
+  let ui = await $.ui.mount({ plugin: 'pixel-pals', surface: 'terminal', ...BAND })
   expect(await said(ui)).toContain('Bash: npm test')
   await ui.unmount()
 
   // The check asks; the pet says so only once the ask has stood a moment.
   await $.tool.check({ tool: 'Bash', input: { command: 'npm test' }, tool_use_id: lastCallId } as never)
-  ui = await $.ui.mount({ plugin: 'spinner', surface: 'terminal', ...BAND })
+  ui = await $.ui.mount({ plugin: 'pixel-pals', surface: 'terminal', ...BAND })
   expect(await said(ui)).not.toContain('等你确认')
   await ui.unmount()
   await clock.advance(600)
-  ui = await $.ui.mount({ plugin: 'spinner', surface: 'terminal', ...BAND })
+  ui = await $.ui.mount({ plugin: 'pixel-pals', surface: 'terminal', ...BAND })
   expect(await said(ui)).toContain('等你确认一下～')
   await ui.unmount()
 
   await clock.advance(1000)
   await call
-  ui = await $.ui.mount({ plugin: 'spinner', surface: 'terminal', ...BAND })
+  ui = await $.ui.mount({ plugin: 'pixel-pals', surface: 'terminal', ...BAND })
   expect(await said(ui)).not.toContain('Bash: npm test')
   expect(await said(ui)).not.toContain('等你确认')
   await ui.unmount()
@@ -355,7 +246,7 @@ test('tests and commits Claude runs: a word from the pet, xp for good news', { o
   const pass = $.tool.call({ tool: 'Bash', command: 'npm test' })
   await clock.advance(1000)
   await pass
-  let ui = await $.ui.mount({ plugin: 'spinner', surface: 'terminal', ...BAND })
+  let ui = await $.ui.mount({ plugin: 'pixel-pals', surface: 'terminal', ...BAND })
   expect(await said(ui)).toContain('测试通过啦！')
   expect(await said(ui)).toContain('Lv.1 ♥0')
   await ui.unmount()
@@ -363,15 +254,15 @@ test('tests and commits Claude runs: a word from the pet, xp for good news', { o
   const fail = $.tool.call({ tool: 'Bash', command: 'pytest' })
   await clock.advance(1000)
   await fail
-  ui = await $.ui.mount({ plugin: 'spinner', surface: 'terminal', ...BAND })
+  ui = await $.ui.mount({ plugin: 'pixel-pals', surface: 'terminal', ...BAND })
   expect(await said(ui)).toContain('测试没过')
   await ui.unmount()
   await clock.advance(4000)
-  ui = await $.ui.mount({ plugin: 'spinner', surface: 'terminal', ...BAND })
+  ui = await $.ui.mount({ plugin: 'pixel-pals', surface: 'terminal', ...BAND })
   expect(await said(ui)).not.toContain('测试没过')
   await ui.unmount()
   // One xp for the tests that passed, none for those that failed.
-  expect((await $.command.run({ ...RUN, command: 'spinner', args: '' })).text).toContain('经验 1 ·')
+  expect((await $.command.run({ ...RUN, command: 'pals', args: '' })).text).toContain('经验 1 ·')
 })
 
 test('an ask the mode settles at once never reaches the pet', { options: UPSTREAM }, async ($, on) => {
@@ -387,7 +278,7 @@ test('an ask the mode settles at once never reaches the pet', { options: UPSTREA
   await call
   await $.tool.check({ tool: 'Bash', input: { command: 'npm test' }, tool_use_id: lastCallId } as never)
   await clock.advance(600)
-  const ui = await $.ui.mount({ plugin: 'spinner', surface: 'terminal', ...BAND })
+  const ui = await $.ui.mount({ plugin: 'pixel-pals', surface: 'terminal', ...BAND })
   expect(await said(ui)).not.toContain('等你确认')
   await ui.unmount()
 })
@@ -399,12 +290,12 @@ test('a finished turn plays the finale, then the companion waits; a click pats i
   await $.turn.start({ text: 'hi', turnId: 't1' })
   await $.turn.complete(DONE)
 
-  const ui = await $.ui.mount({ plugin: 'spinner', surface: 'terminal', ...IDLE })
+  const ui = await $.ui.mount({ plugin: 'pixel-pals', surface: 'terminal', ...IDLE })
   expect(await drawn(ui, 'finale-t1')).toContain('完成 · 12s')
   await ui.unmount()
 
   await clock.advance(FINALE_MS)
-  const idle = await $.ui.mount({ plugin: 'spinner', surface: 'terminal', ...IDLE })
+  const idle = await $.ui.mount({ plugin: 'pixel-pals', surface: 'terminal', ...IDLE })
   expect(await idle.findAll({ type: 'Client' })).toHaveLength(1)
   expect(await said(idle)).toContain('做完啦，快看看！')
   expect(await said(idle)).toContain('Lv.1 ♥0')
@@ -414,61 +305,61 @@ test('a finished turn plays the finale, then the companion waits; a click pats i
   expect(await drawn(idle, 'pet')).toMatch(/#ff6b9d|#ff8fab/)
   await idle.unmount()
 
-  expect((await $.command.run({ ...RUN, command: 'spinner', args: 'pet' })).text).toContain('♥2')
+  expect((await $.command.run({ ...RUN, command: 'pals', args: 'pet' })).text).toContain('♥2')
 
-  await $.command.run({ ...RUN, command: 'spinner', args: 'companion off' })
-  const none = await $.ui.mount({ plugin: 'spinner', surface: 'terminal', ...IDLE })
+  await $.command.run({ ...RUN, command: 'pals', args: 'companion off' })
+  const none = await $.ui.mount({ plugin: 'pixel-pals', surface: 'terminal', ...IDLE })
   expect(await none.findAll({ type: 'Client' })).toHaveLength(0)
   await none.unmount()
 })
 
-test('/spinner switches, hides and reports', { options: UPSTREAM }, async ($, on) => {
+test('/pals switches, hides and reports', { options: UPSTREAM }, async ($, on) => {
   const clock = host(on)
   await $.session.start(START)
   await clock.settle()
 
-  expect((await $.command.run({ ...RUN, command: 'spinner', args: 'thunder' })).text).toBe('已切换到 thunder')
-  const status = (await $.command.run({ ...RUN, command: 'spinner', args: '' })).text
+  expect((await $.command.run({ ...RUN, command: 'pals', args: 'thunder' })).text).toBe('已切换到 thunder')
+  const status = (await $.command.run({ ...RUN, command: 'pals', args: '' })).text
   expect(status).toContain('当前主题：thunder')
   expect(status).toContain('thunder · Lv.1 · 经验 0 · ♥0')
-  expect((await $.command.run({ ...RUN, command: 'spinner', args: 'nyancat' })).text).toContain('没有叫 nyancat 的主题')
-  expect((await $.command.run({ ...RUN, command: 'spinner', args: 'random' })).text).toContain('每个会话随机一个主题')
+  expect((await $.command.run({ ...RUN, command: 'pals', args: 'nyancat' })).text).toContain('没有叫 nyancat 的主题')
+  expect((await $.command.run({ ...RUN, command: 'pals', args: 'random' })).text).toContain('每个会话随机一个主题')
 
-  expect((await $.command.run({ ...RUN, command: 'spinner', args: 'off' })).text).toBe('运行动画已关闭')
-  const ui = await $.ui.mount({ plugin: 'spinner', surface: 'terminal', ...SPINNER })
+  expect((await $.command.run({ ...RUN, command: 'pals', args: 'off' })).text).toBe('运行动画已关闭')
+  const ui = await $.ui.mount({ plugin: 'pixel-pals', surface: 'terminal', ...SPINNER })
   expect(await ui.findAll({ type: 'Text' })).toHaveLength(1)
   await ui.unmount()
-  const band = await $.ui.mount({ plugin: 'spinner', surface: 'terminal', ...IDLE })
+  const band = await $.ui.mount({ plugin: 'pixel-pals', surface: 'terminal', ...IDLE })
   expect(await band.findAll({ type: 'Client' })).toHaveLength(0)
   await band.unmount()
 })
 
-test('/spinner theme asks which: an offered option, one typed under Other, or dismissed', { options: UPSTREAM }, async ($, on) => {
+test('/pals theme asks which: an offered option, one typed under Other, or dismissed', { options: UPSTREAM }, async ($, on) => {
   const clock = host(on)
   await $.session.start(START)
   await clock.settle()
-  await $.command.run({ ...RUN, command: 'spinner', args: 'cat' })
+  await $.command.run({ ...RUN, command: 'pals', args: 'chomp' })
 
   answer = 'random'
-  expect((await $.command.run({ ...RUN, command: 'spinner', args: 'theme' })).text).toContain('每个会话随机一个主题')
+  expect((await $.command.run({ ...RUN, command: 'pals', args: 'theme' })).text).toContain('每个会话随机一个主题')
   expect(asked?.question).toContain('换哪个主题')
   expect(asked?.options).toHaveLength(4)
   expect(asked?.options[0]).toBe('random')
 
-  answer = ' Ocean '
-  expect((await $.command.run({ ...RUN, command: 'spinner', args: 'theme' })).text).toBe('已切换到 ocean')
-  expect(asked?.options).not.toContain('ocean')
+  answer = ' Thunder '
+  expect((await $.command.run({ ...RUN, command: 'pals', args: 'theme' })).text).toBe('已切换到 thunder')
+  expect(asked?.options).not.toContain('thunder')
   expect(rows).toEqual([
-    ['spinner.theme', 'cat'],
-    ['spinner.theme', 'random'],
-    ['spinner.theme', 'ocean'],
+    ['pixel-pals.theme', 'chomp'],
+    ['pixel-pals.theme', 'random'],
+    ['pixel-pals.theme', 'thunder'],
   ])
 
   answer = 'nyancat'
-  expect((await $.command.run({ ...RUN, command: 'spinner', args: 'theme' })).text).toContain('没有叫 nyancat 的主题')
+  expect((await $.command.run({ ...RUN, command: 'pals', args: 'theme' })).text).toContain('没有叫 nyancat 的主题')
 
   answer = null
-  expect((await $.command.run({ ...RUN, command: 'spinner', args: 'theme' })).text).toContain('当前主题：ocean')
+  expect((await $.command.run({ ...RUN, command: 'pals', args: 'theme' })).text).toContain('当前主题：thunder')
   expect(rows).toHaveLength(3)
 })
 
@@ -481,61 +372,61 @@ test('a subagent\'s permission ask shows too, until its call ends', { options: U
   await clock.settle()
   await $.tool.check({ tool: 'Bash', input: { command: 'rm -rf build' }, tool_use_id: lastCallId } as never)
   await clock.advance(600)
-  let ui = await $.ui.mount({ plugin: 'spinner', surface: 'terminal', ...BAND })
+  let ui = await $.ui.mount({ plugin: 'pixel-pals', surface: 'terminal', ...BAND })
   expect(await said(ui)).toContain('等你确认一下～')
   await ui.unmount()
   await clock.advance(1000)
   await call
-  ui = await $.ui.mount({ plugin: 'spinner', surface: 'terminal', ...BAND })
+  ui = await $.ui.mount({ plugin: 'pixel-pals', surface: 'terminal', ...BAND })
   expect(await said(ui)).not.toContain('等你确认')
   await ui.unmount()
 })
 
-test('/spinner arguments', { options: UPSTREAM }, async () => {
+test('/pals arguments', { options: UPSTREAM }, async () => {
   expect(parseCommand('')).toEqual({ kind: 'status' })
   expect(parseCommand(' OFF ')).toEqual({ kind: 'visible', isOn: false })
   expect(parseCommand('stage on')).toEqual({ kind: 'stage', isOn: true })
   expect(parseCommand('stage')).toEqual({ kind: 'unknown', name: 'stage' })
   expect(parseCommand('companion off')).toEqual({ kind: 'companion', isOn: false })
   expect(parseCommand('preview')).toEqual({ kind: 'preview', theme: null })
-  expect(parseCommand('preview neon')).toEqual({ kind: 'preview', theme: 'neon' })
+  expect(parseCommand('preview nyan')).toEqual({ kind: 'preview', theme: 'nyan' })
   expect(parseCommand('preview x')).toEqual({ kind: 'unknown', name: 'x' })
   expect(parseCommand('Random')).toEqual({ kind: 'theme', theme: 'random' })
-  expect(parseCommand('cat')).toEqual({ kind: 'theme', theme: 'cat' })
+  expect(parseCommand('chomp')).toEqual({ kind: 'theme', theme: 'chomp' })
   expect(parseCommand('theme')).toEqual({ kind: 'pick' })
-  expect(parseCommand('theme neon')).toEqual({ kind: 'theme', theme: 'neon' })
+  expect(parseCommand('theme tales')).toEqual({ kind: 'theme', theme: 'tales' })
   expect(parseCommand('theme random')).toEqual({ kind: 'theme', theme: 'random' })
   expect(parseCommand('theme x')).toEqual({ kind: 'unknown', name: 'x' })
 })
 
-test('/spinner writes its /config rows, once per change', { options: { ...UPSTREAM, theme: 'dino' } }, async ($, on) => {
+test('/pals writes its /config rows, once per change', { options: { ...UPSTREAM, theme: 'sparky' } }, async ($, on) => {
   const clock = host(on)
   await $.session.start(START)
   await clock.settle()
-  await $.command.run({ ...RUN, command: 'spinner', args: 'neon' })
-  await $.command.run({ ...RUN, command: 'spinner', args: 'stage off' })
-  await $.command.run({ ...RUN, command: 'spinner', args: 'stage off' })
-  await $.command.run({ ...RUN, command: 'spinner', args: 'companion off' })
-  await $.command.run({ ...RUN, command: 'spinner', args: 'off' })
+  await $.command.run({ ...RUN, command: 'pals', args: 'bluecat' })
+  await $.command.run({ ...RUN, command: 'pals', args: 'stage off' })
+  await $.command.run({ ...RUN, command: 'pals', args: 'stage off' })
+  await $.command.run({ ...RUN, command: 'pals', args: 'companion off' })
+  await $.command.run({ ...RUN, command: 'pals', args: 'off' })
   expect(rows).toEqual([
-    ['spinner.theme', 'neon'],
-    ['spinner.stage', false],
-    ['spinner.companion', false],
-    ['spinner.visible', false],
+    ['pixel-pals.theme', 'bluecat'],
+    ['pixel-pals.stage', false],
+    ['pixel-pals.companion', false],
+    ['pixel-pals.visible', false],
   ])
 })
 
 test('settings older versions kept in the store move to /config rows', { options: UPSTREAM }, async ($, on) => {
-  const clock = host(on, { theme: 'cat', isStageOff: true, isCompanionOff: false, isHidden: false })
+  const clock = host(on, { theme: 'chomp', isStageOff: true, isCompanionOff: false, isHidden: false })
   await $.session.start(START)
   await clock.settle()
   expect(rows).toEqual([
-    ['spinner.theme', 'cat'],
-    ['spinner.visible', true],
-    ['spinner.stage', false],
-    ['spinner.companion', true],
+    ['pixel-pals.theme', 'chomp'],
+    ['pixel-pals.visible', true],
+    ['pixel-pals.stage', false],
+    ['pixel-pals.companion', true],
   ])
-  expect((await $.command.run({ ...RUN, command: 'spinner', args: '' })).text).toContain('当前主题：cat')
+  expect((await $.command.run({ ...RUN, command: 'pals', args: '' })).text).toContain('当前主题：chomp')
   // A reload (a row changed) keeps the session's theme; the store holds nothing to move again.
   await $.session.start(START)
   await clock.settle()
@@ -546,40 +437,41 @@ test('random keeps the theme it drew this session across a reload', { options: U
   const clock = host(on)
   await $.session.start(START)
   await clock.settle()
-  const first = (await $.command.run({ ...RUN, command: 'spinner', args: '' })).text?.split('\n')[0]
+  const first = (await $.command.run({ ...RUN, command: 'pals', args: '' })).text?.split('\n')[0]
   await clock.advance(12_345)
   await $.session.start(START)
   await clock.settle()
-  expect((await $.command.run({ ...RUN, command: 'spinner', args: '' })).text?.split('\n')[0]).toBe(first)
+  expect((await $.command.run({ ...RUN, command: 'pals', args: '' })).text?.split('\n')[0]).toBe(first)
 })
 
 test('the footer button turns the animations off and on, keeping the modes beneath it', { options: UPSTREAM }, async ($, on) => {
   const clock = host(on)
   await $.session.start(START)
   await clock.settle()
-  const footer = await $.ui.mount({ plugin: 'spinner', surface: 'terminal', component: 'SessionMode', props: { modes: ['focus'] } })
-  expect(await footer.find({ type: 'Button', key: 'spinner-toggle' })).toBeDefined()
-  await footer.press({ key: 'spinner-toggle' })
-  const band = await $.ui.mount({ plugin: 'spinner', surface: 'terminal', ...IDLE })
+  const footer = await $.ui.mount({ plugin: 'pixel-pals', surface: 'terminal', component: 'SessionMode', props: { modes: ['focus'] } })
+  expect(await footer.find({ type: 'Button', key: 'pals-toggle' })).toBeDefined()
+  await footer.press({ key: 'pals-toggle' })
+  const band = await $.ui.mount({ plugin: 'pixel-pals', surface: 'terminal', ...IDLE })
   expect(await band.findAll({ type: 'Client' })).toHaveLength(0)
   await band.unmount()
-  await footer.press({ key: 'spinner-toggle' })
+  await footer.press({ key: 'pals-toggle' })
   expect(rows).toEqual([
-    ['spinner.visible', false],
-    ['spinner.visible', true],
+    ['pixel-pals.visible', false],
+    ['pixel-pals.visible', true],
   ])
   await footer.unmount()
 })
 
-test('k-mods defaults: /spinner replies in Korean', async ($, on) => {
+test('k-mods defaults: /pals replies in Korean', async ($, on) => {
   const clock = host(on)
   await $.session.start(START)
   await clock.settle()
-  const reply = await $.command.run({ ...RUN, command: 'spinner', args: '' })
+  const reply = await $.command.run({ ...RUN, command: 'pals', args: '' })
   expect(String(reply.text)).toContain('현재 테마')
 })
 
-test('k-mods: random picks only from the four themes', () => {
-  expect(RANDOM_POOL).toEqual(['nyan', 'clawd', 'thunder', 'chomp'])
+test('pixel-pals: the six curated scenes and tales, all in random', () => {
+  expect([...THEME_NAMES]).toEqual(['clawd', 'thunder', 'chomp', 'sparky', 'bluecat', 'nyan', 'tales'])
+  expect(RANDOM_POOL).toEqual([...THEME_NAMES])
   for (let seed = 0; seed < 50; seed++) expect(RANDOM_POOL).toContain(pickRandom(seed))
 })

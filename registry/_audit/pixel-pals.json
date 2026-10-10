@@ -1,18 +1,24 @@
 {
-  "name": "spinner",
-  "source": "./mods/spinner",
-  "auditedWith": "2.1.291",
+  "name": "pixel-pals",
+  "source": "./mods/pixel-pals",
+  "auditedWith": "2.1.296",
   "validate": {
     "success": true,
     "errors": [],
     "warnings": []
   },
   "hooks": [
-    "command.run{command=spinner}",
+    "agent.spawn",
+    "classic.PermissionRequest",
+    "classic.SessionStart",
+    "classic.UserPromptSubmit",
+    "command.run{command=pals}",
+    "command.run{command=tales}",
     "prompt.edit",
     "prompt.submit",
+    "session.compact",
+    "session.measure",
     "session.start",
-    "state.set{plugin=hud, key=petPats}",
     "tool.call",
     "tool.check",
     "turn.complete",
@@ -23,14 +29,15 @@
     "ui.render{component=Spinner}"
   ],
   "calls": [
+    "$.agent.list",
     "$.clock.after",
+    "$.clock.every",
     "$.clock.now",
     "$.command.register",
     "$.config.set",
     "$.env.get",
-    "$.fs.stat",
-    "$.process.run",
-    "$.process.spawn",
+    "$.session.root",
+    "$.session.usage",
     "$.settings.read",
     "$.state.get",
     "$.state.set",
@@ -50,24 +57,25 @@
     "nothing"
   ],
   "gatingWithoutCatch": [
+    "agent.spawn",
+    "classic.PermissionRequest",
+    "classic.SessionStart",
+    "classic.UserPromptSubmit",
     "prompt.submit",
-    "state.set{plugin=hud, key=petPats}",
+    "session.compact",
     "tool.call",
     "tool.check"
   ],
   "commands": [
-    "/spinner"
+    "/pals",
+    "/tales"
   ],
-  "programs": [
-    "swiftc"
-  ],
+  "programs": [],
   "urls": [],
   "license": "LICENSE",
   "permissions": [
-    "process",
     "gate",
     "chat",
-    "env",
-    "fs-read"
+    "env"
   ]
 }

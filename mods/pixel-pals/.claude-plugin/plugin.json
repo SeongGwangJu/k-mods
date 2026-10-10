@@ -1,0 +1,94 @@
+{
+  "name": "pixel-pals",
+  "version": "1.0.0",
+  "description": "[k-mods] Claude가 일하는 동안 입력창 위에 냥캣·Clawd·썬더 같은 픽셀 친구들이 지나가고, 턴마다 자라는 펫을 키워요. 엄선한 6가지 장면에 clawd-tales의 Clawd 이야기를 더한 한국어판. 원본: hoobnn/hoobnn-agent-mods의 spinner, plaxagoras/clawd-tales (둘 다 MIT)",
+  "author": {
+    "name": "hoobnn · plaxagoras"
+  },
+  "homepage": "https://github.com/SeongGwangJu/k-mods/tree/main/mods/pixel-pals",
+  "repository": "https://github.com/SeongGwangJu/k-mods",
+  "license": "MIT",
+  "keywords": [
+    "animation",
+    "pixel-art",
+    "pet",
+    "nyan",
+    "clawd",
+    "korean",
+    "mod"
+  ],
+  "types": "./types/index.d.ts",
+  "userConfig": {
+    "visible": {
+      "type": "boolean",
+      "title": "애니메이션 보이기",
+      "description": "장면 띠와 펫을 통째로 보이거나 숨겨요 (/pals off · /pals on과 같아요)",
+      "default": true
+    },
+    "footerButton": {
+      "type": "boolean",
+      "title": "하단 버튼",
+      "description": "입력창 아래에 애니메이션을 켜고 끄는 Pals 버튼을 둬요 (/pals off · on과 같아요)",
+      "default": false
+    },
+    "theme": {
+      "type": "string",
+      "title": "테마",
+      "description": "장면 모양: nyan(냥캣), clawd(Claude 마스코트), thunder(슈팅 게임), chomp, sparky, bluecat(픽셀 오마주), tales(clawd-tales의 Clawd 이야기), random(턴마다 새로). /pals <테마>로 바로 바꿀 수 있어요",
+      "options": [
+        "random",
+        "nyan",
+        "clawd",
+        "thunder",
+        "chomp",
+        "sparky",
+        "bluecat",
+        "tales"
+      ],
+      "default": "random"
+    },
+    "stage": {
+      "type": "boolean",
+      "title": "장면 띠",
+      "description": "모델이 일하는 동안 입력창 위에 장면을 띄워요 (/pals stage off · on으로도 바꿔요)",
+      "default": true
+    },
+    "celebrate": {
+      "type": "boolean",
+      "title": "피날레",
+      "description": "턴이 끝나면 띠에 짧은 피날레를 보여줘요: 걸린 시간과 축하, 중단되면 아쉬운 얼굴",
+      "default": true
+    },
+    "companion": {
+      "type": "boolean",
+      "title": "펫",
+      "description": "입력창 위 한 줄에 펫을 둬요. 지금 하는 일(도구 실행, 확인 대기)을 보여주고 턴이 끝날 때마다 레벨이 올라요. 누르거나 /pals pet으로 쓰다듬어요",
+      "default": false
+    },
+    "reducedMotion": {
+      "type": "boolean",
+      "title": "움직임 줄이기",
+      "description": "장면과 펫을 정지 그림으로 그려요. 모델이 하는 일에 따라 그림은 바뀌지만 움직이지 않아요",
+      "default": false
+    },
+    "language": {
+      "type": "string",
+      "title": "언어",
+      "description": "/pals·/tales 응답, 피날레, Clawd 이야기 문구의 언어. auto는 Claude Code 언어 설정, 그다음 시스템 로캘을 따라요 (Clawd 이야기는 한국어·영어만)",
+      "options": [
+        "auto",
+        "en",
+        "zh-Hans",
+        "zh-Hant",
+        "ja",
+        "ko",
+        "es",
+        "fr",
+        "de",
+        "pt-BR",
+        "ru"
+      ],
+      "default": "ko"
+    }
+  }
+}

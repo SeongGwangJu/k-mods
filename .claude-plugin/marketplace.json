@@ -5,7 +5,7 @@
     "url": "https://github.com/SeongGwangJu"
   },
   "description": "한국어로 고르고 한 줄로 설치하는 Claude Code mods 모음. 검토한 커밋만 설치돼요.",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "plugins": [
     {
       "name": "ko-ui",
@@ -95,25 +95,23 @@
       "repository": "https://github.com/NahumLitvin/prismantis"
     },
     {
-      "name": "spinner",
-      "source": "./mods/spinner",
-      "description": "Claude가 일하는 동안 입력창 위에 냥캣·Clawd 같은 픽셀 장면을 표시하고 펫을 키워요. 한국어·간결한 기본값으로 고친 수정판이에요",
+      "name": "pixel-pals",
+      "source": "./mods/pixel-pals",
+      "description": "Claude가 일하는 동안 입력창 위에 냥캣·Clawd·썬더 같은 픽셀 친구들이 지나가요. 엄선한 장면 6종에 clawd-tales의 Clawd 이야기를 합친 한국어판이에요",
       "category": "애니메이션",
       "tags": [
         "애니메이션",
         "펫",
-        "테마",
         "픽셀아트",
-        "스피너",
+        "냥캣",
+        "Clawd",
         "마스코트",
-        "레벨업",
-        "다국어"
+        "한국어"
       ],
       "author": {
-        "name": "hoobnn",
-        "url": "https://github.com/hoobnn"
+        "name": "hoobnn · plaxagoras"
       },
-      "homepage": "https://github.com/hoobnn/hoobnn-agent-mods",
+      "homepage": "https://github.com/SeongGwangJu/k-mods/tree/main/mods/pixel-pals",
       "license": "MIT",
       "repository": "https://github.com/hoobnn/hoobnn-agent-mods"
     },
@@ -1440,7 +1438,7 @@
       "name": "korean-pack",
       "source": "./bundles/korean-pack",
       "displayName": "한국어 팩",
-      "description": "메뉴·설정 번역(ko-ui)과 작업 상태 한국어(status-ko)를 한 번에 설치해 Claude Code 화면을 한국어로 바꿔요",
+      "description": "메뉴·설정·작업 표시줄 번역(ko-ui)을 설치해 Claude Code 화면을 한국어로 바꿔요. 작업 상태 한국어(status-ko)는 ko-ui와 같은 줄을 덮어써서 뺐어요",
       "category": "묶음",
       "tags": [
         "한국어",
@@ -1454,15 +1452,14 @@
       "license": "MIT",
       "repository": "https://github.com/SeongGwangJu/k-mods",
       "dependencies": [
-        "ko-ui",
-        "status-ko"
+        "ko-ui"
       ]
     },
     {
       "name": "starter",
       "source": "./bundles/starter",
       "displayName": "추천 세트",
-      "description": "처음 설치하기 좋은 추천 세트예요. ko-ui, skins, spinner, ctx-strip, mod-store를 한 번에 설치해요",
+      "description": "처음 설치하기 좋은 추천 세트예요. ko-ui, skins, pixel-pals, ctx-strip, mod-store를 한 번에 설치해요",
       "category": "묶음",
       "tags": [
         "추천",
@@ -1478,7 +1475,7 @@
       "dependencies": [
         "ko-ui",
         "skins",
-        "spinner",
+        "pixel-pals",
         "ctx-strip",
         "mod-store"
       ]
