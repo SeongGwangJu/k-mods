@@ -1,10 +1,10 @@
 # k-mods
 
+<p align="center"><b>한국어</b> · <a href="README.en.md">English</a></p>
+
 [![Claude Code 2.1.287+](https://img.shields.io/badge/Claude%20Code-2.1.287%2B-d97757)](https://code.claude.com/docs/en/plugins/mods/overview)
-[![CI](https://github.com/SeongGwangJu/k-mods/actions/workflows/ci.yml/badge.svg)](https://github.com/SeongGwangJu/k-mods/actions/workflows/ci.yml)
 [![clones](https://img.shields.io/endpoint?url=https%3A%2F%2Fgist.githubusercontent.com%2FSeongGwangJu%2Ff134cc891cc7d55d21e092d5eabf9328%2Fraw%2FSeongGwangJu__k-mods-clones.json)](https://github.com/SeongGwangJu/k-mods)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
-[![English](https://img.shields.io/badge/README-English-lightgrey)](README.en.md)
 [![Website](https://img.shields.io/badge/website-k--mods-49B3EF)](https://seonggwangju.github.io/k-mods/)
 
 <!-- HERO: 데모 GIF가 정해지면 아래 줄의 주석을 풀어요
