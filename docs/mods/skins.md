@@ -2,6 +2,8 @@
 
 > 도구 호출·표·코드·셸 출력을 테마 카드 형식으로 표시해요. 원본에서 한글 표가 잘리던 문제를 고쳤어요
 
+<img src="../../docs/assets/mods/skins.png" alt="skins" width="640">
+
 | | |
 | --- | --- |
 | 설치 이름 | `skins` |
