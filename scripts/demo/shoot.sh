@@ -20,6 +20,7 @@
 #   model=sonnet      모델
 #   allow="..."       확인 없이 허용할 도구
 #   plugins="a b"     같이 불러올 mod (기본은 <이름> 하나)
+#   options='{"k":1}' 첫 mod의 설정값(이번 세션에만, 예: 테마 고정)
 #
 # 환경 변수: K_OUT(저장 폴더, 기본 docs/assets/mods), K_START(start 덮어쓰기), K_KEEP=1(정리 건너뛰기)
 set -eu
@@ -113,7 +114,7 @@ PY
 for NAME in "$@"; do
   TAPE="$ROOT/scripts/demo/shots/$NAME.tape"
   [ -f "$TAPE" ] || { echo "shoot: $TAPE 이(가) 없어요" >&2; exit 1; }
-  S_SIZE=1000x820 S_TYPE=png S_CROP= S_PAD=14 S_START=0 S_MODEL=sonnet S_ALLOW= S_PLUGINS=$NAME
+  S_SIZE=1000x820 S_TYPE=png S_CROP= S_PAD=14 S_START=0 S_MODEL=sonnet S_ALLOW= S_PLUGINS=$NAME S_OPTIONS='{}'
   eval "$(python3 - "$TAPE" <<'PY'
 import shlex, sys
 line = next((l for l in open(sys.argv[1], encoding='utf-8') if l.startswith('# shoot:')), '')
@@ -131,7 +132,9 @@ PY
 
   echo "== $NAME"
   "$ROOT/scripts/demo/make-workspace.sh" "$DEMO/shop-api" >/dev/null
-  printf '%s\n' '{"tui":"fullscreen","spinnerTipsEnabled":false}' > "$DEMO/settings.json"
+  # --plugin-dir로 불러온 mod의 설정은 "<이름>@inline" 아래에 둔다
+  python3 -c 'import json, sys; print(json.dumps({"tui": "fullscreen", "spinnerTipsEnabled": False, "pluginConfigs": {sys.argv[1] + "@inline": {"options": json.loads(sys.argv[2])}}}))' \
+    "${S_PLUGINS%% *}" "$S_OPTIONS" > "$DEMO/settings.json"
   ls "$HOME/.claude/plugins/store" 2>/dev/null > "$DEMO/store-before.txt" || true
   DIRS=""
   for p in $S_PLUGINS; do DIRS="$DIRS $(plugin_dir "$p")"; done
@@ -147,7 +150,8 @@ PY
     if [ "$(trusted)" != 1 ]; then printf 'Down\nEnter\nSleep 5s\n'; fi
     printf 'Show\n\n'
     grep -v '^# shoot:' "$TAPE"
-    printf '\nCtrl+C\nSleep 0.5s\nCtrl+C\nSleep 1.5s\n'
+    # 끝내는 장면은 녹화하지 않는다(GIF 끝에 빈 화면이 남지 않게)
+    printf '\nHide\nCtrl+C\nSleep 0.5s\nCtrl+C\nSleep 1.5s\n'
   } > "$RUN"
   (cd "$ROOT" && vhs "$RUN" >/dev/null)
 
