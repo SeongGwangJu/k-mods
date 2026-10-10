@@ -12,8 +12,11 @@
 -->
 
 A reviewed, installable catalog of **Claude Code mods**, curated in Korea.
-Every external mod is pinned to the exact commit we reviewed and labeled with what it can do on your machine. <!-- BEGIN:count -->64<!-- END:count --> mods so far.
-Browse them with previews on the [website](https://seonggwangju.github.io/k-mods/en/).
+Every external mod is pinned to the exact commit we reviewed and labeled with what it can do on your machine.
+
+(Curation, preview images and Korean localization are ongoing…)
+
+Every mod is listed below, but they are easier to browse with pictures on the [website](https://seonggwangju.github.io/k-mods/en/).
 
 ## Install
 
