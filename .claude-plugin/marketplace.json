@@ -5,7 +5,7 @@
     "url": "https://github.com/SeongGwangJu"
   },
   "description": "한국어로 고르고 한 줄로 설치하는 Claude Code mods 모음. 검토한 커밋만 설치돼요.",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "plugins": [
     {
       "name": "ko-ui",
@@ -280,25 +280,6 @@
       "repository": "https://github.com/davila7/claude-code-templates"
     },
     {
-      "name": "status-ko",
-      "source": "./mods/status-ko",
-      "displayName": "작업 상태 한국어",
-      "description": "작업 중에는 '읽는 중 · page.tsx'처럼 지금 하는 일을 보여줘요. 끝나면 모델·시간·도구·캐시를 한 줄로 정리해요",
-      "category": "상태줄",
-      "tags": [
-        "한국어",
-        "스피너",
-        "상태줄"
-      ],
-      "author": {
-        "name": "SeongGwangJu",
-        "url": "https://github.com/SeongGwangJu"
-      },
-      "homepage": "https://github.com/SeongGwangJu/k-mods/tree/main/mods/status-ko",
-      "license": "MIT",
-      "repository": "https://github.com/SeongGwangJu/k-mods"
-    },
-    {
       "name": "ctx-strip",
       "source": "./mods/ctx-strip",
       "displayName": "컨텍스트 막대",
@@ -314,6 +295,25 @@
         "url": "https://github.com/SeongGwangJu"
       },
       "homepage": "https://github.com/SeongGwangJu/k-mods/tree/main/mods/ctx-strip",
+      "license": "MIT",
+      "repository": "https://github.com/SeongGwangJu/k-mods"
+    },
+    {
+      "name": "status-ko",
+      "source": "./mods/status-ko",
+      "displayName": "작업 상태 한국어",
+      "description": "작업 중에는 '읽는 중 · page.tsx'처럼 지금 하는 일을 보여줘요. 끝나면 모델·시간·도구·캐시를 한 줄로 정리해요",
+      "category": "상태줄",
+      "tags": [
+        "한국어",
+        "스피너",
+        "상태줄"
+      ],
+      "author": {
+        "name": "SeongGwangJu",
+        "url": "https://github.com/SeongGwangJu"
+      },
+      "homepage": "https://github.com/SeongGwangJu/k-mods/tree/main/mods/status-ko",
       "license": "MIT",
       "repository": "https://github.com/SeongGwangJu/k-mods"
     },
@@ -1462,7 +1462,7 @@
       "name": "starter",
       "source": "./bundles/starter",
       "displayName": "추천 세트",
-      "description": "처음 설치하기 좋은 추천 세트예요. 모드 상점, 한국어 팩, 픽셀 장면 스피너, 메모장, 컨텍스트 막대, 위험 명령 브레이크, 작업 끝 알림을 한 번에 설치해요",
+      "description": "처음 설치하기 좋은 추천 세트예요. ko-ui, status-ko, skins, spinner, ctx-strip, mod-store를 한 번에 설치해요",
       "category": "묶음",
       "tags": [
         "추천",
@@ -1476,14 +1476,12 @@
       "license": "MIT",
       "repository": "https://github.com/SeongGwangJu/k-mods",
       "dependencies": [
-        "mod-store",
         "ko-ui",
         "status-ko",
+        "skins",
         "spinner",
-        "memo-pad",
         "ctx-strip",
-        "blast-radius-ko",
-        "done-alarm"
+        "mod-store"
       ]
     },
     {

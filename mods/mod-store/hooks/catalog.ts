@@ -20,7 +20,7 @@ export type CatalogEntry = {
 }
 
 export const MARKETPLACE = 'k-mods'
-export const CATALOG_VERSION = '0.2.0'
+export const CATALOG_VERSION = '0.3.0'
 
 // 상점 자신은 목록에서 숨긴다
 export const SELF_NAME = 'mod-store'
@@ -346,24 +346,6 @@ export const CATALOG: CatalogEntry[] = [
     ]
   },
   {
-    "name": "status-ko",
-    "displayName": "작업 상태 한국어",
-    "summary": "작업 중에는 '읽는 중 · page.tsx'처럼 지금 하는 일을 보여줘요. 끝나면 모델·시간·도구·캐시를 한 줄로 정리해요",
-    "category": "statusline",
-    "kind": "original",
-    "author": "SeongGwangJu",
-    "license": "MIT",
-    "homepage": "https://github.com/SeongGwangJu/k-mods/tree/main/mods/status-ko",
-    "commands": [],
-    "requires": [],
-    "notes": [],
-    "permissions": [
-      "도구 호출 제어",
-      "대화 읽기"
-    ],
-    "featured": true
-  },
-  {
     "name": "ctx-strip",
     "displayName": "컨텍스트 막대",
     "summary": "컨텍스트 구성(대화·도구·스킬…)을 입력창 위 막대로 표시해요. 서브에이전트가 실행되면 한 줄로 알려줘요",
@@ -383,7 +365,26 @@ export const CATALOG: CatalogEntry[] = [
       "도구 호출 제어",
       "대화 읽기",
       "환경·설정 읽기"
-    ]
+    ],
+    "featured": true
+  },
+  {
+    "name": "status-ko",
+    "displayName": "작업 상태 한국어",
+    "summary": "작업 중에는 '읽는 중 · page.tsx'처럼 지금 하는 일을 보여줘요. 끝나면 모델·시간·도구·캐시를 한 줄로 정리해요",
+    "category": "statusline",
+    "kind": "original",
+    "author": "SeongGwangJu",
+    "license": "MIT",
+    "homepage": "https://github.com/SeongGwangJu/k-mods/tree/main/mods/status-ko",
+    "commands": [],
+    "requires": [],
+    "notes": [],
+    "permissions": [
+      "도구 호출 제어",
+      "대화 읽기"
+    ],
+    "featured": true
   },
   {
     "name": "agent-radar",
@@ -1258,8 +1259,7 @@ export const CATALOG: CatalogEntry[] = [
     "notes": [],
     "permissions": [
       "대화 읽기"
-    ],
-    "featured": true
+    ]
   },
   {
     "name": "blast-radius-ko",
@@ -1533,7 +1533,6 @@ export const CATALOG: CatalogEntry[] = [
       "대화 읽기",
       "파일 읽기"
     ],
-    "featured": true,
     "dependencies": [
       "ko-ui",
       "status-ko"
@@ -1542,7 +1541,7 @@ export const CATALOG: CatalogEntry[] = [
   {
     "name": "starter",
     "displayName": "추천 세트",
-    "summary": "처음 설치하기 좋은 추천 세트예요. 모드 상점, 한국어 팩, 픽셀 장면 스피너, 메모장, 컨텍스트 막대, 위험 명령 브레이크, 작업 끝 알림을 한 번에 설치해요",
+    "summary": "처음 설치하기 좋은 추천 세트예요. ko-ui, status-ko, skins, spinner, ctx-strip, mod-store를 한 번에 설치해요",
     "category": "bundle",
     "kind": "bundle",
     "author": "SeongGwangJu",
@@ -1552,25 +1551,20 @@ export const CATALOG: CatalogEntry[] = [
     "requires": [],
     "notes": [],
     "permissions": [
-      "네트워크",
       "프로그램 실행",
       "파일 쓰기",
       "도구 호출 제어",
-      "프롬프트 입력",
       "대화 읽기",
       "환경·설정 읽기",
-      "파일 읽기",
-      "소리"
+      "파일 읽기"
     ],
     "dependencies": [
-      "mod-store",
       "ko-ui",
       "status-ko",
+      "skins",
       "spinner",
-      "memo-pad",
       "ctx-strip",
-      "blast-radius-ko",
-      "done-alarm"
+      "mod-store"
     ]
   },
   {

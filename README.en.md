@@ -67,8 +67,8 @@ Browse them with previews on the [website](https://seonggwangju.github.io/k-mods
 
 | mod | What it does | Source |
 | --- | --- | --- |
+| [**ctx-strip**](docs/mods/ctx-strip.md) ⭐ | A stacked bar above the prompt showing what fills your context window, plus a live line for running subagents | 🇰🇷 k-mods |
 | [**status-ko**](docs/mods/status-ko.md) ⭐ | Spinner shows what Claude is doing now in Korean; the turn footer becomes one line of model, time, tools and cache hit | 🇰🇷 k-mods |
-| [**ctx-strip**](docs/mods/ctx-strip.md) | A stacked bar above the prompt showing what fills your context window, plus a live line for running subagents | 🇰🇷 k-mods |
 | [**agent-radar**](docs/mods/agent-radar.md) | Shows one live line per running subagent above the prompt: time, tool count, current action. /radar lists every agent and its messages. | [Hamza Zafar](https://github.com/hamzafer) |
 | [**browser-lanes**](docs/mods/browser-lanes.md) | Shows whether this session has a Playwright browser and who holds it, and makes subagents in the same session take turns using it. | [Hamza Zafar](https://github.com/hamzafer) |
 | [**cache-panel**](docs/mods/cache-panel.md) | A passive 50-minute prompt-cache reminder with keep-warm, ping-once or compact choices, each shown with a live cost estimate. | [Dustin Yuchen Teng](https://github.com/danyuchn) |
@@ -122,7 +122,7 @@ Browse them with previews on the [website](https://seonggwangju.github.io/k-mods
 
 | mod | What it does | Source |
 | --- | --- | --- |
-| [**streamer-mode**](docs/mods/streamer-mode.md) ⭐ | Hides API keys, emails, phone numbers and Korean ID numbers on screen while you stream or share; Claude still sees the originals | 🇰🇷 k-mods |
+| [**streamer-mode**](docs/mods/streamer-mode.md) | Hides API keys, emails, phone numbers and Korean ID numbers on screen while you stream or share; Claude still sees the originals | 🇰🇷 k-mods |
 | [**blast-radius-ko**](docs/mods/blast-radius-ko.md) | Holds irreversible commands (rm -rf, force push, DB resets, volume prunes) and shows what they would change before asking | 🔧 [Anthropic](https://github.com/anthropics) · patched |
 | [**secret-redactor**](docs/mods/secret-redactor.md) | Redacts API keys, JWTs, private keys and DB strings from tool results before the model reads them; blocks placeholder reuse in Bash. | [claude-code-templates](https://www.aitmpl.com) |
 | [**secret-vault**](docs/mods/secret-vault.md) | Hides pasted or tool-read secrets, emails and IPs with stable placeholders, restoring real values only right before a tool runs. | [Ray Amjad](https://github.com/ray-amjad) |
@@ -144,8 +144,8 @@ Browse them with previews on the [website](https://seonggwangju.github.io/k-mods
 
 | mod | What it does | Source |
 | --- | --- | --- |
-| [**korean-pack**](docs/mods/korean-pack.md) ⭐ | One install for a Korean Claude Code: menu and settings translation (ko-ui) plus Korean status lines (status-ko) | 📦 bundle |
-| [**starter**](docs/mods/starter.md) | The k-mods starter set: mod store, Korean pack, pixel-scene spinner, memo pad, context bar, risky-command brake and done alarm | 📦 bundle |
+| [**korean-pack**](docs/mods/korean-pack.md) | One install for a Korean Claude Code: menu and settings translation (ko-ui) plus Korean status lines (status-ko) | 📦 bundle |
+| [**starter**](docs/mods/starter.md) | The k-mods starter set: ko-ui, status-ko, skins, spinner, ctx-strip and mod-store in one install | 📦 bundle |
 | [**taxi-pack**](docs/mods/taxi-pack.md) | Claude Code as a taxi ride: meter (cost and limits), navigation (todo route), speed camera (risky-command check) and dashcam (tool-call recorder) in one install | 📦 bundle |
 <!-- END:catalog -->
 
