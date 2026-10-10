@@ -19,18 +19,14 @@ Claude Code에 **mods**가 생겼어요. 이제 화면과 동작을 원하는 �
 
 ## 설치
 
-Claude Code 안에서 두 줄이면 돼요.
+Claude Code 2.1.287 이상이 필요해요 (`claude --version`).
 
 ```
 /plugin marketplace add SeongGwangJu/k-mods
-/plugin install starter@k-mods
 ```
 
-- `starter`는 추천 세트예요. 모드 상점, 한국어 팩, 냥캣이 나오는 픽셀 장면 스피너, 메모장, 컨텍스트 막대, 위험 명령 브레이크, 작업 끝 알림이 함께 설치돼요.
-- 하나씩 고르고 싶다면 `/plugin`을 열어 **k-mods** 목록을 보거나 `mod-store`를 설치하고 `/k-mods`를 입력하세요. 버튼으로 설치할 수 있어요.
-- 이미 열려 있는 세션에는 `/reload-plugins`로 바로 적용돼요. Claude Code 2.1.287 이상이 필요해요 (`claude --version`).
-
-자세한 설치·업데이트·팀 공유 방법은 [설치 가이드](docs/guide/install.md)에 있어요.
+`/plugin`에서 원하는 mod를 고르거나 아래 [먼저 써 보세요](#먼저-써-보세요)에서 시작하세요.
+업데이트·팀 공유는 [설치 가이드](docs/guide/install.md)에 있어요.
 
 ## 잠깐만요
 
@@ -49,6 +45,8 @@ Claude Code 안에서 실행되는 플러그인 코드예요. 도구 호출, 프
 더 알고 싶다면 [mods가 뭔가요?](docs/guide/what-are-mods.md)를 읽어 보세요.
 
 ## 먼저 써 보세요
+
+아래 mod를 한 번에 설치하려면 `/plugin install starter@k-mods`, 하나씩 고르려면 각 줄의 명령을 쓰세요.
 
 <!-- BEGIN:featured -->
 | mod | 무엇을 해 주나요 |
@@ -200,19 +198,10 @@ GitHub·Linear 같은 외부 서비스의 상태와 작업을 Claude Code에 표
 ## 왜 k-mods인가요?
 
 1. **검토한 버전만 설치돼요.** 원본 저장소의 커밋을 고정해 두기 때문에 원본이 바뀌어도 검토한 코드만 설치돼요. 업데이트도 다시 검토한 뒤 등록해요.
-2. **이 mod가 내 컴퓨터에서 하는 일을 먼저 보여줘요.** mod는 샌드박스 없이 내 권한으로 실행돼요. 네트워크 사용, 프로그램 실행, 파일 쓰기, 모델 호출에 필요한 권한을 정적 분석하고 라벨로 표시해요.
+2. **이 mod가 내 컴퓨터에서 하는 일을 먼저 보여줘요.** mod는 샌드박스 없이 내 권한으로 실행돼요. 네트워크 사용, 프로그램 실행, 파일 쓰기, 모델 호출에 필요한 권한을 정적 분석하고 라벨로 표시해요. 검토 기준은 [안전 가이드](docs/guide/safety.md)에 있어요.
 3. **한국 환경에서 확인했어요.** 한글 표가 잘리는 문제처럼 한국어에서만 드러나는 버그를 고친 수정판도 제공해요. 수정 내용은 각 수정판의 `CHANGES-KO.md`에 기록해요.
-4. **한국어로 설명해요.** `/plugin` 목록에도 한국어 이름과 설명이 나와요.
+4. **한국어로 설명해요.** `/plugin` 목록에도 한국어 설명이 나와요.
 5. **원작자를 존중해요.** 외부 mod의 코드를 이 저장소에 복사하지 않아요. 설치할 때 원본 저장소에서 받아요. 라이선스가 없는 mod는 허락을 받기 전에는 등록하지 않으며 원작자가 원하면 목록에서 바로 삭제해요.
-
-## 안전하게 쓰기
-
-mod는 내 파일을 읽고 쓰며 프로그램을 실행하고 네트워크를 사용할 수 있어요. k-mods가 코드를 검토하지만, 설치 전에 mod 페이지의 **"이 mod가 내 컴퓨터에서 하는 일"** 을 한 번 읽어 주세요.
-직접 확인하려면 `claude plugin validate <폴더>`를 실행하세요. 해당 mod가 받는 이벤트와 호출하는 API를 보여줘요. 검토 기준과 라벨 뜻은 [안전 가이드](docs/guide/safety.md)에 있어요.
-
-## 나만의 mod 만들기
-
-Claude Code에게 "입력창 위에 현재 git 브랜치를 보여주는 mod 만들어 줘"라고 말하면 바로 만들어 줘요. 직접 코드를 쓰는 법부터 테스트와 배포까지 [나만의 mod 만들기](docs/guide/make-your-own.md)에 정리했어요. API를 한국어로 빠르게 확인하려면 [치트시트](docs/guide/cheatsheet.md)를 보세요.
 
 ## 기여하기
 
@@ -232,12 +221,6 @@ Claude Code에게 "입력창 위에 현재 git 브랜치를 보여주는 mod 만
 | [나만의 mod 만들기](docs/guide/make-your-own.md) | Claude에게 시키기, 직접 쓰기, 테스트, k-mods에 등록하기 |
 | [치트시트](docs/guide/cheatsheet.md) | 이벤트·API·렌더 사이트(화면 표시 위치) 한국어 요약 |
 | [기여 가이드](CONTRIBUTING.md) | 추천·등록·검토 절차, mod 작성 규칙 |
-
-## 감사
-
-- mods를 만든 Anthropic, 그리고 [token-weather·blast-radius 같은 예제](https://github.com/anthropics/claude-code-playground/tree/main/claude-code/mods)
-- 이 카탈로그에 등록된 모든 mod의 원작자. 각 mod 페이지에 출처와 커밋을 기록했어요.
-- 한국어 스킬 모음 [k-skill](https://github.com/NomaDamas/k-skill)에서 많이 배웠어요.
 
 ## 라이선스
 

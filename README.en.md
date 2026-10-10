@@ -17,14 +17,14 @@ Browse them with previews on the [website](https://seonggwangju.github.io/k-mods
 
 ## Install
 
+Needs Claude Code 2.1.287 or later (`claude --version`).
+
 ```
 /plugin marketplace add SeongGwangJu/k-mods
-/plugin install starter@k-mods
 ```
 
-- `starter` is the recommended set. Prefer to pick? Open `/plugin` and browse the **k-mods** marketplace, or install `mod-store` and type `/k-mods` to browse and install with one key.
-- Run `/reload-plugins` in an open session. Needs Claude Code 2.1.287 or later.
-- Descriptions in `/plugin` are in Korean; this page and each mod's source link are in English.
+Pick mods in `/plugin`, or install the ⭐ mods below at once with `/plugin install starter@k-mods`.
+Descriptions in `/plugin` are in Korean; this page and each mod's source link are in English.
 
 ## Why k-mods
 
