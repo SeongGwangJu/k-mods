@@ -180,6 +180,21 @@ uvx --with pyte python scripts/dev/tui.py --cmd "scripts/cc.sh --plugin-dir mods
 테스트한 Claude Code 버전: 2.1.291
 ```
 
+## 미리보기 이미지 (선택)
+
+registry 항목의 `preview`에 이미지를 넣으면 README "먼저 써 보세요"(추천 mod만), mod별 상세 페이지, [웹사이트](https://seonggwangju.github.io/k-mods/)에 보여요. 원본 저장소에 쓸 만한 이미지가 있으면 커밋을 고정한 raw 주소를, 없으면 이 저장소의 `docs/assets/mods/<이름>.png|gif`를 넣어요.
+
+없어도 PR은 받아요. 메인테이너가 검토하면서 찍어 넣어요. 직접 찍는다면 모양을 맞추기 위해 `scripts/demo/shoot.sh`를 써 주세요.
+
+```sh
+scripts/demo/shoot.sh <이름>   # scripts/demo/shots/<이름>.tape의 장면을 찍어 docs/assets/mods/에 저장
+```
+
+- macOS, vhs·ffmpeg(`brew install vhs ffmpeg`), D2Coding ligature 글꼴, 로그인된 Claude Code가 필요해요. 모델을 부르는 장면은 내 사용량을 써요.
+- mod는 설치하지 않고 `--plugin-dir`로 그 세션에만 불러와요. 개인 설정과 사용자 플러그인은 섞이지 않아요.
+- 움직임이 핵심이면 GIF, 아니면 PNG예요. mod가 바꾸는 부분(대개 입력창 위와 입력창)만 남겨요. 웹사이트 썸네일은 GIF의 첫 프레임이라 핵심 장면부터 반복되게 해요(`start`).
+- 촬영이 끝나면 데모 세션의 대화 기록과 입력 기록을 지워요. 장면 파일 쓰는 법은 `scripts/demo/shoot.sh` 맨 위에 있어요.
+
 ## PR 체크리스트
 
 - [ ] `node scripts/build.mjs`를 돌렸고 생성물이 함께 들어 있어요
