@@ -68,7 +68,7 @@ Descriptions in `/plugin` are in Korean; this page and each mod's source link ar
 | mod | What it does | Source |
 | --- | --- | --- |
 | [**ctx-strip**](docs/mods/ctx-strip.md) ⭐ | A stacked bar above the prompt showing what fills your context window, plus a live line for running subagents | 🇰🇷 k-mods |
-| [**status-ko**](docs/mods/status-ko.md) ⭐ | Spinner shows what Claude is doing now in Korean; the turn footer becomes one line of model, time, tools and cache hit | 🇰🇷 k-mods |
+| [**status-ko**](docs/mods/status-ko.md) | Spinner shows what Claude is doing now in Korean; the turn footer becomes one line of model, time, tools and cache hit | 🇰🇷 k-mods |
 | [**agent-radar**](docs/mods/agent-radar.md) | Shows one live line per running subagent above the prompt: time, tool count, current action. /radar lists every agent and its messages. | [Hamza Zafar](https://github.com/hamzafer) |
 | [**browser-lanes**](docs/mods/browser-lanes.md) | Shows whether this session has a Playwright browser and who holds it, and makes subagents in the same session take turns using it. | [Hamza Zafar](https://github.com/hamzafer) |
 | [**cache-panel**](docs/mods/cache-panel.md) | A passive 50-minute prompt-cache reminder with keep-warm, ping-once or compact choices, each shown with a live cost estimate. | [Dustin Yuchen Teng](https://github.com/danyuchn) |
@@ -145,7 +145,7 @@ Descriptions in `/plugin` are in Korean; this page and each mod's source link ar
 | mod | What it does | Source |
 | --- | --- | --- |
 | [**korean-pack**](docs/mods/korean-pack.md) | One install for a Korean Claude Code: menu and settings translation (ko-ui) plus Korean status lines (status-ko) | 📦 bundle |
-| [**starter**](docs/mods/starter.md) | The k-mods starter set: ko-ui, status-ko, skins, spinner, ctx-strip and mod-store in one install | 📦 bundle |
+| [**starter**](docs/mods/starter.md) | The k-mods starter set: ko-ui, skins, spinner, ctx-strip and mod-store in one install | 📦 bundle |
 | [**taxi-pack**](docs/mods/taxi-pack.md) | Claude Code as a taxi ride: meter (cost and limits), navigation (todo route), speed camera (risky-command check) and dashcam (tool-call recorder) in one install | 📦 bundle |
 <!-- END:catalog -->
 

@@ -1,6 +1,6 @@
 # 추천 세트
 
-> 처음 설치하기 좋은 추천 세트예요. ko-ui, status-ko, skins, spinner, ctx-strip, mod-store를 한 번에 설치해요
+> 처음 설치하기 좋은 추천 세트예요. ko-ui, skins, spinner, ctx-strip, mod-store를 한 번에 설치해요
 
 | | |
 | --- | --- |
@@ -34,7 +34,6 @@ claude plugin install starter@k-mods
 ## 함께 설치되는 mod
 
 - [ko-ui](ko-ui.md): 슬래시 커맨드 설명, `/config` 항목, 작업 표시줄 같은 화면 문구를 번역 사전에 맞춰 한국어로 표시해요.
-- [작업 상태 한국어](status-ko.md) `status-ko`: 작업 중에는 '읽는 중 · page.tsx'처럼 지금 하는 일을 보여줘요. 끝나면 모델·시간·도구·캐시를 한 줄로 정리해요
 - [skins](skins.md): 도구 호출·표·코드·셸 출력을 테마 카드 형식으로 표시해요. 원본에서 한글 표가 잘리던 문제를 고쳤어요
 - [spinner](spinner.md): Claude가 일하는 동안 입력창 위에 냥캣·Clawd 같은 픽셀 장면을 표시하고 펫을 키워요. 한국어·간결한 기본값으로 고친 수정판이에요
 - [컨텍스트 막대](ctx-strip.md) `ctx-strip`: 컨텍스트 구성(대화·도구·스킬…)을 입력창 위 막대로 표시해요. 서브에이전트가 실행되면 한 줄로 알려줘요

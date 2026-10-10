@@ -5,7 +5,7 @@
     "url": "https://github.com/SeongGwangJu"
   },
   "description": "한국어로 고르고 한 줄로 설치하는 Claude Code mods 모음. 검토한 커밋만 설치돼요.",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "plugins": [
     {
       "name": "ko-ui",
@@ -1462,7 +1462,7 @@
       "name": "starter",
       "source": "./bundles/starter",
       "displayName": "추천 세트",
-      "description": "처음 설치하기 좋은 추천 세트예요. ko-ui, status-ko, skins, spinner, ctx-strip, mod-store를 한 번에 설치해요",
+      "description": "처음 설치하기 좋은 추천 세트예요. ko-ui, skins, spinner, ctx-strip, mod-store를 한 번에 설치해요",
       "category": "묶음",
       "tags": [
         "추천",
@@ -1477,7 +1477,6 @@
       "repository": "https://github.com/SeongGwangJu/k-mods",
       "dependencies": [
         "ko-ui",
-        "status-ko",
         "skins",
         "spinner",
         "ctx-strip",

@@ -65,7 +65,7 @@ claude plugin install starter@k-mods
 
 k-mods가 미리 묶어 둔 세트도 있어요.
 
-- `starter@k-mods`: 추천 세트. README "먼저 써 보세요"의 mod(ko-ui, status-ko, skins, spinner, ctx-strip, mod-store)가 한 번에 깔려요.
+- `starter@k-mods`: 추천 세트. README "먼저 써 보세요"의 mod(ko-ui, skins, spinner, ctx-strip, mod-store)가 한 번에 깔려요.
 - `korean-pack@k-mods`: 한국어 팩만 (메뉴·설정 번역 + 작업 상태 한국어).
 
 하나씩 골라 설치하고 싶으면 `mod-store@k-mods`를 설치한 뒤 세션에서 `/k-mods`를 입력하세요. 카탈로그가 패널로 열리고, 버튼으로 설치·삭제할 수 있어요.

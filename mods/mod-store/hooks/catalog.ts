@@ -20,7 +20,7 @@ export type CatalogEntry = {
 }
 
 export const MARKETPLACE = 'k-mods'
-export const CATALOG_VERSION = '0.3.0'
+export const CATALOG_VERSION = '0.4.0'
 
 // 상점 자신은 목록에서 숨긴다
 export const SELF_NAME = 'mod-store'
@@ -383,8 +383,7 @@ export const CATALOG: CatalogEntry[] = [
     "permissions": [
       "도구 호출 제어",
       "대화 읽기"
-    ],
-    "featured": true
+    ]
   },
   {
     "name": "agent-radar",
@@ -1541,7 +1540,7 @@ export const CATALOG: CatalogEntry[] = [
   {
     "name": "starter",
     "displayName": "추천 세트",
-    "summary": "처음 설치하기 좋은 추천 세트예요. ko-ui, status-ko, skins, spinner, ctx-strip, mod-store를 한 번에 설치해요",
+    "summary": "처음 설치하기 좋은 추천 세트예요. ko-ui, skins, spinner, ctx-strip, mod-store를 한 번에 설치해요",
     "category": "bundle",
     "kind": "bundle",
     "author": "SeongGwangJu",
@@ -1560,7 +1559,6 @@ export const CATALOG: CatalogEntry[] = [
     ],
     "dependencies": [
       "ko-ui",
-      "status-ko",
       "skins",
       "spinner",
       "ctx-strip",

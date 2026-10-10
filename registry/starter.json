@@ -3,8 +3,8 @@
   "name": "starter",
   "displayName": "추천 세트",
   "displayNameEn": "Starter Set",
-  "summary": "처음 설치하기 좋은 추천 세트예요. ko-ui, status-ko, skins, spinner, ctx-strip, mod-store를 한 번에 설치해요",
-  "summaryEn": "The k-mods starter set: ko-ui, status-ko, skins, spinner, ctx-strip and mod-store in one install",
+  "summary": "처음 설치하기 좋은 추천 세트예요. ko-ui, skins, spinner, ctx-strip, mod-store를 한 번에 설치해요",
+  "summaryEn": "The k-mods starter set: ko-ui, skins, spinner, ctx-strip and mod-store in one install",
   "category": "bundle",
   "tags": [
     "추천",
@@ -14,7 +14,6 @@
   "source": "./bundles/starter",
   "dependencies": [
     "ko-ui",
-    "status-ko",
     "skins",
     "spinner",
     "ctx-strip",

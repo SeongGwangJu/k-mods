@@ -55,7 +55,6 @@ Claude Code 안에서 실행되는 플러그인 코드예요. 도구 호출, 프
 | [**skins**](docs/mods/skins.md)<br>`/plugin install skins@k-mods` | 도구 호출·표·코드·셸 출력을 테마 카드 형식으로 표시해요. 원본에서 한글 표가 잘리던 문제를 고쳤어요 |
 | [**spinner**](docs/mods/spinner.md)<br>`/plugin install spinner@k-mods`<br><img src="https://raw.githubusercontent.com/hoobnn/hoobnn-agent-mods/8fb6f67cad9fd023cc7c06b7923518b4bbc45aea/claude-code/spinner/assets/nyan.gif" alt="spinner" width="420"> | Claude가 일하는 동안 입력창 위에 냥캣·Clawd 같은 픽셀 장면을 표시하고 펫을 키워요. 한국어·간결한 기본값으로 고친 수정판이에요 |
 | [**컨텍스트 막대**](docs/mods/ctx-strip.md)<br>`/plugin install ctx-strip@k-mods` | 컨텍스트 구성(대화·도구·스킬…)을 입력창 위 막대로 표시해요. 서브에이전트가 실행되면 한 줄로 알려줘요 |
-| [**작업 상태 한국어**](docs/mods/status-ko.md)<br>`/plugin install status-ko@k-mods` | 작업 중에는 '읽는 중 · page.tsx'처럼 지금 하는 일을 보여줘요. 끝나면 모델·시간·도구·캐시를 한 줄로 정리해요 |
 | [**모드 상점**](docs/mods/mod-store.md)<br>`/plugin install mod-store@k-mods` | `/k-mods`를 입력하면 카탈로그가 열려요. 버튼으로 mod를 설치하거나 제거할 수 있어요 |
 <!-- END:featured -->
 
@@ -102,7 +101,7 @@ Claude가 일하는 동안 애니메이션이나 게임을 표시해요
 | mod | 무엇을 해 주나요 | 출처 |
 | --- | --- | --- |
 | [**컨텍스트 막대**](docs/mods/ctx-strip.md) ⭐<br>`ctx-strip` | 컨텍스트 구성(대화·도구·스킬…)을 입력창 위 막대로 표시해요. 서브에이전트가 실행되면 한 줄로 알려줘요 | 🇰🇷 k-mods |
-| [**작업 상태 한국어**](docs/mods/status-ko.md) ⭐<br>`status-ko` | 작업 중에는 '읽는 중 · page.tsx'처럼 지금 하는 일을 보여줘요. 끝나면 모델·시간·도구·캐시를 한 줄로 정리해요 | 🇰🇷 k-mods |
+| [**작업 상태 한국어**](docs/mods/status-ko.md)<br>`status-ko` | 작업 중에는 '읽는 중 · page.tsx'처럼 지금 하는 일을 보여줘요. 끝나면 모델·시간·도구·캐시를 한 줄로 정리해요 | 🇰🇷 k-mods |
 | [**agent-radar**](docs/mods/agent-radar.md) | 실행 중인 서브에이전트마다 경과 시간·도구 호출 수·현재 작업을 입력창 위 한 줄로 표시해요. /radar로 전체 목록과 대화 내용을 확인할 수 있어요. | [Hamza Zafar](https://github.com/hamzafer) |
 | [**browser-lanes**](docs/mods/browser-lanes.md) | 이 세션에 Playwright 브라우저가 있는지, 현재 누가 쓰는지 입력창 위에 표시해요. 서브에이전트끼리는 차례대로 사용하게 해요. | [Hamza Zafar](https://github.com/hamzafer) |
 | [**cache-panel**](docs/mods/cache-panel.md) | 프롬프트 캐시가 만료되기 50분 전에 알려줘요. 주기적 갱신, 한 번 갱신, 대화 압축 중 하나를 예상 비용과 함께 선택할 수 있어요. | [Dustin Yuchen Teng](https://github.com/danyuchn) |
@@ -189,7 +188,7 @@ GitHub·Linear 같은 외부 서비스의 상태와 작업을 Claude Code에 표
 | mod | 무엇을 해 주나요 | 출처 |
 | --- | --- | --- |
 | [**한국어 팩**](docs/mods/korean-pack.md)<br>`korean-pack` | 메뉴·설정 번역(ko-ui)과 작업 상태 한국어(status-ko)를 한 번에 설치해 Claude Code 화면을 한국어로 바꿔요 | 📦 묶음 |
-| [**추천 세트**](docs/mods/starter.md)<br>`starter` | 처음 설치하기 좋은 추천 세트예요. ko-ui, status-ko, skins, spinner, ctx-strip, mod-store를 한 번에 설치해요 | 📦 묶음 |
+| [**추천 세트**](docs/mods/starter.md)<br>`starter` | 처음 설치하기 좋은 추천 세트예요. ko-ui, skins, spinner, ctx-strip, mod-store를 한 번에 설치해요 | 📦 묶음 |
 | [**택시팩**](docs/mods/taxi-pack.md)<br>`taxi-pack` | 미터기(요금·한도), 내비(할 일 진행 상황), 과속카메라(위험 명령 확인), 블랙박스(도구 호출 기록)를 한 번에 설치해요 | 📦 묶음 |
 <!-- END:catalog -->
 

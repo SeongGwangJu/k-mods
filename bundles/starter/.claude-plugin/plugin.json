@@ -1,7 +1,7 @@
 {
   "name": "starter",
-  "version": "0.3.0",
-  "description": "처음 설치하기 좋은 추천 세트예요. ko-ui, status-ko, skins, spinner, ctx-strip, mod-store를 한 번에 설치해요",
+  "version": "0.4.0",
+  "description": "처음 설치하기 좋은 추천 세트예요. ko-ui, skins, spinner, ctx-strip, mod-store를 한 번에 설치해요",
   "author": {
     "name": "SeongGwangJu",
     "url": "https://github.com/SeongGwangJu"
@@ -11,7 +11,6 @@
   "license": "MIT",
   "dependencies": [
     "ko-ui",
-    "status-ko",
     "skins",
     "spinner",
     "ctx-strip",

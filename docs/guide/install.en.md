@@ -65,7 +65,7 @@ claude plugin install starter@k-mods
 
 k-mods also has sets that are bundled in advance.
 
-- `starter@k-mods`: The recommended set. Installs the ⭐ mods (ko-ui, status-ko, skins, spinner, ctx-strip, mod-store) in one go.
+- `starter@k-mods`: The recommended set. Installs the ⭐ mods (ko-ui, skins, spinner, ctx-strip, mod-store) in one go.
 - `korean-pack@k-mods`: The Korean pack only (menu and settings translation + Korean status lines).
 
 To pick mods one by one, install `mod-store@k-mods`, then enter `/k-mods` in a session. The catalog opens in a pane, and you can install and delete with buttons.
