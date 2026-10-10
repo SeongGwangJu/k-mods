@@ -2,6 +2,8 @@
 
 > Claude가 일하는 동안 다음에 시킬 일을 적어 두고 버튼 한 번으로 입력창에 추가해요
 
+<img src="../../docs/assets/mods/memo-pad.gif" alt="메모장" width="640">
+
 | | |
 | --- | --- |
 | 설치 이름 | `memo-pad` |

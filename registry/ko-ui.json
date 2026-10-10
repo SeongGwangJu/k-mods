@@ -55,6 +55,7 @@
     "Permission prompts, the welcome screen, option values, error messages and the pill text below the prompt stay in the original, because there is no hook for them or translating them would lose other information."
   ],
   "featured": true,
+  "preview": "docs/assets/mods/ko-ui.png",
   "review": {
     "date": "2026-10-06",
     "by": "k-mods",

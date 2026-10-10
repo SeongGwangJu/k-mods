@@ -2,6 +2,8 @@
 
 > 작업 중에는 '읽는 중 · page.tsx'처럼 지금 하는 일을 보여줘요. 끝나면 모델·시간·도구·캐시를 한 줄로 정리해요
 
+<img src="../../docs/assets/mods/status-ko.gif" alt="작업 상태 한국어" width="640">
+
 | | |
 | --- | --- |
 | 설치 이름 | `status-ko` |

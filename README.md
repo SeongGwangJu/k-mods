@@ -51,11 +51,11 @@ Claude Code 안에서 실행되는 플러그인 코드예요. 도구 호출, 프
 <!-- BEGIN:featured -->
 | mod | 무엇을 해 주나요 |
 | --- | --- |
-| [**ko-ui**](docs/mods/ko-ui.md)<br>`/plugin install ko-ui@k-mods` | 슬래시 커맨드 설명, `/config` 항목, 작업 표시줄 같은 화면 문구를 번역 사전에 맞춰 한국어로 표시해요. |
+| [**ko-ui**](docs/mods/ko-ui.md)<br>`/plugin install ko-ui@k-mods`<br><img src="docs/assets/mods/ko-ui.png" alt="ko-ui" width="420"> | 슬래시 커맨드 설명, `/config` 항목, 작업 표시줄 같은 화면 문구를 번역 사전에 맞춰 한국어로 표시해요. |
 | [**skins**](docs/mods/skins.md)<br>`/plugin install skins@k-mods` | 도구 호출·표·코드·셸 출력을 테마 카드 형식으로 표시해요. 원본에서 한글 표가 잘리던 문제를 고쳤어요 |
 | [**spinner**](docs/mods/spinner.md)<br>`/plugin install spinner@k-mods`<br><img src="https://raw.githubusercontent.com/hoobnn/hoobnn-agent-mods/8fb6f67cad9fd023cc7c06b7923518b4bbc45aea/claude-code/spinner/assets/nyan.gif" alt="spinner" width="420"> | Claude가 일하는 동안 입력창 위에 냥캣·Clawd 같은 픽셀 장면을 표시하고 펫을 키워요. 한국어·간결한 기본값으로 고친 수정판이에요 |
-| [**컨텍스트 막대**](docs/mods/ctx-strip.md)<br>`/plugin install ctx-strip@k-mods` | 컨텍스트 구성(대화·도구·스킬…)을 입력창 위 막대로 표시해요. 서브에이전트가 실행되면 한 줄로 알려줘요 |
-| [**모드 상점**](docs/mods/mod-store.md)<br>`/plugin install mod-store@k-mods` | `/k-mods`를 입력하면 카탈로그가 열려요. 버튼으로 mod를 설치하거나 제거할 수 있어요 |
+| [**컨텍스트 막대**](docs/mods/ctx-strip.md)<br>`/plugin install ctx-strip@k-mods`<br><img src="docs/assets/mods/ctx-strip.png" alt="컨텍스트 막대" width="420"> | 컨텍스트 구성(대화·도구·스킬…)을 입력창 위 막대로 표시해요. 서브에이전트가 실행되면 한 줄로 알려줘요 |
+| [**모드 상점**](docs/mods/mod-store.md)<br>`/plugin install mod-store@k-mods`<br><img src="docs/assets/mods/mod-store.png" alt="모드 상점" width="420"> | `/k-mods`를 입력하면 카탈로그가 열려요. 버튼으로 mod를 설치하거나 제거할 수 있어요 |
 <!-- END:featured -->
 
 ## mod 목록

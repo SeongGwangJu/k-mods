@@ -2,6 +2,8 @@
 
 > rm -rf·force push·DB 초기화처럼 되돌릴 수 없는 명령은 실행 전에 멈춰요. 변경 범위를 보여준 뒤 실행할지 물어봐요
 
+<img src="../../docs/assets/mods/blast-radius-ko.png" alt="blast-radius-ko" width="640">
+
 | | |
 | --- | --- |
 | 설치 이름 | `blast-radius-ko` |

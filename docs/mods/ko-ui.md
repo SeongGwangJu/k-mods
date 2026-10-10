@@ -2,6 +2,8 @@
 
 > 슬래시 커맨드 설명, `/config` 항목, 작업 표시줄 같은 화면 문구를 번역 사전에 맞춰 한국어로 표시해요.
 
+<img src="../../docs/assets/mods/ko-ui.png" alt="ko-ui" width="640">
+
 | | |
 | --- | --- |
 | 설치 이름 | `ko-ui` |

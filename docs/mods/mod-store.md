@@ -2,6 +2,8 @@
 
 > `/k-mods`를 입력하면 카탈로그가 열려요. 버튼으로 mod를 설치하거나 제거할 수 있어요
 
+<img src="../../docs/assets/mods/mod-store.png" alt="모드 상점" width="640">
+
 | | |
 | --- | --- |
 | 설치 이름 | `mod-store` |
