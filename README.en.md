@@ -18,6 +18,8 @@ Every external mod is pinned to the exact commit we reviewed and labeled with wh
 
 Every mod is listed below, but they are easier to browse with pictures on the [website](https://seonggwangju.github.io/k-mods/en/).
 
+<a href="https://seonggwangju.github.io/k-mods/en/"><img src="docs/assets/site-preview.png" alt="The k-mods website: a Nyan Cat demo and featured mod cards" width="760"></a>
+
 ## Install
 
 Needs Claude Code 2.1.287 or later (`claude --version`).

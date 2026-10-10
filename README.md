@@ -17,6 +17,8 @@ Claude Code 화면과 동작을 원하는 대로 바꿀 수 있는 **mods** 기�
 
 아래에 모든 mod가 소개되어 있지만, 이미지로 편하게 볼 수 있어요. 아래 [웹사이트](https://seonggwangju.github.io/k-mods/)에서 둘러보세요.
 
+<a href="https://seonggwangju.github.io/k-mods/"><img src="docs/assets/site-preview.png" alt="k-mods 웹사이트 첫 화면: 냥캣 데모와 추천 mod 카드" width="760"></a>
+
 ## 설치
 
 Claude Code 2.1.287 이상이 필요해요 (`claude --version`).
