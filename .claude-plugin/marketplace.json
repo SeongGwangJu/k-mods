@@ -954,7 +954,7 @@
       "source": {
         "source": "github",
         "repo": "Kruhlikau/subagent-tuner",
-        "sha": "823747db2ab95027b986ba5cb28046ddf8063f7e"
+        "sha": "46bee016e183ca81ede82139fa01b17048ee721e"
       },
       "description": "서브에이전트가 시작될 때 쓸 모델과 추론 강도를 직접 고르거나, 작업 종류별 추천과 저장한 기본값으로 정해요.",
       "category": "도구",
