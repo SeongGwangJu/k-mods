@@ -1,0 +1,88 @@
+{
+  "name": "modstage",
+  "source": {
+    "source": "github",
+    "repo": "qualixar/modstage",
+    "sha": "e1d8522dbb5feaa3b1bb88d9698ee340b2690b50"
+  },
+  "auditedWith": "2.1.301",
+  "validate": {
+    "success": true,
+    "errors": [],
+    "warnings": []
+  },
+  "hooks": [
+    "agent.spawn",
+    "command.run{command=modstage}",
+    "prompt.submit",
+    "session.start",
+    "tool.call",
+    "tool.call{tool=?}",
+    "tool.call{tool=Bash}",
+    "tool.call{tool=mcp__modstage__stage_agents}",
+    "tool.call{tool=mcp__modstage__stage_board}",
+    "tool.call{tool=mcp__modstage__stage_claim}",
+    "tool.call{tool=mcp__modstage__stage_close}",
+    "tool.call{tool=mcp__modstage__stage_decide}",
+    "tool.call{tool=mcp__modstage__stage_interrupt}",
+    "tool.call{tool=mcp__modstage__stage_post}",
+    "tool.call{tool=mcp__modstage__stage_release}",
+    "tool.call{tool=mcp__modstage__stage_send}",
+    "tool.call{tool=mcp__modstage__stage_start}",
+    "tool.call{tool=mcp__modstage__stage_status}",
+    "tool.call{tool=mcp__modstage__stage_wait}",
+    "turn.complete",
+    "ui.message",
+    "ui.render{component=AbovePrompt}",
+    "ui.render{component=Pane, requestId=modstage}"
+  ],
+  "calls": [
+    "$.agent.spawn",
+    "$.clock.every",
+    "$.command.register",
+    "$.env.get",
+    "$.fs.read",
+    "$.http.fetch",
+    "$.process.run",
+    "$.session.cwd",
+    "$.session.id",
+    "$.session.send",
+    "$.state.get",
+    "$.state.set",
+    "$.tool.register",
+    "$.ui.open",
+    "$.ui.resolve",
+    "$.ui.scroll",
+    "$.ui.toast"
+  ],
+  "envReads": [
+    "HOME",
+    "MODSTAGE_HOME",
+    "MODSTAGE_NO_CLIENT"
+  ],
+  "envWrites": [
+    "nothing"
+  ],
+  "gatingWithoutCatch": [
+    "agent.spawn",
+    "prompt.submit",
+    "tool.call"
+  ],
+  "commands": [
+    "/modstage"
+  ],
+  "programs": [],
+  "urls": [
+    "http://127.0.0.1:47321"
+  ],
+  "license": "LICENSE",
+  "permissions": [
+    "network",
+    "process",
+    "gate",
+    "chat",
+    "env",
+    "fs-read",
+    "message"
+  ]
+}
