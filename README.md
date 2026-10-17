@@ -133,6 +133,7 @@ Claude가 일하는 동안 애니메이션이나 게임을 표시해요
 | [**agent-flow**](docs/mods/agent-flow.md) | 메인 루프와 서브에이전트의 관계를 트리 구조로 표시해요. 각 에이전트에 오간 컨텍스트 양과 답변은 클릭해서 볼 수 있어요 | [claude-code-templates](https://www.aitmpl.com) |
 | [**agent-quick-menu**](docs/mods/agent-quick-menu.md) | 설치된 플러그인의 명령과 설정을 한 패널에서 찾아 바로 실행할 수 있어요. | [dasganni](https://github.com/dasganni) |
 | [**image-view**](docs/mods/image-view.md) | 붙여넣은 이미지를 `[Image #1]` 같은 글자 대신 입력창 위 썸네일로 보여줘요. | [gggodlin](https://github.com/GGGODLIN) |
+| [**modstage**](docs/mods/modstage.md) | Codex·Grok·Muse·Antigravity·Kimi·Qwen Code·OpenCode를 Claude Code 서브에이전트로 실행해요. 탭마다 실시간으로 보고, 위험한 작업은 승인하고, 중간에 방향을 바꿔요 | [Varun Pratap Bhardwaj](https://github.com/qualixar) |
 | [**now-playing**](docs/mods/now-playing.md) | macOS에서 Spotify로 재생 중인 곡과 가사를 입력창 위에 표시해요. 버튼이나 /music으로 재생·일시정지·이전·다음을 조작할 수 있어요. | [Hamza Zafar](https://github.com/hamzafer) |
 | [**paste-view**](docs/mods/paste-view.md) | 붙여넣은 이미지와 긴 텍스트를 입력창 위에서 미리 확인할 수 있어요. | [Clément Décou](https://github.com/Amorfx) |
 | [**pixel-player**](docs/mods/pixel-player.md) | mpv로 재생목록을 재생하면서 음악에 맞춰 반응하는 픽셀 아트 캐릭터를 패널에 표시해요. | [chrisluo5311](https://github.com/chrisluo5311) |

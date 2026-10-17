@@ -814,6 +814,31 @@
       "repository": "https://github.com/GGGODLIN/cc-mod-image-view"
     },
     {
+      "name": "modstage",
+      "source": {
+        "source": "github",
+        "repo": "qualixar/modstage",
+        "sha": "e1d8522dbb5feaa3b1bb88d9698ee340b2690b50"
+      },
+      "description": "Codex·Grok·Muse·Antigravity·Kimi·Qwen Code·OpenCode를 Claude Code 서브에이전트로 실행해요. 탭마다 실시간으로 보고, 위험한 작업은 승인하고, 중간에 방향을 바꿔요",
+      "category": "도구",
+      "tags": [
+        "서브에이전트",
+        "멀티에이전트",
+        "승인",
+        "패널",
+        "Codex",
+        "Muse"
+      ],
+      "author": {
+        "name": "Varun Pratap Bhardwaj",
+        "url": "https://github.com/qualixar"
+      },
+      "homepage": "https://github.com/qualixar/modstage",
+      "license": "MIT",
+      "repository": "https://github.com/qualixar/modstage"
+    },
+    {
       "name": "now-playing",
       "source": {
         "source": "git-subdir",

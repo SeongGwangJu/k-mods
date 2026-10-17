@@ -1,0 +1,60 @@
+{
+  "$schema": "./_schema.json",
+  "name": "modstage",
+  "summary": "Codex·Grok·Muse·Antigravity·Kimi·Qwen Code·OpenCode를 Claude Code 서브에이전트로 실행해요. 탭마다 실시간으로 보고, 위험한 작업은 승인하고, 중간에 방향을 바꿔요",
+  "summaryEn": "Runs Codex, Grok, Muse, Antigravity, Kimi, Qwen Code and OpenCode as Claude Code subagents in live tabs, with approvals and steering.",
+  "category": "tool",
+  "tags": [
+    "서브에이전트",
+    "멀티에이전트",
+    "승인",
+    "패널",
+    "Codex",
+    "Muse"
+  ],
+  "kind": "upstream",
+  "source": {
+    "source": "github",
+    "repo": "qualixar/modstage",
+    "sha": "e1d8522dbb5feaa3b1bb88d9698ee340b2690b50"
+  },
+  "upstream": {
+    "repo": "qualixar/modstage",
+    "commit": "e1d8522dbb5feaa3b1bb88d9698ee340b2690b50",
+    "stars": 1
+  },
+  "author": {
+    "name": "Varun Pratap Bhardwaj",
+    "url": "https://github.com/qualixar"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/qualixar/modstage",
+  "commands": [
+    "/modstage"
+  ],
+  "surfaces": [
+    "terminal",
+    "desktop"
+  ],
+  "preview": "https://raw.githubusercontent.com/qualixar/modstage/e1d8522dbb5feaa3b1bb88d9698ee340b2690b50/assets/demo/modstage-hero.gif",
+  "review": {
+    "date": "2026-10-17",
+    "by": "varun369",
+    "claudeCode": "2.1.301",
+    "method": [
+      "validate",
+      "code-read"
+    ],
+    "findings": [
+      "작성자 본인이 검토함 (자기 mod 등록)",
+      "네트워크: mod 자체는 127.0.0.1:47321의 로컬 브리지에만 요청 ($.http.fetch, 설치별 토큰 인증). 기기 밖 전송 없음, 텔레메트리 없음. 단 사용자가 시작한 에이전트 CLI(Codex 등)는 각자 자기 서비스와 통신",
+      "외부 프로그램 실행: $.process.run으로 bridge/bridge.sh(로컬 Python 3.10+ 브리지)를 실행. 브리지는 사용자가 연결하고 로그인한 에이전트 CLI만 실행",
+      "파일: mod는 ~/.modstage/token만 읽음. 브리지가 ~/.modstage/(토큰, 실행 로그)와 작업 폴더의 .modstage/(보드, STATE.md)에 씀. 실행 로그에는 에이전트가 본 파일 내용과 명령 출력이 남으니 셸 기록처럼 다뤄야 함",
+      "모델 호출($.model.*) 없음. Claude 서브에이전트는 사용자가 패널에서 시작할 때만 $.agent.spawn",
+      "도구 호출 거절: Bash에서 codex exec / muse exec / grok -p를 직접 실행하면 거절해 ModStage로 돌림. 다른 에이전트가 점유한 파일을 Claude가 편집하면 거절. stage_decide는 승인 요청 뒤 사용자가 직접 메시지를 보냈을 때만 동작",
+      "대화 내용: 사용자 프롬프트는 마지막 입력 시각과 앞 500자를 $.state에만 저장하고 브리지로 보내지 않음 (시각만 승인 확인에 사용). 에이전트에는 사용자나 Claude가 준 작업 텍스트만 전달",
+      "에이전트의 권한 요청은 Needs-you 수신함에 표시. Grok CLI는 자기 설정으로 자동 승인해서 ModStage가 먼저 물을 수 없음(화면에 표시함)",
+      "타이머: $.clock.every 250ms 로컬 폴링(브리지 상태), 약 1분마다 에이전트 목록 갱신"
+    ]
+  }
+}
