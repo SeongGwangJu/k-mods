@@ -34,18 +34,20 @@
     "`claude -p`와 SDK 실행, 포크는 건드리지 않아요.",
     "입력창 위 띠에서 Manual(묻기)과 Auto(저장한 기본값 우선)를 바꿔요. 터미널이 144칸 이상이면 옆 패널로, 좁으면 대화상자로 물어봐요.",
     "설치 직후는 Manual이라 서브에이전트를 띄울 때마다 물어봐요. 패널은 답이 없으면 10분 뒤 진행하고, 대화상자는 답할 때까지 기다려요. 자리를 비울 때는 Auto로 두세요.",
-    "저장한 기본값과 내장 에이전트의 추천값은 에이전트 정의(frontmatter)에 적은 모델·추론 강도보다 우선해요. 직접 만든 에이전트는 저장한 기본값이 없으면 건드리지 않고 정의에 적은 값을 그대로 써요. 추천값은 에이전트 종류나 작업 설명의 단어(review, fix, research 등)로 골라요. Claude Code가 내장 에이전트를 호출 뒤에야 알려 주면, 에이전트가 시작될 때 추천 모델만 적용해요(추론 강도는 적용되지 않아요)."
+    "저장한 기본값은 에이전트 정의(frontmatter)에 적은 모델·추론 강도보다 우선해요. 기본값이 없으면 직접 만든 에이전트는 정의대로 두고, 내장 에이전트에만 작업 단어(review, fix, research 등)로 고른 추천값을 넣어요.",
+    "Claude Code 2.1.295 이상에서 동작해요."
   ],
   "notesEn": [
     "Runs started with `claude -p`, SDK hosts and forks are left untouched.",
     "A band above the prompt switches between Manual (asks) and Auto (the saved default wins); the question is a pane beside the transcript on terminals 144 columns or wider, dialogs otherwise.",
     "Manual is the mode after install, so every subagent launch asks first: the pane goes ahead after ten minutes without an answer, the dialogs wait until answered. Switch to Auto before leaving a session to run on its own.",
-    "A saved default and the recommendation for a built-in agent win over the model and effort set in an agent's definition (frontmatter). A custom agent with no saved default is left as it is, so its own definition applies. The recommendation is read from words in the agent type or description (review, fix, research and so on). If Claude Code announces a built-in agent only after the call, the recommended model (not the effort) is applied when the agent starts."
+    "A saved default wins over the model and effort in an agent's definition (frontmatter). Without one, custom agents keep their own definition, and only built-in agents get the recommendation read from words such as review, fix or research.",
+    "Needs Claude Code 2.1.295 or later."
   ],
   "review": {
-    "date": "2026-10-15",
+    "date": "2026-10-19",
     "by": "k-mods",
-    "claudeCode": "2.1.296",
+    "claudeCode": "2.1.302",
     "method": [
       "validate",
       "code-read"

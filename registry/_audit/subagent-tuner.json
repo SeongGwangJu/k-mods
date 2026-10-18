@@ -5,7 +5,7 @@
     "repo": "Kruhlikau/subagent-tuner",
     "sha": "46bee016e183ca81ede82139fa01b17048ee721e"
   },
-  "auditedWith": "2.1.291",
+  "auditedWith": "2.1.302",
   "validate": {
     "success": true,
     "errors": [],

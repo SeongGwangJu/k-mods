@@ -37,7 +37,8 @@ claude plugin install subagent-tuner@k-mods
 - `claude -p`와 SDK 실행, 포크는 건드리지 않아요.
 - 입력창 위 띠에서 Manual(묻기)과 Auto(저장한 기본값 우선)를 바꿔요. 터미널이 144칸 이상이면 옆 패널로, 좁으면 대화상자로 물어봐요.
 - 설치 직후는 Manual이라 서브에이전트를 띄울 때마다 물어봐요. 패널은 답이 없으면 10분 뒤 진행하고, 대화상자는 답할 때까지 기다려요. 자리를 비울 때는 Auto로 두세요.
-- 저장한 기본값과 내장 에이전트의 추천값은 에이전트 정의(frontmatter)에 적은 모델·추론 강도보다 우선해요. 직접 만든 에이전트는 저장한 기본값이 없으면 건드리지 않고 정의에 적은 값을 그대로 써요. 추천값은 에이전트 종류나 작업 설명의 단어(review, fix, research 등)로 골라요. Claude Code가 내장 에이전트를 호출 뒤에야 알려 주면, 에이전트가 시작될 때 추천 모델만 적용해요(추론 강도는 적용되지 않아요).
+- 저장한 기본값은 에이전트 정의(frontmatter)에 적은 모델·추론 강도보다 우선해요. 기본값이 없으면 직접 만든 에이전트는 정의대로 두고, 내장 에이전트에만 작업 단어(review, fix, research 등)로 고른 추천값을 넣어요.
+- Claude Code 2.1.295 이상에서 동작해요.
 
 ## 이 mod가 내 컴퓨터에서 하는 일
 
@@ -47,7 +48,7 @@ claude plugin install subagent-tuner@k-mods
 
 <details><summary>정적 분석 결과 (<code>claude plugin validate</code>)</summary>
 
-- 검사한 Claude Code: 2.1.291
+- 검사한 Claude Code: 2.1.302
 - 결과: 통과
 - 다루는 이벤트: `agent.offer`, `agent.spawn`, `session.start`, `tool.call{tool=Agent}`, `ui.close`, `ui.render{component=AbovePrompt}`, `ui.render{component=Pane}`
 - 부르는 API: `$.clock.now`, `$.clock.sleep`, `$.fs.write`, `$.process.run`, `$.session.surfaces`, `$.state.get`, `$.state.set`, `$.store.get`, `$.store.set`, `$.ui.ask`, `$.ui.close`, `$.ui.open`, `$.ui.panes`, `$.ui.resolve`, `$.ui.toast`
@@ -56,7 +57,7 @@ claude plugin install subagent-tuner@k-mods
 
 ## 검토 기록
 
-- 2026-10-15 · k-mods · Claude Code 2.1.296 · 정적 검사, 코드 읽기
+- 2026-10-19 · k-mods · Claude Code 2.1.302 · 정적 검사, 코드 읽기
 - 이 항목은 위 커밋에 고정돼 있어요. 원본이 바뀌면 다시 검토한 뒤에 올려요.
 
 <details><summary>검토 노트 8개 (코드를 읽으며 확인한 것)</summary>
