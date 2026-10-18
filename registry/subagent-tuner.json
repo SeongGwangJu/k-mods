@@ -14,11 +14,11 @@
   "source": {
     "source": "github",
     "repo": "Kruhlikau/subagent-tuner",
-    "sha": "823747db2ab95027b986ba5cb28046ddf8063f7e"
+    "sha": "46bee016e183ca81ede82139fa01b17048ee721e"
   },
   "upstream": {
     "repo": "Kruhlikau/subagent-tuner",
-    "commit": "823747db2ab95027b986ba5cb28046ddf8063f7e",
+    "commit": "46bee016e183ca81ede82139fa01b17048ee721e",
     "stars": 0
   },
   "author": {
@@ -34,13 +34,13 @@
     "`claude -p`와 SDK 실행, 포크는 건드리지 않아요.",
     "입력창 위 띠에서 Manual(묻기)과 Auto(저장한 기본값 우선)를 바꿔요. 터미널이 144칸 이상이면 옆 패널로, 좁으면 대화상자로 물어봐요.",
     "설치 직후는 Manual이라 서브에이전트를 띄울 때마다 물어봐요. 패널은 답이 없으면 10분 뒤 진행하고, 대화상자는 답할 때까지 기다려요. 자리를 비울 때는 Auto로 두세요.",
-    "이 mod가 고른 모델·추론 강도가 에이전트 정의(frontmatter)에 적은 값보다 우선해요. 저장한 기본값이 없으면 에이전트 종류나 작업 설명의 단어(review, fix, research 등)로 고른 추천값이 들어가요."
+    "저장한 기본값과 내장 에이전트의 추천값은 에이전트 정의(frontmatter)에 적은 모델·추론 강도보다 우선해요. 직접 만든 에이전트는 저장한 기본값이 없으면 건드리지 않고 정의에 적은 값을 그대로 써요. 추천값은 에이전트 종류나 작업 설명의 단어(review, fix, research 등)로 골라요. Claude Code가 내장 에이전트를 호출 뒤에야 알려 주면, 에이전트가 시작될 때 추천 모델만 적용해요(추론 강도는 적용되지 않아요)."
   ],
   "notesEn": [
     "Runs started with `claude -p`, SDK hosts and forks are left untouched.",
     "A band above the prompt switches between Manual (asks) and Auto (the saved default wins); the question is a pane beside the transcript on terminals 144 columns or wider, dialogs otherwise.",
     "Manual is the mode after install, so every subagent launch asks first: the pane goes ahead after ten minutes without an answer, the dialogs wait until answered. Switch to Auto before leaving a session to run on its own.",
-    "What the tuner picks wins over the model and effort set in an agent's definition (frontmatter). With no saved default, that is the recommendation read from words in the agent type or description (review, fix, research and so on)."
+    "A saved default and the recommendation for a built-in agent win over the model and effort set in an agent's definition (frontmatter). A custom agent with no saved default is left as it is, so its own definition applies. The recommendation is read from words in the agent type or description (review, fix, research and so on). If Claude Code announces a built-in agent only after the call, the recommended model (not the effort) is applied when the agent starts."
   ],
   "review": {
     "date": "2026-10-15",
@@ -56,7 +56,9 @@
       "외부 프로그램은 대기용 sh(macOS·Linux) 또는 powershell.exe(Windows)만 실행해요. 패널 대기와, 플러그인 폴더의 .waits/ 쓰기 확인 파일 삭제에만 써요. 파일 경로는 셸 인자나 이스케이프한 문자열로 넘겨요.",
       "파일 쓰기는 플러그인 폴더의 .waits/ 아래 빈 신호 파일과 확인용 .probe 파일뿐이고, 끝나면 지워요. 설정(모드·기본값)은 Claude Code의 플러그인 저장소에 저장해요.",
       "tool.call{tool=Agent}를 가로채 model과 effort 필드만 바꾸고, 사용자가 취소하면 호출을 거절해요(deny). 훅이 실패하면 .catch로 원래 호출을 그대로 통과시켜요.",
-      "ui.close 훅은 .catch 없이 등록되지만 패널을 닫은 결정만 기록하고 항상 next()로 넘겨요."
+      "ui.close 훅은 .catch 없이 등록되지만 패널을 닫은 결정만 기록하고 항상 next()로 넘겨요.",
+      "agent.offer 훅은 어떤 에이전트가 내장인지 기록만 하고 항상 next()로 원래 제안을 그대로 넘겨요.",
+      "agent.spawn 훅은 호출 때 이름으로만 판단한 Auto 호출에 한해, 엔진이 제공한 내장 에이전트면 모델만 바꾸고 항상 .catch로 원래 흐름을 이어 줘요."
     ]
   }
 }
