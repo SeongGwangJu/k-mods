@@ -3,9 +3,9 @@
   "source": {
     "source": "github",
     "repo": "hellosverre/claude-skins",
-    "sha": "1953c83947472b06c002bc1e29b1638214f81edc"
+    "sha": "985ad63fdb3483bbb98f61cf57955cac3f56a449"
   },
-  "auditedWith": "2.1.296",
+  "auditedWith": "2.1.310",
   "validate": {
     "success": true,
     "errors": [],
@@ -54,6 +54,7 @@
     "$.session.cwd",
     "$.session.id",
     "$.session.usage",
+    "$.skinCode.draws",
     "$.state.get",
     "$.state.set",
     "$.store.get",

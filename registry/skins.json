@@ -25,12 +25,12 @@
   "source": {
     "source": "github",
     "repo": "hellosverre/claude-skins",
-    "sha": "1953c83947472b06c002bc1e29b1638214f81edc"
+    "sha": "985ad63fdb3483bbb98f61cf57955cac3f56a449"
   },
   "upstream": {
     "repo": "hellosverre/claude-skins",
-    "commit": "1953c83947472b06c002bc1e29b1638214f81edc",
-    "stars": 120
+    "commit": "985ad63fdb3483bbb98f61cf57955cac3f56a449",
+    "stars": 210
   },
   "author": {
     "name": "hellosverre",
@@ -48,9 +48,9 @@
   "featured": true,
   "preview": "docs/assets/mods/skins.png",
   "review": {
-    "date": "2026-10-13",
+    "date": "2026-10-26",
     "by": "k-mods",
-    "claudeCode": "2.1.296",
+    "claudeCode": "2.1.310",
     "method": [
       "validate",
       "code-read",
@@ -58,10 +58,13 @@
       "live-session"
     ],
     "findings": [
-      "validate 통과, 원본 테스트 213개 통과(2.1.296). 원본 CI가 Linux·Windows·macOS에서 테스트·validate·타입 검사를 돌려요.",
+      "validate 통과, 원본 테스트 253개 통과(2.1.310). 원본 CI가 Linux·Windows·macOS에서 테스트·validate·타입 검사를 돌려요.",
       "네트워크: 하루 한 번 원본 저장소의 plugin.json을 raw.githubusercontent.com에서 GET으로 받아 새 버전을 확인해요. 보내는 데이터 없음.",
       "외부 프로세스: 테마가 auto일 때 OS의 밝기 모드를 읽으려고 macOS `defaults read -g AppleInterfaceStyle`, GNOME `gsettings get`만 실행해요.",
       "파일: 자기 plugin.json만 읽고, 설정은 mod 저장소($.store)에만 써요. 모델 호출 없음.",
+      "명령 실행: 사용량 막대의 Compact 버튼을 눌렀을 때만 Claude Code의 /compact를 실행해요(`/skin compact off`로 버튼을 숨겨요).",
+      "설치 3일 뒤 GitHub 별을 부탁하는 알림을 한 번 띄워요. 화면 알림뿐이고 네트워크 요청은 없어요.",
+      "skin-code mod가 설치돼 있으면 코드 블록이 있는 답을 그쪽에 넘겨요. 없으면 아무것도 하지 않아요.",
       "차단형 훅 tool.call은 셸 명령·소요 시간을 기록하고 next(e) 결과를 그대로 돌려주며, 자기 디자인 도구(mcp__skins__design) 호출만 직접 처리해요. 다른 도구를 막지 않아요.",
       "Mermaid 안내문(약 130토큰)을 prompt.compose로 더해요. `claude -p` 같은 화면 없는 실행에는 넣지 않아요."
     ]

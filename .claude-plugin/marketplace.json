@@ -36,7 +36,7 @@
       "source": {
         "source": "github",
         "repo": "hellosverre/claude-skins",
-        "sha": "1953c83947472b06c002bc1e29b1638214f81edc"
+        "sha": "985ad63fdb3483bbb98f61cf57955cac3f56a449"
       },
       "description": "도구 호출·표·코드·셸 출력·Mermaid를 테마 카드로 그리고, 헤딩·경고문·체크리스트도 스킨 모양으로 보여줘요. 테마 15종을 /skin으로 바로 바꿔요",
       "category": "테마",

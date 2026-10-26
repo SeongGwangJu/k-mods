@@ -10,7 +10,7 @@
 | 종류 | 원본 (검토한 커밋 고정) |
 | 만든 사람 | [hellosverre](https://github.com/hellosverre) |
 | 라이선스 | MIT |
-| 원본 | [hellosverre/claude-skins @ `1953c83`](https://github.com/hellosverre/claude-skins/tree/1953c83947472b06c002bc1e29b1638214f81edc) |
+| 원본 | [hellosverre/claude-skins @ `985ad63`](https://github.com/hellosverre/claude-skins/tree/985ad63fdb3483bbb98f61cf57955cac3f56a449) |
 | 유형 | 🎨 테마 |
 | 보이는 곳 | 터미널 · 데스크톱 앱 |
 | 명령어 | `/skin` |
@@ -52,25 +52,28 @@ claude plugin install skins@k-mods
 
 <details><summary>정적 분석 결과 (<code>claude plugin validate</code>)</summary>
 
-- 검사한 Claude Code: 2.1.296
+- 검사한 Claude Code: 2.1.310
 - 결과: 통과
 - 다루는 이벤트: `classic.SessionStart{source=clear|resume|fork}`, `command.run{command=skin}`, `config.set`, `engine.create`, `prompt.compose`, `session.append`, `session.measure`, `session.start`, `skins.markdown`, `tool.call`, `tool.call{tool=/"^mcp__skins__design$"/}`, `turn.complete`, `turn.start`, `ui.invalidate`, `ui.render{component=AbovePrompt}`, `ui.render{component=AskUserQuestion}`, `ui.render{component=AssistantMessage}`, `ui.render{component=CommandOutput}`, `ui.render{component=Pane, requestId=skins-gallery}`, `ui.render{component=Pane, requestId=skins-settings}`, `ui.render{component=Spinner}`, `ui.render{component=ToolGroup}`, `ui.render{component=ToolResult}`, `ui.render{component=ToolUse}`, `ui.render{component=TurnDuration}`, `ui.render{component=UserMessage}`
-- 부르는 API: `$.clock.after`, `$.clock.every`, `$.clock.now`, `$.clock.sleep`, `$.command.register`, `$.command.run`, `$.config.list`, `$.env.get`, `$.fs.read`, `$.http.fetch`, `$.process.run`, `$.session.cwd`, `$.session.id`, `$.session.usage`, `$.state.get`, `$.state.set`, `$.store.get`, `$.store.set`, `$.tool.register`, `$.ui.copy`, `$.ui.log`, `$.ui.open`, `$.ui.resolve`, `$.ui.toast`
+- 부르는 API: `$.clock.after`, `$.clock.every`, `$.clock.now`, `$.clock.sleep`, `$.command.register`, `$.command.run`, `$.config.list`, `$.env.get`, `$.fs.read`, `$.http.fetch`, `$.process.run`, `$.session.cwd`, `$.session.id`, `$.session.usage`, `$.skinCode.draws`, `$.state.get`, `$.state.set`, `$.store.get`, `$.store.set`, `$.tool.register`, `$.ui.copy`, `$.ui.log`, `$.ui.open`, `$.ui.resolve`, `$.ui.toast`
 - 읽는 환경 변수: `CI`, `COLORFGBG`, `FORCE_HYPERLINK`, `KONSOLE_VERSION`, `SKINS_THEME`, `TERM`, `TERM_PROGRAM`, `TERM_PROGRAM_VERSION`, `TMUX`, `VTE_VERSION`, `WT_SESSION`
 
 </details>
 
 ## 검토 기록
 
-- 2026-10-13 · k-mods · Claude Code 2.1.296 · 정적 검사, 코드 읽기, 테스트, 실제 세션 확인
+- 2026-10-26 · k-mods · Claude Code 2.1.310 · 정적 검사, 코드 읽기, 테스트, 실제 세션 확인
 - 이 항목은 위 커밋에 고정돼 있어요. 원본이 바뀌면 다시 검토한 뒤에 올려요.
 
-<details><summary>검토 노트 6개 (코드를 읽으며 확인한 것)</summary>
+<details><summary>검토 노트 9개 (코드를 읽으며 확인한 것)</summary>
 
-- validate 통과, 원본 테스트 213개 통과(2.1.296). 원본 CI가 Linux·Windows·macOS에서 테스트·validate·타입 검사를 돌려요.
+- validate 통과, 원본 테스트 253개 통과(2.1.310). 원본 CI가 Linux·Windows·macOS에서 테스트·validate·타입 검사를 돌려요.
 - 네트워크: 하루 한 번 원본 저장소의 plugin.json을 raw.githubusercontent.com에서 GET으로 받아 새 버전을 확인해요. 보내는 데이터 없음.
 - 외부 프로세스: 테마가 auto일 때 OS의 밝기 모드를 읽으려고 macOS `defaults read -g AppleInterfaceStyle`, GNOME `gsettings get`만 실행해요.
 - 파일: 자기 plugin.json만 읽고, 설정은 mod 저장소($.store)에만 써요. 모델 호출 없음.
+- 명령 실행: 사용량 막대의 Compact 버튼을 눌렀을 때만 Claude Code의 /compact를 실행해요(`/skin compact off`로 버튼을 숨겨요).
+- 설치 3일 뒤 GitHub 별을 부탁하는 알림을 한 번 띄워요. 화면 알림뿐이고 네트워크 요청은 없어요.
+- skin-code mod가 설치돼 있으면 코드 블록이 있는 답을 그쪽에 넘겨요. 없으면 아무것도 하지 않아요.
 - 차단형 훅 tool.call은 셸 명령·소요 시간을 기록하고 next(e) 결과를 그대로 돌려주며, 자기 디자인 도구(mcp__skins__design) 호출만 직접 처리해요. 다른 도구를 막지 않아요.
 - Mermaid 안내문(약 130토큰)을 prompt.compose로 더해요. `claude -p` 같은 화면 없는 실행에는 넣지 않아요.
 
@@ -78,5 +81,5 @@ claude plugin install skins@k-mods
 
 ## 더 보기
 
-- [원본 저장소](https://github.com/hellosverre/claude-skins/tree/1953c83947472b06c002bc1e29b1638214f81edc)
+- [원본 저장소](https://github.com/hellosverre/claude-skins/tree/985ad63fdb3483bbb98f61cf57955cac3f56a449)
 - [카탈로그로 돌아가기](../../README.md#mod-목록)
