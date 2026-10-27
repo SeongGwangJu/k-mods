@@ -27,6 +27,6 @@ pixel-pals는 원본 두 개를 합친 k-mods 수정판이에요.
 
 ## 테스트
 
-- `tests/scenes.test.tsx`: 원본 spinner 테스트를 원본 기본값(`UPSTREAM`)으로 돌린다. audio 테스트를 빼고, 지운 테마를 쓰던 테스트는 남은 테마로 바꿨다. 6종 + tales와 random 범위 테스트를 더했다.
+- `tests/scenes.test.tsx`: 원본 spinner 테스트를 원본 기본값(`UPSTREAM`)으로 돌린다. audio 테스트를 빼고, 지운 테마를 쓰던 테스트는 남은 테마로 바꿨다. 6종 + tales와 random 범위 테스트를 더했다. 권한 확인 mock(`askFor`)은 원본 커밋 `28d46ab`의 수정을 옮겨 왔다(Claude Code 2.1.306 이후 테스트 도구가 `$.tool.call`마다 권한 확인을 거쳐서).
 - `tests/tales.test.ts`: 원본 clawd-tales 테스트를 `theme: 'tales'`, `language: 'en'`으로 그대로 돌리고, 한국어 캡션 테스트를 더했다.
 - 원본 그림 파일(assets)은 담지 않았다. 미리보기는 k-mods가 직접 찍은 `docs/assets/mods/pixel-pals.gif`.

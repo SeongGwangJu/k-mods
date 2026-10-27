@@ -39,6 +39,17 @@ let rows: [string, unknown][] = []
 // What the AskUserQuestion dialog answers (`/pals theme`); null: dismissed.
 let asked: { question: string; options: string[] } | null = null
 let answer: string | null = null
+let isAsking = false
+
+/** The permission check the engine makes of a call, answered `ask`. */
+async function askFor($: { tool: { check: (input: never) => Promise<unknown> } }, input: unknown): Promise<void> {
+  isAsking = true
+  try {
+    await $.tool.check(input as never)
+  } finally {
+    isAsking = false
+  }
+}
 // The id of the last tool call the host ran, for a check about it.
 let lastCallId = ''
 // How a call the host runs ends: denied, or run with or without an error.
@@ -60,8 +71,9 @@ function host(on: On, stored: Record<string, unknown> = {}) {
   on('session.start', ($, e) => ({ cwd: e.cwd }))
   on('turn.start', ($, e) => ({ turnId: e.turnId }))
   on('turn.complete', () => ({ text: 'ok' }))
-  // The engine's verdict: every call asks.
-  on('tool.check', () => ({ decision: 'ask' }))
+  // The engine's verdict: a check a test raises asks. The check the kit raises for each call
+  // passes, as an ask there, with no person to answer, would refuse the call.
+  on('tool.check', () => ({ decision: isAsking ? 'ask' : 'allow' }))
   on('tool.call', async ($, e) => {
     if (e.tool === 'AskUserQuestion') {
       const q = e.questions[0]!
@@ -220,7 +232,7 @@ test('the companion follows tool calls and permission prompts', { options: UPSTR
   await ui.unmount()
 
   // The check asks; the pet says so only once the ask has stood a moment.
-  await $.tool.check({ tool: 'Bash', input: { command: 'npm test' }, tool_use_id: lastCallId } as never)
+  await askFor($, { tool: 'Bash', input: { command: 'npm test' }, tool_use_id: lastCallId })
   ui = await $.ui.mount({ plugin: 'pixel-pals', surface: 'terminal', ...BAND })
   expect(await said(ui)).not.toContain('等你确认')
   await ui.unmount()
@@ -273,10 +285,10 @@ test('an ask the mode settles at once never reaches the pet', { options: UPSTREA
   const call = $.tool.call({ tool: 'Bash', command: 'npm test' })
   await clock.settle()
   // A query (no call id) and a call already over: neither is the person's to answer.
-  await $.tool.check({ tool: 'Bash', input: { command: 'ls' } })
+  await askFor($, { tool: 'Bash', input: { command: 'ls' } })
   await clock.advance(1000)
   await call
-  await $.tool.check({ tool: 'Bash', input: { command: 'npm test' }, tool_use_id: lastCallId } as never)
+  await askFor($, { tool: 'Bash', input: { command: 'npm test' }, tool_use_id: lastCallId })
   await clock.advance(600)
   const ui = await $.ui.mount({ plugin: 'pixel-pals', surface: 'terminal', ...BAND })
   expect(await said(ui)).not.toContain('等你确认')
@@ -370,7 +382,7 @@ test('a subagent\'s permission ask shows too, until its call ends', { options: U
   await $.turn.start({ text: 'hi', turnId: 't1' })
   const call = $.tool.call({ tool: 'Bash', command: 'rm -rf build', agentId: 'a1' } as never)
   await clock.settle()
-  await $.tool.check({ tool: 'Bash', input: { command: 'rm -rf build' }, tool_use_id: lastCallId } as never)
+  await askFor($, { tool: 'Bash', input: { command: 'rm -rf build' }, tool_use_id: lastCallId })
   await clock.advance(600)
   let ui = await $.ui.mount({ plugin: 'pixel-pals', surface: 'terminal', ...BAND })
   expect(await said(ui)).toContain('等你确认一下～')
