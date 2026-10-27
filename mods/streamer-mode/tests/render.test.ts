@@ -11,8 +11,10 @@ function captureRender(on: AnyOn): Array<Record<string, unknown>> {
   const captured: Array<Record<string, unknown>> = []
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   on('ui.render', (...args: any[]) => {
-    const e = args[1] as { props: Record<string, unknown> }
+    const e = args[1] as { component: string; props: Record<string, unknown> }
     captured.push(e.props)
+    // AskUserQuestion 트리는 엔진이 직접 그리는 노드를 정확히 하나 담아야 검증을 통과한다
+    if (e.component === 'AskUserQuestion') return { type: 'engine', ref: 0 }
     return { type: 'Text', props: {}, children: [] }
   })
   return captured
