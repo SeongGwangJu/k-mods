@@ -891,7 +891,7 @@ export const CATALOG: CatalogEntry[] = [
   {
     "name": "modstage",
     "displayName": "modstage",
-    "summary": "Codex·Grok·Muse·Antigravity·Kimi·Qwen Code·OpenCode를 Claude Code 서브에이전트로 실행해요. 탭마다 실시간으로 보고, 위험한 작업은 승인하고, 중간에 방향을 바꿔요",
+    "summary": "Codex, Grok, Muse 같은 코딩 에이전트 7종을 Claude Code 서브에이전트로 실행해요. 탭에서 진행을 실시간으로 보고, 위험한 작업을 승인하고, 실행 중에 지시를 바꿔요",
     "category": "tool",
     "kind": "upstream",
     "author": "Varun Pratap Bhardwaj",
@@ -900,8 +900,16 @@ export const CATALOG: CatalogEntry[] = [
     "commands": [
       "/modstage"
     ],
-    "requires": [],
-    "notes": [],
+    "requires": [
+      "Python 3.10 이상",
+      "에이전트 CLI 1개 이상 설치, 로그인 (Codex, Grok, Muse, Antigravity, Kimi, Qwen Code, OpenCode 중)"
+    ],
+    "notes": [
+      "세션을 시작할 때마다 로컬 브리지(Python 프로그램)를 실행해요. Claude Code를 닫아도 브리지는 계속 실행되고, 끄려면 `kill $(cat ~/.modstage/bridge.pid)`를 입력해요.",
+      "도구 12개(`stage_*`)를 지연 로딩 없이 등록해요. ModStage를 쓰지 않는 세션에도 도구 설명만큼 컨텍스트를 써요.",
+      "Bash로 `codex exec`, `muse exec`, `grok -p`를 직접 실행하면 거절하고 `stage_start`를 쓰라고 안내해요. `--help`, `--version`은 그대로 실행돼요.",
+      "실행 방식 기본값은 ask(위험한 작업은 승인 요청)예요. auto는 에이전트의 승인 요청을 모두 자동으로 허용하고, Antigravity는 `--dangerously-skip-permissions`로 실행해요. ask에서도 실제로 묻는지는 각 CLI 설정에 따라 달라져요."
+    ],
     "permissions": [
       "네트워크",
       "프로그램 실행",

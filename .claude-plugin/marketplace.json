@@ -820,7 +820,7 @@
         "repo": "qualixar/modstage",
         "sha": "e1d8522dbb5feaa3b1bb88d9698ee340b2690b50"
       },
-      "description": "Codex·Grok·Muse·Antigravity·Kimi·Qwen Code·OpenCode를 Claude Code 서브에이전트로 실행해요. 탭마다 실시간으로 보고, 위험한 작업은 승인하고, 중간에 방향을 바꿔요",
+      "description": "Codex, Grok, Muse 같은 코딩 에이전트 7종을 Claude Code 서브에이전트로 실행해요. 탭에서 진행을 실시간으로 보고, 위험한 작업을 승인하고, 실행 중에 지시를 바꿔요",
       "category": "도구",
       "tags": [
         "서브에이전트",
