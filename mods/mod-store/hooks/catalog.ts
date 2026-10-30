@@ -889,6 +889,30 @@ export const CATALOG: CatalogEntry[] = [
     ]
   },
   {
+    "name": "modstage",
+    "displayName": "modstage",
+    "summary": "Codex·Grok·Muse·Antigravity·Kimi·Qwen Code·OpenCode를 Claude Code 서브에이전트로 실행해요. 탭마다 실시간으로 보고, 위험한 작업은 승인하고, 중간에 방향을 바꿔요",
+    "category": "tool",
+    "kind": "upstream",
+    "author": "Varun Pratap Bhardwaj",
+    "license": "MIT",
+    "homepage": "https://github.com/qualixar/modstage",
+    "commands": [
+      "/modstage"
+    ],
+    "requires": [],
+    "notes": [],
+    "permissions": [
+      "네트워크",
+      "프로그램 실행",
+      "도구 호출 제어",
+      "대화 읽기",
+      "환경·설정 읽기",
+      "파일 읽기",
+      "세션 메시지"
+    ]
+  },
+  {
     "name": "now-playing",
     "displayName": "now-playing",
     "summary": "macOS에서 Spotify로 재생 중인 곡과 가사를 입력창 위에 표시해요. 버튼이나 /music으로 재생·일시정지·이전·다음을 조작할 수 있어요.",
