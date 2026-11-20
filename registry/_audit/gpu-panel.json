@@ -1,0 +1,70 @@
+{
+  "name": "gpu-panel",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/tom0266/claude-gpu-panel.git",
+    "path": "gpu-panel",
+    "sha": "e8d086abe104fd25c565a0123ed8b713ccf60f39"
+  },
+  "auditedWith": "2.1.329",
+  "validate": {
+    "success": true,
+    "errors": [],
+    "warnings": []
+  },
+  "hooks": [
+    "agent.spawn",
+    "command.run{command=effort}",
+    "command.run{command=gpu}",
+    "session.measure",
+    "session.start",
+    "ui.render{component=Pane, requestId=gpu-panel-detail} (default matcher key: plugin)",
+    "ui.render{component=PromptHint}",
+    "ui.status"
+  ],
+  "calls": [
+    "$.agent.list",
+    "$.clock.every",
+    "$.clock.now",
+    "$.command.register",
+    "$.command.run",
+    "$.env.get",
+    "$.fs.read",
+    "$.process.hookEnv",
+    "$.process.run",
+    "$.session.compact",
+    "$.session.info",
+    "$.session.model",
+    "$.session.usage",
+    "$.state.get",
+    "$.state.set",
+    "$.store.get",
+    "$.store.set",
+    "$.ui.open",
+    "$.ui.resolve",
+    "$.ui.toast"
+  ],
+  "envReads": [
+    "HOME",
+    "USER"
+  ],
+  "envWrites": [
+    "nothing"
+  ],
+  "gatingWithoutCatch": [],
+  "commands": [
+    "/gpu"
+  ],
+  "programs": [
+    "grep",
+    "nvidia-smi",
+    "ps"
+  ],
+  "urls": [],
+  "license": "../LICENSE",
+  "permissions": [
+    "process",
+    "env",
+    "fs-read"
+  ]
+}

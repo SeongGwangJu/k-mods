@@ -108,6 +108,7 @@ Claude가 일하는 동안 애니메이션이나 게임을 표시해요
 | [**cache-panel**](docs/mods/cache-panel.md) | 프롬프트 캐시가 만료되기 50분 전에 알려줘요. 주기적 갱신, 한 번 갱신, 대화 압축 중 하나를 예상 비용과 함께 선택할 수 있어요. | [Dustin Yuchen Teng](https://github.com/danyuchn) |
 | [**context-bar**](docs/mods/context-bar.md) | 컨텍스트 창을 /context와 같은 색의 구간별 막대 그래프로 표시해요. 토큰 수·압축 시점·범례도 입력창 위에서 확인할 수 있어요. | [Hamza Zafar](https://github.com/hamzafer) |
 | [**flightdeck**](docs/mods/flightdeck.md) | 메인 모델의 상태·비용·컨텍스트, 온콜 아키텍트 상담, 권한 검사, 서브에이전트 카드를 한 화면에 표시해요. 세션 이벤트가 발생하면 실시간으로 갱신해요 | [Stephen Casella](https://github.com/scasella) |
+| [**gpu-panel**](docs/mods/gpu-panel.md) | 프롬프트 밑 한 줄에 어느 GPU가 돌고 있는지, 내 학습이 몇 개 떠 있는지, 플랜 한도와 컨텍스트가 얼마나 남았는지 보여줘요. gpu를 누르면 카드마다 누가 쓰고 있는지까지 옆 창에 나와요. | [tom0266](https://github.com/tom0266) |
 | [**hud**](docs/mods/hud.md) | 모델·프로젝트·Git·컨텍스트·사용량·도구·할 일을 HUD 한 줄로 표시해요. 예산·이력·작업 요약·상세 패널·테마도 지원해요. | [hoobnn](https://github.com/hoobnn) |
 | [**mod-usage**](docs/mods/mod-usage.md) | 컨텍스트·5시간·7일 사용량을 입력창 위 그라데이션 막대 3개로 표시해요. Desktop/VS Code 전용이며 12개 언어를 지원하지만 한국어는 아직 없어요. | [Jack Chiang](https://github.com/jack21) |
 | [**pr-pulse**](docs/mods/pr-pulse.md) | GitHub PR의 머지 준비 상태·CI 체크·리뷰 코멘트·리뷰 대기열을 입력창 위 한 줄과 패널에 실시간으로 표시해요 | [Gerric Chaplin](https://github.com/gerricchaplin) |

@@ -482,6 +482,29 @@ export const CATALOG: CatalogEntry[] = [
     ]
   },
   {
+    "name": "gpu-panel",
+    "displayName": "gpu-panel",
+    "summary": "프롬프트 밑 한 줄에 어느 GPU가 돌고 있는지, 내 학습이 몇 개 떠 있는지, 플랜 한도와 컨텍스트가 얼마나 남았는지 보여줘요. gpu를 누르면 카드마다 누가 쓰고 있는지까지 옆 창에 나와요.",
+    "category": "statusline",
+    "kind": "upstream",
+    "author": "tom0266",
+    "license": "MIT",
+    "homepage": "https://github.com/tom0266/claude-gpu-panel",
+    "commands": [
+      "/gpu"
+    ],
+    "requires": [
+      "GPU 칸은 PATH에 nvidia-smi가 있어야 나와요. 없으면 그 칸만 숨겨져요.",
+      "job 칸은 ~/.claude/statusline-jobs.txt(한 줄에 패턴 하나)가 있어야 나와요."
+    ],
+    "notes": [],
+    "permissions": [
+      "프로그램 실행",
+      "환경·설정 읽기",
+      "파일 읽기"
+    ]
+  },
+  {
     "name": "hud",
     "displayName": "hud",
     "summary": "모델·프로젝트·Git·컨텍스트·사용량·도구·할 일을 HUD 한 줄로 표시해요. 예산·이력·작업 요약·상세 패널·테마도 지원해요.",
