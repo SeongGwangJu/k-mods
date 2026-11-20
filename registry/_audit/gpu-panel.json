@@ -4,15 +4,13 @@
     "source": "git-subdir",
     "url": "https://github.com/tom0266/claude-gpu-panel.git",
     "path": "gpu-panel",
-    "sha": "2725262eacbdcea57896cb79059ddb6c37526805"
+    "sha": "e8d086abe104fd25c565a0123ed8b713ccf60f39"
   },
   "auditedWith": "2.1.329",
   "validate": {
     "success": true,
     "errors": [],
-    "warnings": [
-      "[object Object]"
-    ]
+    "warnings": []
   },
   "hooks": [
     "agent.spawn",

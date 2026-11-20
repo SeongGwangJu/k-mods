@@ -14,12 +14,12 @@
     "source": "git-subdir",
     "url": "https://github.com/tom0266/claude-gpu-panel.git",
     "path": "gpu-panel",
-    "sha": "2725262eacbdcea57896cb79059ddb6c37526805"
+    "sha": "e8d086abe104fd25c565a0123ed8b713ccf60f39"
   },
   "upstream": {
     "repo": "tom0266/claude-gpu-panel",
     "path": "gpu-panel",
-    "commit": "2725262eacbdcea57896cb79059ddb6c37526805"
+    "commit": "e8d086abe104fd25c565a0123ed8b713ccf60f39"
   },
   "author": {
     "name": "tom0266",
@@ -56,10 +56,17 @@
       "외부 프로그램 실행: 10초마다 nvidia-smi와 ps, 30초마다 세션 기록 파일에서 제목을 찾는 grep. GPU 창이 열려 있을 때만 nvidia-smi --query-compute-apps와 ps로 카드별 사용 계정을 조회해요.",
       "파일 읽기: ~/.claude/statusline-jobs.txt(감시 패턴)와 현재 세션 기록 파일(세션 이름). 파일 쓰기 없음.",
       "저장: 실제로 본 모델 id에서 배운 버전 번호만 $.store에 남겨요(세션 간 유지).",
-      "ui.status 훅이 다른 mod의 상태 줄 가운데 'no active cases', 'waste≈0'이 들어간 줄을 숨겨요. 그 밖의 상태 줄과 경고는 그대로 지나가요.",
-      "gating 훅(command.run effort, ui.status, agent.spawn)은 모두 .catch로 next(e)를 통과시켜요. 서브에이전트 생성을 막지 않아요.",
+      "ui.status 훅은 hideQuietStatus 옵션을 켰을 때만 등록돼요(기본 꺼짐). 켜면 다른 mod의 상태 줄 가운데 'no active cases', 'waste≈0'이 들어간 줄만 숨기고 경고는 그대로 지나가요.",
+      "gating 훅(command.run effort, agent.spawn, 옵션을 켰을 때의 ui.status)은 모두 .catch로 next(e)를 통과시켜요. 서브에이전트 생성을 막지 않아요.",
       "버튼은 /effort, /model 실행과 $.session.compact 호출이에요. 사용자가 눌렀을 때만 동작해요.",
-      "env 읽기: HOME, USER. 기기 밖 데이터 전송 없음."
+      "env 읽기: HOME, USER. 기기 밖 데이터 전송 없음.",
+      "plugin.json에 network.hosts를 빈 목록으로 선언했어요. claude plugin validate --strict 통과."
     ]
-  }
+  },
+  "settings": [
+    "language: 알림·창 문구의 언어(en, ko). 기본 en이에요.",
+    "palette: dark(어두운 터미널용 고정 색) 또는 theme(Claude Code 테마 색, 밝은 터미널용).",
+    "fiveHourThreshold, sevenDayThreshold: 한도 알림을 띄울 퍼센트. 기본 80, 70이에요.",
+    "hideQuietStatus: 다른 mod의 '이상 없음' 상태 줄을 숨겨요. 기본은 꺼져 있어요."
+  ]
 }

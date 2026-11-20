@@ -417,7 +417,7 @@
         "source": "git-subdir",
         "url": "https://github.com/tom0266/claude-gpu-panel.git",
         "path": "gpu-panel",
-        "sha": "2725262eacbdcea57896cb79059ddb6c37526805"
+        "sha": "e8d086abe104fd25c565a0123ed8b713ccf60f39"
       },
       "description": "프롬프트 밑 한 줄에 어느 GPU가 돌고 있는지, 내 학습이 몇 개 떠 있는지, 플랜 한도와 컨텍스트가 얼마나 남았는지 보여줘요. gpu를 누르면 카드마다 누가 쓰고 있는지까지 옆 창에 나와요.",
       "category": "상태줄",
