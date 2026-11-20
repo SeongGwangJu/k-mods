@@ -1,0 +1,65 @@
+{
+  "$schema": "./_schema.json",
+  "name": "gpu-panel",
+  "summary": "프롬프트 밑 한 줄에 어느 GPU가 돌고 있는지, 내 학습이 몇 개 떠 있는지, 플랜 한도와 컨텍스트가 얼마나 남았는지 보여줘요. gpu를 누르면 카드마다 누가 쓰고 있는지까지 옆 창에 나와요.",
+  "summaryEn": "A panel under the prompt for shared GPU servers: which cards are busy and who is on them, your training jobs, plan limits and context, with effort, model and compact buttons.",
+  "category": "statusline",
+  "tags": [
+    "GPU",
+    "사용량",
+    "서버"
+  ],
+  "kind": "upstream",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/tom0266/claude-gpu-panel.git",
+    "path": "gpu-panel",
+    "sha": "2725262eacbdcea57896cb79059ddb6c37526805"
+  },
+  "upstream": {
+    "repo": "tom0266/claude-gpu-panel",
+    "path": "gpu-panel",
+    "commit": "2725262eacbdcea57896cb79059ddb6c37526805"
+  },
+  "author": {
+    "name": "tom0266",
+    "url": "https://github.com/tom0266"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/tom0266/claude-gpu-panel",
+  "commands": [
+    "/gpu"
+  ],
+  "surfaces": [
+    "terminal",
+    "desktop"
+  ],
+  "requires": [
+    "GPU 칸은 PATH에 nvidia-smi가 있어야 나와요. 없으면 그 칸만 숨겨져요.",
+    "job 칸은 ~/.claude/statusline-jobs.txt(한 줄에 패턴 하나)가 있어야 나와요."
+  ],
+  "requiresEn": [
+    "The GPU fields need nvidia-smi on PATH; without it only those fields are hidden.",
+    "The job field needs ~/.claude/statusline-jobs.txt, one pattern per line."
+  ],
+  "review": {
+    "date": "2026-11-20",
+    "by": "tom0266",
+    "claudeCode": "2.1.329",
+    "method": [
+      "validate",
+      "code-read"
+    ],
+    "findings": [
+      "작성자 본인이 등록한 항목이에요(자기 검토).",
+      "네트워크 호출 없음($.http.fetch 미사용). 모델 호출 없음.",
+      "외부 프로그램 실행: 10초마다 nvidia-smi와 ps, 30초마다 세션 기록 파일에서 제목을 찾는 grep. GPU 창이 열려 있을 때만 nvidia-smi --query-compute-apps와 ps로 카드별 사용 계정을 조회해요.",
+      "파일 읽기: ~/.claude/statusline-jobs.txt(감시 패턴)와 현재 세션 기록 파일(세션 이름). 파일 쓰기 없음.",
+      "저장: 실제로 본 모델 id에서 배운 버전 번호만 $.store에 남겨요(세션 간 유지).",
+      "ui.status 훅이 다른 mod의 상태 줄 가운데 'no active cases', 'waste≈0'이 들어간 줄을 숨겨요. 그 밖의 상태 줄과 경고는 그대로 지나가요.",
+      "gating 훅(command.run effort, ui.status, agent.spawn)은 모두 .catch로 next(e)를 통과시켜요. 서브에이전트 생성을 막지 않아요.",
+      "버튼은 /effort, /model 실행과 $.session.compact 호출이에요. 사용자가 눌렀을 때만 동작해요.",
+      "env 읽기: HOME, USER. 기기 밖 데이터 전송 없음."
+    ]
+  }
+}
