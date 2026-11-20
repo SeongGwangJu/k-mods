@@ -64,9 +64,10 @@
     ]
   },
   "settings": [
-    "language: 알림·창 문구의 언어(en, ko). 기본 en이에요.",
-    "palette: dark(어두운 터미널용 고정 색) 또는 theme(Claude Code 테마 색, 밝은 터미널용).",
-    "fiveHourThreshold, sevenDayThreshold: 한도 알림을 띄울 퍼센트. 기본 80, 70이에요.",
-    "hideQuietStatus: 다른 mod의 '이상 없음' 상태 줄을 숨겨요. 기본은 꺼져 있어요."
+    {
+      "key": "language",
+      "value": "ko",
+      "why": "한도 알림과 GPU 창의 안내 문구가 한국어로 나와요. 기본은 en이에요."
+    }
   ]
 }

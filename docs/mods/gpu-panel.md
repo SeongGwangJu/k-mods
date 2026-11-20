@@ -39,10 +39,7 @@ claude plugin install gpu-panel@k-mods
 
 | 설정 | 값 | 이유 |
 | --- | --- | --- |
-| `undefined` | `undefined` | undefined |
-| `undefined` | `undefined` | undefined |
-| `undefined` | `undefined` | undefined |
-| `undefined` | `undefined` | undefined |
+| `language` | `"ko"` | 한도 알림과 GPU 창의 안내 문구가 한국어로 나와요. 기본은 en이에요. |
 
 ## 이 mod가 내 컴퓨터에서 하는 일
 
